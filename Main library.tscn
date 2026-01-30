@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bt0bfm4h4m1gj"]
+
+[ext_resource type="ArrayMesh" uid="uid://drgjvq2nt7w0r" path="res://Mesh/Earth.obj" id="1_3qioa"]
+[ext_resource type="ArrayMesh" uid="uid://dwqlbdbdoif1t" path="res://Mesh/Water.obj" id="2_ymriv"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cm0pq"]
+data = PackedVector3Array(-1, 1, 0, 1, 1, 0, -1, 1, 1, -1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, 1, -1, 0, -1, -1, 0, 1, -1, 1, 1, -1, 1, -1, -1, 0, -1, -1, 1, 1, 1, 0, 1, -1, 0, 1, 1, 1, 1, 1, 1, 1, -1, 0, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 0, -1, 1, 0, -1, -1, 1, -1, -1, 0, 1, 1, -1, 1, 1, 0, -1, 1, -1, -1, 1, -1, 1, 1, 0, -1, 1, 0, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, -1, -1, 0, 1, -1, -1, 1, -1, -1, -1, -1, 0, 1, -1, 0, 1, -1, -1, 1, -1, 0, 1, 1, -1, 1, 1, -1, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1, -1, -1, -1, 1, 0, -1, 1, 0, -1, -1, -1, -1, 1, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fos0i"]
+data = PackedVector3Array(-1, 1, 0, 1, 1, 0, -1, 1, 1, -1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, 1, -1, 0, -1, -1, 0, 1, -1, 1, 1, -1, 1, -1, -1, 0, -1, -1, 1, 1, 1, 0, 1, -1, 0, 1, 1, 1, 1, 1, 1, 1, -1, 0, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 0, -1, 1, 0, -1, -1, 1, -1, -1, 0, 1, 1, -1, 1, 1, 0, -1, 1, -1, -1, 1, -1, 1, 1, 0, -1, 1, 0, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, -1, -1, 0, 1, -1, -1, 1, -1, -1, -1, -1, 0, 1, -1, 0, 1, -1, -1, 1, -1, 0, 1, 1, -1, 1, 1, -1, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1, -1, -1, -1, 1, 0, -1, 1, 0, -1, -1, -1, -1, 1, -1)
+
+[node name="Node3D" type="Node3D" unique_id=899135004]
+
+[node name="Earth" type="MeshInstance3D" parent="." unique_id=1175404569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0856256, 0, -0.15899467)
+mesh = ExtResource("1_3qioa")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Earth" unique_id=112258056]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Earth/StaticBody3D" unique_id=813335299]
+shape = SubResource("ConcavePolygonShape3D_cm0pq")
+
+[node name="Water" type="MeshInstance3D" parent="." unique_id=1526072895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.246202, -4.7683716e-07, -0.3375802)
+mesh = ExtResource("2_ymriv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Water" unique_id=270233179]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water/StaticBody3D" unique_id=1164772557]
+shape = SubResource("ConcavePolygonShape3D_fos0i")
