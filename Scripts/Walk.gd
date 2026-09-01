@@ -38,8 +38,9 @@ func _process(delta: float) -> void:
 	if volume_mag > minimum:
 		
 		model.position.y = volume_mag * multiplier
-		#print(position.x , "position")
+		#$peach/Armature/Skeleton3D.position.y = volume_mag * multiplier
 	else:
+		#$peach/Armature/Skeleton3D.position.y = 0
 		model.position.y = 0
 
 

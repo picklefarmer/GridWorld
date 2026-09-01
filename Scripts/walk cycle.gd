@@ -11,6 +11,7 @@ var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 @export var multiplier : float = 0.25
 @export var deltav : float = 1.0
 @export var stride : float = 1.0
+@export var isLeg : bool = false
 
 var canMove : bool = true
 func _ready() -> void:
@@ -33,12 +34,13 @@ func _process(delta: float) -> void:
 	if volume_mag > minimum:
 		if canMove:
 			stride *= -1.0
-			var global_force_vector : Vector3 = Vector3(0,volume_mag *multiplier*stride,0)
+			var global_force_vector : Vector3 = Vector3(0,0,volume_mag *multiplier*stride)
 			var skeleton: Skeleton3D = get_parent() as Skeleton3D
 			var rotVector : Transform3D = skeleton.global_transform * skeleton.get_bone_global_pose(0)
 			var localForce : Vector3 = rotVector.basis * global_force_vector
 			external_force = localForce
-			Actions.goForward.emit(volume_mag*0.12)
+			if isLeg : 
+				Actions.goForward.emit(volume_mag*0.22)
 			canMove = false
 	else:
 		canMove = true

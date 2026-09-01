@@ -3,6 +3,7 @@
 [ext_resource type="MeshLibrary" uid="uid://pag8hdgxm8qp" path="res://MeshLibrary.meshlib" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://d0y26xbn6k0b1" path="res://Scripts/run.gd" id="2_r0du0"]
 [ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="3_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="4_cm0pq"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_glv2v"]
 rayleigh_coefficient = 1.11
@@ -58,21 +59,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.654991, 0, -14.606642)
 curve = SubResource("Curve3D_uu6xs")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=416138429]
-physics_interpolation_mode = 2
-auto_translate_mode = 2
 transform = Transform3D(-0.9225934, 0, -0.38576978, 0, 1, 0, 0.38576978, 0, -0.9225934, -11.548273, 2, 2.7896957)
 use_model_front = true
 script = ExtResource("2_r0du0")
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Path3D/PathFollow3D" unique_id=794805237]
-process_physics_priority = -1
-physics_interpolation_mode = 2
-auto_translate_mode = 2
-remote_path = NodePath("../../../Peachman")
+[node name="Peachman" parent="Path3D/PathFollow3D" unique_id=2119852306 instance=ExtResource("3_cm0pq")]
+visible = false
+script = null
 
-[node name="Peachman" parent="." unique_id=2119852306 instance=ExtResource("3_cm0pq")]
-transform = Transform3D(-0.9225934, 0, -0.38576978, 0, 1, 0, 0.38576978, 0, -0.9225934, -29.203264, 2, -11.816946)
+[node name="Blueberryman" parent="Path3D/PathFollow3D" unique_id=608704938 instance=ExtResource("4_cm0pq")]
+transform = Transform3D(0.9948702, 0, -0.101178795, 0, 1, 0, 0.101178795, 0, 0.9948702, -0.39151955, 2.3841858e-07, 0.37713814)
 
-[node name="Camera3D2" type="Camera3D" parent="Peachman" unique_id=1180250909]
-transform = Transform3D(0.73852056, 0, 0.674231, 0, 1, 0, -0.674231, 0, 0.73852056, 3.2396717, 2.600916, 4.022627)
+[node name="Camera3D2" type="Camera3D" parent="Path3D/PathFollow3D/Blueberryman" unique_id=1180250909]
+transform = Transform3D(0.8721083, 0, 0.4893123, 0, 1, 0, -0.4893123, 0, 0.8721083, 3.9528008, 2.6009157, 7.110546)
 fov = 78.05362
