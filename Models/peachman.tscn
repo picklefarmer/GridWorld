@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ddcenk4t8tagx" path="res://Models/peach.blend" id="1_q03g3"]
 [ext_resource type="Script" uid="uid://0oruccicihmn" path="res://Scripts/mouth.gd" id="2_spvp5"]
 [ext_resource type="Script" uid="uid://cd6ig180cvpii" path="res://Scripts/walk cycle.gd" id="3_68o0a"]
+[ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="3_qibsc"]
 
 [node name="Peachman" type="Node3D" unique_id=1887923755]
 script = ExtResource("1_68o0a")
@@ -12,7 +13,12 @@ multiplier = 1.0
 
 [node name="peach" parent="." unique_id=1407819886 instance=ExtResource("1_q03g3")]
 
-[node name="Head" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1407819886, 2116220276) index="2" unique_id=519881353]
+[node name="Skeleton3D" parent="peach/Armature" parent_id_path=PackedInt32Array(1407819886, 186049201) index="0" unique_id=2116220276]
+script = ExtResource("3_qibsc")
+bone_name = "Bone"
+multiplier = 0.5
+
+[node name="Head" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" index="2" unique_id=519881353]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -50,16 +56,14 @@ settings/0/joints/6/bone = 8
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="Mouth" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1407819886, 2116220276) index="3" unique_id=1864510796]
+[node name="Mouth" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" index="3" unique_id=1864510796]
 setting_count = 1
 settings/0/root_bone_name = "Bone.009"
 settings/0/root_bone = 9
 settings/0/end_bone_name = "Bone.011"
 settings/0/end_bone = 11
 settings/0/extend_end_bone = false
-settings/0/center_from = 2
-settings/0/center_bone_name = "Bone"
-settings/0/center_bone = 0
+settings/0/center_from = 0
 settings/0/individual_config = false
 settings/0/rotation_axis = 3
 settings/0/radius/value = 0.02
@@ -80,9 +84,9 @@ settings/0/joints/2/bone = 11
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("2_spvp5")
-multiplier = 30.0
+multiplier = 4000.0
 
-[node name="Body" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1407819886, 2116220276) index="4" unique_id=2078050291]
+[node name="Body" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" index="4" unique_id=2078050291]
 setting_count = 1
 settings/0/root_bone_name = "Bone.012"
 settings/0/root_bone = 12
@@ -114,7 +118,7 @@ settings/0/joints/3/bone = 15
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="LL" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1407819886, 2116220276) index="5" unique_id=2063910013]
+[node name="LL" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" index="5" unique_id=2063910013]
 setting_count = 1
 settings/0/root_bone_name = "Bone.015_L.001"
 settings/0/root_bone = 17
@@ -150,7 +154,7 @@ minimum = 0.02
 multiplier = 300.0
 isLeg = true
 
-[node name="RL" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1407819886, 2116220276) index="6" unique_id=978175268]
+[node name="RL" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" index="6" unique_id=978175268]
 setting_count = 1
 settings/0/root_bone_name = "Bone.015_R.001"
 settings/0/root_bone = 22
@@ -186,7 +190,7 @@ minimum = 0.02
 multiplier = -300.0
 isLeg = true
 
-[node name="LA" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1407819886, 2116220276) index="7" unique_id=1260153892]
+[node name="LA" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" index="7" unique_id=1260153892]
 setting_count = 1
 settings/0/root_bone_name = "Bone_L"
 settings/0/root_bone = 26
@@ -222,7 +226,7 @@ settings/0/exclude_collision_count = 0
 script = ExtResource("3_68o0a")
 multiplier = -50.0
 
-[node name="RA" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1407819886, 2116220276) index="8" unique_id=423464653]
+[node name="RA" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" index="8" unique_id=423464653]
 setting_count = 1
 settings/0/root_bone_name = "Bone_R"
 settings/0/root_bone = 30

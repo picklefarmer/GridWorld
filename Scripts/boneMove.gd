@@ -1,8 +1,9 @@
-extends SpringBoneSimulator3D
+extends Skeleton3D
 
-
-#@onready var audio_stream_player : AudioStreamPlayer = $"../AudioStreamPlayer"
-
+@export var bone_name: String = "1"
+var bone_idx: int
+@onready var audio_stream_player : AudioStreamPlayer = $"../../../../../../AudioStreamPlayer"
+var current_pos: Vector3
 var record_bus_index : int
 #var record_effect: AudioEffectRecord
 var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
@@ -10,11 +11,10 @@ var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 @export var minimum = 0.05
 @export var multiplier : float = 0.25
 @export var deltav : float = 1.0
-@export var speaking : bool = false
-
 
 func _ready() -> void:
-	
+	bone_idx = find_bone(bone_name)
+	current_pos = get_bone_pose_position(bone_idx)
 	#print(AudioServer.get_input_device_list())
 	record_bus_index = AudioServer.get_bus_index("recording")
 	#record_effect = AudioServer.get_bus_effect(record_bus_index,0)
@@ -29,16 +29,11 @@ func _process(delta: float) -> void:
 	volume_mag = clamp((MIN_DB + linear_to_db(volume_mag))/MIN_DB,0,1)
 	#print( volume_mag)
 	if volume_mag > minimum:
-		var global_force_vector : Vector3 = Vector3(0,0,volume_mag *multiplier)
-		var skeleton: Skeleton3D = get_parent() as Skeleton3D
-		var rotVector : Transform3D = skeleton.global_transform * skeleton.get_bone_global_pose(0)
-		var localForce : Vector3 = rotVector.basis * global_force_vector
-		external_force = localForce
-		#external_force.y = -volume_mag * multiplier
-		#position.x = -volume_mag * multiplier
+		var new_pos = current_pos + Vector3(0, volume_mag*multiplier, 0) 
+		set_bone_pose_position(bone_idx, new_pos)
+		#current_pose = current_pose.rotated_local(Vector3.UP, volume_mag * multiplier)
+		
 		
 	else:
-		external_force = Vector3.ZERO
-
-
-	
+		set_bone_pose_position(bone_idx, current_pos)
+	print(get_bone_pose_position(bone_idx)	)

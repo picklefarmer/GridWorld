@@ -64,12 +64,12 @@ use_model_front = true
 script = ExtResource("2_r0du0")
 
 [node name="Peachman" parent="Path3D/PathFollow3D" unique_id=2119852306 instance=ExtResource("3_cm0pq")]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5234756, 0, 1.4732952)
 script = null
 
 [node name="Blueberryman" parent="Path3D/PathFollow3D" unique_id=608704938 instance=ExtResource("4_cm0pq")]
 transform = Transform3D(0.9948702, 0, -0.101178795, 0, 1, 0, 0.101178795, 0, 0.9948702, -0.39151955, 2.3841858e-07, 0.37713814)
 
-[node name="Camera3D2" type="Camera3D" parent="Path3D/PathFollow3D/Blueberryman" unique_id=1180250909]
-transform = Transform3D(0.8721083, 0, 0.4893123, 0, 1, 0, -0.4893123, 0, 0.8721083, 3.9528008, 2.6009157, 7.110546)
+[node name="Camera3D2" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=1180250909]
+transform = Transform3D(0.91714257, 0, 0.39856336, 0, 1, 0, -0.39856336, 0, 0.91714257, 2.8215675, 2.600916, 7.8511505)
 fov = 78.05362

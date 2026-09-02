@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://c5147cxtt5lq2"]
 
 [ext_resource type="PackedScene" uid="uid://pg1lvlrcsb3k" path="res://Models/blueberry.blend" id="1_l7jvf"]
+[ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="2_cgbj2"]
 [ext_resource type="Script" uid="uid://cd6ig180cvpii" path="res://Scripts/walk cycle.gd" id="3_cgbj2"]
 
 [node name="Blueberryman" type="Node3D" unique_id=539657863]
 
 [node name="blueberry" parent="." unique_id=140777573 instance=ExtResource("1_l7jvf")]
 
-[node name="Body" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" parent_id_path=PackedInt32Array(140777573, 1114642463) index="1" unique_id=27820999]
+[node name="Skeleton3D" parent="blueberry/Armature" parent_id_path=PackedInt32Array(140777573, 446899455) index="0" unique_id=1114642463]
+script = ExtResource("2_cgbj2")
+bone_name = "1.001"
+multiplier = 2.0
+
+[node name="Body" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" index="1" unique_id=27820999]
 setting_count = 1
 settings/0/root_bone_name = "1"
 settings/0/root_bone = 0
@@ -39,7 +45,7 @@ settings/0/joints/3/bone = 25
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="Mouth" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" parent_id_path=PackedInt32Array(140777573, 1114642463) index="2" unique_id=706035480]
+[node name="Mouth" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" index="2" unique_id=706035480]
 setting_count = 1
 settings/0/root_bone_name = "Bone.001"
 settings/0/root_bone = 12
@@ -74,7 +80,7 @@ bone = 12
 position_offset = Vector3(0, 1.25, -0.58)
 rotation_offset = Quaternion(0.47, 0, 0, 1)
 
-[node name="LL" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" parent_id_path=PackedInt32Array(140777573, 1114642463) index="3" unique_id=643825084]
+[node name="LL" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" index="3" unique_id=643825084]
 setting_count = 1
 settings/0/root_bone_name = "Bone.006_L"
 settings/0/root_bone = 1
@@ -111,7 +117,7 @@ script = ExtResource("3_cgbj2")
 multiplier = -300.0
 isLeg = true
 
-[node name="RL" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" parent_id_path=PackedInt32Array(140777573, 1114642463) index="4" unique_id=116880326]
+[node name="RL" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" index="4" unique_id=116880326]
 setting_count = 1
 settings/0/root_bone_name = "Bone.006_R"
 settings/0/root_bone = 6
@@ -148,7 +154,7 @@ script = ExtResource("3_cgbj2")
 multiplier = 300.0
 isLeg = true
 
-[node name="LA" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" parent_id_path=PackedInt32Array(140777573, 1114642463) index="5" unique_id=183151472]
+[node name="LA" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" index="5" unique_id=183151472]
 setting_count = 1
 settings/0/root_bone_name = "Bone_L"
 settings/0/root_bone = 16
@@ -184,7 +190,7 @@ settings/0/exclude_collision_count = 0
 script = ExtResource("3_cgbj2")
 multiplier = 50.0
 
-[node name="RA" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" parent_id_path=PackedInt32Array(140777573, 1114642463) index="6" unique_id=1048429324]
+[node name="RA" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" index="6" unique_id=1048429324]
 setting_count = 1
 settings/0/root_bone_name = "Bone_R"
 settings/0/root_bone = 20
