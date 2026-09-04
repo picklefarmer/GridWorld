@@ -116,6 +116,8 @@ settings/0/exclude_collision_count = 0
 script = ExtResource("3_cgbj2")
 multiplier = -300.0
 isLeg = true
+bus = "track2"
+track = 1
 
 [node name="RL" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" index="4" unique_id=116880326]
 setting_count = 1
@@ -153,6 +155,8 @@ settings/0/exclude_collision_count = 0
 script = ExtResource("3_cgbj2")
 multiplier = 300.0
 isLeg = true
+bus = "track2"
+track = 1
 
 [node name="LA" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" index="5" unique_id=183151472]
 setting_count = 1
@@ -189,6 +193,8 @@ settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("3_cgbj2")
 multiplier = 50.0
+bus = "track2"
+track = 1
 
 [node name="RA" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" index="6" unique_id=1048429324]
 setting_count = 1
@@ -225,5 +231,7 @@ settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("3_cgbj2")
 multiplier = -50.0
+bus = "track2"
+track = 1
 
 [editable path="blueberry"]

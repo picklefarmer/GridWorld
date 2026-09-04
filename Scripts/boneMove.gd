@@ -36,4 +36,4 @@ func _process(delta: float) -> void:
 		
 	else:
 		set_bone_pose_position(bone_idx, current_pos)
-	print(get_bone_pose_position(bone_idx)	)
+	

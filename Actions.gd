@@ -1,4 +1,4 @@
 extends Node
 
 
-signal goForward(inch:float)
+signal goForward(inch:float,track:int)
