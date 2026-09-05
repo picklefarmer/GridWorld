@@ -9,6 +9,9 @@ resource_name = "SpectrumAnalyzer"
 [sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_n8wo2"]
 resource_name = "SpectrumAnalyzer"
 
+[sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_5t1r3"]
+resource_name = "SpectrumAnalyzer"
+
 [resource]
 bus/0/volume_db = 6.0199986
 bus/1/name = &"mute"
@@ -41,3 +44,11 @@ bus/4/volume_db = 0.0
 bus/4/send = &"Master"
 bus/4/effect/0/effect = SubResource("AudioEffectSpectrumAnalyzer_n8wo2")
 bus/4/effect/0/enabled = true
+bus/5/name = &"track4"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = 0.0
+bus/5/send = &"Master"
+bus/5/effect/0/effect = SubResource("AudioEffectSpectrumAnalyzer_5t1r3")
+bus/5/effect/0/enabled = true

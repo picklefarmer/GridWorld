@@ -1,0 +1,249 @@
+[gd_scene format=3 uid="uid://bqm41vsg73qys"]
+
+[ext_resource type="PackedScene" uid="uid://dtmjrfdburr1d" path="res://Models/bananaman.blend" id="1_dcfrk"]
+[ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="2_k5hs8"]
+[ext_resource type="Script" uid="uid://0oruccicihmn" path="res://Scripts/mouth.gd" id="2_ktv2a"]
+[ext_resource type="Script" uid="uid://cd6ig180cvpii" path="res://Scripts/walk cycle.gd" id="4_4q6l0"]
+
+[node name="Bananaman" type="Node3D" unique_id=602892636]
+
+[node name="bananaman" parent="." unique_id=1986969318 instance=ExtResource("1_dcfrk")]
+
+[node name="Skeleton3D" parent="bananaman/Armature" parent_id_path=PackedInt32Array(1986969318, 66468382) index="0" unique_id=421669521]
+script = ExtResource("2_k5hs8")
+bone_name = "Bone"
+multiplier = 2.0
+track = "track4"
+
+[node name="Head" type="SpringBoneSimulator3D" parent="bananaman/Armature/Skeleton3D" index="1" unique_id=960975709]
+setting_count = 1
+settings/0/root_bone_name = "Bone.001"
+settings/0/root_bone = 1
+settings/0/end_bone_name = "Bone.006"
+settings/0/end_bone = 6
+settings/0/extend_end_bone = false
+settings/0/center_from = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 3
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone.001"
+settings/0/joints/0/bone = 1
+settings/0/joints/1/bone_name = "Bone.002"
+settings/0/joints/1/bone = 2
+settings/0/joints/2/bone_name = "Bone.003"
+settings/0/joints/2/bone = 3
+settings/0/joints/3/bone_name = "Bone.004"
+settings/0/joints/3/bone = 4
+settings/0/joints/4/bone_name = "Bone.005"
+settings/0/joints/4/bone = 5
+settings/0/joints/5/bone_name = "Bone.006"
+settings/0/joints/5/bone = 6
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+
+[node name="Mouth" type="SpringBoneSimulator3D" parent="bananaman/Armature/Skeleton3D" index="2" unique_id=1967546489]
+setting_count = 1
+settings/0/root_bone_name = "Bone.008"
+settings/0/root_bone = 8
+settings/0/end_bone_name = "Bone.010"
+settings/0/end_bone = 10
+settings/0/extend_end_bone = false
+settings/0/center_from = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 3
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 1.3
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, 1, 0)
+settings/0/joints/0/bone_name = "Bone.008"
+settings/0/joints/0/bone = 8
+settings/0/joints/1/bone_name = "Bone.009"
+settings/0/joints/1/bone = 9
+settings/0/joints/2/bone_name = "Bone.010"
+settings/0/joints/2/bone = 10
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+script = ExtResource("2_ktv2a")
+multiplier = 30.0
+bus = "track4"
+
+[node name="Body" type="SpringBoneSimulator3D" parent="bananaman/Armature/Skeleton3D" index="3" unique_id=1168956759]
+setting_count = 1
+settings/0/root_bone_name = "Bone.011"
+settings/0/root_bone = 19
+settings/0/end_bone_name = "Bone.013"
+settings/0/end_bone = 21
+settings/0/extend_end_bone = false
+settings/0/center_from = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 3
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone.011"
+settings/0/joints/0/bone = 19
+settings/0/joints/1/bone_name = "Bone.012"
+settings/0/joints/1/bone = 20
+settings/0/joints/2/bone_name = "Bone.013"
+settings/0/joints/2/bone = 21
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+
+[node name="LA" type="SpringBoneSimulator3D" parent="bananaman/Armature/Skeleton3D" index="4" unique_id=1284937331]
+setting_count = 1
+settings/0/root_bone_name = "Bone_L.001"
+settings/0/root_bone = 12
+settings/0/end_bone_name = "Bone_L.003"
+settings/0/end_bone = 14
+settings/0/extend_end_bone = false
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 3
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone_L.001"
+settings/0/joints/0/bone = 12
+settings/0/joints/1/bone_name = "Bone_L.002"
+settings/0/joints/1/bone = 13
+settings/0/joints/2/bone_name = "Bone_L.003"
+settings/0/joints/2/bone = 14
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+script = ExtResource("4_4q6l0")
+multiplier = 50.0
+bus = "track4"
+track = 4
+
+[node name="RA" type="SpringBoneSimulator3D" parent="bananaman/Armature/Skeleton3D" index="5" unique_id=1480866792]
+setting_count = 1
+settings/0/root_bone_name = "Bone_R.001"
+settings/0/root_bone = 16
+settings/0/end_bone_name = "Bone_R.003"
+settings/0/end_bone = 18
+settings/0/extend_end_bone = false
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 3
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone_R.001"
+settings/0/joints/0/bone = 16
+settings/0/joints/1/bone_name = "Bone_R.002"
+settings/0/joints/1/bone = 17
+settings/0/joints/2/bone_name = "Bone_R.003"
+settings/0/joints/2/bone = 18
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+script = ExtResource("4_4q6l0")
+multiplier = -50.0
+bus = "track4"
+track = 4
+
+[node name="LL" type="SpringBoneSimulator3D" parent="bananaman/Armature/Skeleton3D" index="6" unique_id=1111290531]
+setting_count = 1
+settings/0/root_bone_name = "Bone.013_L.001"
+settings/0/root_bone = 23
+settings/0/end_bone_name = "Bone.013_L.003"
+settings/0/end_bone = 25
+settings/0/extend_end_bone = false
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 3
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone.013_L.001"
+settings/0/joints/0/bone = 23
+settings/0/joints/1/bone_name = "Bone.013_L.002"
+settings/0/joints/1/bone = 24
+settings/0/joints/2/bone_name = "Bone.013_L.003"
+settings/0/joints/2/bone = 25
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+script = ExtResource("4_4q6l0")
+multiplier = -300.0
+isLeg = true
+bus = "track4"
+track = 4
+
+[node name="RL" type="SpringBoneSimulator3D" parent="bananaman/Armature/Skeleton3D" index="7" unique_id=2086122400]
+setting_count = 1
+settings/0/root_bone_name = "Bone.013_R.001"
+settings/0/root_bone = 27
+settings/0/end_bone_name = "Bone.013_R.003"
+settings/0/end_bone = 29
+settings/0/extend_end_bone = false
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 3
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone.013_R.001"
+settings/0/joints/0/bone = 27
+settings/0/joints/1/bone_name = "Bone.013_R.002"
+settings/0/joints/1/bone = 28
+settings/0/joints/2/bone_name = "Bone.013_R.003"
+settings/0/joints/2/bone = 29
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+script = ExtResource("4_4q6l0")
+multiplier = 300.0
+isLeg = true
+bus = "track4"
+track = 4
+
+[editable path="bananaman"]
