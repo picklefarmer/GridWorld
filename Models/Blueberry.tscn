@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://pg1lvlrcsb3k" path="res://Models/blueberry.blend" id="1_l7jvf"]
 [ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="2_cgbj2"]
 [ext_resource type="Script" uid="uid://cd6ig180cvpii" path="res://Scripts/walk cycle.gd" id="3_cgbj2"]
+[ext_resource type="Script" uid="uid://0oruccicihmn" path="res://Scripts/mouth.gd" id="3_dlypm"]
 
 [node name="Blueberryman" type="Node3D" unique_id=539657863]
 
@@ -12,6 +13,7 @@
 script = ExtResource("2_cgbj2")
 bone_name = "1.001"
 multiplier = 2.0
+track = "track2"
 
 [node name="Body" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" index="1" unique_id=27820999]
 setting_count = 1
@@ -72,6 +74,9 @@ settings/0/joints/2/bone_name = "Bone.003"
 settings/0/joints/2/bone = 14
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
+script = ExtResource("3_dlypm")
+multiplier = 30.0
+bus = "track2"
 
 [node name="SpringBoneCollisionPlane3D" type="SpringBoneCollisionPlane3D" parent="blueberry/Armature/Skeleton3D/Mouth" unique_id=1460740875]
 transform = Transform3D(1, -5.506921e-07, -4.5643014e-07, -5.7436245e-07, -0.9985624, -0.053593516, -4.262606e-07, 0.053593516, -0.9985626, 4.1484807e-07, 3.1423626, 1.349426)
@@ -117,7 +122,7 @@ script = ExtResource("3_cgbj2")
 multiplier = -300.0
 isLeg = true
 bus = "track2"
-track = 1
+track = 2
 
 [node name="RL" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" index="4" unique_id=116880326]
 setting_count = 1
@@ -156,7 +161,7 @@ script = ExtResource("3_cgbj2")
 multiplier = 300.0
 isLeg = true
 bus = "track2"
-track = 1
+track = 2
 
 [node name="LA" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" index="5" unique_id=183151472]
 setting_count = 1
@@ -194,7 +199,7 @@ settings/0/exclude_collision_count = 0
 script = ExtResource("3_cgbj2")
 multiplier = 50.0
 bus = "track2"
-track = 1
+track = 2
 
 [node name="RA" type="SpringBoneSimulator3D" parent="blueberry/Armature/Skeleton3D" index="6" unique_id=1048429324]
 setting_count = 1
@@ -232,6 +237,6 @@ settings/0/exclude_collision_count = 0
 script = ExtResource("3_cgbj2")
 multiplier = -50.0
 bus = "track2"
-track = 1
+track = 2
 
 [editable path="blueberry"]

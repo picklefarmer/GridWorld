@@ -2,21 +2,24 @@ extends Skeleton3D
 
 @export var bone_name: String = "1"
 var bone_idx: int
-@onready var audio_stream_player : AudioStreamPlayer = $"../../../../../../AudioStreamPlayer"
+var nodePath : NodePath
 var current_pos: Vector3
 var record_bus_index : int
+#var audio_stream_player : AudioStreamPlayer
 #var record_effect: AudioEffectRecord
 var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 @export var MIN_DB: int = 82
 @export var minimum = 0.05
 @export var multiplier : float = 0.25
 @export var deltav : float = 1.0
+@export var track: String = "recording"
 
 func _ready() -> void:
+	#audio_stream_player = get_node(nodePath).audioStreamer
 	bone_idx = find_bone(bone_name)
 	current_pos = get_bone_pose_position(bone_idx)
 	#print(AudioServer.get_input_device_list())
-	record_bus_index = AudioServer.get_bus_index("recording")
+	record_bus_index = AudioServer.get_bus_index(track)
 	#record_effect = AudioServer.get_bus_effect(record_bus_index,0)
 	spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
 	#record_effect.set_recording_active(true)

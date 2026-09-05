@@ -149,6 +149,7 @@ script = ExtResource("3_68o0a")
 minimum = 0.02
 multiplier = 300.0
 isLeg = true
+track = 1
 
 [node name="RL" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" index="6" unique_id=978175268]
 setting_count = 1
@@ -185,6 +186,7 @@ script = ExtResource("3_68o0a")
 minimum = 0.02
 multiplier = -300.0
 isLeg = true
+track = 1
 
 [node name="LA" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" index="7" unique_id=1260153892]
 setting_count = 1
@@ -221,6 +223,7 @@ settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("3_68o0a")
 multiplier = -50.0
+track = 1
 
 [node name="RA" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" index="8" unique_id=423464653]
 setting_count = 1
@@ -257,5 +260,6 @@ settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("3_68o0a")
 multiplier = 50.0
+track = 1
 
 [editable path="peach"]

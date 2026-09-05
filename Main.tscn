@@ -3,9 +3,11 @@
 [ext_resource type="MeshLibrary" uid="uid://pag8hdgxm8qp" path="res://MeshLibrary.meshlib" id="1_glv2v"]
 [ext_resource type="AudioStream" uid="uid://bbqmpiagvnlyi" path="res://Audio/Track 1.mp3" id="2_lgr22"]
 [ext_resource type="Script" uid="uid://d0y26xbn6k0b1" path="res://Scripts/run.gd" id="2_r0du0"]
+[ext_resource type="AudioStream" uid="uid://x83aylbaoom0" path="res://Audio/track 2.mp3" id="3_03owx"]
 [ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="3_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://dr8pgrx0830fe" path="res://Mesh/raceway.blend" id="5_fos0i"]
+[ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="5_trn2v"]
 [ext_resource type="Texture2D" uid="uid://b20cxhjo531j3" path="res://Mesh/textures/Untitled.png" id="6_3dxm6"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_j3pel"]
@@ -14,7 +16,7 @@
 closed = true
 bake_interval = 0.01
 _data = {
-"points": PackedVector3Array(-17, 0, 0, 17, 0, 0, 1.3293915, 0.66467476, -16.54021, 0, 0, -6, 0, 0, 6, 19.74026, 0.6508863, -1.4631972, 15, 0, 0, -15, 0, 0, 0.9884052, 0.6508863, 12.203287, 0.028411865, 0, 5.3946633, -0.028411865, 0, -5.3946633, -16.854265, 0.6508863, -0.7439084),
+"points": PackedVector3Array(-17, 0, 0, 17, 0, 0, 1.3293915, 0.66467476, -16.31855, 0, 0, -6, 0, 0, 6, 19.74026, 0.6508863, -1.4631972, 15, 0, 0, -15, 0, 0, 2.144783, 0.6508863, 12.766378, 0.028411865, 0, 5.3946633, -0.028411865, 0, -5.3946633, -15.688721, 0.6508863, -0.7439084),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -110,7 +112,7 @@ sky_custom_fov = 72.7
 ambient_light_source = 3
 ambient_light_color = Color(0, 0, 0.81960785, 1)
 
-[node name="Node3D" type="Node3D" unique_id=1756663993]
+[node name="Vitamen" type="Node3D" unique_id=1756663993]
 
 [node name="GridMap" type="GridMap" parent="." unique_id=226806084]
 mesh_library = ExtResource("1_glv2v")
@@ -119,41 +121,58 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=190006111]
+[node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=190006111]
 stream = SubResource("AudioStreamMicrophone_j3pel")
 autoplay = true
 bus = &"recording"
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=536204235]
+[node name="Track 2 streamer" type="AudioStreamPlayer" parent="." unique_id=536204235]
 stream = ExtResource("2_lgr22")
 autoplay = true
 bus = &"track2"
+parameters/looping = true
+
+[node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=1052482222]
+stream = ExtResource("3_03owx")
+autoplay = true
+bus = &"track3"
 parameters/looping = true
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1022963223]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.517174, 2.0780988, -7.041608)
 curve = SubResource("Curve3D_uu6xs")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=416138429]
-transform = Transform3D(4.371069e-08, 0, 0.999984, 0, 0.9999999, 0, -0.999984, 0, 4.371069e-08, 1.3293915, 0.66467476, -16.54021)
-use_model_front = true
-script = ExtResource("2_r0du0")
-
-[node name="Peachman" parent="Path3D/PathFollow3D" unique_id=2119852306 instance=ExtResource("3_cm0pq")]
-transform = Transform3D(0.9866659, 0, -0.16275842, 0, 1, 0, 0.16275844, 0, 0.9866659, 3.5234737, 0, 1.4732952)
-
-[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=1180250909]
-transform = Transform3D(0.91714257, 0, 0.39856336, 0, 1, 0, -0.39856336, 0, 0.91714257, 2.8215675, 2.600916, 7.8511505)
-fov = 78.05362
-
-[node name="PathFollow3D2" type="PathFollow3D" parent="Path3D" unique_id=1232437005]
-transform = Transform3D(4.371069e-08, 0, 0.999984, 0, 0.9999999, 0, -0.999984, 0, 4.371069e-08, 1.3293915, 0.66467476, -16.54021)
+[node name="track1" type="PathFollow3D" parent="Path3D" unique_id=416138429]
+transform = Transform3D(4.371069e-08, 0, 0.999984, 0, 0.9999999, 0, -0.999984, 0, 4.371069e-08, 1.3293915, 0.66467476, -16.31855)
 use_model_front = true
 script = ExtResource("2_r0du0")
 trackNumber = 1
 
-[node name="Blueberryman" parent="Path3D/PathFollow3D2" unique_id=539657863 instance=ExtResource("4_cm0pq")]
-transform = Transform3D(0.9884067, 0, -0.15184163, 0, 1, 0, 0.15184166, 0, 0.98840666, -0.39152145, 2.3841858e-07, 0.37713814)
+[node name="Peachman" parent="Path3D/track1" unique_id=2119852306 instance=ExtResource("3_cm0pq")]
+transform = Transform3D(0.9866659, 0, -0.16275842, 0, 1, 0, 0.16275844, 0, 0.9866659, 0.14721107, 0, 0.67498016)
+
+[node name="Camera3D" type="Camera3D" parent="Path3D/track1" unique_id=1180250909]
+transform = Transform3D(0.8522905, 0, 0.5230992, 0, 1.0000001, 0, -0.5230992, 0, 0.8522905, 1.3477917, 2.6010377, 10.705783)
+fov = 78.05362
+
+[node name="track2" type="PathFollow3D" parent="Path3D" unique_id=1852939651]
+transform = Transform3D(4.371069e-08, 0, 0.999984, 0, 0.9999999, 0, -0.999984, 0, 4.371069e-08, 1.3293915, 0.66467476, -16.31855)
+use_model_front = true
+script = ExtResource("2_r0du0")
+trackNumber = 3
+
+[node name="Strawberry" parent="Path3D/track2" unique_id=2136539647 instance=ExtResource("5_trn2v")]
+transform = Transform3D(1.000016, 0, 0, 0, 1.0000001, 0, 0, 0, 1.000016, -3.588993, -0.03464365, 0.3673973)
+
+[node name="track3" type="PathFollow3D" parent="Path3D" unique_id=1232437005]
+transform = Transform3D(-0.9979543, -0.0009874438, -0.063543424, -0.0009894227, 0.99999636, 7.27579e-12, 0.06354328, 6.287405e-05, -0.9979565, -15.657588, 0.6508863, 0.16407566)
+progress = 77.43944
+use_model_front = true
+script = ExtResource("2_r0du0")
+trackNumber = 2
+
+[node name="Blueberryman" parent="Path3D/track3" unique_id=539657863 instance=ExtResource("4_cm0pq")]
+transform = Transform3D(0.9884067, 0, -0.15184163, 0, 1, 0, 0.15184166, 0, 0.98840666, 4.69586, 2.3841858e-07, 0.78969383)
 
 [node name="raceway" parent="." unique_id=973746171 instance=ExtResource("5_fos0i")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -82.23411, 2.7800903, 8.643673)

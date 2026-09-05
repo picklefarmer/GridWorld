@@ -2,6 +2,7 @@ extends PathFollow3D
 
 @export var trackNumber : int = 0
 var runAmount : float = 0
+
 func _ready() -> void:
 	progress_ratio = 0
 	Actions.goForward.connect(running)

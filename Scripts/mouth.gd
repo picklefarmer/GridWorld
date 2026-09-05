@@ -11,12 +11,12 @@ var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 @export var multiplier : float = 0.25
 @export var deltav : float = 1.0
 @export var speaking : bool = false
-
+@export var bus : String = "recording"
 
 func _ready() -> void:
 	
 	#print(AudioServer.get_input_device_list())
-	record_bus_index = AudioServer.get_bus_index("recording")
+	record_bus_index = AudioServer.get_bus_index(bus)
 	#record_effect = AudioServer.get_bus_effect(record_bus_index,0)
 	spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
 	#record_effect.set_recording_active(true)
