@@ -183,6 +183,7 @@ multiplier = -125.0
 isLeg = true
 bus = "track3"
 track = 3
+alreadyUp = 0.08
 
 [node name="LA" type="SpringBoneSimulator3D" parent="strawberry/Armature/Skeleton3D" index="6" unique_id=752857658]
 setting_count = 1

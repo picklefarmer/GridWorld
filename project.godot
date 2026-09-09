@@ -22,11 +22,16 @@ config/icon="res://icon.svg"
 [audio]
 
 buses/default_bus_layout="uid://cs6c4aq3i62ps"
+general/default_playback_type.web=0
 driver/enable_input=true
 
 [autoload]
 
 Actions="*uid://dbn5cww40x3ad"
+
+[display]
+
+window/size/viewport_width=648
 
 [physics]
 

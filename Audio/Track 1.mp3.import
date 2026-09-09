@@ -2,13 +2,13 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://bbqmpiagvnlyi"
-path="res://.godot/imported/Track 1.mp3-303efad257d8e416e74f436e7c6b9d17.mp3str"
+uid="uid://636go37d6w5f"
+path="res://.godot/imported/track 1.mp3-ef1e59be87b56b6633cdda8890b5bb84.mp3str"
 
 [deps]
 
-source_file="res://Audio/Track 1.mp3"
-dest_files=["res://.godot/imported/Track 1.mp3-303efad257d8e416e74f436e7c6b9d17.mp3str"]
+source_file="res://Audio/track 1.mp3"
+dest_files=["res://.godot/imported/track 1.mp3-ef1e59be87b56b6633cdda8890b5bb84.mp3str"]
 
 [params]
 
