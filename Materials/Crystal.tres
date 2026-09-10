@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bvwxkwf8qql4a"]
+
+[ext_resource type="Texture2D" uid="uid://dbr1m16orqbt4" path="res://Mesh/textures/Gemstone.png" id="1_ugxv2"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_color = Color(2.8583107, 2.8583107, 2.8583107, 1)
+albedo_texture = ExtResource("1_ugxv2")
+roughness = 0.14102563
+emission_enabled = true
+emission = Color(0, 0.29182783, 0.5838315, 1)
+metadata/_gltf_primary_texture_coord = 0
