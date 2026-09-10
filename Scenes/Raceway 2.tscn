@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://d0y26xbn6k0b1" path="res://Scripts/run.gd" id="5_wayxb"]
 [ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="6_jv81l"]
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="7_pxnv1"]
+[ext_resource type="Curve3D" uid="uid://b8vqh0cj4t5oc" path="res://Curves/three knot.tres" id="7_ql3gu"]
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="8_cfm87"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="9_juxwo"]
 [ext_resource type="PackedScene" uid="uid://c47yc10fjtfn0" path="res://Models/cloud.blend" id="13_4wofl"]
@@ -34,14 +35,6 @@ sky = SubResource("Sky_uu6xs")
 sky_custom_fov = 72.7
 ambient_light_source = 3
 ambient_light_color = Color(0, 0, 0.81960785, 1)
-
-[sub_resource type="Curve3D" id="Curve3D_hqkbf"]
-closed = true
-_data = {
-"points": PackedVector3Array(-28.434536, 5.939453, 3.6183052, 28.434536, -5.939453, -3.6183052, 10.053501, 7.4647217, 52.339375, 2.0500946, 2.1734924, 20.035015, -2.0500946, -2.1734924, -20.035015, 49.42375, -4.963852, -4.914081, 34.92079, -7.208374, 7.1304398, -34.92079, 7.208374, -7.1304398, -11.705582, 9.344482, -70.08625, 12.191284, 6.399597, -31.466793, -12.191284, -6.399597, 31.466793, -86.77698, 8.374634, -37.20837, -28.597504, 0.33920288, -9.423584, 28.597504, -0.33920288, 9.423584, -53.480347, -4.8675537, 31.582825, -20.609985, -4.489502, 31.611938, 20.609985, 4.489502, -31.611938, 40.528744, 12.521864, -7.044646, 11.0425415, 3.722412, 7.684204, -11.0425415, -3.722412, -7.684204, 34.52545, 7.2756233, -78.93292, 18.224007, -0.9906616, -26.888977, -18.224007, 0.9906616, 26.888977, -41.149048, -5.0548096, -76.594666, -13.270142, -2.74057, -20.369507, 13.270142, 2.74057, 20.369507, -53.83548, 11.781921, 17.550861),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 9
 
 [node name="Vitamen" type="Node3D" unique_id=1756663993]
 
@@ -101,7 +94,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.386978, 19.14504, -19.062
 
 [node name="Path3D2" type="Path3D" parent="." unique_id=166933922]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.99231, 0)
-curve = SubResource("Curve3D_hqkbf")
+curve = ExtResource("7_ql3gu")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1928489554]
