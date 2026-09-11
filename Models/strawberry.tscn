@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bbiowgnfyjsi4"]
 
+[ext_resource type="Script" uid="uid://dqf1wfabyxm1u" path="res://Scripts/playerMain.gd" id="1_m5ee3"]
 [ext_resource type="PackedScene" uid="uid://sww0rc4miv7n" path="res://Models/strawberry.blend" id="1_y1u1h"]
 [ext_resource type="Script" uid="uid://0oruccicihmn" path="res://Scripts/mouth.gd" id="2_e8kwr"]
 [ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="2_xi6eh"]
 [ext_resource type="Script" uid="uid://cd6ig180cvpii" path="res://Scripts/walk cycle.gd" id="3_g37py"]
 
 [node name="Strawberry" type="Node3D" unique_id=1848394695]
+script = ExtResource("1_m5ee3")
 
 [node name="strawberry" parent="." unique_id=131434778 instance=ExtResource("1_y1u1h")]
 

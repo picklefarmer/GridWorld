@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dijdkqpdtklv"]
 
 [ext_resource type="PackedScene" uid="uid://ddcenk4t8tagx" path="res://Models/peach.blend" id="1_q03g3"]
+[ext_resource type="Script" uid="uid://dqf1wfabyxm1u" path="res://Scripts/playerMain.gd" id="1_qibsc"]
 [ext_resource type="Script" uid="uid://0oruccicihmn" path="res://Scripts/mouth.gd" id="2_spvp5"]
 [ext_resource type="Script" uid="uid://cd6ig180cvpii" path="res://Scripts/walk cycle.gd" id="3_68o0a"]
 [ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="3_qibsc"]
 
 [node name="Peachman" type="Node3D" unique_id=1887923755]
+script = ExtResource("1_qibsc")
 
 [node name="peach" parent="." unique_id=1407819886 instance=ExtResource("1_q03g3")]
 
@@ -150,6 +152,7 @@ minimum = 0.02
 multiplier = 300.0
 isLeg = true
 track = 1
+runSpeed = 0.24
 
 [node name="RL" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" index="6" unique_id=978175268]
 setting_count = 1

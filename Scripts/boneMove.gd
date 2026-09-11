@@ -15,14 +15,16 @@ var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 @export var track: String = "recording"
 
 func _ready() -> void:
-	#audio_stream_player = get_node(nodePath).audioStreamer
+	
+	Actions.syncLip.connect(rebus)
+
 	bone_idx = find_bone(bone_name)
 	current_pos = get_bone_pose_position(bone_idx)
-	#print(AudioServer.get_input_device_list())
+
 	record_bus_index = AudioServer.get_bus_index(track)
-	#record_effect = AudioServer.get_bus_effect(record_bus_index,0)
+
 	spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
-	#record_effect.set_recording_active(true)
+
 	
 
 func _process(delta: float) -> void:
@@ -39,4 +41,11 @@ func _process(delta: float) -> void:
 		
 	else:
 		set_bone_pose_position(bone_idx, current_pos)
+		
+func rebus():
+	if owner.get("active") != null:
+		track = "recording"
+		print("rebus")
+		record_bus_index = AudioServer.get_bus_index("recording")
+		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
 	

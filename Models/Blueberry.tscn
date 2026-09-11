@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://c5147cxtt5lq2"]
 
 [ext_resource type="PackedScene" uid="uid://pg1lvlrcsb3k" path="res://Models/blueberry.blend" id="1_l7jvf"]
+[ext_resource type="Script" uid="uid://dqf1wfabyxm1u" path="res://Scripts/playerMain.gd" id="1_wdich"]
 [ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="2_cgbj2"]
 [ext_resource type="Script" uid="uid://cd6ig180cvpii" path="res://Scripts/walk cycle.gd" id="3_cgbj2"]
 [ext_resource type="Script" uid="uid://0oruccicihmn" path="res://Scripts/mouth.gd" id="3_dlypm"]
 
 [node name="Blueberryman" type="Node3D" unique_id=539657863]
+script = ExtResource("1_wdich")
 
 [node name="blueberry" parent="." unique_id=140777573 instance=ExtResource("1_l7jvf")]
 
 [node name="Skeleton3D" parent="blueberry/Armature" parent_id_path=PackedInt32Array(140777573, 446899455) index="0" unique_id=1114642463]
 script = ExtResource("2_cgbj2")
-bone_name = "1.001"
 multiplier = 2.0
 track = "track2"
 

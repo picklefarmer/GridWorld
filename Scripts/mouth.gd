@@ -15,6 +15,7 @@ var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 
 func _ready() -> void:
 	
+	Actions.syncLip.connect(rebus)
 	#print(AudioServer.get_input_device_list())
 	record_bus_index = AudioServer.get_bus_index(bus)
 	#record_effect = AudioServer.get_bus_effect(record_bus_index,0)
@@ -41,4 +42,10 @@ func _process(delta: float) -> void:
 		external_force = Vector3.ZERO
 
 
-	
+func rebus():
+	if owner.active:
+		print("rebus")
+		bus = "recording"
+		record_bus_index = AudioServer.get_bus_index("recording")
+		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
+		print(spectrum_analyzer)	

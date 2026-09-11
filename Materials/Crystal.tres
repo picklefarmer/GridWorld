@@ -5,9 +5,9 @@
 [resource]
 resource_name = "Material.001"
 cull_mode = 2
-albedo_color = Color(2.8583107, 2.8583107, 2.8583107, 1)
+albedo_color = Color(1.6347512, 1.6347512, 1.6347512, 1)
 albedo_texture = ExtResource("1_ugxv2")
-roughness = 0.14102563
+roughness = 0.22
 emission_enabled = true
-emission = Color(0, 0.29182783, 0.5838315, 1)
+emission = Color(0, 0.2503251, 0.50697523, 1)
 metadata/_gltf_primary_texture_coord = 0

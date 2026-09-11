@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bqm41vsg73qys"]
 
 [ext_resource type="PackedScene" uid="uid://dtmjrfdburr1d" path="res://Models/bananaman.blend" id="1_dcfrk"]
+[ext_resource type="Script" uid="uid://dqf1wfabyxm1u" path="res://Scripts/playerMain.gd" id="1_ljknf"]
 [ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="2_k5hs8"]
 [ext_resource type="Script" uid="uid://0oruccicihmn" path="res://Scripts/mouth.gd" id="2_ktv2a"]
 [ext_resource type="Script" uid="uid://cd6ig180cvpii" path="res://Scripts/walk cycle.gd" id="4_4q6l0"]
 
 [node name="Bananaman" type="Node3D" unique_id=602892636]
+script = ExtResource("1_ljknf")
 
 [node name="bananaman" parent="." unique_id=1986969318 instance=ExtResource("1_dcfrk")]
 

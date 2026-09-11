@@ -15,14 +15,13 @@ var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 @export var bus : String = "recording"
 @export var track : int = 0
 @export var alreadyUp: float = 1.0
+@export var runSpeed : float = 0.074
 var canMove : bool = true
 func _ready() -> void:
-	
-	#print(AudioServer.get_input_device_list())
-	record_bus_index = AudioServer.get_bus_index(bus)
-	#record_effect = AudioServer.get_bus_effect(record_bus_index,0)
-	spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
-	#record_effect.set_recording_active(true)
+	Actions.syncLip.connect(rebus)
+	if !owner.active:
+		record_bus_index = AudioServer.get_bus_index(bus)
+		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
 	
 	
 
@@ -44,11 +43,11 @@ func _process(delta: float) -> void:
 			var global_force_vector : Vector3 = Vector3(0,0,volume_mag *multiplier*stride)
 			var skeleton: Skeleton3D = get_parent() as Skeleton3D
 			var rotVector : Transform3D = skeleton.global_transform * skeleton.get_bone_global_pose(0)
-			var localForce : Vector3 = rotVector.basis * global_force_vector
+			var localForce : Vector3 = rotVector.basis.inverse() * global_force_vector
 			external_force = localForce
 			alreadyUp = volume_mag
 			if isLeg : 
-				Actions.goForward.emit(volume_mag*0.12,track)
+				Actions.goForward.emit(volume_mag*runSpeed,track)
 			canMove = false
 	else:
 		canMove = true
@@ -56,3 +55,10 @@ func _process(delta: float) -> void:
 		alreadyUp = 0.0		
 
 	
+func rebus():
+	if owner.active:
+		track = 1
+		print("rebus")
+		record_bus_index = AudioServer.get_bus_index("recording")
+		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
+		print(spectrum_analyzer)

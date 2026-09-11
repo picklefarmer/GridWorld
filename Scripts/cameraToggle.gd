@@ -33,12 +33,6 @@ func zoom(reference:Camera3D,out: Camera3D):
 		zoomin.tween_property(out,"fov",inOut,1.0)
 		zoomin.tween_callback(flip)
 		zoomin.tween_property(reference,"fov",outIn,0.25)
-		
-		
-		
-		
-		
-		
 
 func flip():
 	if ischecked:
