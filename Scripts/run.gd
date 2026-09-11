@@ -18,9 +18,11 @@ func _process(delta: float) -> void:
 func running(inch:float,track:int):
 	if track == trackNumber:
 		runAmount = inch
+		
 func modRun(beatInt):
-	print(beatInt)
-	runAmount *= beatInt	
+
+	runAmount = runAmount * beatInt*5	
+	
 	
 	
 
