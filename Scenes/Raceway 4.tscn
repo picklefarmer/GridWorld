@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="7_xjy4r"]
 [ext_resource type="PackedScene" uid="uid://cwaq0357wmo8y" path="res://Mesh/starfield 2.blend" id="8_ckf1d"]
 [ext_resource type="AudioStream" uid="uid://dhnr4kla454px" path="res://Audio/track 1.mp3" id="11_q6u7a"]
+[ext_resource type="PackedScene" uid="uid://brot8tvj4oaou" path="res://Models/pearman.tscn" id="11_uwv7w"]
 [ext_resource type="AudioStream" uid="uid://dj8iumk1ej3t3" path="res://Audio/track 2.mp3" id="12_jj500"]
 [ext_resource type="PackedScene" uid="uid://ni123b8085v8" path="res://Mesh/crystal.blend" id="12_xjy4r"]
 [ext_resource type="AudioStream" uid="uid://bm7nw04l68svc" path="res://Audio/track 3.mp3" id="13_ebmx3"]
@@ -22,7 +23,7 @@
 _data = [Vector2(0.098919265, 0), 0.0, 0.17114195, 0, 0, Vector2(0.4142403, 0.12065345), 0.8054654, 0.8054654, 0, 0, Vector2(0.6288621, 0.30478907), 1.0292553, 1.0292553, 0, 0, Vector2(0.8841704, 0.81066704), 0.24449319, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_j1ajb"]
+[sub_resource type="CurveTexture" id="CurveTexture_g6ltt"]
 curve = SubResource("Curve_sdpiv")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ckf1d"]
@@ -34,12 +35,12 @@ ground_bottom_color = Color(0.0047869445, 0, 0.18486784, 1)
 ground_horizon_color = Color(15.839062, 6.679772, 18.892157, 1)
 ground_energy_multiplier = 2.95
 
-[sub_resource type="Sky" id="Sky_0a17n"]
+[sub_resource type="Sky" id="Sky_so25e"]
 sky_material = SubResource("ProceduralSkyMaterial_ckf1d")
 
 [sub_resource type="Environment" id="Environment_bu834"]
 background_mode = 2
-sky = SubResource("Sky_0a17n")
+sky = SubResource("Sky_so25e")
 tonemap_mode = 2
 glow_hdr_threshold = 0.46
 fog_mode = 1
@@ -48,7 +49,7 @@ fog_light_energy = 3.14
 fog_density = 0.2041
 adjustment_brightness = 0.59
 adjustment_contrast = 1.25
-adjustment_color_correction = SubResource("CurveTexture_j1ajb")
+adjustment_color_correction = SubResource("CurveTexture_g6ltt")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jj500"]
 resource_name = "track"
@@ -228,7 +229,7 @@ curve = ExtResource("2_xjxiu")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1273837031]
-transform = Transform3D(0.06998244, -0.43911096, 0.89574087, -0.99448776, 0.036894396, 0.09583793, -0.075118326, -0.897532, -0.43429512, -29.682558, -25.326977, -91.61023)
+transform = Transform3D(0.069982484, -0.43911096, 0.89574087, -0.9944884, 0.036894396, 0.09583793, -0.07511838, -0.897532, -0.43429512, -29.682558, -25.326977, -91.61023)
 progress = 1134.1913
 use_model_front = true
 script = ExtResource("3_0a17n")
@@ -246,7 +247,7 @@ light_specular = 0.523
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1085270310]
 script = ExtResource("6_jj500")
-PlayableCharacters = Array[PackedScene]([ExtResource("7_xjy4r"), ExtResource("4_bu834"), ExtResource("5_po5p7"), ExtResource("6_ubsab")])
+PlayableCharacters = Array[PackedScene]([ExtResource("7_xjy4r"), ExtResource("4_bu834"), ExtResource("5_po5p7"), ExtResource("6_ubsab"), ExtResource("11_uwv7w")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("4_bu834")]
 transform = Transform3D(0.99966985, 7.450581e-09, -0.025692385, 7.450581e-09, 1.0000004, 0, 0.025692455, 2.9802322e-08, 0.9996698, 1.1060009, 7.6293945e-06, 0.2539959)
@@ -296,6 +297,9 @@ bus = &"track2"
 parameters/looping = true
 script = ExtResource("13_uwv7w")
 bpm = 100.0
+beatWhole = 12.38
+beatHalf = 3.825
+time = 3.52
 
 [node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=1126162328]
 stream = ExtResource("11_q6u7a")

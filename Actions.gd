@@ -3,4 +3,4 @@ extends Node
 
 signal goForward(inch:float,track:int)
 signal syncLip
-signal beatOff(beatNumber:int)
+signal beatOff(beatNumber:int,delta:float)
