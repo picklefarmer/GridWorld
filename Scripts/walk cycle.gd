@@ -13,7 +13,7 @@ var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 @export var stride : float = 1.0
 @export var isLeg : bool = false
 @export var bus : String = "recording"
-@export var track : int = 0
+@export var track : int = 1
 @export var alreadyUp: float = 1.0
 @export var runSpeed : float = 0.074
 var canMove : bool = true

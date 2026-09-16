@@ -3,7 +3,7 @@ var mic_input_index : int
 var mic_spectrum : AudioEffectInstance
 
 
-@export var bpm: float = 120.0
+@export var bpm: float = 100.0
 var seconds_per_beat: float = 60.0
 var song_position: float = 0.0
 var song_position_in_beats: int = 0
@@ -16,17 +16,19 @@ var beatCount : int = 0
 @export var beatHalf: float = 2.0
 @export var beatReturn : float = 52.0
 @export var time: float = 5.0
+var audioLatency :float = 0.0
 
 func _ready() -> void:
 	seconds_per_beat = 60.0 / bpm
 	mic_input_index = AudioServer.get_bus_index("recording")
 	mic_spectrum = AudioServer.get_bus_effect_instance(mic_input_index,0)
+	audioLatency = AudioServer.get_output_latency()
 	
 func _physics_process(delta: float) -> void:
 
 	if playing:
 		song_position = get_playback_position() + AudioServer.get_time_since_last_mix()
-		song_position -= AudioServer.get_output_latency()
+		song_position -= audioLatency
 		song_position_in_beats = int(floor(song_position / seconds_per_beat))
 		#print(song_position_in_beats%4,beatCount)
 		

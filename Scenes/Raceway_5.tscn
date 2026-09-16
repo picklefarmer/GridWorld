@@ -15,7 +15,10 @@
 [ext_resource type="AudioStream" uid="uid://dj8iumk1ej3t3" path="res://Audio/track 2.mp3" id="11_nm0h3"]
 [ext_resource type="Script" uid="uid://ts38hmt4qhiy" path="res://Scripts/BPM.gd" id="12_h431d"]
 [ext_resource type="AudioStream" uid="uid://dhnr4kla454px" path="res://Audio/track 1.mp3" id="13_fofj2"]
+[ext_resource type="PackedScene" uid="uid://brot8tvj4oaou" path="res://Models/pearman.tscn" id="13_oby42"]
+[ext_resource type="PackedScene" uid="uid://4disebtdqhdv" path="res://Models/cherryman.tscn" id="14_bbyen"]
 [ext_resource type="AudioStream" uid="uid://bm7nw04l68svc" path="res://Audio/track 3.mp3" id="14_f8uwd"]
+[ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="15_i1t5i"]
 [ext_resource type="PackedScene" uid="uid://cwaq0357wmo8y" path="res://Mesh/starfield 2.blend" id="16_fofj2"]
 [ext_resource type="Texture2D" uid="uid://bjoaitnx0n2fp" path="res://Mesh/textures/starfield 2.png" id="17_jka6j"]
 [ext_resource type="Texture2D" uid="uid://mfa5iclwktri" path="res://Mesh/textures/Emision Star.png" id="18_1ibpp"]
@@ -279,7 +282,7 @@ light_specular = 0.523
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=653339698]
 script = ExtResource("6_8iess")
-PlayableCharacters = Array[PackedScene]([ExtResource("7_iw6ib"), ExtResource("8_nm0h3"), ExtResource("9_h431d"), ExtResource("10_fofj2")])
+PlayableCharacters = Array[PackedScene]([ExtResource("7_iw6ib"), ExtResource("8_nm0h3"), ExtResource("9_h431d"), ExtResource("10_fofj2"), ExtResource("13_oby42"), ExtResource("14_bbyen"), ExtResource("15_i1t5i")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("8_nm0h3")]
 transform = Transform3D(0.99966985, 7.450581e-09, -0.025692385, 7.450581e-09, 1.0000004, 0, 0.025692455, 2.9802322e-08, 0.9996698, 1.1060009, 7.6293945e-06, 0.2539959)
@@ -336,7 +339,6 @@ autoplay = true
 bus = &"track2"
 parameters/looping = true
 script = ExtResource("12_h431d")
-bpm = 100.0
 beatWhole = 12.38
 beatHalf = 3.825
 time = 3.52
@@ -393,7 +395,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1765137, 133.68167, -73.566
 curve = SubResource("Curve3D_oby42")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="ship2 patrol2" unique_id=706926250]
-transform = Transform3D(0.3022292, -0.0015032163, 0.95320845, 0.0049743415, 0.9999679, -2.4917543e-07, -0.9531966, 0.004741798, 0.30223295, -164.02895, 2.9234514e-05, 180.68619)
+transform = Transform3D(0.30222917, -0.0015032162, 0.95320845, 0.0049743415, 0.9999678, -2.4917543e-07, -0.9531965, 0.0047417977, 0.30223295, -164.02895, 2.9234514e-05, 180.68619)
 progress = 355.69266
 use_model_front = true
 script = ExtResource("20_s87fk")

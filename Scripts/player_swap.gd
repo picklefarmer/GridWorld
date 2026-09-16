@@ -14,10 +14,10 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("playerLeft"):
-		swap(1)
+		swap(-1)
 		
 	if Input.is_action_just_pressed("playerRight"):
-		swap(-1)
+		swap(1)
 
 
 func swap(direction:int):
@@ -31,8 +31,12 @@ func swap(direction:int):
 	player.queue_free()
 	player = newPlayer
 	
-	playerInd = (playerInd+direction)%PlayableCharacters.size()
-	if playerInd < 0 :
-		playerInd = abs(playerInd)+1
-	print(playerInd)
+	if direction < 0:
+		playerInd = (playerInd+direction)%(PlayableCharacters.size())
+		print(playerInd,"up")
+	elif playerInd == 0:
+		playerInd = PlayableCharacters.size()-1	
+	else :
+		playerInd = abs((playerInd-1)%(PlayableCharacters.size()*-1))
+		print(playerInd,"down")
 	

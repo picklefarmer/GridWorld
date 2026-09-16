@@ -8,10 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://bi8qkd86iwfy" path="res://Mesh/textures/planet2.png" id="2_hyqlg"]
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="3_dx4sp"]
 [ext_resource type="Texture2D" uid="uid://cydbgttothbg5" path="res://Mesh/textures/planet3.png" id="3_ykraj"]
+[ext_resource type="Script" uid="uid://dad14bax8o1t2" path="res://Scripts/player_swap.gd" id="4_gxcac"]
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="4_m2k0b"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="5_wwexb"]
 [ext_resource type="PackedScene" uid="uid://cgksx521hif7v" path="res://Mesh/raceway 3.blend" id="9_6wnqo"]
+[ext_resource type="PackedScene" uid="uid://brot8tvj4oaou" path="res://Models/pearman.tscn" id="9_fre0y"]
+[ext_resource type="PackedScene" uid="uid://4disebtdqhdv" path="res://Models/cherryman.tscn" id="10_qgqpk"]
 [ext_resource type="Texture2D" uid="uid://bodpimoakjn37" path="res://Mesh/textures/Fake Mobius 1.png" id="11_6wnqo"]
+[ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="11_mbsru"]
 [ext_resource type="AudioStream" uid="uid://d1nkgw0ogu7m0" path="res://Audio/Past tracks/set track 3 (4).mp3" id="13_k3hb3"]
 [ext_resource type="AudioStream" uid="uid://x7ah4u2ehv84" path="res://Audio/Past tracks/set track 3 (5).mp3" id="14_gxcac"]
 [ext_resource type="AudioStream" uid="uid://cqihmv77ki28m" path="res://Audio/Past tracks/set track 3 (6).mp3" id="15_eth5o"]
@@ -238,14 +242,11 @@ curve = ExtResource("1_dwhon")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1456456726]
-transform = Transform3D(0.38965407, -0.29412538, 0.872726, 0.6058329, 0.7955789, -0.002377386, -0.69361055, 0.52966416, 0.48820043, -40.738438, -14.611015, 59.052917)
+transform = Transform3D(0.3896541, -0.29412538, 0.87272614, 0.6058329, 0.7955789, -0.0023773864, -0.69361055, 0.52966416, 0.4882005, -40.738438, -14.611015, 59.052917)
 progress = 289.06317
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 1
-
-[node name="Peachman" parent="Path3D2/track1" unique_id=1887923755 instance=ExtResource("2_dwhon")]
-transform = Transform3D(0.9996698, 3.7252903e-09, -0.025692374, -3.7252903e-09, 1.0000002, -5.820766e-09, 0.025692455, -3.0267984e-09, 0.99966973, 1.1063193, -0.9230838, 0.2541885)
 
 [node name="Camera3D" type="Camera3D" parent="Path3D2/track1" unique_id=612203952]
 transform = Transform3D(0.91449213, 0.08441145, -0.39575633, -0.05562716, 0.99494314, 0.08367811, 0.4008258, -0.05450681, 0.91453886, 0.24364296, 2.8095574, 8.901731)
@@ -256,6 +257,13 @@ fov = 78.7
 transform = Transform3D(1, 0, 0, 0, 0.7527585, -0.6582967, 0, 0.6582967, 0.7527585, 0.99999994, 3.258231, 4.6411386)
 light_energy = 15.367
 light_specular = 0.523
+
+[node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1634127562]
+script = ExtResource("4_gxcac")
+PlayableCharacters = Array[PackedScene]([ExtResource("5_wwexb"), ExtResource("2_dwhon"), ExtResource("3_dx4sp"), ExtResource("4_m2k0b"), ExtResource("9_fre0y"), ExtResource("10_qgqpk"), ExtResource("11_mbsru")])
+
+[node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("2_dwhon")]
+transform = Transform3D(0.99966985, 0, -0.025692403, 2.9802322e-08, 1.0000002, 5.9604645e-08, 0.025692463, 0, 0.99966973, 1.1063194, -0.92308426, 0.25418854)
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=775808202]
 transform = Transform3D(0.3896556, -0.29412383, 0.8727198, 0.6058352, 0.79557467, -0.0023773692, -0.69361323, 0.52966136, 0.48819697, -40.738438, -14.611015, 59.052917)
@@ -278,7 +286,7 @@ trackNumber = 2
 transform = Transform3D(0.98840654, 1.8626451e-09, -0.1518416, -7.450581e-09, 0.9999998, 6.4319465e-09, 0.15184166, -9.546056e-09, 0.98840654, 5.509986, -1.1325192, 0.7002289)
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1019939291]
-transform = Transform3D(0.3896556, -0.29412538, 0.872726, 0.6058352, 0.7955789, -0.002377386, -0.69361323, 0.52966416, 0.48820043, -40.738438, -14.611015, 59.052917)
+transform = Transform3D(0.3896556, -0.29412538, 0.87272614, 0.6058352, 0.7955789, -0.0023773864, -0.69361323, 0.52966416, 0.4882005, -40.738438, -14.611015, 59.052917)
 progress = 289.06317
 use_model_front = true
 script = ExtResource("1_sx8qh")

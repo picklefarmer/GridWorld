@@ -7,13 +7,17 @@
 [ext_resource type="AudioStream" uid="uid://87mmv2e5b0q0" path="res://Audio/Past tracks/track 3.mp3" id="4_jliky"]
 [ext_resource type="Script" uid="uid://d0y26xbn6k0b1" path="res://Scripts/run.gd" id="5_8no50"]
 [ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="6_2a25w"]
+[ext_resource type="Script" uid="uid://dad14bax8o1t2" path="res://Scripts/player_swap.gd" id="7_lv0y0"]
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="7_r7h1t"]
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="8_jafop"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="9_apb5h"]
 [ext_resource type="PackedScene" uid="uid://dr8pgrx0830fe" path="res://Mesh/raceway.blend" id="10_jpj64"]
 [ext_resource type="Texture2D" uid="uid://c0yuliptnoecv" path="res://Mesh/textures/Raceway.png" id="11_cgggu"]
+[ext_resource type="PackedScene" uid="uid://brot8tvj4oaou" path="res://Models/pearman.tscn" id="12_2a25w"]
 [ext_resource type="Texture2D" uid="uid://ddd6yabgkytp2" path="res://Mesh/textures/checkered.png" id="12_xdlnv"]
 [ext_resource type="PackedScene" uid="uid://c47yc10fjtfn0" path="res://Models/cloud.blend" id="13_mytkj"]
+[ext_resource type="PackedScene" uid="uid://4disebtdqhdv" path="res://Models/cherryman.tscn" id="13_r7h1t"]
+[ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="14_jafop"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_j3pel"]
 
@@ -224,12 +228,17 @@ use_model_front = true
 script = ExtResource("5_8no50")
 trackNumber = 1
 
-[node name="Peachman" parent="Path3D2/track1" unique_id=2119852306 instance=ExtResource("6_2a25w")]
-transform = Transform3D(0.9866659, 0, -0.16275842, 0, 1, 0, 0.16275844, 0, 0.9866659, 1.9456673, 0, 0.67497826)
-
 [node name="Camera3D" type="Camera3D" parent="Path3D2/track1" unique_id=1180250909]
 transform = Transform3D(0.98246956, -0.02565923, 0.18473524, 0.016530262, 0.9985741, 0.050781794, -0.18577495, -0.04684554, 0.9814903, 3.511509, 4.8075876, 16.621471)
+current = true
 fov = 40.2
+
+[node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=887007692]
+script = ExtResource("7_lv0y0")
+PlayableCharacters = Array[PackedScene]([ExtResource("9_apb5h"), ExtResource("6_2a25w"), ExtResource("7_r7h1t"), ExtResource("8_jafop"), ExtResource("12_2a25w"), ExtResource("13_r7h1t"), ExtResource("14_jafop")])
+
+[node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=2119852306 instance=ExtResource("6_2a25w")]
+transform = Transform3D(0.9866659, 0, -0.16275842, 0, 1, 0, 0.16275844, 0, 0.9866659, 1.9456673, 0, 0.67497635)
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=1852939651]
 transform = Transform3D(4.371033e-08, 0, 0.99997437, 0, 0.99999577, 0, -0.9999758, 0, 4.371027e-08, 2.7128735, 0.66467476, -23.434544)
