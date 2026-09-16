@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dlrtv3mwqbror"]
 
+[ext_resource type="Script" uid="uid://dns0bthdf5pwo" path="res://Scripts/cameraToggle.gd" id="1_7nbvk"]
 [ext_resource type="MeshLibrary" uid="uid://pag8hdgxm8qp" path="res://MeshLibrary.meshlib" id="1_r0pcp"]
-[ext_resource type="AudioStream" uid="uid://636go37d6w5f" path="res://Audio/track 1.mp3" id="2_7nbvk"]
-[ext_resource type="AudioStream" uid="uid://x83aylbaoom0" path="res://Audio/track 2.mp3" id="3_hqkbf"]
-[ext_resource type="AudioStream" uid="uid://87mmv2e5b0q0" path="res://Audio/track 3.mp3" id="4_4d5hb"]
+[ext_resource type="AudioStream" uid="uid://uqbn2ydwii4s" path="res://Audio/Past tracks/Set track 3 (1).mp3" id="3_r0pcp"]
+[ext_resource type="AudioStream" uid="uid://dp6ho3iprt3br" path="res://Audio/Past tracks/Set track 3 (2).mp3" id="4_7nbvk"]
+[ext_resource type="AudioStream" uid="uid://sv1j7sucpfht" path="res://Audio/Past tracks/Set track 3 (3).mp3" id="5_hqkbf"]
 [ext_resource type="Script" uid="uid://d0y26xbn6k0b1" path="res://Scripts/run.gd" id="5_wayxb"]
 [ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="6_jv81l"]
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="7_pxnv1"]
@@ -36,7 +37,10 @@ sky_custom_fov = 72.7
 ambient_light_source = 3
 ambient_light_color = Color(0, 0, 0.81960785, 1)
 
-[node name="Vitamen" type="Node3D" unique_id=1756663993]
+[node name="Raceway 2" type="Node3D" unique_id=1756663993]
+script = ExtResource("1_7nbvk")
+outOut = 80.0
+inOut = 60.0
 
 [node name="GridMap" type="GridMap" parent="." unique_id=226806084]
 mesh_library = ExtResource("1_r0pcp")
@@ -52,19 +56,19 @@ autoplay = true
 bus = &"recording"
 
 [node name="Track 2 streamer" type="AudioStreamPlayer" parent="." unique_id=536204235]
-stream = ExtResource("2_7nbvk")
+stream = ExtResource("3_r0pcp")
 autoplay = true
 bus = &"track2"
 parameters/looping = true
 
 [node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=1052482222]
-stream = ExtResource("3_hqkbf")
+stream = ExtResource("4_7nbvk")
 autoplay = true
 bus = &"track3"
 parameters/looping = true
 
 [node name="Track 4 streamer" type="AudioStreamPlayer" parent="." unique_id=711959227]
-stream = ExtResource("4_4d5hb")
+stream = ExtResource("5_hqkbf")
 autoplay = true
 bus = &"track4"
 parameters/looping = true
@@ -137,3 +141,6 @@ trackNumber = 4
 
 [node name="Bananaman" parent="Path3D2/track4" unique_id=154644148 instance=ExtResource("9_juxwo")]
 transform = Transform3D(1, -3.7252903e-09, -1.4901161e-08, 1.8626451e-09, 0.99999994, -1.071021e-08, 0, -2.0954758e-09, 1.0000001, -3.005291, 0.3080101, -0.043114662)
+
+[node name="BirdsEye" type="Camera3D" parent="." unique_id=1924329885]
+transform = Transform3D(1, 0, 0, 0, -0.026922494, 0.9996376, 0, -0.9996376, -0.026922494, -16.048752, 140.89099, -17.139923)

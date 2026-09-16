@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bdvgnljrx1sln"]
+
+[ext_resource type="Script" uid="uid://huw8p7ds2sd5" path="res://Scripts/levelLoader.gd" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://daydnui185opp" path="res://Scenes/Raceway 1.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://dlrtv3mwqbror" path="res://Scenes/Raceway 2.tscn" id="3_21xkr"]
+[ext_resource type="PackedScene" uid="uid://ce20vt5qq8yd3" path="res://Scenes/Raceway_3.tscn" id="4_6bp64"]
+[ext_resource type="PackedScene" uid="uid://cnjoq7c1creac" path="res://Scenes/Raceway 4.tscn" id="5_344ge"]
+[ext_resource type="PackedScene" uid="uid://dt8nd1t23uiig" path="res://Scenes/Raceway_5.tscn" id="6_ynf5e"]
+
+[node name="Main" type="Node3D" unique_id=1519358469]
+script = ExtResource("1_jjgbg")
+Raceways = Array[PackedScene]([ExtResource("3_21xkr"), ExtResource("4_6bp64"), ExtResource("5_344ge"), ExtResource("6_ynf5e"), ExtResource("2_bo1nx")])
+
+[node name="Raceway 1" parent="." unique_id=1756663993 instance=ExtResource("2_bo1nx")]

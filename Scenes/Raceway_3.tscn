@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="5_wwexb"]
 [ext_resource type="PackedScene" uid="uid://cgksx521hif7v" path="res://Mesh/raceway 3.blend" id="9_6wnqo"]
 [ext_resource type="Texture2D" uid="uid://bodpimoakjn37" path="res://Mesh/textures/Fake Mobius 1.png" id="11_6wnqo"]
-[ext_resource type="AudioStream" uid="uid://636go37d6w5f" path="res://Audio/track 1.mp3" id="11_wwexb"]
-[ext_resource type="AudioStream" uid="uid://x83aylbaoom0" path="res://Audio/track 2.mp3" id="12_6wnqo"]
-[ext_resource type="AudioStream" uid="uid://87mmv2e5b0q0" path="res://Audio/track 3.mp3" id="13_k3hb3"]
+[ext_resource type="AudioStream" uid="uid://d1nkgw0ogu7m0" path="res://Audio/Past tracks/set track 3 (4).mp3" id="13_k3hb3"]
+[ext_resource type="AudioStream" uid="uid://x7ah4u2ehv84" path="res://Audio/Past tracks/set track 3 (5).mp3" id="14_gxcac"]
+[ext_resource type="AudioStream" uid="uid://cqihmv77ki28m" path="res://Audio/Past tracks/set track 3 (6).mp3" id="15_eth5o"]
 
 [sub_resource type="Gradient" id="Gradient_gxcac"]
 interpolation_mode = 1
@@ -238,8 +238,8 @@ curve = ExtResource("1_dwhon")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1456456726]
-transform = Transform3D(0.6264551, 0.057082944, 0.7773544, -0.054423533, 0.99808246, -0.029431129, -0.7775299, -0.023869528, 0.62837374, -50.897934, -15.268453, 52.66032)
-progress = 277.50644
+transform = Transform3D(0.38965407, -0.29412538, 0.872726, 0.6058329, 0.7955789, -0.002377386, -0.69361055, 0.52966416, 0.48820043, -40.738438, -14.611015, 59.052917)
+progress = 289.06317
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 1
@@ -258,8 +258,8 @@ light_energy = 15.367
 light_specular = 0.523
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=775808202]
-transform = Transform3D(0.62645817, 0.057082627, 0.77734756, -0.054423794, 0.9980769, -0.02943087, -0.77753365, -0.023869395, 0.6283682, -50.897934, -15.268453, 52.66032)
-progress = 277.50644
+transform = Transform3D(0.3896556, -0.29412383, 0.8727198, 0.6058352, 0.79557467, -0.0023773692, -0.69361323, 0.52966136, 0.48819697, -40.738438, -14.611015, 59.052917)
+progress = 289.06317
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 3
@@ -268,8 +268,8 @@ trackNumber = 3
 transform = Transform3D(1.0000157, 1.8626451e-09, 0, 0, 0.9999999, -1.7695129e-08, -1.4901161e-08, 3.259629e-09, 1.0000161, -6.191844, -0.356431, 0.5591793)
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1070217300]
-transform = Transform3D(0.62645817, 0.057082944, 0.77735084, -0.054423794, 0.99808246, -0.029430995, -0.77753365, -0.023869528, 0.6283709, -50.897934, -15.268453, 52.66032)
-progress = 277.50644
+transform = Transform3D(0.3896556, -0.29412538, 0.8727223, 0.6058352, 0.7955789, -0.002377376, -0.69361323, 0.52966416, 0.48819834, -40.738438, -14.611015, 59.052917)
+progress = 289.06317
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 2
@@ -278,8 +278,8 @@ trackNumber = 2
 transform = Transform3D(0.98840654, 1.8626451e-09, -0.1518416, -7.450581e-09, 0.9999998, 6.4319465e-09, 0.15184166, -9.546056e-09, 0.98840654, 5.509986, -1.1325192, 0.7002289)
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1019939291]
-transform = Transform3D(0.62645817, 0.057082944, 0.7773554, -0.054423794, 0.99808246, -0.029431166, -0.77753365, -0.023869528, 0.6283745, -50.897934, -15.268453, 52.66032)
-progress = 277.50644
+transform = Transform3D(0.3896556, -0.29412538, 0.872726, 0.6058352, 0.7955789, -0.002377386, -0.69361323, 0.52966416, 0.48820043, -40.738438, -14.611015, 59.052917)
+progress = 289.06317
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 4
@@ -327,19 +327,19 @@ autoplay = true
 bus = &"recording"
 
 [node name="Track 2 streamer" type="AudioStreamPlayer" parent="." unique_id=456510598]
-stream = ExtResource("11_wwexb")
+stream = ExtResource("13_k3hb3")
 autoplay = true
 bus = &"track2"
 parameters/looping = true
 
 [node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=1368721556]
-stream = ExtResource("12_6wnqo")
+stream = ExtResource("14_gxcac")
 autoplay = true
 bus = &"track3"
 parameters/looping = true
 
 [node name="Track 4 streamer" type="AudioStreamPlayer" parent="." unique_id=1099343305]
-stream = ExtResource("13_k3hb3")
+stream = ExtResource("15_eth5o")
 autoplay = true
 bus = &"track4"
 parameters/looping = true

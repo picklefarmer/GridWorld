@@ -49,5 +49,5 @@ func compare(beatIndex,delta):
 	volume_mag = clamp((MIN_DB + linear_to_db(volume_mag))/MIN_DB,0,1)
 	
 	if volume_mag > minimum:
-		print("beat",beatIndex)
+		#print("beat",beatIndex)
 		Actions.beatOff.emit(beatIndex,delta,time)

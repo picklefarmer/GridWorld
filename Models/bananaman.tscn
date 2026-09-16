@@ -18,6 +18,7 @@ multiplier = 2.0
 track = "track4"
 
 [node name="Head" type="SpringBoneSimulator3D" parent="bananaman/Armature/Skeleton3D" index="1" unique_id=960975709]
+influence = 0.27
 setting_count = 1
 settings/0/root_bone_name = "Bone.001"
 settings/0/root_bone = 1
@@ -83,6 +84,7 @@ multiplier = 30.0
 bus = "track4"
 
 [node name="Body" type="SpringBoneSimulator3D" parent="bananaman/Armature/Skeleton3D" index="3" unique_id=1168956759]
+influence = 0.4
 setting_count = 1
 settings/0/root_bone_name = "Bone.011"
 settings/0/root_bone = 19

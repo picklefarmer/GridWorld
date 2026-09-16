@@ -25,7 +25,7 @@ func _ready() -> void:
 	
 	
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	
 	
 	var volume_mag = spectrum_analyzer.get_magnitude_for_frequency_range(350.0,3000.0,AudioEffectSpectrumAnalyzerInstance.MAGNITUDE_AVERAGE).length()
@@ -58,7 +58,7 @@ func _process(delta: float) -> void:
 func rebus():
 	if owner.active:
 		track = 1
-		print("rebus")
+		#print("rebus")
 		record_bus_index = AudioServer.get_bus_index("recording")
 		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
-		print(spectrum_analyzer)
+		#print(spectrum_analyzer)

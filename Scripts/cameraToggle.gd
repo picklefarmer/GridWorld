@@ -10,7 +10,10 @@ var ischecked : bool = true
 @onready var top : Camera3D = $BirdsEye
 @onready var zoomin :Tween
 
-
+func _ready() -> void:
+	#$Microphone.play()
+	
+	print($Microphone.autoplay,$Microphone.playing)
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("SwapCamera"):
 		if ischecked:

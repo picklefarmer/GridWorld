@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://cwaq0357wmo8y" path="res://Mesh/starfield 2.blend" id="16_fofj2"]
 [ext_resource type="Texture2D" uid="uid://bjoaitnx0n2fp" path="res://Mesh/textures/starfield 2.png" id="17_jka6j"]
 [ext_resource type="Texture2D" uid="uid://mfa5iclwktri" path="res://Mesh/textures/Emision Star.png" id="18_1ibpp"]
+[ext_resource type="Script" uid="uid://bpbmhr171dh64" path="res://path_follow_3d.gd" id="20_s87fk"]
+[ext_resource type="PackedScene" uid="uid://chm85lgq3m3k3" path="res://Models/Ship One1.blend" id="21_3ut23"]
+[ext_resource type="PackedScene" uid="uid://c7trfvdendah2" path="res://Models/ship 2.blend" id="22_3ut23"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bw7wr"]
 resource_name = "Material.001"
@@ -199,6 +202,46 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_axljq")
 
+[sub_resource type="Curve3D" id="Curve3D_3ut23"]
+closed = true
+_data = {
+"points": PackedVector3Array(202.8465, 5.124237, -79.898254, -74.02512, -1.8699967, 29.157408, -214.65251, 0, -105.28398, -33.50087, -9.1552734e-05, -68.58838, 33.50087, 9.1552734e-05, 68.58838, -247.9966, 0, 116.058655, -88.10801, -3.0517578e-05, 69.97539, 88.10801, 3.0517578e-05, -69.97539, 4.0168457, 0, 152.34407),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_4p2bv"]
+closed = true
+_data = {
+"points": PackedVector3Array(202.8465, 5.124237, -79.898254, -74.02512, -1.8699967, 29.157408, -214.31653, 7.8117523, -102.298904, -33.50087, -9.1552734e-05, -68.58838, 33.50087, 9.1552734e-05, 68.58838, -247.9966, 0, 116.058655, -88.10801, -3.0517578e-05, 69.97539, 88.10801, 3.0517578e-05, -69.97539, -2.2075806, 0.079422, 147.96892),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_oby42"]
+closed = true
+_data = {
+"points": PackedVector3Array(202.8465, 5.124237, -79.898254, -74.02512, -1.8699967, 29.157408, -214.65251, 0, -105.28398, -33.50087, -9.1552734e-05, -68.58838, 33.50087, 9.1552734e-05, 68.58838, -247.9966, 0, 116.058655, -88.10801, -3.0517578e-05, 69.97539, 88.10801, 3.0517578e-05, -69.97539, 4.0168457, 0, 152.34407),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_bbyen"]
+closed = true
+_data = {
+"points": PackedVector3Array(202.8465, 5.124237, -79.898254, -74.02512, -1.8699967, 29.157408, -214.65251, 0, -105.28398, -33.50087, -9.1552734e-05, -68.58838, 33.50087, 9.1552734e-05, 68.58838, -247.9966, 0, 116.058655, -88.10801, -3.0517578e-05, 69.97539, 88.10801, 3.0517578e-05, -69.97539, 4.0168457, 0, 152.34407),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_n4ffx"]
+closed = true
+_data = {
+"points": PackedVector3Array(202.8465, 5.124237, -79.898254, -74.02512, -1.8699967, 29.157408, -214.65251, 0, -105.28398, -33.50087, -9.1552734e-05, -68.58838, 33.50087, 9.1552734e-05, 68.58838, -247.9966, 0, 116.058655, -88.10801, -3.0517578e-05, 69.97539, 88.10801, 3.0517578e-05, -69.97539, 4.0168457, 0, 152.34407),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
 [node name="Raceway 5" type="Node3D" unique_id=193874533]
 script = ExtResource("1_1ibpp")
 outIn = 60.0
@@ -318,6 +361,72 @@ mesh = SubResource("ArrayMesh_s87fk")
 [node name="BirdsEye" type="Camera3D" parent="." unique_id=1148550697]
 transform = Transform3D(0.99693465, -0.07846325, -1.6780024e-09, -1.7542469e-09, -4.3678487e-08, 1.0000107, -0.07846046, -0.99697006, -4.3679638e-08, -3.191, 400, 22.882)
 fov = 88.7
+
+[node name="ship patrol" type="Path3D" parent="." unique_id=1615800434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.268677, 117.69885, 0)
+curve = SubResource("Curve3D_3ut23")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="ship patrol" unique_id=28002278]
+transform = Transform3D(-0.8881308, -0.0012073071, 0.4595514, 0.002353166, 0.9999637, 0.0071747284, -0.4595472, 0.007453701, -0.8881022, 23.816458, 0.12254615, 127.89141)
+progress = 564.7782
+use_model_front = true
+script = ExtResource("20_s87fk")
+
+[node name="Ship One1" parent="ship patrol/PathFollow3D" unique_id=1410953389 instance=ExtResource("21_3ut23")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="ship2 patrol1" type="Path3D" parent="." unique_id=271226234]
+transform = Transform3D(1, 0, 0, 0, 0.990704, 0.13603538, 0, -0.13603538, 0.990704, 31.268677, 177.13745, 13.22136)
+curve = SubResource("Curve3D_4p2bv")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="ship2 patrol1" unique_id=533479948]
+transform = Transform3D(0.36647326, -0.021862438, -0.9301482, 1.862606e-09, 0.99970907, -0.023497079, 0.930406, 0.008611292, 0.36637175, -214.31653, 7.8117523, -102.298904)
+use_model_front = true
+script = ExtResource("20_s87fk")
+progressStart = 0.438
+
+[node name="ship 2" parent="ship2 patrol1/PathFollow3D" unique_id=1208759706 instance=ExtResource("22_3ut23")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+
+[node name="ship2 patrol2" type="Path3D" parent="." unique_id=777512040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1765137, 133.68167, -73.566795)
+curve = SubResource("Curve3D_oby42")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="ship2 patrol2" unique_id=706926250]
+transform = Transform3D(0.3022292, -0.0015032163, 0.95320845, 0.0049743415, 0.9999679, -2.4917543e-07, -0.9531966, 0.004741798, 0.30223295, -164.02895, 2.9234514e-05, 180.68619)
+progress = 355.69266
+use_model_front = true
+script = ExtResource("20_s87fk")
+progressStart = 0.573
+
+[node name="ship 2" parent="ship2 patrol2/PathFollow3D" unique_id=156922844 instance=ExtResource("22_3ut23")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+
+[node name="ship patrol2" type="Path3D" parent="." unique_id=1932268659]
+transform = Transform3D(-0.29599428, 0, -0.9551897, 0, 1, 0, 0.9551897, 0, -0.29599428, 9.442623, 175.0863, 70.43387)
+curve = SubResource("Curve3D_bbyen")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="ship patrol2" unique_id=1097711867]
+transform = Transform3D(0.36647406, -0.021862546, -0.93015045, 0, 0.9997142, -0.02349713, 0.930408, 0.008611336, 0.36637264, -214.65251, 0, -105.28398)
+use_model_front = true
+script = ExtResource("20_s87fk")
+
+[node name="Ship One1" parent="ship patrol2/PathFollow3D" unique_id=970275555 instance=ExtResource("21_3ut23")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="ship patrol3" type="Path3D" parent="." unique_id=692271927]
+transform = Transform3D(-0.2866512, 0, 0.958035, 0, 1, 0, -0.958035, 0, -0.2866512, 8.130177, 112.23564, -196.18947)
+curve = SubResource("Curve3D_n4ffx")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="ship patrol3" unique_id=497572140]
+transform = Transform3D(-0.8881308, -0.0012073071, 0.4595514, 0.002353166, 0.9999637, 0.0071747284, -0.4595472, 0.007453701, -0.8881022, 23.816458, 0.12254615, 127.89141)
+progress = 564.7782
+use_model_front = true
+script = ExtResource("20_s87fk")
+progressStart = 0.573
+
+[node name="Ship One1" parent="ship patrol3/PathFollow3D" unique_id=1680438166 instance=ExtResource("21_3ut23")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [editable path="raceway 5"]
 [editable path="starfield 2"]

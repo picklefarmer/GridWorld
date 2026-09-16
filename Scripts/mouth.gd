@@ -23,7 +23,7 @@ func _ready() -> void:
 	#record_effect.set_recording_active(true)
 	
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	
 	
 	var volume_mag = spectrum_analyzer.get_magnitude_for_frequency_range(350.0,3000.0,AudioEffectSpectrumAnalyzerInstance.MAGNITUDE_AVERAGE).length()
@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 		var global_force_vector : Vector3 = Vector3(0,0,volume_mag *multiplier)
 		var skeleton: Skeleton3D = get_parent() as Skeleton3D
 		var rotVector : Transform3D = skeleton.global_transform * skeleton.get_bone_global_pose(0)
-		var localForce : Vector3 = rotVector.basis * global_force_vector
+		var localForce : Vector3 = rotVector.basis.inverse() * global_force_vector
 		external_force = localForce
 		#external_force.y = -volume_mag * multiplier
 		#position.x = -volume_mag * multiplier
