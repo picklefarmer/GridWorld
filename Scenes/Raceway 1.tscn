@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dns0bthdf5pwo" path="res://Scripts/cameraToggle.gd" id="1_vcrnp"]
 [ext_resource type="AudioStream" uid="uid://636go37d6w5f" path="res://Audio/Past tracks/track 1.mp3" id="2_vcrnp"]
 [ext_resource type="AudioStream" uid="uid://x83aylbaoom0" path="res://Audio/Past tracks/track 2.mp3" id="3_lv0y0"]
+[ext_resource type="Script" uid="uid://ts38hmt4qhiy" path="res://Scripts/BPM.gd" id="4_jafop"]
 [ext_resource type="AudioStream" uid="uid://87mmv2e5b0q0" path="res://Audio/Past tracks/track 3.mp3" id="4_jliky"]
 [ext_resource type="Script" uid="uid://d0y26xbn6k0b1" path="res://Scripts/run.gd" id="5_8no50"]
 [ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="6_2a25w"]
@@ -18,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://c47yc10fjtfn0" path="res://Models/cloud.blend" id="13_mytkj"]
 [ext_resource type="PackedScene" uid="uid://4disebtdqhdv" path="res://Models/cherryman.tscn" id="13_r7h1t"]
 [ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="14_jafop"]
+[ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="15_r7h1t"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_j3pel"]
 
@@ -205,6 +207,9 @@ stream = ExtResource("2_vcrnp")
 autoplay = true
 bus = &"track2"
 parameters/looping = true
+script = ExtResource("4_jafop")
+beatReturn = 40.0
+time = 6.7
 
 [node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=1052482222]
 stream = ExtResource("3_lv0y0")
@@ -235,7 +240,7 @@ fov = 40.2
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=887007692]
 script = ExtResource("7_lv0y0")
-PlayableCharacters = Array[PackedScene]([ExtResource("9_apb5h"), ExtResource("6_2a25w"), ExtResource("7_r7h1t"), ExtResource("8_jafop"), ExtResource("12_2a25w"), ExtResource("13_r7h1t"), ExtResource("14_jafop")])
+PlayableCharacters = Array[PackedScene]([ExtResource("9_apb5h"), ExtResource("6_2a25w"), ExtResource("7_r7h1t"), ExtResource("8_jafop"), ExtResource("12_2a25w"), ExtResource("13_r7h1t"), ExtResource("14_jafop"), ExtResource("15_r7h1t")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=2119852306 instance=ExtResource("6_2a25w")]
 transform = Transform3D(0.9866659, 0, -0.16275842, 0, 1, 0, 0.16275844, 0, 0.9866659, 1.9456673, 0, 0.67497635)

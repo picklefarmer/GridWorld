@@ -6,6 +6,9 @@ extends SpringBoneSimulator3D
 var record_bus_index : int
 #var record_effect: AudioEffectRecord
 var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
+@export var bone_name: String = "Bone"
+var bone_idx: int
+
 @export var MIN_DB: int = 82
 @export var minimum = 0.05
 @export var multiplier : float = 0.25
@@ -16,9 +19,13 @@ var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 @export var track : int = 1
 @export var alreadyUp: float = 1.0
 @export var runSpeed : float = 0.074
+var skeleton : Skeleton3D
 var canMove : bool = true
 func _ready() -> void:
 	Actions.syncLip.connect(rebus)
+	skeleton = get_parent() as Skeleton3D
+	bone_idx = skeleton.find_bone(bone_name)
+	
 	if !owner.active:
 		record_bus_index = AudioServer.get_bus_index(bus)
 		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
@@ -41,9 +48,12 @@ func _physics_process(delta: float) -> void:
 				#pass
 			stride *= -1.0
 			var global_force_vector : Vector3 = Vector3(0,0,volume_mag *multiplier*stride)
+			var path3dVector : Vector3 = owner.get_parent().global_transform.basis * global_force_vector
+			
+			
 			var skeleton: Skeleton3D = get_parent() as Skeleton3D
-			var rotVector : Transform3D = skeleton.global_transform * skeleton.get_bone_global_pose(0)
-			var localForce : Vector3 = rotVector.basis.inverse() * global_force_vector
+			var rotVector : Transform3D = skeleton.global_transform * skeleton.get_bone_global_pose(bone_idx)
+			var localForce : Vector3 = rotVector.basis.inverse() * path3dVector
 			external_force = localForce
 			alreadyUp = volume_mag
 			if isLeg : 

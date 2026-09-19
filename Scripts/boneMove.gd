@@ -1,6 +1,6 @@
 extends Skeleton3D
 
-@export var bone_name: String = "1"
+@export var bone_name: String = "Bone"
 var bone_idx: int
 var nodePath : NodePath
 var current_pos: Vector3
@@ -17,7 +17,7 @@ var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 func _ready() -> void:
 	
 	Actions.syncLip.connect(rebus)
-
+	#print(get_bone_name(0))
 	bone_idx = find_bone(bone_name)
 	current_pos = get_bone_pose_position(bone_idx)
 
@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 func rebus():
 	if owner.get("active") != null:
 		track = "recording"
-		print("rebus")
+		#print("rebus")
 		record_bus_index = AudioServer.get_bus_index("recording")
 		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
 	

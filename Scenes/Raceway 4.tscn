@@ -17,6 +17,7 @@
 [ext_resource type="Material" uid="uid://bvwxkwf8qql4a" path="res://Materials/Crystal.tres" id="13_fh4fj"]
 [ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="13_so25e"]
 [ext_resource type="Script" uid="uid://ts38hmt4qhiy" path="res://Scripts/BPM.gd" id="13_uwv7w"]
+[ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="14_afnnl"]
 [ext_resource type="AudioStream" uid="uid://dsrd68lhptraq" path="res://Audio/Past tracks/track 1 - track 4.mp3" id="15_so25e"]
 [ext_resource type="AudioStream" uid="uid://ds3vhfqsbm6rf" path="res://Audio/Past tracks/track 2 - track 4.mp3" id="17_afnnl"]
 [ext_resource type="AudioStream" uid="uid://beg315go6ndkj" path="res://Audio/Past tracks/track 3 -track 4.mp3" id="18_eieg8"]
@@ -231,8 +232,8 @@ curve = ExtResource("2_xjxiu")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1273837031]
-transform = Transform3D(0.069982626, -0.43911096, 0.89574087, -0.99449044, 0.036894396, 0.09583793, -0.07511853, -0.897532, -0.43429512, -29.682558, -25.326977, -91.61023)
-progress = 1134.1913
+transform = Transform3D(0.10608555, -0.025495924, 0.99410206, -0.98764014, -0.11674711, 0.10246347, 0.11342682, -0.99270505, -0.03758202, 5.16429, -22.365536, -100.06714)
+progress = 1170.4413
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 1
@@ -249,7 +250,7 @@ light_specular = 0.523
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1085270310]
 script = ExtResource("6_jj500")
-PlayableCharacters = Array[PackedScene]([ExtResource("7_xjy4r"), ExtResource("4_bu834"), ExtResource("5_po5p7"), ExtResource("6_ubsab"), ExtResource("11_uwv7w"), ExtResource("12_g6ltt"), ExtResource("13_so25e")])
+PlayableCharacters = Array[PackedScene]([ExtResource("7_xjy4r"), ExtResource("4_bu834"), ExtResource("5_po5p7"), ExtResource("6_ubsab"), ExtResource("11_uwv7w"), ExtResource("12_g6ltt"), ExtResource("13_so25e"), ExtResource("14_afnnl")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("4_bu834")]
 transform = Transform3D(0.99966985, 7.450581e-09, -0.025692385, 7.450581e-09, 1.0000004, 0, 0.025692455, 2.9802322e-08, 0.9996698, 1.1060009, 7.6293945e-06, 0.2539959)

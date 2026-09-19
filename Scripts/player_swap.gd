@@ -4,7 +4,7 @@ extends Node3D
 
 var player : Node3D
 var loadedPlayers : Array = []
-var playerInd : int = 0 
+var playerInd : int = 1
 
 func _ready() -> void:
 	#for character in PlayableCharacters:
@@ -31,12 +31,5 @@ func swap(direction:int):
 	player.queue_free()
 	player = newPlayer
 	
-	if direction < 0:
-		playerInd = (playerInd+direction)%(PlayableCharacters.size())
-		print(playerInd,"up")
-	elif playerInd == 0:
-		playerInd = PlayableCharacters.size()-1	
-	else :
-		playerInd = abs((playerInd-1)%(PlayableCharacters.size()*-1))
-		print(playerInd,"down")
+	playerInd = posmod(playerInd+direction, PlayableCharacters.size())
 	

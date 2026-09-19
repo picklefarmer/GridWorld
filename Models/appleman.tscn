@@ -1,15 +1,20 @@
 [gd_scene format=3 uid="uid://bx3wchm3qg4cg"]
 
-[ext_resource type="PackedScene" uid="uid://cskj71ienuwun" path="res://apple.blend" id="1_u2y58"]
-[ext_resource type="Script" uid="uid://cm5hcj2otyvi5" path="res://mouth.gd" id="2_lfxht"]
+[ext_resource type="Script" uid="uid://dqf1wfabyxm1u" path="res://Scripts/playerMain.gd" id="1_4xpl1"]
+[ext_resource type="PackedScene" uid="uid://cavs1rp25jiuu" path="res://Models/apple.blend" id="1_u2y58"]
+[ext_resource type="Script" uid="uid://0oruccicihmn" path="res://Scripts/mouth.gd" id="2_lfxht"]
+[ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="2_qlfva"]
+[ext_resource type="Script" uid="uid://cd6ig180cvpii" path="res://Scripts/walk cycle.gd" id="3_vwgy3"]
 
-[node name="Appleman" type="RigidBody3D" unique_id=1934221554]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31249726, 0)
-gravity_scale = 0.0
+[node name="Appleman" type="Node3D" unique_id=4949676]
+script = ExtResource("1_4xpl1")
 
 [node name="apple" parent="." unique_id=1194533125 instance=ExtResource("1_u2y58")]
 
-[node name="Mouth" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1194533125, 1116975366) index="1" unique_id=1855878826]
+[node name="Skeleton3D" parent="apple/Armature" parent_id_path=PackedInt32Array(1194533125, 539309938) index="0" unique_id=1404615717]
+script = ExtResource("2_qlfva")
+
+[node name="Mouth" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" index="1" unique_id=1855878826]
 setting_count = 1
 settings/0/root_bone_name = "Bone.002"
 settings/0/root_bone = 2
@@ -46,7 +51,8 @@ bone = 6
 position_offset = Vector3(0, -0.19, -0.28)
 rotation_offset = Quaternion(0.01, 0, 0, 1)
 
-[node name="Body" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1194533125, 1116975366) index="2" unique_id=1348034259]
+[node name="Body" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" index="2" unique_id=1348034259]
+influence = 0.305
 setting_count = 1
 settings/0/root_bone_name = "Bone.006"
 settings/0/root_bone = 6
@@ -74,7 +80,8 @@ settings/0/joints/2/bone = 8
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="head" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1194533125, 1116975366) index="3" unique_id=717181047]
+[node name="head" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" index="3" unique_id=717181047]
+influence = 0.31
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -102,7 +109,7 @@ settings/0/joints/2/bone = 2
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="LL" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1194533125, 1116975366) index="4" unique_id=482024664]
+[node name="LL" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" index="4" unique_id=482024664]
 setting_count = 1
 settings/0/root_bone_name = "Bone.008_L.001"
 settings/0/root_bone = 10
@@ -111,9 +118,11 @@ settings/0/end_bone = 12
 settings/0/extend_end_bone = true
 settings/0/end_bone/direction = 6
 settings/0/end_bone/length = 0.505
-settings/0/center_from = 0
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
 settings/0/individual_config = false
-settings/0/rotation_axis = 3
+settings/0/rotation_axis = 0
 settings/0/radius/value = 0.02
 settings/0/radius/damping_curve = null
 settings/0/stiffness/value = 6.0
@@ -131,8 +140,12 @@ settings/0/joints/2/bone_name = "Bone.008_L.003"
 settings/0/joints/2/bone = 12
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
+script = ExtResource("3_vwgy3")
+multiplier = -300.0
+isLeg = true
+runSpeed = 0.24
 
-[node name="RL" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1194533125, 1116975366) index="5" unique_id=192791727]
+[node name="RL" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" index="5" unique_id=192791727]
 setting_count = 1
 settings/0/root_bone_name = "Bone.008_R.001"
 settings/0/root_bone = 14
@@ -141,9 +154,11 @@ settings/0/end_bone = 16
 settings/0/extend_end_bone = true
 settings/0/end_bone/direction = 6
 settings/0/end_bone/length = 0.505
-settings/0/center_from = 0
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
 settings/0/individual_config = false
-settings/0/rotation_axis = 3
+settings/0/rotation_axis = 0
 settings/0/radius/value = 0.02
 settings/0/radius/damping_curve = null
 settings/0/stiffness/value = 6.0
@@ -161,17 +176,23 @@ settings/0/joints/2/bone_name = "Bone.008_R.003"
 settings/0/joints/2/bone = 16
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
+script = ExtResource("3_vwgy3")
+multiplier = 300.0
+isLeg = true
+runSpeed = 0.24
 
-[node name="LA" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1194533125, 1116975366) index="6" unique_id=315252605]
+[node name="LA" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" index="6" unique_id=315252605]
 setting_count = 1
-settings/0/root_bone_name = "Bone.006_L"
-settings/0/root_bone = 17
+settings/0/root_bone_name = "Bone.006_L.001"
+settings/0/root_bone = 18
 settings/0/end_bone_name = "Bone.006_L.003"
 settings/0/end_bone = 20
 settings/0/extend_end_bone = true
 settings/0/end_bone/direction = 6
 settings/0/end_bone/length = 0.5
-settings/0/center_from = 0
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
 settings/0/individual_config = false
 settings/0/rotation_axis = 3
 settings/0/radius/value = 0.02
@@ -183,36 +204,30 @@ settings/0/drag/damping_curve = null
 settings/0/gravity/value = 0.0
 settings/0/gravity/damping_curve = null
 settings/0/gravity/direction = Vector3(0, -1, 0)
-settings/0/joints/0/bone_name = "Bone.006_L"
-settings/0/joints/0/bone = 17
-settings/0/joints/1/bone_name = "Bone.006_L.001"
-settings/0/joints/1/bone = 18
-settings/0/joints/2/bone_name = "Bone.006_L.002"
-settings/0/joints/2/bone = 19
-settings/0/joints/3/bone_name = "Bone.006_L.003"
-settings/0/joints/3/bone = 20
+settings/0/joints/0/bone_name = "Bone.006_L.001"
+settings/0/joints/0/bone = 18
+settings/0/joints/1/bone_name = "Bone.006_L.002"
+settings/0/joints/1/bone = 19
+settings/0/joints/2/bone_name = "Bone.006_L.003"
+settings/0/joints/2/bone = 20
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
-script = ExtResource("2_lfxht")
-multiplier = -35.0
+script = ExtResource("3_vwgy3")
+multiplier = -125.0
+runSpeed = 0.24
 
-[node name="SpringBoneCollisionPlane3D" type="SpringBoneCollisionPlane3D" parent="apple/Armature/Skeleton3D/LA" unique_id=375169037]
-transform = Transform3D(-0.9985088, 0.0073762243, -0.054090373, -0.008404561, -0.9997876, 0.018811176, -0.05394014, 0.019237742, 0.9983587, 0.6379905, 3.0043235, -0.0411004)
-bone_name = "Bone.006_L"
-bone = 17
-position_offset = Vector3(0.285, 0.61, 0.01)
-rotation_offset = Quaternion(-79.53, 90, 0, 1)
-
-[node name="RA" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1194533125, 1116975366) index="7" unique_id=1198780970]
+[node name="RA" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" index="7" unique_id=1198780970]
 setting_count = 1
-settings/0/root_bone_name = "Bone.006_R"
-settings/0/root_bone = 21
+settings/0/root_bone_name = "Bone.006_R.001"
+settings/0/root_bone = 22
 settings/0/end_bone_name = "Bone.006_R.003"
 settings/0/end_bone = 24
 settings/0/extend_end_bone = true
 settings/0/end_bone/direction = 6
 settings/0/end_bone/length = 0.497
-settings/0/center_from = 0
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
 settings/0/individual_config = false
 settings/0/rotation_axis = 3
 settings/0/radius/value = 0.02
@@ -224,24 +239,15 @@ settings/0/drag/damping_curve = null
 settings/0/gravity/value = 0.0
 settings/0/gravity/damping_curve = null
 settings/0/gravity/direction = Vector3(0, -1, 0)
-settings/0/joints/0/bone_name = "Bone.006_R"
-settings/0/joints/0/bone = 21
-settings/0/joints/1/bone_name = "Bone.006_R.001"
-settings/0/joints/1/bone = 22
-settings/0/joints/2/bone_name = "Bone.006_R.002"
-settings/0/joints/2/bone = 23
-settings/0/joints/3/bone_name = "Bone.006_R.003"
-settings/0/joints/3/bone = 24
+settings/0/joints/0/bone_name = "Bone.006_R.001"
+settings/0/joints/0/bone = 22
+settings/0/joints/1/bone_name = "Bone.006_R.002"
+settings/0/joints/1/bone = 23
+settings/0/joints/2/bone_name = "Bone.006_R.003"
+settings/0/joints/2/bone = 24
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
-script = ExtResource("2_lfxht")
-multiplier = -35.0
-
-[node name="SpringBoneCollisionPlane3D" type="SpringBoneCollisionPlane3D" parent="apple/Armature/Skeleton3D/RA" unique_id=1743800675]
-transform = Transform3D(-0.99850875, -0.007375912, 0.054090347, 0.008404271, -0.99978775, 0.018811194, 0.053940125, 0.019237734, 0.9983586, -0.6368426, 2.9943895, -0.041100398)
-bone_name = "Bone.006_R"
-bone = 21
-position_offset = Vector3(-0.275, 0.61, 0.01)
-rotation_offset = Quaternion(-79.53, -90, 0, 1)
+script = ExtResource("3_vwgy3")
+multiplier = 125.0
 
 [editable path="apple"]

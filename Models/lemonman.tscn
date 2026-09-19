@@ -14,7 +14,6 @@ script = ExtResource("1_lkcn4")
 
 [node name="Skeleton3D" parent="lemon/Armature" parent_id_path=PackedInt32Array(604556061, 1690358426) index="0" unique_id=543869899]
 script = ExtResource("2_5h6ky")
-bone_name = "Bone"
 
 [node name="Body" type="SpringBoneSimulator3D" parent="lemon/Armature/Skeleton3D" index="1" unique_id=2103244473]
 setting_count = 1
@@ -91,7 +90,7 @@ settings/0/center_from = 2
 settings/0/center_bone_name = "Bone"
 settings/0/center_bone = 0
 settings/0/individual_config = false
-settings/0/rotation_axis = 3
+settings/0/rotation_axis = 0
 settings/0/radius/value = 0.02
 settings/0/radius/damping_curve = null
 settings/0/stiffness/value = 11.0
@@ -112,7 +111,7 @@ settings/0/exclude_collision_count = 0
 script = ExtResource("4_ljf0i")
 multiplier = 300.0
 isLeg = true
-track = 1
+runSpeed = 0.274
 
 [node name="LL" type="SpringBoneSimulator3D" parent="lemon/Armature/Skeleton3D" index="4" unique_id=498731325]
 setting_count = 1
@@ -125,7 +124,7 @@ settings/0/center_from = 2
 settings/0/center_bone_name = "Bone"
 settings/0/center_bone = 0
 settings/0/individual_config = false
-settings/0/rotation_axis = 3
+settings/0/rotation_axis = 0
 settings/0/radius/value = 0.02
 settings/0/radius/damping_curve = null
 settings/0/stiffness/value = 11.0
@@ -146,7 +145,7 @@ settings/0/exclude_collision_count = 0
 script = ExtResource("4_ljf0i")
 multiplier = -300.0
 isLeg = true
-track = 1
+runSpeed = 0.274
 
 [node name="Head" type="SpringBoneSimulator3D" parent="lemon/Armature/Skeleton3D" index="5" unique_id=1271454375]
 setting_count = 1
@@ -182,8 +181,8 @@ settings/0/exclude_collision_count = 0
 
 [node name="LA" type="SpringBoneSimulator3D" parent="lemon/Armature/Skeleton3D" index="6" unique_id=308396762]
 setting_count = 1
-settings/0/root_bone_name = "Bone_L"
-settings/0/root_bone = 20
+settings/0/root_bone_name = "Bone_L.001"
+settings/0/root_bone = 21
 settings/0/end_bone_name = "Bone_L.003"
 settings/0/end_bone = 23
 settings/0/extend_end_bone = false
@@ -201,24 +200,22 @@ settings/0/drag/damping_curve = null
 settings/0/gravity/value = 0.0
 settings/0/gravity/damping_curve = null
 settings/0/gravity/direction = Vector3(0, -1, 0)
-settings/0/joints/0/bone_name = "Bone_L"
-settings/0/joints/0/bone = 20
-settings/0/joints/1/bone_name = "Bone_L.001"
-settings/0/joints/1/bone = 21
-settings/0/joints/2/bone_name = "Bone_L.002"
-settings/0/joints/2/bone = 22
-settings/0/joints/3/bone_name = "Bone_L.003"
-settings/0/joints/3/bone = 23
+settings/0/joints/0/bone_name = "Bone_L.001"
+settings/0/joints/0/bone = 21
+settings/0/joints/1/bone_name = "Bone_L.002"
+settings/0/joints/1/bone = 22
+settings/0/joints/2/bone_name = "Bone_L.003"
+settings/0/joints/2/bone = 23
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("4_ljf0i")
 multiplier = 150.0
-track = 1
+runSpeed = 0.174
 
 [node name="RA" type="SpringBoneSimulator3D" parent="lemon/Armature/Skeleton3D" index="7" unique_id=33575117]
 setting_count = 1
-settings/0/root_bone_name = "Bone_R"
-settings/0/root_bone = 24
+settings/0/root_bone_name = "Bone_R.001"
+settings/0/root_bone = 25
 settings/0/end_bone_name = "Bone_R.003"
 settings/0/end_bone = 27
 settings/0/extend_end_bone = false
@@ -236,18 +233,15 @@ settings/0/drag/damping_curve = null
 settings/0/gravity/value = 0.0
 settings/0/gravity/damping_curve = null
 settings/0/gravity/direction = Vector3(0, -1, 0)
-settings/0/joints/0/bone_name = "Bone_R"
-settings/0/joints/0/bone = 24
-settings/0/joints/1/bone_name = "Bone_R.001"
-settings/0/joints/1/bone = 25
-settings/0/joints/2/bone_name = "Bone_R.002"
-settings/0/joints/2/bone = 26
-settings/0/joints/3/bone_name = "Bone_R.003"
-settings/0/joints/3/bone = 27
+settings/0/joints/0/bone_name = "Bone_R.001"
+settings/0/joints/0/bone = 25
+settings/0/joints/1/bone_name = "Bone_R.002"
+settings/0/joints/1/bone = 26
+settings/0/joints/2/bone_name = "Bone_R.003"
+settings/0/joints/2/bone = 27
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("4_ljf0i")
 multiplier = -150.0
-track = 1
 
 [editable path="lemon"]
