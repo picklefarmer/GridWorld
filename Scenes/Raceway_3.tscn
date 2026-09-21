@@ -217,7 +217,7 @@ PlayableCharacters = Array[PackedScene]([ExtResource("5_wwexb"), ExtResource("2_
 transform = Transform3D(0.99966985, 0, -0.025692403, 2.9802322e-08, 1.0000002, 5.9604645e-08, 0.025692463, 0, 0.99966973, 1.1063194, -0.92308426, 0.25418854)
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=775808202]
-transform = Transform3D(0.09812027, 0.050460823, 0.9938753, 0.14654452, 0.9870639, -0.06458413, -0.9842889, 0.15198793, 0.089460395, -11.873419, -16.00911, 67.25146)
+transform = Transform3D(0.09812027, 0.05046082, 0.9938753, 0.14654452, 0.9870638, -0.06458413, -0.9842889, 0.15198793, 0.089460395, -11.873419, -16.00911, 67.25146)
 progress = 315.55646
 use_model_front = true
 script = ExtResource("1_sx8qh")
@@ -288,6 +288,8 @@ autoplay = true
 bus = &"track2"
 parameters/looping = true
 script = ExtResource("19_mbsru")
+beatWhole = 40.0
+beatHalf = 20.0
 
 [node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=1368721556]
 stream = ExtResource("14_gxcac")

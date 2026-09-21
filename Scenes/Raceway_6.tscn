@@ -48,14 +48,14 @@ curve = ExtResource("2_xg55g")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1076679970]
-transform = Transform3D(0.1557234, -0.90777, -0.38938555, -0.98773974, -0.13870895, -0.07161743, 0.011000339, 0.39568597, -0.9184215, -14.100639, -133.03682, 0.7156998)
+transform = Transform3D(0.15572335, -0.9077699, -0.38938555, -0.9877395, -0.13870895, -0.07161743, 0.011000336, 0.39568597, -0.9184215, -14.100639, -133.03682, 0.7156998)
 progress = 3204.1
 use_model_front = true
 script = ExtResource("3_4npvc")
 trackNumber = 1
 
 [node name="Camera3D" type="Camera3D" parent="Path3D2/track1" unique_id=201225700]
-transform = Transform3D(0.82249814, 0.01674759, 0.56854796, 0.039979775, 0.99544483, -0.087156676, -0.5673915, 0.094418965, 0.8180332, 5.449, 2.868, 8.994)
+transform = Transform3D(0.82249814, 0.01674759, 0.56854796, 0.039979775, 0.99544483, -0.087156676, -0.5673915, 0.094418965, 0.8180332, 5.449, 5.348, 8.994)
 current = true
 fov = 84.6
 
@@ -113,8 +113,8 @@ autoplay = true
 bus = &"track2"
 parameters/looping = true
 script = ExtResource("11_ups11")
-beatWhole = 12.38
-beatHalf = 3.825
+beatWhole = 2000.0
+beatHalf = 1000.0
 time = 4.84
 
 [node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=1885430834]

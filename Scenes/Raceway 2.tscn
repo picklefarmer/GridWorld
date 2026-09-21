@@ -144,6 +144,8 @@ autoplay = true
 bus = &"track2"
 parameters/looping = true
 script = ExtResource("17_cfm87")
+beatWhole = 20.0
+beatHalf = 10.0
 
 [node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=1052482222]
 stream = ExtResource("4_7nbvk")

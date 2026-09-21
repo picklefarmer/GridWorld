@@ -208,6 +208,8 @@ autoplay = true
 bus = &"track2"
 parameters/looping = true
 script = ExtResource("4_jafop")
+beatWhole = 24.0
+beatHalf = 12.0
 beatReturn = 40.0
 time = 6.7
 

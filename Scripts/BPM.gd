@@ -7,6 +7,8 @@ var mic_spectrum : AudioEffectInstance
 var seconds_per_beat: float = 60.0
 var song_position: float = 0.0
 var song_position_in_beats: int = 0
+var currentMeasure : int = 0
+var currentStep : int = 0
 var last_reported_beat: int = 0
 var beatCount : int = 0
 var section : int = 0
@@ -14,10 +16,12 @@ var beatToggle : bool = true
 @export var MIN_DB: int = 82
 @export var minimum = 0.05
 @export var multiplier : float = 0.25
-@export var beatWhole: float = 4.0
-@export var beatHalf: float = 2.0
-@export var beatReturn : float = 52.0
-@export var time: float = 5.0
+var beatWhole: float = 64.0
+var beatHalf: float = 32.0
+var offbeat : float = 16.0
+var off : float  = 2.0
+var beatReturn : float = 52.0
+var time: float = 20.0
 
 var audioLatency :float = 0.0
 
@@ -32,33 +36,47 @@ func _physics_process(delta: float) -> void:
 	if playing:
 		song_position = get_playback_position() + AudioServer.get_time_since_last_mix()
 		song_position -= audioLatency
-		song_position_in_beats = int(floor(song_position / seconds_per_beat))%4
-		
-		if song_position_in_beats == section:
+		song_position_in_beats = int(floor(song_position / (seconds_per_beat/4)))
+		currentMeasure = song_position_in_beats%4
+		currentStep =  (song_position_in_beats/4)%4
+		print(currentMeasure," : ",currentStep)
+		if currentMeasure == section:
 			#print(song_position_in_beats,"return")
 			return
 		else:
-			if beatToggle:
-				match song_position_in_beats:
-					0:
+			
+			match currentMeasure:
+				0:
+					if currentStep == 0 or currentStep == 3:
 						compare(beatWhole,delta )
-						section = song_position_in_beats
-						beatToggle = false
-					1:
-						compare(0.0,delta)	
-						section = song_position_in_beats
-						beatToggle = false
-					2:
+					else:
+						compare(off,delta)
+						#section = currentMeasure
+					#beatToggle = false
+				1:
+					if currentStep == 0 or currentStep == 3:	
+						compare(offbeat,delta)	
+					else:
+						compare(off,delta)
+						#section = currentMeasure
+						#beatToggle = false
+				2:
+					if currentStep == 0 or currentStep == 3:
 						compare(beatHalf,delta)
-						section = song_position_in_beats
-						beatToggle = false
-					3:
-						compare(0.0,delta)
-						section = song_position_in_beats
-						beatToggle = false
-			else:
-				print(beatToggle," beatToggle")
-				beatToggle = !beatToggle
+					else:
+						compare(off,delta)
+						#section = currentMeasure
+						#beatToggle = false
+				3:
+					if currentStep == 0 or currentStep == 3:
+						compare(offbeat,delta)
+					else:
+						compare(off,delta)
+						#section = currentMeasure
+						#beatToggle = false
+			
+			
+				#beatToggle = !beatToggle
 			
 			
 			
@@ -78,6 +96,7 @@ func compare(beatIndex,delta):
 	volume_mag = clamp((MIN_DB + linear_to_db(volume_mag))/MIN_DB,0,1)
 	#print("fired",beatIndex,volume_mag)
 	if volume_mag > minimum:
-		print("beat ","section: ",section," : ",beatIndex," : ", volume_mag)
+		print("beat ","section: ",section," : ",beatIndex," : ", currentStep)
 		Actions.beatOff.emit(beatIndex,delta,time)
+	section = currentMeasure	
 	
