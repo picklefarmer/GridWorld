@@ -60,9 +60,11 @@ settings/0/root_bone = 9
 settings/0/end_bone_name = "Bone.011"
 settings/0/end_bone = 11
 settings/0/extend_end_bone = false
-settings/0/center_from = 0
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
 settings/0/individual_config = false
-settings/0/rotation_axis = 3
+settings/0/rotation_axis = 0
 settings/0/radius/value = 0.02
 settings/0/radius/damping_curve = null
 settings/0/stiffness/value = 11.0
@@ -81,7 +83,7 @@ settings/0/joints/2/bone = 11
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("2_spvp5")
-multiplier = -40.0
+multiplier = 40.0
 
 [node name="Body" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" index="4" unique_id=2078050291]
 setting_count = 1
@@ -150,7 +152,6 @@ script = ExtResource("3_68o0a")
 minimum = 0.02
 multiplier = 300.0
 isLeg = true
-runSpeed = 0.24
 
 [node name="RL" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" index="6" unique_id=978175268]
 setting_count = 1
@@ -187,7 +188,6 @@ script = ExtResource("3_68o0a")
 minimum = 0.02
 multiplier = -300.0
 isLeg = true
-runSpeed = 0.24
 
 [node name="LA" type="SpringBoneSimulator3D" parent="peach/Armature/Skeleton3D" index="7" unique_id=1260153892]
 setting_count = 1

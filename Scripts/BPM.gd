@@ -19,9 +19,9 @@ var beatToggle : bool = true
 var beatWhole: float = 64.0
 var beatHalf: float = 32.0
 var offbeat : float = 16.0
-var off : float  = 2.0
+var off : float  = 0.0
 var beatReturn : float = 52.0
-var time: float = 20.0
+var time: float = 0.25
 
 var audioLatency :float = 0.0
 
@@ -37,14 +37,15 @@ func _physics_process(delta: float) -> void:
 		song_position = get_playback_position() + AudioServer.get_time_since_last_mix()
 		song_position -= audioLatency
 		song_position_in_beats = int(floor(song_position / (seconds_per_beat/4)))
-		currentMeasure = song_position_in_beats%4
-		currentStep =  (song_position_in_beats/4)%4
+		currentStep= song_position_in_beats%4
+		currentMeasure =  (song_position_in_beats/4)%4
 		print(currentMeasure," : ",currentStep)
-		if currentMeasure == section:
+		if currentStep == section:
+			
 			#print(song_position_in_beats,"return")
 			return
 		else:
-			
+			section = currentStep	
 			match currentMeasure:
 				0:
 					if currentStep == 0 or currentStep == 3:
@@ -74,16 +75,10 @@ func _physics_process(delta: float) -> void:
 						compare(off,delta)
 						#section = currentMeasure
 						#beatToggle = false
-			
+		
 			
 				#beatToggle = !beatToggle
-			
-			
-			
-		
-		
-		
-		
+
 		#if song_position_in_beats > last_reported_beat:
 			#last_reported_beat = song_position_in_beats
 			##compare(last_reported_beat)
@@ -96,7 +91,9 @@ func compare(beatIndex,delta):
 	volume_mag = clamp((MIN_DB + linear_to_db(volume_mag))/MIN_DB,0,1)
 	#print("fired",beatIndex,volume_mag)
 	if volume_mag > minimum:
-		print("beat ","section: ",section," : ",beatIndex," : ", currentStep)
+		print("beat ","section: ",section," : ",beatIndex," : ", currentMeasure)
 		Actions.beatOff.emit(beatIndex,delta,time)
-	section = currentMeasure	
+		
+		
+	
 	

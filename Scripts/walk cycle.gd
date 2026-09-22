@@ -43,16 +43,9 @@ func _physics_process(delta: float) -> void:
 	
 	if volume_mag > minimum :
 		if canMove:
-			#if volume_mag >= alreadyUp:
-				#canMove = true
-				#external_force = Vector3.ZERO
-				#alreadyUp = 0.0
-				#pass
 			stride *= -1.0
 			var global_force_vector : Vector3 = Vector3(0,0,volume_mag *multiplier*stride)
 			var path3dVector : Vector3 = owner.get_parent().global_transform.basis * global_force_vector
-			
-			
 			var skeleton: Skeleton3D = get_parent() as Skeleton3D
 			var rotVector : Transform3D = skeleton.global_transform * skeleton.get_bone_global_pose(bone_idx)
 			var localForce : Vector3 = rotVector.basis.inverse() * path3dVector
