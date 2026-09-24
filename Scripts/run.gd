@@ -2,6 +2,7 @@ extends PathFollow3D
 
 @export var trackNumber : int = 0
 var runAmount : float = 0.0
+var nonPlayerMultiplier: float = 1.0
 var evalTime : float = 8.25
 #var progressNormalized : float 
 
@@ -12,12 +13,15 @@ func _ready() -> void:
 	Actions.goForward.connect(running)
 	if trackNumber == 1:
 		Actions.beatOff.connect(modRun)
+	else:
+		nonPlayerMultiplier = 4.0
+	
 	
 func _physics_process(delta: float) -> void:
 
 	
 	#progress_ratio = lerp(progress_ratio,runAmount + progress_ratio,delta*evalTime)
-	progress = lerp(progress,runAmount + progress,delta*evalTime)
+	progress = lerp(progress,(runAmount*nonPlayerMultiplier) + progress,delta*evalTime)
 	runAmount = lerp(runAmount,0.0, delta* 11.0)
 	
 	
@@ -29,6 +33,7 @@ func modRun(beatInt:float,delta:float,time:float):
 	
 	
 	runAmount = lerp(runAmount, runAmount * beatInt,time* delta)
+	print(runAmount)
 	
 	
 	

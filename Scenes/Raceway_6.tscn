@@ -48,7 +48,7 @@ curve = ExtResource("2_xg55g")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1076679970]
-transform = Transform3D(0.15572335, -0.9077699, -0.38938555, -0.9877395, -0.13870895, -0.07161743, 0.011000336, 0.39568597, -0.9184215, -14.100639, -133.03682, 0.7156998)
+transform = Transform3D(0.15572317, -0.9077699, -0.38938555, -0.9877383, -0.13870895, -0.07161743, 0.011000323, 0.39568597, -0.9184215, -14.100639, -133.03682, 0.7156998)
 progress = 3204.1
 use_model_front = true
 script = ExtResource("3_4npvc")
@@ -113,9 +113,6 @@ autoplay = true
 bus = &"track2"
 parameters/looping = true
 script = ExtResource("11_ups11")
-beatWhole = 2000.0
-beatHalf = 1000.0
-time = 4.84
 
 [node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=1885430834]
 stream = ExtResource("12_qbfiw")
@@ -125,6 +122,7 @@ parameters/looping = true
 
 [node name="Track 4 streamer" type="AudioStreamPlayer" parent="." unique_id=1224388948]
 stream = ExtResource("13_ups11")
+volume_db = 10.472
 autoplay = true
 bus = &"track4"
 parameters/looping = true

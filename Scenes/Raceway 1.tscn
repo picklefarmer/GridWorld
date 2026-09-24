@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://4disebtdqhdv" path="res://Models/cherryman.tscn" id="13_r7h1t"]
 [ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="14_jafop"]
 [ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="15_r7h1t"]
+[ext_resource type="AudioStream" uid="uid://d1bvve4au7c0" path="res://Audio/test.mp3" id="17_apb5h"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_j3pel"]
 
@@ -208,10 +209,6 @@ autoplay = true
 bus = &"track2"
 parameters/looping = true
 script = ExtResource("4_jafop")
-beatWhole = 24.0
-beatHalf = 12.0
-beatReturn = 40.0
-time = 6.7
 
 [node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=1052482222]
 stream = ExtResource("3_lv0y0")
@@ -235,6 +232,10 @@ use_model_front = true
 script = ExtResource("5_8no50")
 trackNumber = 1
 
+[node name="AudioListener3D" type="AudioListener3D" parent="Path3D2/track1" unique_id=1645621004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8037148, 1.8406985, 0.38011742)
+current = true
+
 [node name="Camera3D" type="Camera3D" parent="Path3D2/track1" unique_id=1180250909]
 transform = Transform3D(0.98246956, -0.02565923, 0.18473524, 0.016530262, 0.9985741, 0.050781794, -0.18577495, -0.04684554, 0.9814903, 3.511509, 4.8075876, 16.621471)
 current = true
@@ -255,6 +256,15 @@ trackNumber = 3
 
 [node name="Strawberry" parent="Path3D2/track2" unique_id=2136539647 instance=ExtResource("7_r7h1t")]
 transform = Transform3D(1.0000159, 0, 0, 0, 1, 0, -3.5527137e-15, 0, 1.000016, -8.257944, -0.03464341, 0.3673973)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D2/track2" unique_id=1961320242]
+transform = Transform3D(1.0000242, 0, 3.5527137e-15, 0, 1.0000043, 0, -3.5527137e-15, 0, 1.0000256, -8.231609, 0, 0)
+stream = ExtResource("17_apb5h")
+volume_db = 12.263
+max_db = 6.0
+autoplay = true
+max_distance = 40.0
+parameters/looping = true
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1232437005]
 transform = Transform3D(4.3710255e-08, 0, 0.99997497, 0, 0.99999565, 0, -0.9999741, 0, 4.3710294e-08, 2.7128735, 0.66467476, -23.434544)

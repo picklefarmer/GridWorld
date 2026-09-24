@@ -393,7 +393,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1765137, 133.68167, -73.566
 curve = SubResource("Curve3D_oby42")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="ship2 patrol2" unique_id=706926250]
-transform = Transform3D(0.30222917, -0.0015032155, 0.95320845, 0.0049743415, 0.9999673, -2.4917543e-07, -0.9531965, 0.0047417954, 0.30223295, -164.02895, 2.9234514e-05, 180.68619)
+transform = Transform3D(0.30222917, -0.001503215, 0.95320845, 0.0049743415, 0.999967, -2.4917543e-07, -0.9531965, 0.004741794, 0.30223295, -164.02895, 2.9234514e-05, 180.68619)
 progress = 355.69266
 use_model_front = true
 script = ExtResource("20_s87fk")

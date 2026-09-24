@@ -1,4 +1,4 @@
-extends AudioStreamPlayer
+extends AudioStreamPlayer3D
 var mic_input_index : int
 var mic_spectrum : AudioEffectInstance
 
@@ -91,7 +91,6 @@ func compare(beatIndex,delta):
 	volume_mag = clamp((MIN_DB + linear_to_db(volume_mag))/MIN_DB,0,1)
 	#print("fired",beatIndex,volume_mag)
 	if volume_mag > minimum:
-		
 		#print("beat ","section: ",section," : ",beatIndex," : ", currentMeasure)
 		Actions.beatOff.emit(beatIndex,delta,time)
 		

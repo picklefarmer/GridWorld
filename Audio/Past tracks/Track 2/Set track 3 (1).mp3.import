@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cydtryfjkn248"
+path="res://.godot/imported/Set track 3 (1).mp3-57dce1af79b836aa3fe854e646123d01.mp3str"
+
+[deps]
+
+source_file="res://Audio/Past tracks/Track 2/Set track 3 (1).mp3"
+dest_files=["res://.godot/imported/Set track 3 (1).mp3-57dce1af79b836aa3fe854e646123d01.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

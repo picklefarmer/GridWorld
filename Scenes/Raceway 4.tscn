@@ -232,7 +232,7 @@ curve = ExtResource("2_xjxiu")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1273837031]
-transform = Transform3D(0.10608556, -0.025495924, 0.99410206, -0.98764026, -0.11674711, 0.10246347, 0.113426834, -0.99270505, -0.03758202, 5.16429, -22.365536, -100.06714)
+transform = Transform3D(0.10608558, -0.025495924, 0.99410206, -0.98764044, -0.11674711, 0.10246347, 0.11342686, -0.99270505, -0.03758202, 5.16429, -22.365536, -100.06714)
 progress = 1170.4413
 use_model_front = true
 script = ExtResource("3_0a17n")

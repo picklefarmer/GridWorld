@@ -16,10 +16,13 @@
 [ext_resource type="PackedScene" uid="uid://4disebtdqhdv" path="res://Models/cherryman.tscn" id="10_qgqpk"]
 [ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="11_mbsru"]
 [ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="12_qgqpk"]
-[ext_resource type="AudioStream" uid="uid://d1nkgw0ogu7m0" path="res://Audio/Past tracks/set track 3 (4).mp3" id="13_k3hb3"]
-[ext_resource type="AudioStream" uid="uid://x7ah4u2ehv84" path="res://Audio/Past tracks/set track 3 (5).mp3" id="14_gxcac"]
-[ext_resource type="AudioStream" uid="uid://cqihmv77ki28m" path="res://Audio/Past tracks/set track 3 (6).mp3" id="15_eth5o"]
-[ext_resource type="Script" uid="uid://ts38hmt4qhiy" path="res://Scripts/BPM.gd" id="19_mbsru"]
+[ext_resource type="AudioStream" uid="uid://b1oacc6ka277" path="res://Audio/Past tracks/Track 3/set track 3 (5).mp3" id="13_qgqpk"]
+[ext_resource type="AudioStream" uid="uid://dmlffw334fbmn" path="res://Audio/Past tracks/Track 3/track 3 near 3.mp3" id="14_5b8p6"]
+[ext_resource type="AudioStream" uid="uid://ryaoi8va5whk" path="res://Audio/Past tracks/Track 3/set track 3 (4).mp3" id="14_mbsru"]
+[ext_resource type="Script" uid="uid://su80mqt2ldhg" path="res://Scripts/BPM3D.gd" id="15_qgqpk"]
+[ext_resource type="AudioStream" uid="uid://bthaenw1hymp0" path="res://Audio/Past tracks/Track 3/track 3 near 2.mp3" id="16_5b8p6"]
+[ext_resource type="AudioStream" uid="uid://lspio4oj04e7" path="res://Audio/Past tracks/Track 3/set track 3 (6).mp3" id="16_dftgd"]
+[ext_resource type="AudioStream" uid="uid://c0pewmgv0shvl" path="res://Audio/Past tracks/Track 3/track 3 near 1.mp3" id="17_mbsru"]
 
 [sub_resource type="Gradient" id="Gradient_gxcac"]
 interpolation_mode = 1
@@ -190,14 +193,17 @@ inOut = 20.0
 [node name="Path3D2" type="Path3D" parent="." unique_id=227104663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.99231, 0)
 curve = ExtResource("1_dwhon")
-debug_custom_color = Color(1, 0, 0, 1)
+debug_custom_color = Color(1, 1, 1, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1456456726]
-transform = Transform3D(0.0981199, 0.050461236, 0.9938753, 0.14654395, 0.987072, -0.06458413, -0.9842851, 0.15198918, 0.089460395, -11.873419, -16.00911, 67.25146)
-progress = 315.55646
+transform = Transform3D(-0.18159886, -0.9825901, -0.038640723, -0.98319966, 0.18208049, -0.009212111, 0.016086929, 0.036318798, -0.99922466, 66.57474, -19.191137, 0.03372462)
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 1
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Path3D2/track1" unique_id=1853028720]
+transform = Transform3D(1, 1.4901161e-08, 0, -1.4901161e-08, 1.0000002, 2.7939677e-09, 7.450581e-09, 8.381903e-09, 1.0000001, 0, 0, 0)
+current = true
 
 [node name="Camera3D" type="Camera3D" parent="Path3D2/track1" unique_id=612203952]
 transform = Transform3D(0.91449213, 0.08441145, -0.39575633, -0.05562716, 0.99494314, 0.08367811, 0.4008258, -0.05450681, 0.91453886, 0.24364296, 2.8095574, 8.901731)
@@ -217,34 +223,81 @@ PlayableCharacters = Array[PackedScene]([ExtResource("5_wwexb"), ExtResource("2_
 transform = Transform3D(0.99966985, 0, -0.025692403, 2.9802322e-08, 1.0000002, 5.9604645e-08, 0.025692463, 0, 0.99966973, 1.1063194, -0.92308426, 0.25418854)
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=775808202]
-transform = Transform3D(0.09812027, 0.05046082, 0.9938753, 0.14654452, 0.9870638, -0.06458413, -0.9842889, 0.15198793, 0.089460395, -11.873419, -16.00911, 67.25146)
-progress = 315.55646
+transform = Transform3D(-0.18159968, -0.9825867, -0.038640734, -0.98320407, 0.18207987, -0.009212113, 0.016087, 0.036318675, -0.9992249, 66.57474, -19.191137, 0.03372462)
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 3
 
+[node name="Track 3 streamer" type="AudioStreamPlayer3D" parent="Path3D2/track2" unique_id=263279954]
+transform = Transform3D(1.0000362, 0, 1.4901161e-08, 1.4901161e-08, 1.0000296, -9.313226e-10, 0, -8.381903e-09, 1.000019, 0, 0, 0)
+stream = ExtResource("13_qgqpk")
+volume_db = 18.102
+autoplay = true
+max_distance = 1599.53
+bus = &"track3"
+parameters/looping = true
+
 [node name="Strawberry" parent="Path3D2/track2" unique_id=1848394695 instance=ExtResource("3_dx4sp")]
 transform = Transform3D(1.0000157, 1.8626451e-09, 0, 0, 0.9999999, -1.7695129e-08, -1.4901161e-08, 3.259629e-09, 1.0000161, -6.191844, -0.356431, 0.5591793)
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D2/track2" unique_id=1375332166]
+stream = ExtResource("14_5b8p6")
+volume_db = 5.255
+autoplay = true
+max_distance = 418.57
+parameters/looping = true
+
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1070217300]
-transform = Transform3D(0.09812027, 0.050461236, 0.9938753, 0.14654452, 0.987072, -0.06458413, -0.9842889, 0.15198918, 0.089460395, -11.873419, -16.00911, 67.25146)
-progress = 315.55646
+transform = Transform3D(-0.18159968, -0.9825934, -0.038640734, -0.98320407, 0.18208112, -0.009212113, 0.016087, 0.03631892, -0.9992249, 66.57474, -19.191137, 0.03372462)
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 2
 
+[node name="Track 2 streamer" type="AudioStreamPlayer3D" parent="Path3D2/track3" unique_id=872950563]
+transform = Transform3D(1.000019, 0, 0, 0, 1.0000211, 0, 0, 0, 1.0000356, 0, 0, 0)
+stream = ExtResource("14_mbsru")
+volume_db = 18.102
+autoplay = true
+max_distance = 1599.53
+bus = &"track2"
+parameters/looping = true
+script = ExtResource("15_qgqpk")
+bpm = 130.0
+
 [node name="Blueberryman" parent="Path3D2/track3" unique_id=539657863 instance=ExtResource("4_m2k0b")]
 transform = Transform3D(0.98840654, 1.8626451e-09, -0.1518416, -7.450581e-09, 0.9999998, 6.4319465e-09, 0.15184166, -9.546056e-09, 0.98840654, 5.509986, -1.1325192, 0.7002289)
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D2/track3" unique_id=856889446]
+stream = ExtResource("16_5b8p6")
+volume_db = 3.503
+autoplay = true
+max_distance = 418.57
+parameters/looping = true
+
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1019939291]
-transform = Transform3D(0.09812027, 0.050461236, 0.9938753, 0.14654452, 0.987072, -0.06458413, -0.9842889, 0.15198918, 0.089460395, -11.873419, -16.00911, 67.25146)
-progress = 315.55646
+transform = Transform3D(-0.18159968, -0.9825934, -0.038640734, -0.98320407, 0.18208112, -0.009212113, 0.016087, 0.03631892, -0.9992249, 66.57474, -19.191137, 0.03372462)
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 4
 
+[node name="Track 4 streamer" type="AudioStreamPlayer3D" parent="Path3D2/track4" unique_id=1492173877]
+transform = Transform3D(1.000019, 0, 0, 0, 1.0000211, 0, 0, 0, 1.0000356, 0, 0, 0)
+stream = ExtResource("16_dftgd")
+volume_db = 18.102
+autoplay = true
+max_distance = 1599.53
+bus = &"track4"
+parameters/looping = true
+
 [node name="Bananaman" parent="Path3D2/track4" unique_id=602892636 instance=ExtResource("5_wwexb")]
 transform = Transform3D(1, -3.7252903e-09, -1.4901161e-08, 1.8626451e-09, 0.99999994, -1.071021e-08, 0, -2.0954758e-09, 1.0000001, -2.6726503, -0.5194231, -0.043114673)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D2/track4" unique_id=254099400]
+stream = ExtResource("17_mbsru")
+volume_db = 9.343
+autoplay = true
+max_distance = 672.7
+parameters/looping = true
 
 [node name="WorldEnvironment2" type="WorldEnvironment" parent="." unique_id=2000159674]
 environment = SubResource("Environment_dwhon")
@@ -281,27 +334,6 @@ stream = SubResource("AudioStreamMicrophone_gxcac")
 volume_db = 1.0
 autoplay = true
 bus = &"recording"
-
-[node name="Track 2 streamer" type="AudioStreamPlayer" parent="." unique_id=456510598]
-stream = ExtResource("13_k3hb3")
-autoplay = true
-bus = &"track2"
-parameters/looping = true
-script = ExtResource("19_mbsru")
-beatWhole = 40.0
-beatHalf = 20.0
-
-[node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=1368721556]
-stream = ExtResource("14_gxcac")
-autoplay = true
-bus = &"track3"
-parameters/looping = true
-
-[node name="Track 4 streamer" type="AudioStreamPlayer" parent="." unique_id=1099343305]
-stream = ExtResource("15_eth5o")
-autoplay = true
-bus = &"track4"
-parameters/looping = true
 
 [node name="BirdsEye" type="Camera3D" parent="." unique_id=1885766573]
 transform = Transform3D(1, 0, 0, 0, 0.17307517, 0.98490864, 0, -0.98490864, 0.17307517, -1.083, 228.964, 45.008)

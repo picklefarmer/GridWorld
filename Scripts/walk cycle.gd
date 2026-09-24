@@ -20,7 +20,7 @@ var bone_idx: int
 @export var alreadyUp: float = 1.0
 #@export var runSpeed : float = 0.074
 
-var runSpeed : float = 2.0
+var runSpeed : float = 1.0
 var skeleton : Skeleton3D
 var canMove : bool = true
 func _ready() -> void:
@@ -52,7 +52,7 @@ func _physics_process(delta: float) -> void:
 			external_force = localForce
 			alreadyUp = volume_mag
 			if isLeg : 
-				Actions.goForward.emit((volume_mag*250)*runSpeed,track)
+				Actions.goForward.emit((volume_mag*50)*runSpeed,track)
 			canMove = false
 	else:
 		canMove = true
