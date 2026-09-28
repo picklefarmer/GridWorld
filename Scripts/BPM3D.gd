@@ -21,7 +21,7 @@ var beatHalf: float = 32.0
 var offbeat : float = 6.0
 var off : float  = 0.0
 var beatReturn : float = 52.0
-var time: float = 4.25
+var time: float = 6.0
 
 var audioLatency :float = 0.0
 
