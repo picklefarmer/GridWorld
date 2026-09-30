@@ -5,6 +5,7 @@ var ischecked : bool = true
 @export var outOut : float = 20
 @export var inIn : float = 120
 @export var inOut : float = 78
+@export var trackMultiplier : float = 1.0
 
 @onready var main : Camera3D = $Path3D2/track1/Camera3D
 @onready var top : Camera3D = $BirdsEye

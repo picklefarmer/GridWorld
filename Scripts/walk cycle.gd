@@ -39,7 +39,9 @@ func _physics_process(delta: float) -> void:
 	
 	var volume_mag = spectrum_analyzer.get_magnitude_for_frequency_range(350.0,3000.0,AudioEffectSpectrumAnalyzerInstance.MAGNITUDE_AVERAGE).length()
 	volume_mag = clamp((MIN_DB + linear_to_db(volume_mag))/MIN_DB,0,1)
-
+	if track == 1 and isLeg and canMove:
+		
+		Actions.updateVol.emit(volume_mag)
 	
 	if volume_mag > minimum :
 		if canMove:
@@ -50,9 +52,13 @@ func _physics_process(delta: float) -> void:
 			var rotVector : Transform3D = skeleton.global_transform * skeleton.get_bone_global_pose(bone_idx)
 			var localForce : Vector3 = rotVector.basis.inverse() * path3dVector
 			external_force = localForce
-			alreadyUp = volume_mag
+			#alreadyUp = volume_mag
 			if isLeg : 
-				Actions.goForward.emit((volume_mag*50)*runSpeed,track)
+				if track == 1:
+					
+					Actions.floatMic.emit(volume_mag*50,delta)
+				else:
+					Actions.goForward.emit((volume_mag*50)*runSpeed,track)
 			canMove = false
 	else:
 		canMove = true

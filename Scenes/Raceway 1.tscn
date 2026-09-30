@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://4disebtdqhdv" path="res://Models/cherryman.tscn" id="13_r7h1t"]
 [ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="14_jafop"]
 [ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="15_r7h1t"]
-[ext_resource type="AudioStream" uid="uid://d1bvve4au7c0" path="res://Audio/test.mp3" id="17_apb5h"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_j3pel"]
 
@@ -189,6 +188,7 @@ ambient_light_color = Color(0, 0, 0.81960785, 1)
 script = ExtResource("1_vcrnp")
 outOut = 80.0
 inOut = 60.0
+trackMultiplier = 0.5
 
 [node name="GridMap" type="GridMap" parent="." unique_id=226806084]
 mesh_library = ExtResource("1_gub7j")
@@ -256,15 +256,6 @@ trackNumber = 3
 
 [node name="Strawberry" parent="Path3D2/track2" unique_id=2136539647 instance=ExtResource("7_r7h1t")]
 transform = Transform3D(1.0000159, 0, 0, 0, 1, 0, -3.5527137e-15, 0, 1.000016, -8.257944, -0.03464341, 0.3673973)
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D2/track2" unique_id=1961320242]
-transform = Transform3D(1.0000242, 0, 3.5527137e-15, 0, 1.0000043, 0, -3.5527137e-15, 0, 1.0000256, -8.231609, 0, 0)
-stream = ExtResource("17_apb5h")
-volume_db = 12.263
-max_db = 6.0
-autoplay = true
-max_distance = 40.0
-parameters/looping = true
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1232437005]
 transform = Transform3D(4.3710255e-08, 0, 0.99997497, 0, 0.99999565, 0, -0.9999741, 0, 4.3710294e-08, 2.7128735, 0.66467476, -23.434544)
