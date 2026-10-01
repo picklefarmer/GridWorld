@@ -27,7 +27,7 @@ func _ready() -> void:
 	Actions.syncLip.connect(rebus)
 	skeleton = get_parent() as Skeleton3D
 	bone_idx = skeleton.find_bone(bone_name)
-	
+	minimum = owner.minimum
 	if !owner.active:
 		record_bus_index = AudioServer.get_bus_index(bus)
 		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)

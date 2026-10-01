@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8ma4rv1c6qvd"
+path="res://.godot/imported/track 7 - guitar 162 bpm.mp3-ce4bb24beeb0f243b094736ba4226979.mp3str"
+
+[deps]
+
+source_file="res://Audio/Past tracks/Track 7/track 7 - guitar 162 bpm.mp3"
+dest_files=["res://.godot/imported/track 7 - guitar 162 bpm.mp3-ce4bb24beeb0f243b094736ba4226979.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

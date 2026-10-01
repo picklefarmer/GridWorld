@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bt2bm8f3qvqen"
+path="res://.godot/imported/audio part two raceway 7.mp3-cc8c94095b05888c880496cc63814898.mp3str"
+
+[deps]
+
+source_file="res://Audio/Past tracks/Track 7/audio part two raceway 7.mp3"
+dest_files=["res://.godot/imported/audio part two raceway 7.mp3-cc8c94095b05888c880496cc63814898.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
