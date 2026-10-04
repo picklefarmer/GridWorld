@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddfdhmbtt1xsq"
+path="res://.godot/imported/raceway 9 - 90bpm keys.mp3-1df369de05ef38bf8d2314d91f37ceb0.mp3str"
+
+[deps]
+
+source_file="res://Audio/Past tracks/Track 9/raceway 9 - 90bpm keys.mp3"
+dest_files=["res://.godot/imported/raceway 9 - 90bpm keys.mp3-1df369de05ef38bf8d2314d91f37ceb0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

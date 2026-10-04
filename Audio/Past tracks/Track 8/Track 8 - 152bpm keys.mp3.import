@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccbrpms47jfw3"
+path="res://.godot/imported/Track 8 - 152bpm keys.mp3-d974bca75f4f2fc75be2e29dccba034e.mp3str"
+
+[deps]
+
+source_file="res://Audio/Past tracks/Track 8/Track 8 - 152bpm keys.mp3"
+dest_files=["res://.godot/imported/Track 8 - 152bpm keys.mp3-d974bca75f4f2fc75be2e29dccba034e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
