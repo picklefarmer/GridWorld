@@ -17,13 +17,20 @@
 [ext_resource type="AudioStream" uid="uid://82it0w41mm02" path="res://Audio/intro 2.mp3" id="12_qbfiw"]
 [ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="13_a4d2n"]
 [ext_resource type="AudioStream" uid="uid://b1ntlptefsi1o" path="res://Audio/intro 3.mp3" id="13_ups11"]
-[ext_resource type="Material" uid="uid://b0v4bw2kla8lx" path="res://Materials/Sky.tres" id="17_5bss4"]
 [ext_resource type="PackedScene" uid="uid://c47yc10fjtfn0" path="res://Models/cloud.blend" id="17_u8886"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_5bss4"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5bss4"]
+sky_top_color = Color(0.7251138, 0.8524773, 0.9999985, 1)
+sky_horizon_color = Color(0.047679633, 0.37949935, 0.794836, 1)
+ground_bottom_color = Color(0.29224792, 0.0006788842, 0.44769925, 1)
+ground_horizon_color = Color(0.047679633, 0.37949935, 0.794836, 1)
+ground_curve = 0.15999997
+sun_curve = 0.42426395
+
 [sub_resource type="Sky" id="Sky_5bss4"]
-sky_material = ExtResource("17_5bss4")
+sky_material = SubResource("ProceduralSkyMaterial_5bss4")
 
 [sub_resource type="Environment" id="Environment_j3pel"]
 background_mode = 2
@@ -48,7 +55,7 @@ curve = ExtResource("2_xg55g")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1076679970]
-transform = Transform3D(0.15572317, -0.9077699, -0.38938555, -0.9877383, -0.13870895, -0.07161743, 0.011000323, 0.39568597, -0.9184215, -14.100639, -133.03682, 0.7156998)
+transform = Transform3D(0.15572312, -0.9077699, -0.38938555, -0.9877381, -0.13870895, -0.07161743, 0.011000321, 0.39568597, -0.9184215, -14.100639, -133.03682, 0.7156998)
 progress = 3204.1
 use_model_front = true
 script = ExtResource("3_4npvc")

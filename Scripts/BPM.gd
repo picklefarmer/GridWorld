@@ -108,9 +108,13 @@ func beatBonus(volImp,delta):
 	print(heldStop)
 	
 	if heldStop:
-			print("beat ","section: ",currentMeasure," : ",volImp, "currentStep ")
-			Actions.goForward.emit(assignBonus()*volImp,1)
-			heldStop = false
+		var bonus : float = assignBonus()
+		var micProg : float = $"../Path3D2/track1".progress
+		print("beat ","section: ",currentMeasure," : currentStep ",currentStep)
+		if bonus <= 1:
+			Actions.updateProgress.emit(volImp,micProg)
+		Actions.goForward.emit(bonus*volImp,1)
+		heldStop = false
 	
 func compare(beatIndex,delta):
 	

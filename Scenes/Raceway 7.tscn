@@ -18,6 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://crqindiuol0ul" path="res://Audio/Past tracks/Track 7/track 7 - piano 162 bpm.mp3" id="15_hfud4"]
 [ext_resource type="AudioStream" uid="uid://337ru3yu1hfw" path="res://Audio/Past tracks/Track 7/track 7 - drums162 bpm.mp3" id="16_v07kg"]
 [ext_resource type="Material" uid="uid://b0v4bw2kla8lx" path="res://Materials/Sky.tres" id="18_hfud4"]
+[ext_resource type="Script" uid="uid://c88xpxg4qepnh" path="res://Scripts/followPlayerCamera.gd" id="19_a8j7u"]
+[ext_resource type="PackedScene" uid="uid://c47yc10fjtfn0" path="res://Models/cloud.blend" id="19_v07kg"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_a8j7u"]
 
@@ -34,6 +36,9 @@ ambient_light_energy = 1.5
 
 [node name="Raceway 7" type="Node3D" unique_id=445197391]
 script = ExtResource("1_v4mcm")
+outIn = 85.0
+outOut = 60.0
+inOut = 40.0
 trackMultiplier = 2.0
 
 [node name="raceway 7" parent="." unique_id=1542613220 instance=ExtResource("1_ndjim")]
@@ -44,7 +49,7 @@ curve = ExtResource("2_kerbq")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=903517246]
-transform = Transform3D(0.0576383, -0.005933567, 0.9987586, -0.0015677001, -0.99982774, -0.0058564036, 0.9982265, -0.0012276064, -0.05767821, 0.5165692, -24.014503, 6.50455)
+transform = Transform3D(0.05763824, -0.005933567, 0.99876064, -0.0015676984, -0.99982774, -0.0058564157, 0.9982255, -0.0012276064, -0.057678327, 0.5165692, -24.014503, 6.50455)
 progress = 465.48233
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -57,6 +62,7 @@ fov = 84.6
 
 [node name="OmniLight3D" type="AreaLight3D" parent="Path3D2/track1" unique_id=231292335]
 transform = Transform3D(1, 0, 0, 0, 0.7527585, -0.6582967, 0, 0.6582967, 0.7527585, 0.99999994, 3.258231, 4.6411386)
+visible = false
 light_energy = 15.367
 light_specular = 0.523
 
@@ -68,7 +74,7 @@ PlayableCharacters = Array[PackedScene]([ExtResource("5_f220s"), ExtResource("6_
 transform = Transform3D(0.99999994, 0, 0, 0, 1.0000004, 0, 0, 0, 0.9999999, 1.1060009, 7.6293945e-06, 0.2539959)
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=40535349]
-transform = Transform3D(0.057638463, -0.005933552, 0.99875015, -0.0015677045, -0.99982524, -0.0058563543, 0.9982294, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
+transform = Transform3D(0.057638403, -0.005933552, 0.99875015, -0.0015677029, -0.99982524, -0.0058563543, 0.9982284, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
 progress = 465.48233
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -79,7 +85,7 @@ transform = Transform3D(1.0000157, 1.8626451e-09, 0, 0, 0.9999999, -1.7695129e-0
 minimum = 0.1
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1702470826]
-transform = Transform3D(0.057638463, -0.005933552, 0.99875015, -0.0015677045, -0.99982524, -0.0058563543, 0.9982294, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
+transform = Transform3D(0.057638403, -0.005933552, 0.99875015, -0.0015677029, -0.99982524, -0.0058563543, 0.9982284, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
 progress = 465.48233
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -87,10 +93,10 @@ trackNumber = 2
 
 [node name="Blueberryman" parent="Path3D2/track3" unique_id=539657863 instance=ExtResource("8_v07kg")]
 transform = Transform3D(0.98840487, 8.839803e-09, -0.1518414, -7.450568e-09, 1, 9.718198e-09, 0.1518414, -8.474209e-09, 0.98840487, 5.51, 0, 0.7)
-minimum = 0.3
+minimum = 0.4
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=979988124]
-transform = Transform3D(0.057638463, -0.005933552, 0.99875015, -0.0015677045, -0.99982524, -0.0058563543, 0.9982294, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
+transform = Transform3D(0.057638403, -0.005933552, 0.99875015, -0.0015677029, -0.99982524, -0.0058563543, 0.9982284, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
 progress = 465.48233
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -117,7 +123,7 @@ bpm = 162.0
 
 [node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=504596070]
 stream = ExtResource("15_hfud4")
-volume_db = 10.913
+volume_db = 2.267
 autoplay = true
 bus = &"track3"
 parameters/looping = true
@@ -139,5 +145,25 @@ sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2080883320]
 environment = SubResource("Environment_v07kg")
+
+[node name="BirdsEye" type="Camera3D" parent="." unique_id=153579034 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0.00035912686, -1.0893003e-05, -0.00035929203, 0.99954027, -0.030317785, 6.385152e-11, 0.030317787, 0.9995403, -2.737915, -5.9031525, 0.8339958)
+script = ExtResource("19_a8j7u")
+target = NodePath("../Path3D2/track1/Camera3D")
+
+[node name="cloud" parent="." unique_id=1972854392 instance=ExtResource("19_v07kg")]
+transform = Transform3D(20.235, 0, 0, 0, 20.235, 0, 0, 0, 20.235, 20.502823, -115.82792, -22.360224)
+
+[node name="cloud3" parent="." unique_id=500859546 instance=ExtResource("19_v07kg")]
+transform = Transform3D(7.9837737, 0, -18.593403, 0, 20.235003, 0, 18.593403, 0, 7.9837737, 35.369278, 62.854263, 12.262247)
+
+[node name="cloud4" parent="." unique_id=472296887 instance=ExtResource("19_v07kg")]
+transform = Transform3D(6.2003946, 0, -14.440093, 0, 15.715, 0, 14.440093, 0, 6.2003946, 20.502823, 193.96498, -22.360224)
+
+[node name="cloud5" parent="." unique_id=1754148944 instance=ExtResource("19_v07kg")]
+transform = Transform3D(-15.521639, 0, -2.4576347, 0, 15.715, 0, 2.4576347, 0, -15.521639, 20.502823, -199.91054, -22.360224)
+
+[node name="cloud2" parent="." unique_id=1203878528 instance=ExtResource("19_v07kg")]
+transform = Transform3D(12.467109, 0, -19.191, 0, 22.885, 0, 19.191, 0, 12.467109, 20.503, -39.71138, -22.36)
 
 [editable path="raceway 7"]

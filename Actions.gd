@@ -6,3 +6,4 @@ signal syncLip
 signal beatOff(beatNumber:int,delta:float)
 signal floatMic(micAmp:float,delta:float)
 signal updateVol(volume:float)
+signal updateProgress(micAmp:float,micProg:float)

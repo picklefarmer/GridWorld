@@ -11,12 +11,12 @@ script = ExtResource("1_ssmm1")
 
 [node name="cherryman" parent="." unique_id=421178101 instance=ExtResource("1_yugaj")]
 
-[node name="Skeleton3D" parent="cherryman/Armature" parent_id_path=PackedInt32Array(421178101, 1252957020) index="0" unique_id=314843518]
+[node name="Skeleton3D" parent="cherryman/Armature" parent_id_path=PackedInt32Array(421178101, 904653738) index="0" unique_id=1953313674]
 script = ExtResource("2_hoj4i")
-multiplier = 0.5
+multiplier = -2.0
 
-[node name="Bone_001" parent="cherryman/Armature/Skeleton3D" index="0" unique_id=1292927764]
-transform = Transform3D(1, 8.100187e-13, 8.347212e-13, -7.9580786e-13, 0.99999994, 4.656613e-10, -8.3899554e-13, 4.656613e-10, 1, -8.653046e-09, 1.097991, 0.26131058)
+[node name="Bone_001" parent="cherryman/Armature/Skeleton3D" index="0" unique_id=582499922]
+transform = Transform3D(0.99999994, 8.6686214e-13, 8.23952e-13, -8.7396756e-13, 1, 0, -8.316958e-13, 0, 1, -1.1419715e-08, 1.0979915, 0.26131034)
 
 [node name="Body" type="SpringBoneSimulator3D" parent="cherryman/Armature/Skeleton3D" index="2" unique_id=1477377538]
 setting_count = 1
@@ -67,26 +67,26 @@ settings/0/individual_config = true
 settings/0/joint_count = 3
 settings/0/joints/0/rotation_axis = 0
 settings/0/joints/0/radius = 0.1
-settings/0/joints/0/stiffness = 4.0
-settings/0/joints/0/drag = 1.0
+settings/0/joints/0/stiffness = 11.0
+settings/0/joints/0/drag = 0.4
 settings/0/joints/0/gravity = 0.0
 settings/0/joints/0/gravity_direction = Vector3(0, -1, 0)
-settings/0/joints/1/rotation_axis = 3
+settings/0/joints/1/rotation_axis = 0
 settings/0/joints/1/radius = 0.1
-settings/0/joints/1/stiffness = 4.0
+settings/0/joints/1/stiffness = 11.0
 settings/0/joints/1/drag = 0.4
 settings/0/joints/1/gravity = 0.0
 settings/0/joints/1/gravity_direction = Vector3(0, -1, 0)
-settings/0/joints/2/rotation_axis = 3
+settings/0/joints/2/rotation_axis = 0
 settings/0/joints/2/radius = 0.1
-settings/0/joints/2/stiffness = 4.0
+settings/0/joints/2/stiffness = 11.0
 settings/0/joints/2/drag = 0.4
 settings/0/joints/2/gravity = 0.0
 settings/0/joints/2/gravity_direction = Vector3(0, -1, 0)
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("2_pscfx")
-multiplier = 150.0
+multiplier = 50.0
 
 [node name="Leg left" type="SpringBoneSimulator3D" parent="cherryman/Armature/Skeleton3D" index="4" unique_id=1031355225]
 setting_count = 1
@@ -120,7 +120,6 @@ settings/0/exclude_collision_count = 0
 script = ExtResource("4_ssmm1")
 multiplier = -300.0
 isLeg = true
-runSpeed = 0.24
 
 [node name="Leg right" type="SpringBoneSimulator3D" parent="cherryman/Armature/Skeleton3D" index="5" unique_id=965340020]
 setting_count = 1
@@ -154,7 +153,6 @@ settings/0/exclude_collision_count = 0
 script = ExtResource("4_ssmm1")
 multiplier = 300.0
 isLeg = true
-runSpeed = 0.24
 
 [node name="Arm left" type="SpringBoneSimulator3D" parent="cherryman/Armature/Skeleton3D" index="6" unique_id=953437130]
 setting_count = 1
@@ -219,5 +217,10 @@ settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("4_ssmm1")
 multiplier = -125.0
+
+[node name="OmniLight3D" type="AreaLight3D" parent="." unique_id=1753207951]
+transform = Transform3D(1, 0, 0, 0, 0.75275856, -0.6582968, 0, 0.6582968, 0.75275856, 0.051749825, 5.939395, 3.8357687)
+light_energy = 15.367
+light_specular = 0.523
 
 [editable path="cherryman"]
