@@ -16,16 +16,19 @@ var beatToggle : bool = true
 @export var MIN_DB: int = 82
 @export var minimum = 0.05
 @export var multiplier : float = 0.25
-var beatWhole: float = 64.0
-var beatHalf: float = 32.0
-var offbeat : float = 6.0
-var off : float  = 0.0
+var beatWhole: float = 4.5
+var beatHalf: float = 3.0
+var offbeat : float = 1.5
+var off : float  = 0.5
 var beatReturn : float = 52.0
-var time: float = 6.0
-
+var time: float = 14.25
+var heldStop : bool = true
+var volumeMag : float = 0.0
 var audioLatency :float = 0.0
 
 func _ready() -> void:
+	Actions.floatMic.connect(beatBonus)
+	Actions.updateVol.connect(updateMag)
 	seconds_per_beat = 60.0 / bpm
 	mic_input_index = AudioServer.get_bus_index("recording")
 	mic_spectrum = AudioServer.get_bus_effect_instance(mic_input_index,0)
@@ -39,60 +42,96 @@ func _physics_process(delta: float) -> void:
 		song_position_in_beats = int(floor(song_position / (seconds_per_beat/4)))
 		currentStep= song_position_in_beats%4
 		currentMeasure =  (song_position_in_beats/4)%4
-		#print(currentMeasure," : ",currentStep)
+		print(currentMeasure," : ",currentStep)
 		if currentStep == section:
-			
+			toggleHeld()
 			#print(song_position_in_beats,"return")
 			return
 		else:
 			section = currentStep	
-			match currentMeasure:
-				0:
-					if currentStep == 0 or currentStep == 3:
-						compare(beatWhole,delta )
-					else:
-						compare(off,delta)
-						#section = currentMeasure
-					#beatToggle = false
-				1:
-					if currentStep == 0 or currentStep == 3:	
-						compare(offbeat,delta)	
-					else:
-						compare(off,delta)
-						#section = currentMeasure
-						#beatToggle = false
-				2:
-					if currentStep == 0 or currentStep == 3:
-						compare(beatHalf,delta)
-					else:
-						compare(off,delta)
-						#section = currentMeasure
-						#beatToggle = false
-				3:
-					if currentStep == 0 or currentStep == 3:
-						compare(offbeat,delta)
-					else:
-						compare(off,delta)
-						#section = currentMeasure
-						#beatToggle = false
-		
-			
-				#beatToggle = !beatToggle
+			#match currentMeasure:
+				#0:
+					#if currentStep == 0 or currentStep == 3:
+						#toggleHeld(beatWhole,delta )
+					#else:
+						#toggleHeld(off,delta)
+				#1:
+					#if currentStep == 0 or currentStep == 3:	
+						#toggleHeld(offbeat,delta)	
+					#else:
+						#toggleHeld(off,delta)
+				#2:
+					#if currentStep == 0 or currentStep == 3:
+						#toggleHeld(beatHalf,delta)
+					#else:
+						#toggleHeld(off,delta)
+				#3:
+					#if currentStep == 0 or currentStep == 3:
+						#toggleHeld(offbeat,delta)
+					#else:
+						#toggleHeld(off,delta)
 
-		#if song_position_in_beats > last_reported_beat:
-			#last_reported_beat = song_position_in_beats
-			##compare(last_reported_beat)
-			#compare(beatReturn, delta)
-		#beatCount = (beatCount +1)%4
+func updateMag(volumeImp:float):
+	volumeMag = volumeImp
+	
+func toggleHeld():
+	
+	if volumeMag > minimum:
+		pass
+	else:
+		heldStop = true
 		
+func assignBonus():
+	match currentMeasure:
+		0:
+			if currentStep == 0 or currentStep == 3:
+				return (beatWhole)
+			else:
+				return (off)
+		1:
+			if currentStep == 0 or currentStep == 3:	
+				return (offbeat)	
+			else:
+				return (off)
+		2:
+			if currentStep == 0 or currentStep == 3:
+				return (beatHalf)
+			else:
+				return (off)
+		3:
+			if currentStep == 0 or currentStep == 3:
+				return (offbeat)
+			else:
+				return (off)
+				
+func beatBonus(volImp,delta):
+	print(heldStop)
+	
+	if heldStop:
+		var bonus : float = assignBonus()
+		var micProg : float = $"../../track1".progress
+		print("beat ","section: ",currentMeasure," : currentStep ",currentStep)
+		if bonus <= 1:
+			Actions.updateProgress.emit(volImp,micProg)
+		Actions.goForward.emit(bonus*volImp,1)
+		heldStop = false
+	
 func compare(beatIndex,delta):
 	
 	var volume_mag = mic_spectrum.get_magnitude_for_frequency_range(350.0,3000.0,AudioEffectSpectrumAnalyzerInstance.MAGNITUDE_AVERAGE).length()
 	volume_mag = clamp((MIN_DB + linear_to_db(volume_mag))/MIN_DB,0,1)
 	#print("fired",beatIndex,volume_mag)
+	print(heldStop)
+	
 	if volume_mag > minimum:
-		#print("beat ","section: ",section," : ",beatIndex," : ", currentMeasure)
-		Actions.beatOff.emit(beatIndex,delta,time)
+		
+		if heldStop:
+			heldStop = false
+			print("beat ","section: ",currentMeasure," : ",beatIndex," : ",currentStep )
+			Actions.beatOff.emit(beatIndex,delta,time)
+			
+	else:
+		heldStop = true
 		
 		
 	

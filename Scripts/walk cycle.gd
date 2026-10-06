@@ -17,7 +17,7 @@ var bone_idx: int
 @export var isLeg : bool = false
 @export var bus : String = "recording"
 @export var track : int = 1
-@export var alreadyUp: float = 1.0
+
 #@export var runSpeed : float = 0.074
 
 var runSpeed : float = 1.0
@@ -43,8 +43,9 @@ func _physics_process(delta: float) -> void:
 		
 		Actions.updateVol.emit(volume_mag)
 	
-	if volume_mag > minimum :
+	if volume_mag > minimum:
 		if canMove:
+			
 			stride *= -1.0
 			var global_force_vector : Vector3 = Vector3(0,0,volume_mag *multiplier*stride)
 			var path3dVector : Vector3 = owner.get_parent().global_transform.basis * global_force_vector
@@ -63,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		canMove = true
 		external_force = Vector3(0,0,0)
-		alreadyUp = 0.0		
+		
 
 	
 func rebus():

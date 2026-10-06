@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bowmg0v2tfxr1"
+path="res://.godot/imported/track 5 bpm 100 - near piano.mp3-7418adad004416249e129fa910a393e1.mp3str"
+
+[deps]
+
+source_file="res://Audio/Past tracks/track 5/track 5 bpm 100 - near piano.mp3"
+dest_files=["res://.godot/imported/track 5 bpm 100 - near piano.mp3-7418adad004416249e129fa910a393e1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

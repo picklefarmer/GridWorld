@@ -12,7 +12,8 @@ var progressNormalized : int
 
 func _ready() -> void:
 	progressNormalized = get_parent().curve.get_baked_length()
-	micSpan = progressNormalized/ 6
+	micSpan = owner.micSpan
+	#progressNormalized/ 6
 	#print(progressNormalized,"progressNormalized")
 	trackNorm = owner.trackMultiplier
 	progress_ratio = 0
@@ -47,11 +48,9 @@ func errorBoost(micAmp:float,micProg:float):
 	
 	var range :float = evalRange(micProg,progress,progressNormalized)
 	if  range <=micSpan:
-		runAmount = runAmount * micAmp +range/6
+		runAmount = runAmount * micAmp +range/8
 		
 		print(trackNumber," error boost: ",micAmp," difference: ",range)
-		
-		
 		
 		
 func evalRange(micProg:float,npcProg:float,progLength:float):

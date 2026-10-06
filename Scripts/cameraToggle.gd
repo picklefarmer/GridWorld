@@ -6,12 +6,15 @@ var ischecked : bool = true
 @export var inIn : float = 120
 @export var inOut : float = 78
 @export var trackMultiplier : float = 1.0
+@export var micSpan : float = 200
 
 @onready var main : Camera3D = $Path3D2/track1/Camera3D
-@onready var top : Camera3D = $BirdsEye
+@export var top : Camera3D 
 @onready var zoomin :Tween
 
-
+func _ready() -> void:
+	if !top:
+		top = $BirdsEye
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("SwapCamera"):

@@ -196,7 +196,7 @@ curve = ExtResource("1_dwhon")
 debug_custom_color = Color(1, 1, 1, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1456456726]
-transform = Transform3D(-0.18159886, -0.9825901, -0.038640723, -0.98319966, 0.18208049, -0.009212111, 0.016086929, 0.036318798, -0.99922466, 66.57474, -19.191137, 0.03372462)
+transform = Transform3D(-0.18159886, -0.9825901, -0.038640734, -0.98319966, 0.18208049, -0.009212113, 0.016086929, 0.036318798, -0.9992249, 66.57474, -19.191137, 0.03372462)
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 1
@@ -223,7 +223,7 @@ PlayableCharacters = Array[PackedScene]([ExtResource("5_wwexb"), ExtResource("2_
 transform = Transform3D(0.99966985, 0, -0.025692403, 2.9802322e-08, 1.0000002, 5.9604645e-08, 0.025692463, 0, 0.99966973, 1.1063194, -0.92308426, 0.25418854)
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=775808202]
-transform = Transform3D(-0.18159968, -0.9825867, -0.038640734, -0.98320407, 0.18207987, -0.009212113, 0.016087, 0.036318675, -0.9992249, 66.57474, -19.191137, 0.03372462)
+transform = Transform3D(-0.18159968, -0.9825867, -0.03864074, -0.98320407, 0.18207987, -0.009212115, 0.016087, 0.036318675, -0.99922514, 66.57474, -19.191137, 0.03372462)
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 3
@@ -248,7 +248,7 @@ max_distance = 418.57
 parameters/looping = true
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1070217300]
-transform = Transform3D(-0.18159968, -0.9825934, -0.038640734, -0.98320407, 0.18208112, -0.009212113, 0.016087, 0.03631892, -0.9992249, 66.57474, -19.191137, 0.03372462)
+transform = Transform3D(-0.18159968, -0.9825934, -0.03864074, -0.98320407, 0.18208112, -0.009212115, 0.016087, 0.03631892, -0.99922514, 66.57474, -19.191137, 0.03372462)
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 2
@@ -275,7 +275,7 @@ max_distance = 418.57
 parameters/looping = true
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1019939291]
-transform = Transform3D(-0.18159968, -0.9825934, -0.038640734, -0.98320407, 0.18208112, -0.009212113, 0.016087, 0.03631892, -0.9992249, 66.57474, -19.191137, 0.03372462)
+transform = Transform3D(-0.18159968, -0.9825934, -0.03864074, -0.98320407, 0.18208112, -0.009212115, 0.016087, 0.03631892, -0.99922514, 66.57474, -19.191137, 0.03372462)
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 4
