@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://82it0w41mm02" path="res://Audio/intro 2.mp3" id="12_qbfiw"]
 [ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="13_a4d2n"]
 [ext_resource type="AudioStream" uid="uid://b1ntlptefsi1o" path="res://Audio/intro 3.mp3" id="13_ups11"]
+[ext_resource type="PackedScene" uid="uid://dok0tv4lxakgx" path="res://Mesh/trail.blend" id="14_a4d2n"]
 [ext_resource type="PackedScene" uid="uid://c47yc10fjtfn0" path="res://Models/cloud.blend" id="17_u8886"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_5bss4"]
@@ -55,7 +56,7 @@ curve = ExtResource("2_xg55g")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1076679970]
-transform = Transform3D(0.15572312, -0.9077699, -0.38938555, -0.9877381, -0.13870895, -0.07161743, 0.011000321, 0.39568597, -0.9184215, -14.100639, -133.03682, 0.7156998)
+transform = Transform3D(0.15572311, -0.9077699, -0.38938555, -0.98773795, -0.13870895, -0.07161743, 0.011000319, 0.39568597, -0.9184215, -14.100639, -133.03682, 0.7156998)
 progress = 3204.1
 use_model_front = true
 script = ExtResource("3_4npvc")
@@ -88,6 +89,10 @@ trackNumber = 3
 [node name="Strawberry" parent="Path3D2/track2" unique_id=1848394695 instance=ExtResource("7_qbfiw")]
 transform = Transform3D(1.0000157, 1.8626451e-09, 0, 0, 0.9999999, -1.7695129e-08, -1.4901161e-08, 3.259629e-09, 1.0000161, -6.192, 0, 0.559)
 
+[node name="trail" parent="Path3D2/track2" unique_id=2053223120 instance=ExtResource("14_a4d2n")]
+transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, -6.193, 3, -0.748)
+visible = false
+
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=540026027]
 transform = Transform3D(0.17377025, -0.9172639, -0.358233, -0.9847405, -0.15837634, -0.07210276, 0.009401254, 0.36522484, -0.9309705, -15.432247, -133.29018, -2.541962)
 progress = 3207.6284
@@ -98,6 +103,10 @@ trackNumber = 2
 [node name="Blueberryman" parent="Path3D2/track3" unique_id=539657863 instance=ExtResource("8_ups11")]
 transform = Transform3D(0.98840487, 8.839803e-09, -0.1518414, -7.450568e-09, 1, 9.718198e-09, 0.1518414, -8.474209e-09, 0.98840487, 5.51, 0, 0.7)
 
+[node name="trail" parent="Path3D2/track3" unique_id=846016056 instance=ExtResource("14_a4d2n")]
+transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 5.767, 3, -0.748)
+visible = false
+
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=479107482]
 transform = Transform3D(0.17377025, -0.9172639, -0.358233, -0.9847405, -0.15837634, -0.07210276, 0.009401254, 0.36522484, -0.9309705, -15.432247, -133.29018, -2.541962)
 progress = 3207.6284
@@ -107,6 +116,10 @@ trackNumber = 4
 
 [node name="Bananaman" parent="Path3D2/track4" unique_id=602892636 instance=ExtResource("5_nl5lx")]
 transform = Transform3D(1, -3.7252903e-09, -1.4901161e-08, 1.8626451e-09, 0.99999994, -1.071021e-08, 0, -2.0954758e-09, 1.0000001, -2.673, 0, -0.043)
+
+[node name="trail" parent="Path3D2/track4" unique_id=465567265 instance=ExtResource("14_a4d2n")]
+transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, -2.683, 3, -0.748)
+visible = false
 
 [node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=1569351624]
 stream = SubResource("AudioStreamMicrophone_5bss4")

@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="11_tfmxy"]
 [ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="12_tsy5s"]
 [ext_resource type="AudioStream" uid="uid://d18tvixgd1ff" path="res://Audio/Past tracks/Track 9/raceway 9 - 90bpm drums.mp3" id="14_55jsm"]
+[ext_resource type="PackedScene" uid="uid://dok0tv4lxakgx" path="res://Mesh/trail.blend" id="14_bgygm"]
 [ext_resource type="Script" uid="uid://ts38hmt4qhiy" path="res://Scripts/BPM.gd" id="15_bgygm"]
 [ext_resource type="AudioStream" uid="uid://x47ecx60nkud" path="res://Audio/Past tracks/Track 9/raceway 9 - 90bpm guitar.mp3" id="16_p2qo6"]
 [ext_resource type="AudioStream" uid="uid://ddfdhmbtt1xsq" path="res://Audio/Past tracks/Track 9/raceway 9 - 90bpm keys.mp3" id="17_ncoeg"]
@@ -92,6 +93,10 @@ trackNumber = 3
 transform = Transform3D(1.0000157, 1.8626451e-09, 0, 0, 0.9999999, -1.7695129e-08, -1.4901161e-08, 3.259629e-09, 1.0000161, -6.192, 0, 0.559)
 minimum = 0.1
 
+[node name="trail" parent="Path3D2/track2" unique_id=1344867179 instance=ExtResource("14_bgygm")]
+transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, -6.193, 3, -0.748)
+visible = false
+
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=2086626794]
 transform = Transform3D(-0.51049143, -0.4862808, 0.7095179, 0.45223594, 0.5494042, 0.70292825, -0.73121154, 0.6792871, -0.060602702, 16.351637, -70.15159, -67.49626)
 progress = 2269.1853
@@ -103,6 +108,10 @@ trackNumber = 2
 transform = Transform3D(0.98840487, 8.839803e-09, -0.1518414, -7.450568e-09, 1, 9.718198e-09, 0.1518414, -8.474209e-09, 0.98840487, 5.51, 0, 0.7)
 minimum = 0.3
 
+[node name="trail" parent="Path3D2/track3" unique_id=1051648188 instance=ExtResource("14_bgygm")]
+transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 5.767, 3, -0.748)
+visible = false
+
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1241858543]
 transform = Transform3D(-0.51049143, -0.4862808, 0.7095179, 0.45223594, 0.5494042, 0.70292825, -0.73121154, 0.6792871, -0.060602702, 16.351637, -70.15159, -67.49626)
 progress = 2269.1853
@@ -113,6 +122,10 @@ trackNumber = 4
 [node name="Bananaman" parent="Path3D2/track4" unique_id=602892636 instance=ExtResource("5_v1win")]
 transform = Transform3D(1, -3.7252903e-09, -1.4901161e-08, 1.8626451e-09, 0.99999994, -1.071021e-08, 0, -2.0954758e-09, 1.0000001, -2.673, 0, -0.043)
 minimum = 0.2
+
+[node name="trail" parent="Path3D2/track4" unique_id=802256972 instance=ExtResource("14_bgygm")]
+transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, -2.683, 3, -0.748)
+visible = false
 
 [node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=793133117]
 stream = SubResource("AudioStreamMicrophone_tfmxy")

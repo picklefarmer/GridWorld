@@ -48,11 +48,19 @@ func errorBoost(micAmp:float,micProg:float):
 	
 	var range :float = evalRange(micProg,progress,progressNormalized)
 	if  range <=micSpan:
-		runAmount = runAmount * micAmp +range/8
-		
+		runAmount = runAmount * micAmp +range/6
+		toggleTrail()
 		print(trackNumber," error boost: ",micAmp," difference: ",range)
 		
-		
+func toggleTrail():
+	var trail = get_child(1)
+	trail.visible = true
+	var tween = create_tween()
+	tween.tween_property(trail, "scale:x", 3.0, 0.25)
+	await get_tree().create_timer(0.5).timeout
+	trail.visible = false
+	trail.scale = Vector3.ONE	
+
 func evalRange(micProg:float,npcProg:float,progLength:float):
 	var difference = abs(micProg - npcProg)
 	difference = posmod(difference,progLength)

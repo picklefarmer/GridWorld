@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bjuaeaj4mjnl0"]
+[gd_scene format=4 uid="uid://bjuaeaj4mjnl0"]
 
 [ext_resource type="PackedScene" uid="uid://b57ruih0bdchd" path="res://Mesh/raceway 7.blend" id="1_ndjim"]
 [ext_resource type="Script" uid="uid://dns0bthdf5pwo" path="res://Scripts/cameraToggle.gd" id="1_v4mcm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://d0y26xbn6k0b1" path="res://Scripts/run.gd" id="3_pknt2"]
 [ext_resource type="Script" uid="uid://dad14bax8o1t2" path="res://Scripts/player_swap.gd" id="4_5db0i"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="5_f220s"]
+[ext_resource type="PackedScene" uid="uid://dt661nepunvho" path="res://Mesh/aura.blend" id="5_l4fvf"]
 [ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="6_v4mcm"]
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="7_hfud4"]
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="8_v07kg"]
@@ -14,12 +15,65 @@
 [ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="11_sl2c3"]
 [ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="12_l4fvf"]
 [ext_resource type="AudioStream" uid="uid://b8ma4rv1c6qvd" path="res://Audio/Past tracks/Track 7/track 7 - guitar 162 bpm.mp3" id="13_f220s"]
+[ext_resource type="PackedScene" uid="uid://dok0tv4lxakgx" path="res://Mesh/trail.blend" id="14_f4scw"]
 [ext_resource type="Script" uid="uid://ts38hmt4qhiy" path="res://Scripts/BPM.gd" id="14_v4mcm"]
 [ext_resource type="AudioStream" uid="uid://crqindiuol0ul" path="res://Audio/Past tracks/Track 7/track 7 - piano 162 bpm.mp3" id="15_hfud4"]
+[ext_resource type="Texture2D" uid="uid://daa32xqckiewn" path="res://Mesh/textures/aura.png" id="15_qo8ij"]
 [ext_resource type="AudioStream" uid="uid://337ru3yu1hfw" path="res://Audio/Past tracks/Track 7/track 7 - drums162 bpm.mp3" id="16_v07kg"]
 [ext_resource type="Material" uid="uid://b0v4bw2kla8lx" path="res://Materials/Sky.tres" id="18_hfud4"]
 [ext_resource type="Script" uid="uid://c88xpxg4qepnh" path="res://Scripts/followPlayerCamera.gd" id="19_a8j7u"]
 [ext_resource type="PackedScene" uid="uid://c47yc10fjtfn0" path="res://Models/cloud.blend" id="19_v07kg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdmpq"]
+resource_name = "Material.001"
+transparency = 4
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("15_qo8ij")
+roughness = 0.5
+emission_enabled = true
+emission = Color(2.9001396, 11.112431, 16.634628, 1)
+emission_energy_multiplier = 1.47
+emission_operator = 1
+emission_texture = ExtResource("15_qo8ij")
+billboard_mode = 1
+billboard_keep_scale = true
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d7n7f"]
+_surfaces = [{
+"aabb": AABB(-1.2071068, 0, -1.2071068, 2.4142137, 1e-05, 2.4142137),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAACAAUABgAAAAQABgAHAAAABwADAAAABwAIAAMA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("/38AAP9/AACB2gAAfSUAAP//AAD/fwAA/38AAAAAAAD/fwAA//8AAIHaAACB2gAAfSUAAIHaAAAAAAAA/38AAH0lAAB9JQAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_l4fvf"]
+resource_name = "aura_Plane_001"
+_surfaces = [{
+"aabb": AABB(-1.2071068, 0, -1.2071068, 2.4142137, 1e-05, 2.4142137),
+"attribute_data": PackedByteArray("/3//f/1KBgABtQYABgD9Svj/AbX4//1KAbX4//1K+P8GAAG1"),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAACAAUABgAAAAQABgAHAAAABwADAAAABwAIAAMA"),
+"material": SubResource("StandardMaterial3D_xdmpq"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("/38AAP9/yMyB2gAAfSXIzP//AAD/f8jM/38AAAAAyMz/fwAA///IzIHaAACB2sjMfSUAAIHayMwAAAAA/3/IzH0lAAB9JcjMyLaapMi2mqTItpqkyLaapMi2mqTItpqkyLaapMi2mqTItpqk")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_d7n7f")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sl2c3"]
+load_path = "res://.godot/imported/aura.png-d26cf7577c3a35627a7e9decca1c992c.s3tc.ctex"
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_a8j7u"]
 
@@ -49,7 +103,7 @@ curve = ExtResource("2_kerbq")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=903517246]
-transform = Transform3D(0.05763824, -0.005933567, 0.99876064, -0.0015676984, -0.99982774, -0.0058564157, 0.9982255, -0.0012276064, -0.057678327, 0.5165692, -24.014503, 6.50455)
+transform = Transform3D(0.057638213, -0.005933567, 0.9987616, -0.0015676976, -0.99982774, -0.0058564213, 0.99822503, -0.0012276064, -0.057678383, 0.5165692, -24.014503, 6.50455)
 progress = 465.48233
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -66,6 +120,13 @@ visible = false
 light_energy = 15.367
 light_specular = 0.523
 
+[node name="aura" parent="Path3D2/track1" unique_id=714870678 instance=ExtResource("5_l4fvf")]
+transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000004, 1.0967164, 3.1612701, -0.044510514)
+
+[node name="Plane_001" parent="Path3D2/track1/aura" index="0" unique_id=514661849]
+transform = Transform3D(4.261795, 0, 0, 0, 4.261795, 0, 0, 0, 4.261795, 0, 0, 0)
+mesh = SubResource("ArrayMesh_l4fvf")
+
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1344751564]
 script = ExtResource("4_5db0i")
 PlayableCharacters = Array[PackedScene]([ExtResource("5_f220s"), ExtResource("6_v4mcm"), ExtResource("7_hfud4"), ExtResource("8_v07kg"), ExtResource("9_a8j7u"), ExtResource("10_f4scw"), ExtResource("11_sl2c3"), ExtResource("12_l4fvf")])
@@ -73,8 +134,17 @@ PlayableCharacters = Array[PackedScene]([ExtResource("5_f220s"), ExtResource("6_
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("6_v4mcm")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1.0000004, 0, 0, 0, 0.9999999, 1.1060009, 7.6293945e-06, 0.2539959)
 
+[node name="Sprite3D" type="Sprite3D" parent="Path3D2/track1" unique_id=1718144804]
+transform = Transform3D(0.72384644, -0.68986, 0.011838343, 0.6896706, 0.7229365, -0.04144671, 0.02003403, 0.038165603, 0.99907094, 1.269886, 3.665863, -0.05150619)
+visible = false
+billboard = 1
+double_sided = false
+no_depth_test = true
+texture_filter = 1
+texture = SubResource("CompressedTexture2D_sl2c3")
+
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=40535349]
-transform = Transform3D(0.057638403, -0.005933552, 0.99875015, -0.0015677029, -0.99982524, -0.0058563543, 0.9982284, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
+transform = Transform3D(0.057638377, -0.005933552, 0.99875015, -0.0015677022, -0.99982524, -0.0058563543, 0.9982279, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
 progress = 465.48233
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -84,8 +154,12 @@ trackNumber = 3
 transform = Transform3D(1.0000157, 1.8626451e-09, 0, 0, 0.9999999, -1.7695129e-08, -1.4901161e-08, 3.259629e-09, 1.0000161, -6.192, 0, 0.559)
 minimum = 0.1
 
+[node name="trail" parent="Path3D2/track2" unique_id=1344867179 instance=ExtResource("14_f4scw")]
+transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, -6.193, 3, -0.748)
+visible = false
+
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1702470826]
-transform = Transform3D(0.057638403, -0.005933552, 0.99875015, -0.0015677029, -0.99982524, -0.0058563543, 0.9982284, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
+transform = Transform3D(0.057638377, -0.005933552, 0.99875015, -0.0015677022, -0.99982524, -0.0058563543, 0.9982279, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
 progress = 465.48233
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -95,8 +169,12 @@ trackNumber = 2
 transform = Transform3D(0.98840487, 8.839803e-09, -0.1518414, -7.450568e-09, 1, 9.718198e-09, 0.1518414, -8.474209e-09, 0.98840487, 5.51, 0, 0.7)
 minimum = 0.4
 
+[node name="trail" parent="Path3D2/track3" unique_id=1197473139 instance=ExtResource("14_f4scw")]
+transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 5.767, 3, -0.748)
+visible = false
+
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=979988124]
-transform = Transform3D(0.057638403, -0.005933552, 0.99875015, -0.0015677029, -0.99982524, -0.0058563543, 0.9982284, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
+transform = Transform3D(0.057638377, -0.005933552, 0.99875015, -0.0015677022, -0.99982524, -0.0058563543, 0.9982279, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
 progress = 465.48233
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -105,6 +183,10 @@ trackNumber = 4
 [node name="Bananaman" parent="Path3D2/track4" unique_id=602892636 instance=ExtResource("5_f220s")]
 transform = Transform3D(1, -3.7252903e-09, -1.4901161e-08, 1.8626451e-09, 0.99999994, -1.071021e-08, 0, -2.0954758e-09, 1.0000001, -2.673, 0, -0.043)
 minimum = 0.1
+
+[node name="trail" parent="Path3D2/track4" unique_id=1878241711 instance=ExtResource("14_f4scw")]
+transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, -2.683, 3, -0.748)
+visible = false
 
 [node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=919770856]
 stream = SubResource("AudioStreamMicrophone_a8j7u")
@@ -167,3 +249,4 @@ transform = Transform3D(-15.521639, 0, -2.4576347, 0, 15.715, 0, 2.4576347, 0, -
 transform = Transform3D(12.467109, 0, -19.191, 0, 22.885, 0, 19.191, 0, 12.467109, 20.503, -39.71138, -22.36)
 
 [editable path="raceway 7"]
+[editable path="Path3D2/track1/aura"]
