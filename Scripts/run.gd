@@ -7,7 +7,7 @@ var evalTime : float = 11.0
 var trackNorm : float = 1.0
 var micProgress: float = 0.0
 var micSpan : float = 200.0
-
+@export var runSpeed: float = 1.0
 var progressNormalized : int 
 
 func _ready() -> void:
@@ -19,7 +19,10 @@ func _ready() -> void:
 	progress_ratio = 0
 	Actions.goForward.connect(running)
 	if trackNumber != 1:
+		runSpeed = get_child(0).runSpeed
 		Actions.updateProgress.connect(errorBoost)
+	else:
+		trackNorm = runSpeed
 	#if trackNumber == 1:
 		#Actions.beatOff.connect(modRun)
 	#else:
@@ -48,18 +51,19 @@ func errorBoost(micAmp:float,micProg:float):
 	
 	var range :float = evalRange(micProg,progress,progressNormalized)
 	if  range <=micSpan:
-		runAmount = runAmount * micAmp +range/6
+		runAmount = micAmp * range/4
 		toggleTrail()
 		print(trackNumber," error boost: ",micAmp," difference: ",range)
 		
 func toggleTrail():
 	var trail = get_child(1)
+	trail.scale = Vector3(0.25,1.0,1.0)
 	trail.visible = true
 	var tween = create_tween()
-	tween.tween_property(trail, "scale:x", 3.0, 0.25)
+	tween.tween_property(trail, "scale:x", 1.0, 0.5)
 	await get_tree().create_timer(0.5).timeout
 	trail.visible = false
-	trail.scale = Vector3.ONE	
+	
 
 func evalRange(micProg:float,npcProg:float,progLength:float):
 	var difference = abs(micProg - npcProg)
@@ -68,7 +72,13 @@ func evalRange(micProg:float,npcProg:float,progLength:float):
 		difference = progLength - difference
 	return difference
 		
-	
+func evalRangeFull(micProg:float,npcProg:float,progLength:float):
+	var difference = abs(micProg - npcProg)
+	difference = posmod(difference,progLength)
+	if difference > progLength/2.0:
+		difference = progLength - difference
+	return difference
+			
 func modRun(beatInt:float,delta:float,time:float):
 	
 	

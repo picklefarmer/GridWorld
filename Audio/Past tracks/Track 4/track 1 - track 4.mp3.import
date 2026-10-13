@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsrd68lhptraq"
+path="res://.godot/imported/track 1 - track 4.mp3-ad2145bd5085bec6a2de88812ed81ea9.mp3str"
+
+[deps]
+
+source_file="res://Audio/Past tracks/Track 4/track 1 - track 4.mp3"
+dest_files=["res://.godot/imported/track 1 - track 4.mp3-ad2145bd5085bec6a2de88812ed81ea9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

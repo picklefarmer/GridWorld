@@ -9,14 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="6_krvlw"]
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="7_qbfiw"]
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="8_ups11"]
-[ext_resource type="AudioStream" uid="uid://cydtq3axnanx4" path="res://Audio/intro 1.mp3" id="10_krvlw"]
+[ext_resource type="AudioStream" uid="uid://cydtq3axnanx4" path="res://Audio/Past tracks/Track 6/Raceway 6 - guitar.mp3" id="10_krvlw"]
 [ext_resource type="PackedScene" uid="uid://brot8tvj4oaou" path="res://Models/pearman.tscn" id="10_u8886"]
 [ext_resource type="PackedScene" uid="uid://4disebtdqhdv" path="res://Models/cherryman.tscn" id="11_5bss4"]
 [ext_resource type="Script" uid="uid://ts38hmt4qhiy" path="res://Scripts/BPM.gd" id="11_ups11"]
 [ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="12_a4d2n"]
-[ext_resource type="AudioStream" uid="uid://82it0w41mm02" path="res://Audio/intro 2.mp3" id="12_qbfiw"]
+[ext_resource type="AudioStream" uid="uid://82it0w41mm02" path="res://Audio/Past tracks/Track 6/Raceway 6 - bass.mp3" id="12_qbfiw"]
 [ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="13_a4d2n"]
-[ext_resource type="AudioStream" uid="uid://b1ntlptefsi1o" path="res://Audio/intro 3.mp3" id="13_ups11"]
+[ext_resource type="AudioStream" uid="uid://b1ntlptefsi1o" path="res://Audio/Past tracks/Track 6/Raceway 6 - piano.mp3" id="13_ups11"]
 [ext_resource type="PackedScene" uid="uid://dok0tv4lxakgx" path="res://Mesh/trail.blend" id="14_a4d2n"]
 [ext_resource type="PackedScene" uid="uid://c47yc10fjtfn0" path="res://Models/cloud.blend" id="17_u8886"]
 
@@ -41,12 +41,13 @@ ambient_light_color = Color(0.09922416, 0.3832445, 0.5481852, 1)
 ambient_light_sky_contribution = 0.31
 ambient_light_energy = 1.5
 
-[node name="Raceway 6" type="Node3D" unique_id=660056602]
+[node name="Raceway 6" type="Node3D" unique_id=660056602 node_paths=PackedStringArray("top")]
 script = ExtResource("1_qbfiw")
 outIn = 80.0
 outOut = 30.0
 inIn = 100.0
 inOut = 40.0
+top = NodePath("Path3D2/track3/followPlayer")
 
 [node name="raceway 6" parent="." unique_id=2046131668 instance=ExtResource("1_6ivuv")]
 
@@ -56,11 +57,12 @@ curve = ExtResource("2_xg55g")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1076679970]
-transform = Transform3D(0.15572311, -0.9077699, -0.38938555, -0.98773795, -0.13870895, -0.07161743, 0.011000319, 0.39568597, -0.9184215, -14.100639, -133.03682, 0.7156998)
-progress = 3204.1
+transform = Transform3D(0.17377006, -0.91726786, -0.35823524, -0.9847394, -0.158377, -0.07210321, 0.009401243, 0.3652264, -0.9309763, -15.432247, -133.29018, -2.541962)
+progress = 3207.6284
 use_model_front = true
 script = ExtResource("3_4npvc")
 trackNumber = 1
+runSpeed = 2.0
 
 [node name="Camera3D" type="Camera3D" parent="Path3D2/track1" unique_id=201225700]
 transform = Transform3D(0.82249814, 0.01674759, 0.56854796, 0.039979775, 0.99544483, -0.087156676, -0.5673915, 0.094418965, 0.8180332, 5.449, 5.348, 8.994)
@@ -84,13 +86,15 @@ transform = Transform3D(0.17377025, -0.9172639, -0.358233, -0.9847405, -0.158376
 progress = 3207.6284
 use_model_front = true
 script = ExtResource("3_4npvc")
-trackNumber = 3
+trackNumber = 2
 
 [node name="Strawberry" parent="Path3D2/track2" unique_id=1848394695 instance=ExtResource("7_qbfiw")]
 transform = Transform3D(1.0000157, 1.8626451e-09, 0, 0, 0.9999999, -1.7695129e-08, -1.4901161e-08, 3.259629e-09, 1.0000161, -6.192, 0, 0.559)
+minimum = 0.39
+runSpeed = 2.0
 
 [node name="trail" parent="Path3D2/track2" unique_id=2053223120 instance=ExtResource("14_a4d2n")]
-transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, -6.193, 3, -0.748)
+transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, -6.193, 3, -0.3971684)
 visible = false
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=540026027]
@@ -98,14 +102,19 @@ transform = Transform3D(0.17377025, -0.9172639, -0.358233, -0.9847405, -0.158376
 progress = 3207.6284
 use_model_front = true
 script = ExtResource("3_4npvc")
-trackNumber = 2
+trackNumber = 3
 
 [node name="Blueberryman" parent="Path3D2/track3" unique_id=539657863 instance=ExtResource("8_ups11")]
 transform = Transform3D(0.98840487, 8.839803e-09, -0.1518414, -7.450568e-09, 1, 9.718198e-09, 0.1518414, -8.474209e-09, 0.98840487, 5.51, 0, 0.7)
+minimum = 0.3
 
 [node name="trail" parent="Path3D2/track3" unique_id=846016056 instance=ExtResource("14_a4d2n")]
 transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 5.767, 3, -0.748)
 visible = false
+
+[node name="followPlayer" type="Camera3D" parent="Path3D2/track3" unique_id=979427677]
+transform = Transform3D(0.7975483, -0.6032566, 1.2014061e-07, -1.6391277e-07, -2.9802322e-08, 1.0000774, -0.60318494, -0.7974535, -1.1920929e-07, 5.7673683, 33.86185, 0.42321968)
+fov = 84.6
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=479107482]
 transform = Transform3D(0.17377025, -0.9172639, -0.358233, -0.9847405, -0.15837634, -0.07210276, 0.009401254, 0.36522484, -0.9309705, -15.432247, -133.29018, -2.541962)
@@ -128,21 +137,21 @@ autoplay = true
 bus = &"recording"
 
 [node name="Track 2 streamer" type="AudioStreamPlayer" parent="." unique_id=763103254]
-stream = ExtResource("10_krvlw")
+stream = ExtResource("13_ups11")
+volume_db = 6.607
 autoplay = true
 bus = &"track2"
 parameters/looping = true
 script = ExtResource("11_ups11")
 
 [node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=1885430834]
-stream = ExtResource("12_qbfiw")
+stream = ExtResource("10_krvlw")
 autoplay = true
 bus = &"track3"
 parameters/looping = true
 
 [node name="Track 4 streamer" type="AudioStreamPlayer" parent="." unique_id=1224388948]
-stream = ExtResource("13_ups11")
-volume_db = 10.472
+stream = ExtResource("12_qbfiw")
 autoplay = true
 bus = &"track4"
 parameters/looping = true

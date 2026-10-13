@@ -28,6 +28,8 @@ func _ready() -> void:
 	skeleton = get_parent() as Skeleton3D
 	bone_idx = skeleton.find_bone(bone_name)
 	minimum = owner.minimum
+	runSpeed = owner.runSpeed
+	
 	if !owner.active:
 		record_bus_index = AudioServer.get_bus_index(bus)
 		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
@@ -57,7 +59,7 @@ func _physics_process(delta: float) -> void:
 			if isLeg : 
 				if track == 1:
 					
-					Actions.floatMic.emit(volume_mag*50,delta)
+					Actions.floatMic.emit(volume_mag*50*runSpeed,delta)
 				else:
 					Actions.goForward.emit((volume_mag*50)*runSpeed,track)
 			canMove = false

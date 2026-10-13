@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var PlayableCharacters : Array[PackedScene] = []
+var runSpeed : float = 1.0
 
 var player : Node3D
 var loadedPlayers : Array = []
@@ -10,6 +11,7 @@ func _ready() -> void:
 	#for character in PlayableCharacters:
 		#loadedPlayers.append(character.instantiate())
 	player = get_child(0)
+	
 	
 	
 func _process(delta: float) -> void:
@@ -30,6 +32,8 @@ func swap(direction:int):
 	newPlayer.transform = player.transform
 	player.queue_free()
 	player = newPlayer
+	
+	
 	
 	playerInd = posmod(playerInd+direction, PlayableCharacters.size())
 	

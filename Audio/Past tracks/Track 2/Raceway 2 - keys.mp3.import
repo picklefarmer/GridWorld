@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgy1t08e5lvaq"
+path="res://.godot/imported/Raceway 2 - keys.mp3-af92d0aab4a67c42352d3e53bbbbc343.mp3str"
+
+[deps]
+
+source_file="res://Audio/Past tracks/Track 2/Raceway 2 - keys.mp3"
+dest_files=["res://.godot/imported/Raceway 2 - keys.mp3-af92d0aab4a67c42352d3e53bbbbc343.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

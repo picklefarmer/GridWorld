@@ -19,9 +19,9 @@
 [ext_resource type="Script" uid="uid://ts38hmt4qhiy" path="res://Scripts/BPM.gd" id="13_uwv7w"]
 [ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="14_afnnl"]
 [ext_resource type="PackedScene" uid="uid://dok0tv4lxakgx" path="res://Mesh/trail.blend" id="15_eieg8"]
-[ext_resource type="AudioStream" uid="uid://dsrd68lhptraq" path="res://Audio/Past tracks/track 1 - track 4.mp3" id="15_so25e"]
-[ext_resource type="AudioStream" uid="uid://ds3vhfqsbm6rf" path="res://Audio/Past tracks/track 2 - track 4.mp3" id="17_afnnl"]
-[ext_resource type="AudioStream" uid="uid://beg315go6ndkj" path="res://Audio/Past tracks/track 3 -track 4.mp3" id="18_eieg8"]
+[ext_resource type="AudioStream" uid="uid://dsrd68lhptraq" path="res://Audio/Past tracks/Track 4/track 1 - track 4.mp3" id="15_so25e"]
+[ext_resource type="AudioStream" uid="uid://ds3vhfqsbm6rf" path="res://Audio/Past tracks/Track 4/track 2 - track 4.mp3" id="17_afnnl"]
+[ext_resource type="AudioStream" uid="uid://beg315go6ndkj" path="res://Audio/Past tracks/Track 4/track 3 -track 4.mp3" id="18_eieg8"]
 
 [sub_resource type="Curve" id="Curve_sdpiv"]
 _data = [Vector2(0.098919265, 0), 0.0, 0.17114195, 0, 0, Vector2(0.4142403, 0.12065345), 0.8054654, 0.8054654, 0, 0, Vector2(0.6288621, 0.30478907), 1.0292553, 1.0292553, 0, 0, Vector2(0.8841704, 0.81066704), 0.24449319, 0.0, 0, 0]
@@ -204,12 +204,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_77j3j")
 
-[node name="True Mobius" type="Node3D" unique_id=248817868]
+[node name="True Mobius" type="Node3D" unique_id=248817868 node_paths=PackedStringArray("top")]
 script = ExtResource("1_fh4fj")
 outIn = 78.0
 outOut = 30.575
 inIn = 93.0
 inOut = 20.0
+top = NodePath("Path3D2/track4/followPlayer")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=242663044]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -233,8 +234,7 @@ curve = ExtResource("2_xjxiu")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1273837031]
-transform = Transform3D(0.10608561, -0.025495924, 0.99410206, -0.9876407, -0.11674711, 0.10246347, 0.11342689, -0.99270505, -0.03758202, 5.16429, -22.365536, -100.06714)
-progress = 1170.4413
+transform = Transform3D(0.0043503833, -0.050852, 0.99877137, -0.97442365, -0.2236338, -0.007143992, 0.2236845, -0.97321385, -0.050545808, 10.341484, -21.762453, -100.19619)
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 1
@@ -257,36 +257,34 @@ PlayableCharacters = Array[PackedScene]([ExtResource("7_xjy4r"), ExtResource("4_
 transform = Transform3D(0.99966985, 7.450581e-09, -0.025692385, 7.450581e-09, 1.0000004, 0, 0.025692455, 2.9802322e-08, 0.9996698, 1.1060009, 7.6293945e-06, 0.2539959)
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=85182908]
-transform = Transform3D(0.06998297, -0.43911096, 0.89574087, -0.9944953, 0.036894396, 0.09583793, -0.07511889, -0.897532, -0.43429512, -29.682558, -25.326977, -91.61023)
-progress = 1134.1913
-use_model_front = true
-script = ExtResource("3_0a17n")
-trackNumber = 3
-
-[node name="Strawberry" parent="Path3D2/track2" unique_id=1848394695 instance=ExtResource("5_po5p7")]
-transform = Transform3D(1.0000157, 1.8626451e-09, 0, 0, 0.9999999, -1.7695129e-08, -1.4901161e-08, 3.259629e-09, 1.0000161, -6.192, 0, 0.559)
-
-[node name="trail" parent="Path3D2/track2" unique_id=1344867179 instance=ExtResource("15_eieg8")]
-transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, -6.193, 3, -0.748)
-visible = false
-
-[node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1360567713]
-transform = Transform3D(0.06998297, -0.43911096, 0.89574087, -0.9944953, 0.036894396, 0.09583793, -0.07511889, -0.897532, -0.43429512, -29.682558, -25.326977, -91.61023)
-progress = 1134.1913
+transform = Transform3D(0.004350397, -0.050852004, 0.9987708, -0.9744266, -0.22363381, -0.007143988, 0.2236852, -0.9732139, -0.050545778, 10.341484, -21.762453, -100.19619)
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 2
 
+[node name="Strawberry" parent="Path3D2/track2" unique_id=1848394695 instance=ExtResource("5_po5p7")]
+transform = Transform3D(1.0000157, 1.8626451e-09, 0, 0, 0.9999999, -1.7695129e-08, -1.4901161e-08, 3.259629e-09, 1.0000161, -6.192, 0, 0.559)
+minimum = 0.4
+
+[node name="trail" parent="Path3D2/track2" unique_id=1344867179 instance=ExtResource("15_eieg8")]
+transform = Transform3D(-5.3085387e-08, -2.9802322e-08, 1, 0, 1, 0, -1.215, 0, -4.284084e-08, -6.1919117, 2.9873047, -0.49881458)
+
+[node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1360567713]
+transform = Transform3D(0.004350397, -0.050852004, 0.9987708, -0.9744266, -0.22363381, -0.007143988, 0.2236852, -0.9732139, -0.050545778, 10.341484, -21.762453, -100.19619)
+use_model_front = true
+script = ExtResource("3_0a17n")
+trackNumber = 3
+
 [node name="Blueberryman" parent="Path3D2/track3" unique_id=539657863 instance=ExtResource("6_ubsab")]
 transform = Transform3D(0.98840487, 8.839803e-09, -0.1518414, -7.450568e-09, 1, 9.718198e-09, 0.1518414, -8.474209e-09, 0.98840487, 5.51, 0, 0.7)
+minimum = 0.3
 
 [node name="trail" parent="Path3D2/track3" unique_id=1220134392 instance=ExtResource("15_eieg8")]
 transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 5.767, 3, -0.748)
 visible = false
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1820980794]
-transform = Transform3D(0.06998297, -0.43911096, 0.89574087, -0.9944953, 0.036894396, 0.09583793, -0.07511889, -0.897532, -0.43429512, -29.682558, -25.326977, -91.61023)
-progress = 1134.1913
+transform = Transform3D(0.004350397, -0.050852004, 0.9987708, -0.9744266, -0.22363381, -0.007143988, 0.2236852, -0.9732139, -0.050545778, 10.341484, -21.762453, -100.19619)
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 4
@@ -295,8 +293,13 @@ trackNumber = 4
 transform = Transform3D(1, -3.7252903e-09, -1.4901161e-08, 1.8626451e-09, 0.99999994, -1.071021e-08, 0, -2.0954758e-09, 1.0000001, -2.673, 0, -0.043)
 
 [node name="trail" parent="Path3D2/track4" unique_id=377960593 instance=ExtResource("15_eieg8")]
-transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, -2.683, 3, -0.748)
+transform = Transform3D(-5.3085387e-08, -2.9802322e-08, 1, 0, 1, 0, -1.215, 0, -4.284084e-08, -2.6830006, 2.9999924, -0.74800014)
 visible = false
+
+[node name="followPlayer" type="Camera3D" parent="Path3D2/track4" unique_id=1117799396]
+transform = Transform3D(0.9763064, -0.10744484, 0.1889983, -0.12755632, 0.4209389, 0.89821863, -0.17599139, -0.90066403, 0.39709237, 19.715452, 95.64949, 42.069695)
+cull_mask = 1048567
+fov = 84.6
 
 [node name="starfield 2" parent="." unique_id=1801712888 instance=ExtResource("8_ckf1d")]
 
@@ -308,6 +311,7 @@ bus = &"recording"
 
 [node name="Track 2 streamer" type="AudioStreamPlayer" parent="." unique_id=2079140832]
 stream = ExtResource("15_so25e")
+volume_db = 1.0
 autoplay = true
 bus = &"track2"
 parameters/looping = true
@@ -315,6 +319,7 @@ script = ExtResource("13_uwv7w")
 
 [node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=1126162328]
 stream = ExtResource("17_afnnl")
+volume_db = 1.0
 autoplay = true
 bus = &"track3"
 parameters/looping = true
@@ -330,15 +335,18 @@ transform = Transform3D(13.9, 0, 0, 0, 13.9, 0, 0, 0, 13.9, 54.871952, -18.10476
 
 [node name="crystal_002" parent="crystal" index="0" unique_id=299906561]
 transform = Transform3D(0.9901012, -0.0919604, -0.10603211, -0.0985354, 0.08256066, -0.99170285, 0.09995148, 0.9923342, 0.07268202, -0.3743887, 0, 0)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 
 [node name="crystal_003" type="MeshInstance3D" parent="crystal" unique_id=800999961]
 transform = Transform3D(-0.07726529, -0.5495476, 0.0072367117, 0.007949347, -0.008424589, -0.55487907, 0.54953796, -0.0771449, 0.009044079, -3.2529197, 0.18440676, 1.3888298)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_004" type="MeshInstance3D" parent="crystal" unique_id=1325858319]
 transform = Transform3D(-0.40874508, -0.28563035, 0.2436548, -0.22813103, -0.09710743, -0.49653935, 0.29817575, -0.46584362, -0.045889977, -6.220335, -0.6423638, 0.95307577)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
@@ -346,20 +354,24 @@ skeleton = NodePath("")
 transform = Transform3D(-3.5905097, -5.7395387, 12.139849, 0, 12.566323, 5.9411697, -13.428263, 1.5346638, -3.246008, -0.27183914, -19.394318, 26.33641)
 
 [node name="crystal_002" parent="crystal2" index="0" unique_id=299906561]
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 
 [node name="crystal_003" type="MeshInstance3D" parent="crystal2" unique_id=1860487667]
 transform = Transform3D(-0.038823947, -0.5188657, -0.19312254, 0.08128423, 0.18615678, -0.5164915, 0.54764104, -0.064414605, 0.06296998, 1.1219616, 0.8156761, -2.4517066)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_004" type="MeshInstance3D" parent="crystal2" unique_id=863310487]
 transform = Transform3D(-0.47429687, -0.2351734, -0.16661689, 0.037693057, 0.2674756, -0.48483056, 0.2857393, -0.4256472, -0.2126097, 3.3034296, 0.9144794, -1.8824537)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_005" type="MeshInstance3D" parent="crystal2" unique_id=1082940839]
 transform = Transform3D(-0.364178, 0.18954864, -0.15825844, 0.21636935, 0.109063834, -0.36727288, -0.118990496, -0.38180673, -0.18347989, 4.581402, -0.18264067, 1.0324464)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
@@ -367,30 +379,36 @@ skeleton = NodePath("")
 transform = Transform3D(-12.119198, 1.534685, -6.631725, 1.2033563, 13.811861, 0.9971976, 6.699774, 0.29531717, -12.175213, -19.914906, -17.984814, -29.279509)
 
 [node name="crystal_002" parent="crystal3" index="0" unique_id=299906561]
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 
 [node name="crystal_003" type="MeshInstance3D" parent="crystal3" unique_id=492291674]
 transform = Transform3D(-0.067847624, -0.5269373, -0.1604951, 0.010485097, 0.16044326, -0.53119934, 0.55073744, -0.06797017, -0.009658895, 0.38166976, -0.33256483, 0.91585827)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_004" type="MeshInstance3D" parent="crystal3" unique_id=1986707424]
 transform = Transform3D(-0.45571846, -0.25657487, -0.1857814, 0.19733898, 0.02467347, -0.518144, 0.24779578, -0.4915133, 0.07096943, -2.2233233, 0.71593285, -0.5251788)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_005" type="MeshInstance3D" parent="crystal3" unique_id=1997972615]
 transform = Transform3D(0.19734085, -0.39256802, -0.023387501, 0.070037454, 0.060831286, -0.4301097, 0.38697726, 0.18918213, 0.08977038, -3.077199, 0.43922132, -0.9393014)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_006" type="MeshInstance3D" parent="crystal3" unique_id=469164149]
 transform = Transform3D(-0.35967112, -0.22773321, 0.11123955, -0.17138712, 0.07626853, -0.39800692, 0.18671665, -0.36867422, -0.15105028, -3.0977807, 0.20174703, 0.061122358)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_007" type="MeshInstance3D" parent="crystal3" unique_id=848531479]
 transform = Transform3D(-0.60473573, 0.40705195, 0.093959205, -0.031140417, 0.12092875, -0.72431445, -0.4165932, -0.59992486, -0.082250565, -3.5229278, 0.82862383, -3.5795693)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
@@ -399,20 +417,24 @@ transform = Transform3D(16.085, 0, 0, 0, 16.085, 0, 0, 0, 16.085, 214.1911, -12.
 
 [node name="crystal_002" parent="crystal4" index="0" unique_id=299906561]
 transform = Transform3D(0.9901012, -0.0919604, -0.10603211, -0.0985354, 0.08256066, -0.99170285, 0.09995148, 0.9923342, 0.07268202, -5.198023, 0, 6.2676063)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 
 [node name="crystal_003" type="MeshInstance3D" parent="crystal4" unique_id=713187885]
 transform = Transform3D(-0.07726529, -0.5495476, 0.0072367117, 0.007949347, -0.008424589, -0.55487907, 0.54953796, -0.0771449, 0.009044079, -3.2529197, 0.18440676, 1.3888298)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_004" type="MeshInstance3D" parent="crystal4" unique_id=1155640625]
 transform = Transform3D(-0.54577065, 0.054245193, 0.08495304, -0.100315444, -0.24676281, -0.48689812, -0.0098172175, -0.4941562, 0.252464, -8.827093, -2.163465, -5.5380006)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_005" type="MeshInstance3D" parent="crystal4" unique_id=479954610]
 transform = Transform3D(-0.3343459, 0.033231195, 0.05204335, -0.058829296, -0.258493, -0.21288611, 0.01875994, -0.21835078, 0.2599442, -12.954444, -2.163465, -5.648016)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
@@ -421,20 +443,24 @@ transform = Transform3D(-4.154917, -6.6417613, 14.048162, 0, 14.5416765, 6.87508
 
 [node name="crystal_002" parent="crystal5" index="0" unique_id=299906561]
 transform = Transform3D(-0.9931551, -0.116001755, -0.013654254, -0.0877348, 0.8180526, -0.5684128, 0.07710673, -0.56332386, -0.82263047, -2.4296918, -0.8135991, 1.7208662)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 
 [node name="crystal_003" type="MeshInstance3D" parent="crystal5" unique_id=2103059816]
 transform = Transform3D(-0.071963765, 0.5367554, 0.12140871, 0.47310296, 0.122886896, -0.26286384, -0.28110495, 0.069409244, -0.47348446, -3.9765124, -1.8058729, 3.0931997)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_004" type="MeshInstance3D" parent="crystal5" unique_id=599656060]
 transform = Transform3D(0.40293905, 0.34731075, 0.15824229, 0.2900615, -0.12911615, -0.4552123, -0.24805164, 0.4131943, -0.27525604, -2.7017097, -2.0768347, 4.444552)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_005" type="MeshInstance3D" parent="crystal5" unique_id=212404429]
 transform = Transform3D(0.4013519, -0.09075535, 0.15582095, 0.08489789, -0.24033464, -0.35865244, 0.15908825, 0.35721526, -0.2017132, -4.68239, -0.6887119, 2.1028547)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
@@ -442,30 +468,36 @@ skeleton = NodePath("")
 transform = Transform3D(-14.024265, 1.7759284, -7.6741924, 1.3925169, 15.983006, 1.1539515, 7.752938, 0.3417395, -14.089087, -19.742378, -11.230993, 136.666)
 
 [node name="crystal_002" parent="crystal6" index="0" unique_id=299906561]
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 
 [node name="crystal_003" type="MeshInstance3D" parent="crystal6" unique_id=783447566]
 transform = Transform3D(-0.067847624, -0.5269373, -0.1604951, 0.010485097, 0.16044326, -0.53119934, 0.55073744, -0.06797017, -0.009658895, 0.38166976, -0.33256483, 0.91585827)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_004" type="MeshInstance3D" parent="crystal6" unique_id=742083532]
 transform = Transform3D(-0.45571846, -0.25657487, -0.1857814, 0.19733898, 0.02467347, -0.518144, 0.24779578, -0.4915133, 0.07096943, -2.2233233, 0.71593285, -0.5251788)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_005" type="MeshInstance3D" parent="crystal6" unique_id=1184227901]
 transform = Transform3D(0.19734085, -0.39256802, -0.023387501, 0.070037454, 0.060831286, -0.4301097, 0.38697726, 0.18918213, 0.08977038, -3.077199, 0.43922132, -0.9393014)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_006" type="MeshInstance3D" parent="crystal6" unique_id=512676324]
 transform = Transform3D(-0.35967112, -0.22773322, 0.11123955, -0.17138714, 0.07626853, -0.3980069, 0.18671662, -0.36867422, -0.15105027, -2.9551883, 0.20803231, -0.19800615)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_007" type="MeshInstance3D" parent="crystal6" unique_id=146499885]
 transform = Transform3D(-0.60473573, 0.40705195, 0.093959205, -0.031140417, 0.12092875, -0.72431445, -0.4165932, -0.59992486, -0.082250565, -3.5229278, 0.82862383, -3.5795693)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
@@ -474,15 +506,18 @@ transform = Transform3D(10.946202, 2.1281757, -13.957424, 0, 17.660881, 2.692864
 
 [node name="crystal_002" parent="crystal7" index="0" unique_id=299906561]
 transform = Transform3D(0.9901012, -0.0919604, -0.10603211, -0.0985354, 0.08256066, -0.99170285, 0.09995148, 0.9923342, 0.07268202, -0.3743887, 0, 0)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 
 [node name="crystal_003" type="MeshInstance3D" parent="crystal7" unique_id=1461745677]
 transform = Transform3D(-0.07726529, -0.5495476, 0.0072367117, 0.007949347, -0.008424589, -0.55487907, 0.54953796, -0.0771449, 0.009044079, -3.2529197, 0.18440676, 1.3888298)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_004" type="MeshInstance3D" parent="crystal7" unique_id=1883948902]
 transform = Transform3D(-0.40874508, -0.28563035, 0.2436548, -0.22813103, -0.09710743, -0.49653935, 0.29817575, -0.46584362, -0.045889977, -6.220335, -0.6423638, 0.95307577)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
@@ -490,20 +525,24 @@ skeleton = NodePath("")
 transform = Transform3D(10.812069, -7.947243, 11.79401, 0, 14.815365, 9.983144, -14.221723, -6.0418944, 8.966402, 12.413924, -156.53787, 29.282919)
 
 [node name="crystal_002" parent="crystal8" index="0" unique_id=299906561]
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 
 [node name="crystal_003" type="MeshInstance3D" parent="crystal8" unique_id=1571416874]
 transform = Transform3D(-0.038823947, -0.5188657, -0.19312254, 0.08128423, 0.18615678, -0.5164915, 0.54764104, -0.064414605, 0.06296998, 1.1219616, 0.8156761, -2.4517066)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_004" type="MeshInstance3D" parent="crystal8" unique_id=966197545]
 transform = Transform3D(-0.47429687, -0.2351734, -0.16661689, 0.037693057, 0.2674756, -0.48483056, 0.2857393, -0.4256472, -0.2126097, 3.3034296, 0.9144794, -1.8824537)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_005" type="MeshInstance3D" parent="crystal8" unique_id=240883645]
 transform = Transform3D(-0.364178, 0.18954864, -0.15825844, 0.21636935, 0.109063834, -0.36727288, -0.118990496, -0.38180673, -0.18347989, 4.581402, -0.18264067, 1.0324464)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
@@ -511,30 +550,36 @@ skeleton = NodePath("")
 transform = Transform3D(-16.349033, -0.1786843, 7.1996803, 1.5466161, 17.355705, 3.9427962, -7.033868, 4.2315164, -15.867488, 15.337596, -161.77109, -46.92777)
 
 [node name="crystal_002" parent="crystal9" index="0" unique_id=299906561]
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 
 [node name="crystal_003" type="MeshInstance3D" parent="crystal9" unique_id=1402910477]
 transform = Transform3D(-0.067847624, -0.5269373, -0.1604951, 0.010485097, 0.16044326, -0.53119934, 0.55073744, -0.06797017, -0.009658895, 0.38166976, -0.33256483, 0.91585827)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_004" type="MeshInstance3D" parent="crystal9" unique_id=906854053]
 transform = Transform3D(-0.45571846, -0.25657487, -0.1857814, 0.19733898, 0.02467347, -0.518144, 0.24779578, -0.4915133, 0.07096943, -2.2233233, 0.71593285, -0.5251788)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_005" type="MeshInstance3D" parent="crystal9" unique_id=2097215521]
 transform = Transform3D(0.19734085, -0.39256802, -0.023387501, 0.070037454, 0.060831286, -0.4301097, 0.38697726, 0.18918213, 0.08977038, -3.077199, 0.43922132, -0.9393014)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_006" type="MeshInstance3D" parent="crystal9" unique_id=696245071]
 transform = Transform3D(-0.35967112, -0.22773321, 0.11123955, -0.17138712, 0.07626853, -0.39800692, 0.18671665, -0.36867422, -0.15105028, -3.0977807, 0.20174703, 0.061122358)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_007" type="MeshInstance3D" parent="crystal9" unique_id=824634]
 transform = Transform3D(-0.60473573, 0.40705195, 0.093959205, -0.031140417, 0.12092875, -0.72431445, -0.4165932, -0.59992486, -0.082250565, -3.5229278, 0.82862383, -3.5795693)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
@@ -543,20 +588,24 @@ transform = Transform3D(10.946201, 2.1281757, -13.957426, 1.1920929e-07, 17.6608
 
 [node name="crystal_002" parent="crystal10" index="0" unique_id=299906561]
 transform = Transform3D(0.9901012, -0.0919604, -0.10603211, -0.0985354, 0.08256066, -0.99170285, 0.09995148, 0.9923342, 0.07268202, -5.198023, 0, 6.2676063)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 
 [node name="crystal_003" type="MeshInstance3D" parent="crystal10" unique_id=1125881263]
 transform = Transform3D(-0.07726529, -0.5495476, 0.0072367117, 0.007949347, -0.008424589, -0.55487907, 0.54953796, -0.0771449, 0.009044079, -3.2529197, 0.18440676, 1.3888298)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_004" type="MeshInstance3D" parent="crystal10" unique_id=925932883]
 transform = Transform3D(-0.54577065, 0.054245193, 0.08495304, -0.100315444, -0.24676281, -0.48689812, -0.0098172175, -0.4941562, 0.252464, -8.827093, -2.163465, -5.5380006)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_005" type="MeshInstance3D" parent="crystal10" unique_id=2144397555]
 transform = Transform3D(-0.3343459, 0.033231195, 0.05204335, -0.058829296, -0.258493, -0.21288611, 0.01875994, -0.21835078, 0.2599442, -12.954444, -2.163465, -5.648016)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
@@ -565,20 +614,24 @@ transform = Transform3D(10.812068, -7.9472437, 11.794011, -1.1920929e-07, 14.815
 
 [node name="crystal_002" parent="crystal11" index="0" unique_id=299906561]
 transform = Transform3D(-0.9931551, -0.116001755, -0.013654254, -0.0877348, 0.8180526, -0.5684128, 0.07710673, -0.56332386, -0.82263047, -2.4296918, -0.8135991, 1.7208662)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 
 [node name="crystal_003" type="MeshInstance3D" parent="crystal11" unique_id=1673882564]
 transform = Transform3D(-0.071963765, 0.5367554, 0.12140871, 0.47310296, 0.122886896, -0.26286384, -0.28110495, 0.069409244, -0.47348446, -3.9765124, -1.8058729, 3.0931997)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_004" type="MeshInstance3D" parent="crystal11" unique_id=1787420613]
 transform = Transform3D(0.40293905, 0.34731075, 0.15824229, 0.2900615, -0.12911615, -0.4552123, -0.24805164, 0.4131943, -0.27525604, -2.7017097, -2.0768347, 4.444552)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_005" type="MeshInstance3D" parent="crystal11" unique_id=535203939]
 transform = Transform3D(0.4013519, -0.09075535, 0.15582095, 0.08489789, -0.24033464, -0.35865244, 0.15908825, 0.35721526, -0.2017132, -4.68239, -0.6887119, 2.1028547)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
@@ -586,30 +639,36 @@ skeleton = NodePath("")
 transform = Transform3D(-16.349033, -0.178684, 7.1996803, 1.5466161, 17.355705, 3.942796, -7.033868, 4.231516, -15.867488, -115.703735, -155.01726, 54.886326)
 
 [node name="crystal_002" parent="crystal12" index="0" unique_id=299906561]
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 
 [node name="crystal_003" type="MeshInstance3D" parent="crystal12" unique_id=1651260672]
 transform = Transform3D(-0.067847624, -0.5269373, -0.1604951, 0.010485097, 0.16044326, -0.53119934, 0.55073744, -0.06797017, -0.009658895, 0.38166976, -0.33256483, 0.91585827)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_004" type="MeshInstance3D" parent="crystal12" unique_id=1607505198]
 transform = Transform3D(-0.45571846, -0.25657487, -0.1857814, 0.19733898, 0.02467347, -0.518144, 0.24779578, -0.4915133, 0.07096943, -2.2233233, 0.71593285, -0.5251788)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_005" type="MeshInstance3D" parent="crystal12" unique_id=1728388555]
 transform = Transform3D(0.19734085, -0.39256802, -0.023387501, 0.070037454, 0.060831286, -0.4301097, 0.38697726, 0.18918213, 0.08977038, -3.077199, 0.43922132, -0.9393014)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_006" type="MeshInstance3D" parent="crystal12" unique_id=1415252284]
 transform = Transform3D(-0.35967112, -0.22773322, 0.11123955, -0.17138714, 0.07626853, -0.3980069, 0.18671662, -0.36867422, -0.15105027, -2.9551883, 0.20803231, -0.19800615)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
 [node name="crystal_007" type="MeshInstance3D" parent="crystal12" unique_id=233051266]
 transform = Transform3D(-0.60473573, 0.40705195, 0.093959205, -0.031140417, 0.12092875, -0.72431445, -0.4165932, -0.59992486, -0.082250565, -3.5229278, 0.82862383, -3.5795693)
+layers = 8
 mesh = SubResource("ArrayMesh_q6u7a")
 skeleton = NodePath("")
 
