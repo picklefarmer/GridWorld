@@ -144,7 +144,6 @@ script = ExtResource("4_4q6l0")
 multiplier = 50.0
 bus = "track4"
 track = 4
-runSpeed = 0.24
 
 [node name="RA" type="SpringBoneSimulator3D" parent="bananaman/Armature/Skeleton3D" index="5" unique_id=1480866792]
 setting_count = 1
@@ -179,7 +178,6 @@ script = ExtResource("4_4q6l0")
 multiplier = -50.0
 bus = "track4"
 track = 4
-runSpeed = 0.24
 
 [node name="LL" type="SpringBoneSimulator3D" parent="bananaman/Armature/Skeleton3D" index="6" unique_id=1111290531]
 setting_count = 1
@@ -215,7 +213,6 @@ multiplier = -300.0
 isLeg = true
 bus = "track4"
 track = 4
-runSpeed = 0.24
 
 [node name="RL" type="SpringBoneSimulator3D" parent="bananaman/Armature/Skeleton3D" index="7" unique_id=2086122400]
 setting_count = 1
@@ -251,6 +248,5 @@ multiplier = 300.0
 isLeg = true
 bus = "track4"
 track = 4
-runSpeed = 0.24
 
 [editable path="bananaman"]

@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 		song_position_in_beats = int(floor(song_position / (seconds_per_beat/4)))
 		currentStep= song_position_in_beats%4
 		currentMeasure =  (song_position_in_beats/4)%4
-		print(currentMeasure," : ",currentStep)
+		#print(currentMeasure," : ",currentStep)
 		if currentStep == section:
 			toggleHeld()
 			#print(song_position_in_beats,"return")
@@ -110,7 +110,7 @@ func beatBonus(volImp,delta):
 	if heldStop:
 		var bonus : float = assignBonus()
 		var micProg : float = $"../../track1".progress
-		print("beat ","section: ",currentMeasure," : currentStep ",currentStep)
+		#print("beat ","section: ",currentMeasure," : currentStep ",currentStep)
 		if bonus <= 1:
 			Actions.updateProgress.emit(volImp,micProg)
 		Actions.goForward.emit(bonus*volImp,1)
@@ -121,13 +121,13 @@ func compare(beatIndex,delta):
 	var volume_mag = mic_spectrum.get_magnitude_for_frequency_range(350.0,3000.0,AudioEffectSpectrumAnalyzerInstance.MAGNITUDE_AVERAGE).length()
 	volume_mag = clamp((MIN_DB + linear_to_db(volume_mag))/MIN_DB,0,1)
 	#print("fired",beatIndex,volume_mag)
-	print(heldStop)
+	#print(heldStop)
 	
 	if volume_mag > minimum:
 		
 		if heldStop:
 			heldStop = false
-			print("beat ","section: ",currentMeasure," : ",beatIndex," : ",currentStep )
+			#print("beat ","section: ",currentMeasure," : ",beatIndex," : ",currentStep )
 			Actions.beatOff.emit(beatIndex,delta,time)
 			
 	else:

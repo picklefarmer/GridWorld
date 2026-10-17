@@ -5,7 +5,7 @@ var runSpeed : float = 1.0
 
 var player : Node3D
 var loadedPlayers : Array = []
-var playerInd : int = 1
+var playerInd : int = 0
 
 func _ready() -> void:
 	#for character in PlayableCharacters:
@@ -24,12 +24,14 @@ func _process(delta: float) -> void:
 
 func swap(direction:int):
 	var playerInstantiated = PlayableCharacters[playerInd].instantiate()
-	
 	self.add_child(playerInstantiated)
 	var newPlayer:Node3D = get_child(1)
-	newPlayer.set("active",true)
+	playerInstantiated.set("active",true)
 	Actions.syncLip.emit()
+	
+	newPlayer.runSpeed = player.runSpeed
 	newPlayer.transform = player.transform
+	
 	player.queue_free()
 	player = newPlayer
 	

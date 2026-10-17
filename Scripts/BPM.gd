@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 		song_position_in_beats = int(floor(song_position / (seconds_per_beat/4)))
 		currentStep= song_position_in_beats%4
 		currentMeasure =  (song_position_in_beats/4)%4
-		print(currentMeasure," : ",currentStep)
+		#print(currentMeasure," : ",currentStep)
 		if currentStep == section:
 			toggleHeld()
 			#print(song_position_in_beats,"return")

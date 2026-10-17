@@ -255,9 +255,9 @@ script = ExtResource("1_1ibpp")
 outIn = 60.0
 outOut = 90.0
 inIn = 80.0
-trackMultiplier = 2.0
-micSpan = 100.0
-top = NodePath("Path3D2/track1/Camera3D2")
+trackMultiplier = 1.25
+micSpan = 20.0
+top = NodePath("BirdsEye")
 
 [node name="raceway 5" parent="." unique_id=683107211 instance=ExtResource("1_e1vjn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8966691, 0, 1.9250069)
@@ -282,10 +282,6 @@ transform = Transform3D(0.9986096, -0.036761135, 0.038242143, 0.039979775, 0.995
 current = true
 fov = 84.6
 
-[node name="Camera3D2" type="Camera3D" parent="Path3D2/track1" unique_id=125686220]
-transform = Transform3D(0.91985327, 0.10166977, 0.37938613, -0.36200896, -0.15517396, 0.9193051, 0.15227681, -0.98258257, -0.105890445, 17.842125, 39.10283, 0.774971)
-fov = 84.6
-
 [node name="OmniLight3D" type="AreaLight3D" parent="Path3D2/track1" unique_id=359317516]
 transform = Transform3D(1, 0, 0, 0, 0.7527585, -0.6582967, 0, 0.6582967, 0.7527585, 0.99999994, 3.258231, 4.6411386)
 light_energy = 15.367
@@ -293,7 +289,7 @@ light_specular = 0.523
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=653339698]
 script = ExtResource("6_8iess")
-PlayableCharacters = Array[PackedScene]([ExtResource("7_iw6ib"), ExtResource("8_nm0h3"), ExtResource("9_h431d"), ExtResource("10_fofj2"), ExtResource("13_oby42"), ExtResource("14_bbyen"), ExtResource("15_i1t5i"), ExtResource("16_bbyen")])
+PlayableCharacters = Array[PackedScene]([ExtResource("7_iw6ib"), ExtResource("9_h431d"), ExtResource("10_fofj2"), ExtResource("13_oby42"), ExtResource("14_bbyen"), ExtResource("15_i1t5i"), ExtResource("16_bbyen"), ExtResource("8_nm0h3")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("8_nm0h3")]
 transform = Transform3D(0.99966985, 7.450581e-09, -0.025692385, 7.450581e-09, 1.0000004, 0, 0.025692455, 2.9802322e-08, 0.9996698, 1.1060009, 7.6293945e-06, 0.2539959)
@@ -301,15 +297,19 @@ transform = Transform3D(0.99966985, 7.450581e-09, -0.025692385, 7.450581e-09, 1.
 [node name="AudioListener3D" type="AudioListener3D" parent="Path3D2/track1" unique_id=2066441725]
 current = true
 
+[node name="followPlayer" type="Camera3D" parent="Path3D2/track1" unique_id=125686220]
+transform = Transform3D(0.9198522, 0.10166911, 0.3793829, -0.36200854, -0.15517426, 0.91931075, 0.15227658, -0.98258656, -0.10589099, 17.84211, 39.102844, 0.77497864)
+fov = 84.6
+
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=1958389275]
 transform = Transform3D(0.016409967, 0.5434569, -0.8392821, 2.9796572e-08, 0.83923405, 0.54363453, 0.99967235, -0.008921059, 0.013777089, 2.30095, 112.10323, -93.58696)
 use_model_front = true
 script = ExtResource("5_ww0kt")
-trackNumber = 3
+trackNumber = 2
 
 [node name="Strawberry" parent="Path3D2/track2" unique_id=1848394695 instance=ExtResource("9_h431d")]
 transform = Transform3D(1.0000157, 1.8626451e-09, 0, 0, 0.9999999, -1.7695129e-08, -1.4901161e-08, 3.259629e-09, 1.0000161, -6.192, 0, 0.559)
-minimum = 0.2
+minimum = 0.255
 
 [node name="trail" parent="Path3D2/track2" unique_id=1344867179 instance=ExtResource("17_xosex")]
 transform = Transform3D(-5.401671e-08, 0, 1, 6.091432e-08, 1, 0, -1.215, 4.3437467e-08, -4.284084e-08, -6.1930084, 3.0000153, -0.48073134)
@@ -326,7 +326,7 @@ parameters/looping = true
 transform = Transform3D(0.016409967, 0.5434569, -0.8392821, 2.9796572e-08, 0.83923405, 0.54363453, 0.99967235, -0.008921059, 0.013777089, 2.30095, 112.10323, -93.58696)
 use_model_front = true
 script = ExtResource("5_ww0kt")
-trackNumber = 2
+trackNumber = 3
 
 [node name="Blueberryman" parent="Path3D2/track3" unique_id=539657863 instance=ExtResource("10_fofj2")]
 transform = Transform3D(0.98840487, 8.839803e-09, -0.1518414, -7.450568e-09, 1, 9.718198e-09, 0.1518414, -8.474209e-09, 0.98840487, 5.51, 0, 0.7)
@@ -404,7 +404,6 @@ bus = &"track4"
 parameters/looping = true
 
 [node name="starfield 2" parent="." unique_id=364037407 instance=ExtResource("16_fofj2")]
-visible = false
 
 [node name="Cube" parent="starfield 2" index="0" unique_id=2112324512]
 mesh = SubResource("ArrayMesh_s87fk")
@@ -441,7 +440,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1765137, 133.68167, -73.566
 curve = SubResource("Curve3D_oby42")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="ship2 patrol2" unique_id=706926250]
-transform = Transform3D(-0.18074596, 0.00081515894, 0.983504, 0.0045084963, 0.9999677, -2.3934393e-07, -0.98349404, 0.0044342047, -0.1807478, -71.99847, 9.843416e-07, 186.6596)
+transform = Transform3D(-0.18074596, 0.00081515865, 0.983504, 0.0045084963, 0.99996734, -2.3934393e-07, -0.98349404, 0.0044342033, -0.1807478, -71.99847, 9.843416e-07, 186.6596)
 progress = 448.82913
 use_model_front = true
 script = ExtResource("20_s87fk")

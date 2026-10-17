@@ -51,7 +51,7 @@ func errorBoost(micAmp:float,micProg:float):
 	
 	var range :float = evalRange(micProg,progress,progressNormalized)
 	if  range <=micSpan:
-		runAmount = micAmp * range/4
+		runAmount = runAmount + micAmp * range/6
 		toggleTrail()
 		print(trackNumber," error boost: ",micAmp," difference: ",range)
 		

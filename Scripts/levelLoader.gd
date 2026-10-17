@@ -3,7 +3,7 @@ extends Node3D
 
 @export var Raceways : Array[PackedScene] = []
 var loadedPlayers : Array = []
-var raceWayInd : int = 5
+var raceWayInd : int = 0
 var currentRaceway:Node3D
 
 func _ready() -> void:

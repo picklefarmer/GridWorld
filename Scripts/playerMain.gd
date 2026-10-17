@@ -6,4 +6,6 @@ var active = false
 
 func _ready() -> void:
 	#Actions.emit_signal("resetMic")
-	pass
+	get_child(0).get_child(0).get_child(0).owner = self
+		
+	

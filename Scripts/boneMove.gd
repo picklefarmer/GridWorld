@@ -24,6 +24,8 @@ func _ready() -> void:
 	record_bus_index = AudioServer.get_bus_index(track)
 
 	spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
+	
+	
 
 	
 
@@ -43,6 +45,7 @@ func _process(delta: float) -> void:
 		set_bone_pose_position(bone_idx, current_pos)
 		
 func rebus():
+	print("is owner active:" ,owner)
 	if owner.get("active") != null:
 		track = "recording"
 		#print("rebus")

@@ -80,7 +80,7 @@ light_specular = 0.523
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1486126738]
 script = ExtResource("4_fy1l5")
-PlayableCharacters = Array[PackedScene]([ExtResource("5_v1win"), ExtResource("6_eo7v2"), ExtResource("7_55jsm"), ExtResource("8_bgygm"), ExtResource("9_p2qo6"), ExtResource("10_ncoeg"), ExtResource("11_tfmxy"), ExtResource("12_tsy5s")])
+PlayableCharacters = Array[PackedScene]([ExtResource("5_v1win"), ExtResource("7_55jsm"), ExtResource("8_bgygm"), ExtResource("9_p2qo6"), ExtResource("10_ncoeg"), ExtResource("11_tfmxy"), ExtResource("12_tsy5s"), ExtResource("6_eo7v2")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("6_eo7v2")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1.0000004, 0, 0, 0, 0.9999999, 1.1060009, 7.6293945e-06, 0.2539959)

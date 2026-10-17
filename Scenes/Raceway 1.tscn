@@ -246,7 +246,7 @@ fov = 40.2
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=887007692]
 script = ExtResource("7_lv0y0")
-PlayableCharacters = Array[PackedScene]([ExtResource("9_apb5h"), ExtResource("6_2a25w"), ExtResource("7_r7h1t"), ExtResource("8_jafop"), ExtResource("12_2a25w"), ExtResource("13_r7h1t"), ExtResource("14_jafop"), ExtResource("15_r7h1t")])
+PlayableCharacters = Array[PackedScene]([ExtResource("9_apb5h"), ExtResource("7_r7h1t"), ExtResource("8_jafop"), ExtResource("12_2a25w"), ExtResource("13_r7h1t"), ExtResource("14_jafop"), ExtResource("15_r7h1t"), ExtResource("6_2a25w")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=2119852306 instance=ExtResource("6_2a25w")]
 transform = Transform3D(0.9866659, 0, -0.16275842, 0, 1, 0, 0.16275844, 0, 0.9866659, 1.9456673, 0, 0.67497635)
