@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://d0y26xbn6k0b1" path="res://Scripts/run.gd" id="3_4npvc"]
 [ext_resource type="Script" uid="uid://dad14bax8o1t2" path="res://Scripts/player_swap.gd" id="4_ri2ci"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="5_nl5lx"]
+[ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="6_fuyv8"]
 [ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="6_krvlw"]
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="7_qbfiw"]
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="8_ups11"]
@@ -80,7 +81,7 @@ area_range = 5.3
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=374503058]
 transform = Transform3D(1, 6.519258e-09, 6.519258e-09, -7.683411e-09, 0.99999994, 2.9802322e-08, 3.7252903e-09, 0, 1, 0, 0, 0)
 script = ExtResource("4_ri2ci")
-PlayableCharacters = Array[PackedScene]([ExtResource("5_nl5lx"), ExtResource("7_qbfiw"), ExtResource("8_ups11"), ExtResource("10_u8886"), ExtResource("11_5bss4"), ExtResource("12_a4d2n"), ExtResource("13_a4d2n"), ExtResource("6_krvlw")])
+PlayableCharacters = Array[PackedScene]([ExtResource("6_fuyv8"), ExtResource("5_nl5lx"), ExtResource("7_qbfiw"), ExtResource("8_ups11"), ExtResource("10_u8886"), ExtResource("11_5bss4"), ExtResource("12_a4d2n"), ExtResource("13_a4d2n"), ExtResource("6_krvlw")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("6_krvlw")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1.0000004, 0, 0, 0, 0.9999999, 1.1060009, 7.6293945e-06, 0.2539959)

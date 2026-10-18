@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dad14bax8o1t2" path="res://Scripts/player_swap.gd" id="6_8iess"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="7_iw6ib"]
 [ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="8_nm0h3"]
+[ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="9_174b6"]
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="9_h431d"]
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="10_fofj2"]
 [ext_resource type="Script" uid="uid://ts38hmt4qhiy" path="res://Scripts/BPM.gd" id="12_h431d"]
@@ -289,7 +290,7 @@ light_specular = 0.523
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=653339698]
 script = ExtResource("6_8iess")
-PlayableCharacters = Array[PackedScene]([ExtResource("7_iw6ib"), ExtResource("9_h431d"), ExtResource("10_fofj2"), ExtResource("13_oby42"), ExtResource("14_bbyen"), ExtResource("15_i1t5i"), ExtResource("16_bbyen"), ExtResource("8_nm0h3")])
+PlayableCharacters = Array[PackedScene]([ExtResource("9_174b6"), ExtResource("7_iw6ib"), ExtResource("9_h431d"), ExtResource("10_fofj2"), ExtResource("13_oby42"), ExtResource("14_bbyen"), ExtResource("15_i1t5i"), ExtResource("16_bbyen"), ExtResource("8_nm0h3")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("8_nm0h3")]
 transform = Transform3D(0.99966985, 7.450581e-09, -0.025692385, 7.450581e-09, 1.0000004, 0, 0.025692455, 2.9802322e-08, 0.9996698, 1.1060009, 7.6293945e-06, 0.2539959)
@@ -440,7 +441,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1765137, 133.68167, -73.566
 curve = SubResource("Curve3D_oby42")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="ship2 patrol2" unique_id=706926250]
-transform = Transform3D(-0.18074596, 0.00081515865, 0.983504, 0.0045084963, 0.99996734, -2.3934393e-07, -0.98349404, 0.0044342033, -0.1807478, -71.99847, 9.843416e-07, 186.6596)
+transform = Transform3D(-0.18074596, 0.0008151586, 0.983504, 0.0045084963, 0.9999672, -2.3934393e-07, -0.98349404, 0.004434203, -0.1807478, -71.99847, 9.843416e-07, 186.6596)
 progress = 448.82913
 use_model_front = true
 script = ExtResource("20_s87fk")

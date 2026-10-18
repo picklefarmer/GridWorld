@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dad14bax8o1t2" path="res://Scripts/player_swap.gd" id="4_tn47a"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="5_scc8t"]
 [ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="6_cbjio"]
+[ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="6_xdynq"]
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="7_8t81g"]
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="8_6hc2p"]
 [ext_resource type="PackedScene" uid="uid://brot8tvj4oaou" path="res://Models/pearman.tscn" id="9_xdynq"]
@@ -62,7 +63,7 @@ curve = ExtResource("2_m0dxl")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=181071794]
-transform = Transform3D(0.78544927, -0.019346682, -0.61890125, -0.03734878, -0.9990465, -0.01619201, -0.61762464, 0.03581031, -0.7860936, -27.905548, -105.99486, -38.856808)
+transform = Transform3D(0.78544927, -0.019346684, -0.61890125, -0.03734878, -0.9990466, -0.01619201, -0.61762464, 0.035810314, -0.7860936, -27.905548, -105.99486, -38.856808)
 progress = 679.81177
 use_model_front = true
 script = ExtResource("3_5wr3t")
@@ -82,7 +83,7 @@ light_specular = 0.523
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1833650716]
 transform = Transform3D(1, -3.7252903e-09, -2.9802322e-08, 0, 1, -1.8626451e-09, -2.9802322e-08, 1.8626451e-09, 1.0000001, 0, 0, 0)
 script = ExtResource("4_tn47a")
-PlayableCharacters = Array[PackedScene]([ExtResource("5_scc8t"), ExtResource("7_8t81g"), ExtResource("8_6hc2p"), ExtResource("9_xdynq"), ExtResource("10_2f62b"), ExtResource("11_n7os7"), ExtResource("12_mpj55"), ExtResource("6_cbjio")])
+PlayableCharacters = Array[PackedScene]([ExtResource("6_xdynq"), ExtResource("5_scc8t"), ExtResource("7_8t81g"), ExtResource("8_6hc2p"), ExtResource("9_xdynq"), ExtResource("10_2f62b"), ExtResource("11_n7os7"), ExtResource("12_mpj55"), ExtResource("6_cbjio")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("6_cbjio")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1.0000004, 0, 0, 0, 0.9999999, 1.1060009, 7.6293945e-06, 0.2539959)
@@ -92,7 +93,7 @@ transform = Transform3D(0.9317014, 0.3635202, -1.4901161e-08, 1.8626451e-09, 1.6
 fov = 84.6
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=1504302682]
-transform = Transform3D(0.78544927, -0.019346543, -0.618876, -0.03734878, -0.9990393, -0.016191348, -0.61762464, 0.03581005, -0.7860615, -27.905548, -105.99486, -38.856808)
+transform = Transform3D(0.78544927, -0.019346543, -0.61887616, -0.03734878, -0.9990393, -0.016191352, -0.61762464, 0.03581005, -0.7860617, -27.905548, -105.99486, -38.856808)
 progress = 679.81177
 use_model_front = true
 script = ExtResource("3_5wr3t")
@@ -107,7 +108,7 @@ transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 
 visible = false
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1159987120]
-transform = Transform3D(0.78544927, -0.019346543, -0.618876, -0.03734878, -0.9990393, -0.016191348, -0.61762464, 0.03581005, -0.7860615, -27.905548, -105.99486, -38.856808)
+transform = Transform3D(0.78544927, -0.019346543, -0.61887616, -0.03734878, -0.9990393, -0.016191352, -0.61762464, 0.03581005, -0.7860617, -27.905548, -105.99486, -38.856808)
 progress = 679.81177
 use_model_front = true
 script = ExtResource("3_5wr3t")
@@ -123,7 +124,7 @@ transform = Transform3D(-1.1920929e-07, 0, 1, 3.7252903e-09, 1, 3.7252903e-09, -
 visible = false
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1692143368]
-transform = Transform3D(0.78544927, -0.019346543, -0.618876, -0.03734878, -0.9990393, -0.016191348, -0.61762464, 0.03581005, -0.7860615, -27.905548, -105.99486, -38.856808)
+transform = Transform3D(0.78544927, -0.019346543, -0.61887616, -0.03734878, -0.9990393, -0.016191352, -0.61762464, 0.03581005, -0.7860617, -27.905548, -105.99486, -38.856808)
 progress = 679.81177
 use_model_front = true
 script = ExtResource("3_5wr3t")

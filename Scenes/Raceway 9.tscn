@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dad14bax8o1t2" path="res://Scripts/player_swap.gd" id="4_fy1l5"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="5_v1win"]
 [ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="6_eo7v2"]
+[ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="6_p2qo6"]
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="7_55jsm"]
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="8_bgygm"]
 [ext_resource type="PackedScene" uid="uid://brot8tvj4oaou" path="res://Models/pearman.tscn" id="9_p2qo6"]
@@ -80,7 +81,7 @@ light_specular = 0.523
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1486126738]
 script = ExtResource("4_fy1l5")
-PlayableCharacters = Array[PackedScene]([ExtResource("5_v1win"), ExtResource("7_55jsm"), ExtResource("8_bgygm"), ExtResource("9_p2qo6"), ExtResource("10_ncoeg"), ExtResource("11_tfmxy"), ExtResource("12_tsy5s"), ExtResource("6_eo7v2")])
+PlayableCharacters = Array[PackedScene]([ExtResource("6_p2qo6"), ExtResource("5_v1win"), ExtResource("7_55jsm"), ExtResource("8_bgygm"), ExtResource("9_p2qo6"), ExtResource("10_ncoeg"), ExtResource("11_tfmxy"), ExtResource("12_tsy5s"), ExtResource("6_eo7v2")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("6_eo7v2")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1.0000004, 0, 0, 0, 0.9999999, 1.1060009, 7.6293945e-06, 0.2539959)

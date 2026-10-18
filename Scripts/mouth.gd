@@ -12,6 +12,7 @@ var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 @export var deltav : float = 1.0
 @export var speaking : bool = false
 @export var bus : String = "recording"
+@export var bone : String = "Bone"
 
 func _ready() -> void:
 	
@@ -29,11 +30,14 @@ func _physics_process(delta: float) -> void:
 	var volume_mag = spectrum_analyzer.get_magnitude_for_frequency_range(350.0,3000.0,AudioEffectSpectrumAnalyzerInstance.MAGNITUDE_AVERAGE).length()
 	volume_mag = clamp((MIN_DB + linear_to_db(volume_mag))/MIN_DB,0,1)
 	#print( volume_mag)
+	
 	if volume_mag > minimum:
 		var global_force_vector : Vector3 = Vector3(0,0,volume_mag *multiplier)
 		var path3dVector : Vector3 = owner.get_parent().global_transform.basis * global_force_vector
+		print("owner", owner.get_parent())
 		var skeleton: Skeleton3D = get_parent() as Skeleton3D
-		var rotVector : Transform3D = skeleton.global_transform * skeleton.get_bone_global_pose(0)
+		var bone_idx = skeleton.find_bone(bone)
+		var rotVector : Transform3D = skeleton.global_transform * skeleton.get_bone_global_pose(bone_idx)
 		var localForce : Vector3 = rotVector.basis.inverse() * path3dVector
 		external_force = localForce
 		#external_force.y = -volume_mag * multiplier

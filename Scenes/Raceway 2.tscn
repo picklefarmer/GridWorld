@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="8_cfm87"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="9_juxwo"]
 [ext_resource type="Script" uid="uid://dad14bax8o1t2" path="res://Scripts/player_swap.gd" id="10_7nbvk"]
+[ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="12_w2k2d"]
 [ext_resource type="PackedScene" uid="uid://c47yc10fjtfn0" path="res://Models/cloud.blend" id="13_4wofl"]
 [ext_resource type="PackedScene" uid="uid://65sk4ge4nifb" path="res://Mesh/raceway 2.blend" id="14_7nbvk"]
 [ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="15_jv81l"]
@@ -118,7 +119,7 @@ curve = ExtResource("7_ql3gu")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1928489554]
-transform = Transform3D(-0.1262292, 0.20127526, 0.9713444, -7.4503927e-09, 0.979188, -0.20289604, -0.99197567, -0.025612345, -0.12360386, 10.053501, 7.4647217, 52.339375)
+transform = Transform3D(-0.12622918, 0.20127526, 0.9713444, -7.450392e-09, 0.979188, -0.20289604, -0.99197555, -0.025612345, -0.12360386, 10.053501, 7.4647217, 52.339375)
 use_model_front = true
 script = ExtResource("5_wayxb")
 trackNumber = 1
@@ -138,7 +139,7 @@ fov = 40.2
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1953451184]
 script = ExtResource("10_7nbvk")
-PlayableCharacters = Array[PackedScene]([ExtResource("9_juxwo"), ExtResource("7_pxnv1"), ExtResource("8_cfm87"), ExtResource("15_wayxb"), ExtResource("16_jv81l"), ExtResource("17_pxnv1"), ExtResource("15_jv81l"), ExtResource("6_jv81l")])
+PlayableCharacters = Array[PackedScene]([ExtResource("12_w2k2d"), ExtResource("9_juxwo"), ExtResource("7_pxnv1"), ExtResource("8_cfm87"), ExtResource("15_wayxb"), ExtResource("16_jv81l"), ExtResource("17_pxnv1"), ExtResource("15_jv81l"), ExtResource("6_jv81l")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("6_jv81l")]
 transform = Transform3D(0.9996698, 7.450581e-09, -0.025692374, -1.4901161e-08, 1.0000002, -1.4901161e-08, 0.025692433, 2.2351742e-08, 0.9996698, 0.77378845, -0.21323013, 0.24564266)

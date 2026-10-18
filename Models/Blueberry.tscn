@@ -79,6 +79,7 @@ settings/0/exclude_collision_count = 0
 script = ExtResource("3_dlypm")
 multiplier = 30.0
 bus = "track3"
+bone = "1"
 
 [node name="SpringBoneCollisionPlane3D" type="SpringBoneCollisionPlane3D" parent="blueberry/Armature/Skeleton3D/Mouth" unique_id=1460740875]
 transform = Transform3D(1, -5.506921e-07, -4.5643014e-07, -5.7436245e-07, -0.9985624, -0.053593516, -4.262606e-07, 0.053593516, -0.9985626, 4.1484807e-07, 3.1423626, 1.349426)
