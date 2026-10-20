@@ -1,0 +1,352 @@
+[gd_scene format=3 uid="uid://cvhhbyfkukdgx"]
+
+[ext_resource type="Script" uid="uid://dqf1wfabyxm1u" path="res://Scripts/playerMain.gd" id="1_1erxo"]
+[ext_resource type="PackedScene" uid="uid://cxa3hhh8imehj" path="res://Models/grape.blend" id="2_dsh10"]
+[ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="3_gvgtj"]
+[ext_resource type="Script" uid="uid://cd6ig180cvpii" path="res://Scripts/walk cycle.gd" id="4_e8u3m"]
+[ext_resource type="PackedScene" uid="uid://c0crq0ku224f4" path="res://Models/Parts/grape_leaf.tscn" id="5_i3l26"]
+[ext_resource type="PackedScene" uid="uid://cwcgfrejfpcxo" path="res://Models/Parts/single_grape.tscn" id="6_8iv5a"]
+[ext_resource type="PackedScene" uid="uid://8r66627kkomc" path="res://Models/Parts/single_grape_eye.tscn" id="7_o54dl"]
+[ext_resource type="PackedScene" uid="uid://bmw00lcr8axyu" path="res://Models/Parts/single_grape_mouth.tscn" id="8_613kt"]
+
+[node name="GrapeMan_Redo" type="Node3D" unique_id=2033235155]
+script = ExtResource("1_1erxo")
+
+[node name="grape" parent="." unique_id=1846222292 instance=ExtResource("2_dsh10")]
+
+[node name="Skeleton3D" parent="grape/Armature" parent_id_path=PackedInt32Array(1846222292, 794675663) index="0" unique_id=862080220]
+script = ExtResource("3_gvgtj")
+multiplier = 0.5
+
+[node name="Body" type="SpringBoneSimulator3D" parent="grape/Armature/Skeleton3D" index="1" unique_id=1518969121]
+setting_count = 1
+settings/0/root_bone_name = "Bone"
+settings/0/root_bone = 0
+settings/0/end_bone_name = "Bone.006"
+settings/0/end_bone = 6
+settings/0/extend_end_bone = false
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 3
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone"
+settings/0/joints/0/bone = 0
+settings/0/joints/1/bone_name = "Bone.001"
+settings/0/joints/1/bone = 1
+settings/0/joints/2/bone_name = "Bone.002"
+settings/0/joints/2/bone = 2
+settings/0/joints/3/bone_name = "Bone.003"
+settings/0/joints/3/bone = 3
+settings/0/joints/4/bone_name = "Bone.004"
+settings/0/joints/4/bone = 4
+settings/0/joints/5/bone_name = "Bone.005"
+settings/0/joints/5/bone = 5
+settings/0/joints/6/bone_name = "Bone.006"
+settings/0/joints/6/bone = 6
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+
+[node name="LL" type="SpringBoneSimulator3D" parent="grape/Armature/Skeleton3D" index="2" unique_id=772172411]
+setting_count = 1
+settings/0/root_bone_name = "Bone.006_L.001"
+settings/0/root_bone = 8
+settings/0/end_bone_name = "Bone.006_L.003"
+settings/0/end_bone = 10
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.213
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 0
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone.006_L.001"
+settings/0/joints/0/bone = 8
+settings/0/joints/1/bone_name = "Bone.006_L.002"
+settings/0/joints/1/bone = 9
+settings/0/joints/2/bone_name = "Bone.006_L.003"
+settings/0/joints/2/bone = 10
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+script = ExtResource("4_e8u3m")
+multiplier = 200.0
+isLeg = true
+
+[node name="RL" type="SpringBoneSimulator3D" parent="grape/Armature/Skeleton3D" index="3" unique_id=444617823]
+setting_count = 1
+settings/0/root_bone_name = "Bone.006_R.001"
+settings/0/root_bone = 12
+settings/0/end_bone_name = "Bone.006_R.003"
+settings/0/end_bone = 14
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.213
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 0
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone.006_R.001"
+settings/0/joints/0/bone = 12
+settings/0/joints/1/bone_name = "Bone.006_R.002"
+settings/0/joints/1/bone = 13
+settings/0/joints/2/bone_name = "Bone.006_R.003"
+settings/0/joints/2/bone = 14
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+script = ExtResource("4_e8u3m")
+multiplier = -200.0
+isLeg = true
+
+[node name="LA" type="SpringBoneSimulator3D" parent="grape/Armature/Skeleton3D" index="4" unique_id=534624348]
+setting_count = 1
+settings/0/root_bone_name = "Bone_L.002"
+settings/0/root_bone = 16
+settings/0/end_bone_name = "Bone_L.004"
+settings/0/end_bone = 18
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.514
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 3
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone_L.002"
+settings/0/joints/0/bone = 16
+settings/0/joints/1/bone_name = "Bone_L.003"
+settings/0/joints/1/bone = 17
+settings/0/joints/2/bone_name = "Bone_L.004"
+settings/0/joints/2/bone = 18
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+script = ExtResource("4_e8u3m")
+multiplier = -130.0
+
+[node name="RA" type="SpringBoneSimulator3D" parent="grape/Armature/Skeleton3D" index="5" unique_id=1135402634]
+setting_count = 1
+settings/0/root_bone_name = "Bone_R.002"
+settings/0/root_bone = 20
+settings/0/end_bone_name = "Bone_R.004"
+settings/0/end_bone = 22
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.628
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 3
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone_R.002"
+settings/0/joints/0/bone = 20
+settings/0/joints/1/bone_name = "Bone_R.003"
+settings/0/joints/1/bone = 21
+settings/0/joints/2/bone_name = "Bone_R.004"
+settings/0/joints/2/bone = 22
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+script = ExtResource("4_e8u3m")
+multiplier = 130.0
+
+[node name="Leaf" type="BoneAttachment3D" parent="grape/Armature/Skeleton3D" index="6" unique_id=1723300125]
+transform = Transform3D(1, -1.7053026e-12, -2.3850004e-07, -2.16005e-12, -1.0000002, 1.1920929e-07, -2.3850004e-07, -1.1920929e-07, -1.0000002, -1.9397817e-12, 5.0825047, 1.1920929e-07)
+bone_name = "Bone.001"
+bone_idx = 1
+
+[node name="grape_leaf" parent="grape/Armature/Skeleton3D/Leaf" unique_id=775553279 instance=ExtResource("5_i3l26")]
+transform = Transform3D(-2.4342341e-07, -0.63750947, -0.7704425, -3.7695663e-08, -0.7704425, 0.63750947, -1, 1.5442473e-07, 1.6502746e-07, -0.09370229, -0.07095003, 0.12507884)
+
+[node name="grape_leaf2" parent="grape/Armature/Skeleton3D/Leaf" unique_id=504015102 instance=ExtResource("5_i3l26")]
+transform = Transform3D(-3.1929525e-07, 0.6236245, -0.7817241, -1.07342004e-07, -0.7817241, -0.62362456, -1, -1.450108e-07, 3.18057e-07, 0.11993888, -0.07095003, 0.1250788)
+
+[node name="1" type="BoneAttachment3D" parent="grape/Armature/Skeleton3D" index="7" unique_id=469090412]
+transform = Transform3D(1, -1.7053025e-12, -2.385003e-07, -2.1600638e-12, -1.0000001, 1.1915109e-07, -2.385003e-07, -1.1915108e-07, -1.0000002, -2.6041738e-12, 4.692901, 7.276492e-08)
+bone_name = "Bone.002"
+bone_idx = 2
+
+[node name="single_grape" parent="grape/Armature/Skeleton3D/1" unique_id=1591084565 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(1, 9.855114e-09, 6.784949e-08, -6.7849626e-08, 0.28448415, 0.95868075, -9.854205e-09, -0.95868075, 0.28448415, 9.956226e-08, -0.6643801, 0.14792436)
+
+[node name="single_grape2" parent="grape/Armature/Skeleton3D/1" unique_id=1246612481 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(0.92034245, -0.38708335, 0.05600204, -0.37293568, -0.82538104, 0.42386925, -0.117849566, -0.41099012, -0.90399045, -0.4917077, 0.16494417, 0.17363706)
+
+[node name="single_grape3" parent="grape/Armature/Skeleton3D/1" unique_id=1045978426 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(0.898341, 0.43207696, -0.079326645, 0.42319593, -0.8027431, 0.42012936, 0.11784934, -0.41098997, -0.90399045, 0.47431907, 0.10628033, 0.17363732)
+
+[node name="single_grape4" parent="grape/Armature/Skeleton3D/1" unique_id=662311845 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(0.8358073, -0.54902273, 7.903736e-08, -0.49636182, -0.75563896, 0.42735788, -0.23462911, -0.35718897, -0.90408254, -0.84834397, 0.27106953, 0.2419164)
+
+[node name="single_grape5" parent="grape/Armature/Skeleton3D/1" unique_id=901367597 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(0.73727727, 0.67559016, 7.903736e-08, 0.61078924, -0.6665595, 0.42735788, 0.28871882, -0.31508118, -0.90408254, 0.834053, 0.19078588, 0.24191645)
+
+[node name="2" type="BoneAttachment3D" parent="grape/Armature/Skeleton3D" index="8" unique_id=1183844494]
+transform = Transform3D(1, -1.7053025e-12, -2.385003e-07, -2.1600638e-12, -1.0000001, 1.1915109e-07, -2.385003e-07, -1.1915108e-07, -1.0000002, -2.6041738e-12, 4.692901, 7.276492e-08)
+bone_name = "Bone.002"
+bone_idx = 2
+
+[node name="single_grape_eye" parent="grape/Armature/Skeleton3D/2" unique_id=1518606351 instance=ExtResource("7_o54dl")]
+transform = Transform3D(0.955894, -0.29371178, 2.2157618e-08, -3.4995974e-08, -3.8455497e-08, 1, -0.2937118, -0.955894, -4.7038093e-08, -0.23317736, -0.025450706, 0.10083284)
+
+[node name="single_grape_eye2" parent="grape/Armature/Skeleton3D/2" unique_id=2087669025 instance=ExtResource("7_o54dl")]
+transform = Transform3D(0.961483, 0.27486405, -2.0735573e-08, 3.2750453e-08, -3.912269e-08, 1, 0.27486408, -0.96148306, -4.6617693e-08, 0.24508658, -0.039866924, 0.12389112)
+
+[node name="single_grape3" parent="grape/Armature/Skeleton3D/2" unique_id=2011005367 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(1, -2.842171e-14, -2.032879e-20, 1.4840017e-18, -4.3713968e-08, 1, -2.842171e-14, -1, -4.3713946e-08, -0.9361579, 0.31359434, 0.33574378)
+
+[node name="single_grape4" parent="grape/Armature/Skeleton3D/2" unique_id=685025977 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(1, -2.842171e-14, -2.032879e-20, 1.4840017e-18, -4.3713968e-08, 1, -2.842171e-14, -1, -4.3713946e-08, 0.89914495, 0.22937012, 0.3357441)
+
+[node name="3" type="BoneAttachment3D" parent="grape/Armature/Skeleton3D" index="9" unique_id=889310941]
+transform = Transform3D(1, -1.7053029e-12, -2.3850035e-07, -2.1600642e-12, -1.0000001, 1.1915109e-07, -2.3850035e-07, -1.1915108e-07, -1.0000002, -3.2685658e-12, 4.3032975, 2.6343226e-08)
+bone_name = "Bone.003"
+bone_idx = 3
+
+[node name="single_grape" parent="grape/Armature/Skeleton3D/3" unique_id=1174633196 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(1, 8.526513e-14, -3.8963516e-20, 4.0996395e-19, -4.371141e-08, 1, 0, -1, -4.3711317e-08, 4.7077936e-08, 0.008769512, -0.25461528)
+
+[node name="single_grape2" parent="grape/Armature/Skeleton3D/3" unique_id=1716695257 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(0.9612617, -0.2756373, 7.114371e-08, 0.096146084, 0.33530155, 0.93719196, -0.2583251, -0.9008867, 0.348814, -0.42415446, 0.14251804, 0.015754135)
+
+[node name="single_grape5" parent="grape/Armature/Skeleton3D/3" unique_id=694900058 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(0.9612617, -0.2756373, 7.114371e-08, 0.096146084, 0.33530155, 0.93719196, -0.2583251, -0.9008867, 0.348814, -0.5711377, 0.4476595, 0.5759347)
+
+[node name="single_grape3" parent="grape/Armature/Skeleton3D/3" unique_id=1110061302 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(0.9612617, 0.27563742, 9.524068e-08, -0.09614626, 0.33530152, 0.93719196, 0.2583251, -0.9008867, 0.348814, 0.3605644, 0.14251709, 0.015753487)
+
+[node name="single_grape4" parent="grape/Armature/Skeleton3D/3" unique_id=1374907218 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(0.9612617, 0.27563742, 9.524068e-08, -0.09614626, 0.33530152, 0.93719196, 0.2583251, -0.9008867, 0.348814, 0.53451115, 0.38987255, 0.582709)
+
+[node name="4" type="BoneAttachment3D" parent="grape/Armature/Skeleton3D" index="10" unique_id=36225290]
+transform = Transform3D(1, -1.7053028e-12, -2.3850035e-07, -2.1600642e-12, -1, 1.19151096e-07, -2.3850035e-07, -1.1915108e-07, -1.0000002, -3.9329577e-12, 3.9136941, -2.0078438e-08)
+bone_name = "Bone.004"
+bone_idx = 4
+
+[node name="single_grape_mouth" parent="grape/Armature/Skeleton3D/4" unique_id=487679516 instance=ExtResource("8_613kt")]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -1.12731415e-08, 0.3868761, -6.316384e-09)
+
+[node name="single_grape2" parent="grape/Armature/Skeleton3D/4" unique_id=1298832785 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(0.9612617, -0.27563727, 1.16104005e-07, 0.14810741, 0.51651233, 0.84337366, -0.2324653, -0.8107028, 0.53732747, -0.36489645, 0.32700038, 0.16842155)
+
+[node name="single_grape3" parent="grape/Armature/Skeleton3D/4" unique_id=1063823802 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(0.9612617, 0.27563745, 1.40201e-07, -0.14810768, 0.5165123, 0.84337366, 0.23246525, -0.8107028, 0.53732747, 0.3483968, 0.3269999, 0.16842075)
+
+[node name="5" type="BoneAttachment3D" parent="grape/Armature/Skeleton3D" index="11" unique_id=1612301439]
+transform = Transform3D(1, -1.7053032e-12, -2.3850035e-07, -2.1600647e-12, -1, 1.19151096e-07, -2.3850035e-07, -1.1915108e-07, -1.0000002, -4.597349e-12, 3.524091, -6.650008e-08)
+bone_name = "Bone.005"
+bone_idx = 5
+
+[node name="single_grape" parent="grape/Armature/Skeleton3D/5" unique_id=144664319 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(1, 3.0474794e-08, 1.16650675e-07, -1.16651115e-07, 0.48910165, 0.8722268, -3.0473117e-08, -0.8722268, 0.48910165, 7.3012636e-08, 0.40196276, 0.09430157)
+
+[node name="6 BACK" type="BoneAttachment3D" parent="grape/Armature/Skeleton3D" index="12" unique_id=827702623]
+transform = Transform3D(1, -1.7053025e-12, -2.385003e-07, -2.1600638e-12, -1.0000001, 1.1915109e-07, -2.385003e-07, -1.1915108e-07, -1.0000002, -2.6041738e-12, 4.692901, 7.276492e-08)
+bone_name = "Bone.002"
+bone_idx = 2
+
+[node name="single_grape" parent="grape/Armature/Skeleton3D/6 BACK" unique_id=1875560447 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-1, 9.384539e-08, 8.143542e-08, 5.6942742e-08, -0.23639524, 0.97165716, 1.10436446e-07, 0.971657, 0.2363952, 0.041862544, -0.28091526, -0.009653532)
+
+[node name="single_grape2" parent="grape/Armature/Skeleton3D/6 BACK" unique_id=1666692632 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-0.961262, -0.27563748, 2.1256804e-07, 0.1948638, -0.6795703, 0.70725703, -0.19494627, 0.6798589, 0.70695674, -0.44096595, 0.11883974, 0.26282075)
+
+[node name="single_grape3" parent="grape/Armature/Skeleton3D/6 BACK" unique_id=155353585 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-0.8660253, 0.50000006, 2.517811e-07, -0.3534782, -0.6122426, 0.7072569, 0.35362864, 0.61250234, 0.7069568, 0.4907412, 0.08425617, 0.2628194)
+
+[node name="6 BACK2" type="BoneAttachment3D" parent="grape/Armature/Skeleton3D" index="13" unique_id=334990000]
+transform = Transform3D(1, -1.7053029e-12, -2.3850035e-07, -2.1600642e-12, -1.0000001, 1.1915109e-07, -2.3850035e-07, -1.1915108e-07, -1.0000002, -3.2685658e-12, 4.3032975, 2.6343226e-08)
+bone_name = "Bone.003"
+bone_idx = 3
+
+[node name="single_grape" parent="grape/Armature/Skeleton3D/6 BACK2" unique_id=539356537 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-1, 8.59641e-08, -2.6403335e-08, -1.6769935e-08, 0.11019213, 0.9939103, 8.835012e-08, 0.9939103, -0.11019213, 8.873157e-08, 0.28429222, 0.2863223)
+
+[node name="single_grape4" parent="grape/Armature/Skeleton3D/6 BACK2" unique_id=1738787999 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-1, 8.59641e-08, -2.6403344e-08, -1.6769935e-08, 0.11019213, 0.9939103, 8.835012e-08, 0.9939103, -0.11019213, 0.41330004, -0.31313372, 0.3446718)
+
+[node name="single_grape5" parent="grape/Armature/Skeleton3D/6 BACK2" unique_id=1191388438 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-1, 8.59641e-08, -2.6403344e-08, -1.6769935e-08, 0.11019213, 0.9939103, 8.835012e-08, 0.9939103, -0.11019213, -0.3358492, -0.34128094, 0.34467196)
+
+[node name="single_grape2" parent="grape/Armature/Skeleton3D/6 BACK2" unique_id=1483636518 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-0.918596, -0.39473736, 0.01907505, -0.047374923, 0.15790866, 0.9863165, -0.39234814, 0.90512276, -0.16375495, -0.46956778, -0.020989418, 0.034434766)
+
+[node name="single_grape3" parent="grape/Armature/Skeleton3D/6 BACK2" unique_id=829814650 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-0.9013147, 0.43186018, -0.033594407, 0.039883755, 0.15996505, 0.9863165, 0.43132478, 0.88764167, -0.16140306, 0.4261682, 0.008995533, 0.0344339)
+
+[node name="6 BACK3" type="BoneAttachment3D" parent="grape/Armature/Skeleton3D" index="14" unique_id=265282395]
+transform = Transform3D(1, -1.7053032e-12, -2.3850035e-07, -2.1600647e-12, -1, 1.19151096e-07, -2.3850035e-07, -1.1915108e-07, -1.0000002, -4.597349e-12, 3.524091, -6.650008e-08)
+bone_name = "Bone.005"
+bone_idx = 5
+
+[node name="single_grape" parent="grape/Armature/Skeleton3D/6 BACK3" unique_id=1073947819 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-1, 8.7422876e-08, -2.1316282e-14, 1.4210855e-14, 4.3710358e-08, 1, 8.742299e-08, 1, -4.3708454e-08, 7.8513835e-09, 0.17664051, 0.035294507)
+
+[node name="single_grape2" parent="grape/Armature/Skeleton3D/6 BACK3" unique_id=968529267 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-0.7916397, -0.6109884, -1.5137181e-07, -0.27949286, 0.3621303, 0.8892387, -0.54331446, 0.70395654, -0.45744357, -0.17676295, -0.24368453, 0.08718319)
+
+[node name="single_grape3" parent="grape/Armature/Skeleton3D/6 BACK3" unique_id=221190480 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-0.6753917, 0.7374593, -5.9180373e-08, 0.337346, 0.3089536, 0.8892387, 0.65577734, 0.60058445, -0.45744357, 0.14696272, -0.13827252, 0.29209402)
+
+[node name="6 BACK4" type="BoneAttachment3D" parent="grape/Armature/Skeleton3D" index="15" unique_id=1399939308]
+transform = Transform3D(1, -1.7053032e-12, -2.385003e-07, -2.1600647e-12, -1, 1.19151096e-07, -2.385003e-07, -1.1915108e-07, -1.0000002, -5.261742e-12, 3.134487, -1.12921825e-07)
+bone_name = "Bone.006"
+bone_idx = 6
+
+[node name="single_grape2" parent="grape/Armature/Skeleton3D/6 BACK4" unique_id=46045746 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-0.9578225, -0.28736046, -1.0701649e-07, -0.113806054, 0.3793351, 0.91823363, -0.263864, 0.8795048, -0.39603907, -0.22524485, 0.10136151, -0.12845933)
+
+[node name="single_grape4" parent="grape/Armature/Skeleton3D/6 BACK4" unique_id=459445609 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-0.9578225, -0.28736046, -1.0701647e-07, -0.113806054, 0.3793351, 0.91823363, -0.263864, 0.8795048, -0.39603907, -0.49550858, -0.018450499, -0.37070766)
+
+[node name="single_grape3" parent="grape/Armature/Skeleton3D/6 BACK4" unique_id=1711046741 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-0.97029585, 0.24192186, -8.3880835e-08, 0.09581043, 0.38427502, 0.91823363, 0.22214083, 0.89095825, -0.39603913, 0.23991346, 0.08985376, -0.14540528)
+
+[node name="single_grape5" parent="grape/Armature/Skeleton3D/6 BACK4" unique_id=1581936612 instance=ExtResource("6_8iv5a")]
+transform = Transform3D(-0.97029585, 0.24192186, -8.388083e-08, 0.09581043, 0.38427502, 0.91823363, 0.22214083, 0.89095825, -0.39603913, 0.55083215, -0.09605932, -0.41785085)
+
+[editable path="grape"]

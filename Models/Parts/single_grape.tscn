@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cwcgfrejfpcxo"]
+
+[ext_resource type="PackedScene" uid="uid://benway5affrc3" path="res://Models/Parts/grape_single.blend" id="1_qb2sh"]
+[ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="2_yp4vc"]
+
+[node name="single_grape" type="Node3D" unique_id=1591084565]
+transform = Transform3D(-4.3711385e-08, -1, 4.3711385e-08, 1, -4.3711385e-08, 4.371139e-08, -4.3711385e-08, 4.371139e-08, 1, 0, 0, 0)
+
+[node name="grape_single" parent="." unique_id=1340839860 instance=ExtResource("1_qb2sh")]
+
+[node name="Skeleton3D" parent="grape_single/Armature" parent_id_path=PackedInt32Array(1340839860, 264588471) index="0" unique_id=2145713486]
+script = ExtResource("2_yp4vc")
+multiplier = 1.25
+
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="grape_single/Armature/Skeleton3D" index="1" unique_id=549071314]
+setting_count = 1
+settings/0/root_bone_name = "Bone"
+settings/0/root_bone = 0
+settings/0/end_bone_name = "Bone.003"
+settings/0/end_bone = 3
+settings/0/extend_end_bone = false
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 3
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 8.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 1.0
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone"
+settings/0/joints/0/bone = 0
+settings/0/joints/1/bone_name = "Bone.001"
+settings/0/joints/1/bone = 1
+settings/0/joints/2/bone_name = "Bone.002"
+settings/0/joints/2/bone = 2
+settings/0/joints/3/bone_name = "Bone.003"
+settings/0/joints/3/bone = 3
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+
+[editable path="grape_single"]

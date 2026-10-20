@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="7_r7h1t"]
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="8_jafop"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="9_apb5h"]
+[ext_resource type="PackedScene" uid="uid://cvhhbyfkukdgx" path="res://Models/grape_man_redo_2.tscn" id="9_cgggu"]
 [ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="9_jpj64"]
 [ext_resource type="PackedScene" uid="uid://dr8pgrx0830fe" path="res://Mesh/raceway.blend" id="10_jpj64"]
 [ext_resource type="Texture2D" uid="uid://c0yuliptnoecv" path="res://Mesh/textures/Raceway.png" id="11_cgggu"]
@@ -247,7 +248,7 @@ fov = 40.2
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=887007692]
 script = ExtResource("7_lv0y0")
-PlayableCharacters = Array[PackedScene]([ExtResource("9_jpj64"), ExtResource("9_apb5h"), ExtResource("7_r7h1t"), ExtResource("8_jafop"), ExtResource("12_2a25w"), ExtResource("13_r7h1t"), ExtResource("14_jafop"), ExtResource("15_r7h1t"), ExtResource("6_2a25w")])
+PlayableCharacters = Array[PackedScene]([ExtResource("9_cgggu"), ExtResource("9_jpj64"), ExtResource("9_apb5h"), ExtResource("7_r7h1t"), ExtResource("8_jafop"), ExtResource("12_2a25w"), ExtResource("13_r7h1t"), ExtResource("14_jafop"), ExtResource("15_r7h1t"), ExtResource("6_2a25w")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=2119852306 instance=ExtResource("6_2a25w")]
 transform = Transform3D(0.9866659, 0, -0.16275842, 0, 1, 0, 0.16275844, 0, 0.9866659, 1.9456673, 0, 0.67497635)
@@ -274,6 +275,7 @@ trackNumber = 3
 
 [node name="Blueberryman" parent="Path3D2/track3" unique_id=539657863 instance=ExtResource("8_jafop")]
 transform = Transform3D(0.98840666, 0, -0.15184163, 0, 0.99999994, 0, 0.15184166, 0, 0.98840666, 6.6142387, 2.3841858e-07, 0.78969383)
+visible = false
 minimum = 0.25
 
 [node name="trail" parent="Path3D2/track3" unique_id=879598588 instance=ExtResource("17_apb5h")]
