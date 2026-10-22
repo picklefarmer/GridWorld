@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="8_cfm87"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="9_juxwo"]
 [ext_resource type="Script" uid="uid://dad14bax8o1t2" path="res://Scripts/player_swap.gd" id="10_7nbvk"]
+[ext_resource type="PackedScene" uid="uid://d2q8e4hxbj834" path="res://Mesh/progress_meter.tscn" id="11_w6ccu"]
 [ext_resource type="PackedScene" uid="uid://cvhhbyfkukdgx" path="res://Models/grape_man_redo_2.tscn" id="12_4wofl"]
 [ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="12_w2k2d"]
 [ext_resource type="PackedScene" uid="uid://c47yc10fjtfn0" path="res://Models/cloud.blend" id="13_4wofl"]
@@ -51,6 +52,7 @@ ambient_light_color = Color(0, 0, 0.81960785, 1)
 
 [node name="Raceway 2" type="Node3D" unique_id=1756663993 node_paths=PackedStringArray("top")]
 script = ExtResource("1_7nbvk")
+outIn = 60.0
 outOut = 80.0
 inOut = 60.0
 trackMultiplier = 0.75
@@ -120,7 +122,7 @@ curve = ExtResource("7_ql3gu")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1928489554]
-transform = Transform3D(-0.12622918, 0.20127526, 0.9713444, -7.4503914e-09, 0.979188, -0.20289604, -0.9919755, -0.025612345, -0.12360386, 10.053501, 7.4647217, 52.339375)
+transform = Transform3D(-0.12622909, 0.20127526, 0.9713444, -7.4503865e-09, 0.979188, -0.20289604, -0.99197483, -0.025612345, -0.12360386, 10.053501, 7.4647217, 52.339375)
 use_model_front = true
 script = ExtResource("5_wayxb")
 trackNumber = 1
@@ -132,7 +134,10 @@ current = true
 [node name="Camera3D" type="Camera3D" parent="Path3D2/track1" unique_id=106374368]
 transform = Transform3D(0.7315377, 0.09565981, -0.6750834, 0.019081414, 0.9868525, 0.16051428, 0.68156046, -0.13030338, 0.7200925, -10.928448, 5.865835, 14.421959)
 current = true
-fov = 40.2
+fov = 60.0
+
+[node name="Progress_Meter" parent="Path3D2/track1/Camera3D" unique_id=1292900729 instance=ExtResource("11_w6ccu")]
+transform = Transform3D(1, 0, 0, 0, -4.371138e-08, -1.0000001, 0, 0.9999998, -4.3711392e-08, -0.73176163, -0.5784673, -1.3911748)
 
 [node name="followPlayer" type="Camera3D" parent="Path3D2/track1" unique_id=1004571524]
 transform = Transform3D(0.7419935, 0.6704436, 3.5390258e-08, 1.1175871e-08, -8.288771e-08, 1.0000114, 0.6704427, -0.74199253, -6.519258e-08, 1.504, 60, 1.01)

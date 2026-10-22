@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d2q8e4hxbj834"]
+
+[ext_resource type="Script" uid="uid://bepgmvpdc6hw1" path="res://Scripts/progress_meter.gd" id="1_2y8rs"]
+[ext_resource type="PackedScene" uid="uid://wjg65e8ag0sf" path="res://Mesh/progress_meter_bar.tscn" id="2_2y8rs"]
+[ext_resource type="PackedScene" uid="uid://c3awccy1tlxkp" path="res://Mesh/progress_meter_bar_player.tscn" id="2_plfkb"]
+
+[node name="Progress_Meter" type="Node3D" unique_id=628590229]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0)
+script = ExtResource("1_2y8rs")
+
+[node name="progress_meter_bar_player" parent="." unique_id=400981961 instance=ExtResource("2_plfkb")]
+
+[node name="progress_meter_bar2" parent="." unique_id=1066932079 instance=ExtResource("2_2y8rs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.542925e-09, 0.051965006)
+
+[node name="progress_meter_bar3" parent="." unique_id=1808620194 instance=ExtResource("2_2y8rs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.180636e-09, 0.105014235)
+
+[node name="progress_meter_bar4" parent="." unique_id=1840191378 instance=ExtResource("2_2y8rs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3765123e-08, 0.15745465)

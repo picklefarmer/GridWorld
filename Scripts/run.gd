@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	#progress_ratio = lerp(progress_ratio,runAmount + progress_ratio,delta*evalTime)
 	progress = lerp(progress,(runAmount*trackNorm) + progress,delta*evalTime)
 	runAmount = lerp(runAmount,0.0, delta* 11.0)
-	
+	Actions.meter_Progress.emit(progress_ratio,trackNumber)
 	
 func running(inch:float,track:int):
 	if track == trackNumber:

@@ -28,6 +28,7 @@ driver/enable_input=true
 [autoload]
 
 Actions="*uid://dbn5cww40x3ad"
+Global="*uid://boxxs1ymyn3fe"
 
 [display]
 
@@ -58,6 +59,11 @@ trackLeft={
 trackRight={
 "deadzone": 0.2,
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":14,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+ProgressMeter={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":2,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
 

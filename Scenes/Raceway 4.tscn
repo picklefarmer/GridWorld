@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="4_bu834"]
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="5_po5p7"]
 [ext_resource type="Script" uid="uid://dad14bax8o1t2" path="res://Scripts/player_swap.gd" id="6_jj500"]
+[ext_resource type="PackedScene" uid="uid://d2q8e4hxbj834" path="res://Mesh/progress_meter.tscn" id="6_k1dfn"]
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="6_ubsab"]
 [ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="7_f7s0b"]
+[ext_resource type="PackedScene" uid="uid://cvhhbyfkukdgx" path="res://Models/grape_man_redo_2.tscn" id="7_vt77n"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="7_xjy4r"]
 [ext_resource type="PackedScene" uid="uid://cwaq0357wmo8y" path="res://Mesh/starfield 2.blend" id="8_ckf1d"]
 [ext_resource type="PackedScene" uid="uid://brot8tvj4oaou" path="res://Models/pearman.tscn" id="11_uwv7w"]
@@ -236,15 +238,18 @@ curve = ExtResource("2_xjxiu")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1273837031]
-transform = Transform3D(0.00064474944, -0.051033713, 0.99877137, -0.9880952, -0.15224253, -0.0071439994, 0.1523944, -0.9868946, -0.050545815, 10.341484, -21.762453, -100.19619)
+transform = Transform3D(0.0006447496, -0.051033713, 0.99877137, -0.98809546, -0.15224253, -0.0071439994, 0.15239443, -0.9868946, -0.050545815, 10.341484, -21.762453, -100.19619)
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 1
 
-[node name="Camera3D" type="Camera3D" parent="Path3D2/track1" unique_id=399348873]
-transform = Transform3D(0.9946187, -0.031285707, 0.09894287, 0.03997978, 0.99544483, -0.087156676, -0.09576099, 0.09064562, 0.9912797, 1.944, 4.223, 8.074)
+[node name="Camera3D" type="Camera3D" parent="Path3D2/track1" unique_id=952307534]
+transform = Transform3D(0.94982064, -0.035997406, -0.31142926, 0.025405236, 0.9990834, -0.037999, 0.3123788, 0.028168317, 0.949461, -4.530633, 3.9282074, 12.466555)
 current = true
-fov = 84.6
+fov = 60.0
+
+[node name="Progress_Meter" parent="Path3D2/track1/Camera3D" unique_id=628590229 instance=ExtResource("6_k1dfn")]
+transform = Transform3D(1, 0, 0, 0, -4.371138e-08, -1.0000001, 0, 0.9999998, -4.3711392e-08, -0.73176163, -0.5784673, -1.3911748)
 
 [node name="OmniLight3D" type="AreaLight3D" parent="Path3D2/track1" unique_id=1243257880]
 transform = Transform3D(1, 0, 0, 0, 0.7527585, -0.6582967, 0, 0.6582967, 0.7527585, 0.99999994, 3.258231, 4.6411386)
@@ -254,14 +259,14 @@ light_specular = 0.523
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1085270310]
 transform = Transform3D(1.0000001, 1.4901161e-08, 4.656613e-10, 0, 1.0000001, 3.7252903e-09, 0, 3.7252903e-09, 1, 0, 0, 0)
 script = ExtResource("6_jj500")
-PlayableCharacters = Array[PackedScene]([ExtResource("7_f7s0b"), ExtResource("7_xjy4r"), ExtResource("5_po5p7"), ExtResource("6_ubsab"), ExtResource("11_uwv7w"), ExtResource("12_g6ltt"), ExtResource("13_so25e"), ExtResource("14_afnnl"), ExtResource("4_bu834")])
+PlayableCharacters = Array[PackedScene]([ExtResource("7_vt77n"), ExtResource("7_f7s0b"), ExtResource("7_xjy4r"), ExtResource("5_po5p7"), ExtResource("6_ubsab"), ExtResource("11_uwv7w"), ExtResource("12_g6ltt"), ExtResource("13_so25e"), ExtResource("14_afnnl"), ExtResource("4_bu834")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("4_bu834")]
 transform = Transform3D(0.99966985, 7.450581e-09, -0.025692385, 7.450581e-09, 1.0000004, 0, 0.025692455, 2.9802322e-08, 0.9996698, 1.1060009, 7.6293945e-06, 0.2539959)
 runSpeed = 1.65
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=85182908]
-transform = Transform3D(0.00064475124, -0.051033713, 0.9987708, -0.98809797, -0.15224253, -0.0071439953, 0.15239482, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
+transform = Transform3D(0.00064475136, -0.051033713, 0.9987708, -0.9880982, -0.15224253, -0.0071439953, 0.15239485, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 2
@@ -274,7 +279,7 @@ minimum = 0.275
 transform = Transform3D(-5.3085387e-08, -2.9802322e-08, 1, 0, 1, 0, -1.215, 0, -4.284084e-08, -6.1919117, 2.9873047, -0.49881458)
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1360567713]
-transform = Transform3D(0.00064475124, -0.051033713, 0.9987708, -0.98809797, -0.15224253, -0.0071439953, 0.15239482, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
+transform = Transform3D(0.00064475136, -0.051033713, 0.9987708, -0.9880982, -0.15224253, -0.0071439953, 0.15239485, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 3
@@ -294,7 +299,7 @@ cull_mask = 1048567
 fov = 84.6
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1820980794]
-transform = Transform3D(0.00064475124, -0.051033713, 0.9987708, -0.98809797, -0.15224253, -0.0071439953, 0.15239482, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
+transform = Transform3D(0.00064475136, -0.051033713, 0.9987708, -0.9880982, -0.15224253, -0.0071439953, 0.15239485, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 4

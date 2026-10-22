@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dad14bax8o1t2" path="res://Scripts/player_swap.gd" id="7_lv0y0"]
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="7_r7h1t"]
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="8_jafop"]
+[ext_resource type="PackedScene" uid="uid://d2q8e4hxbj834" path="res://Mesh/progress_meter.tscn" id="8_xdlnv"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="9_apb5h"]
 [ext_resource type="PackedScene" uid="uid://cvhhbyfkukdgx" path="res://Models/grape_man_redo_2.tscn" id="9_cgggu"]
 [ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="9_jpj64"]
@@ -237,14 +238,17 @@ use_model_front = true
 script = ExtResource("5_8no50")
 trackNumber = 1
 
+[node name="Camera3D" type="Camera3D" parent="Path3D2/track1" unique_id=1548386952]
+transform = Transform3D(0.99193347, -0.038837034, 0.12085974, -0.00011932203, 0.9517758, 0.30682263, -0.12694588, -0.3043625, 0.9440805, 2.116806, 6.0279465, 15.9149275)
+current = true
+fov = 60.0
+
+[node name="Progress_Meter" parent="Path3D2/track1/Camera3D" unique_id=628590229 instance=ExtResource("8_xdlnv")]
+transform = Transform3D(1, 0, 0, 0, -4.371138e-08, -1.0000001, 0, 0.9999998, -4.3711392e-08, -0.73176163, -0.5784673, -1.3911748)
+
 [node name="AudioListener3D" type="AudioListener3D" parent="Path3D2/track1" unique_id=1645621004]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8037148, 1.8406985, 0.38011742)
 current = true
-
-[node name="Camera3D" type="Camera3D" parent="Path3D2/track1" unique_id=1180250909]
-transform = Transform3D(0.98246956, -0.02565923, 0.18473524, 0.016530262, 0.9985741, 0.050781794, -0.18577495, -0.04684554, 0.9814903, 3.511509, 4.8075876, 16.621471)
-current = true
-fov = 40.2
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=887007692]
 script = ExtResource("7_lv0y0")
@@ -275,7 +279,6 @@ trackNumber = 3
 
 [node name="Blueberryman" parent="Path3D2/track3" unique_id=539657863 instance=ExtResource("8_jafop")]
 transform = Transform3D(0.98840666, 0, -0.15184163, 0, 0.99999994, 0, 0.15184166, 0, 0.98840666, 6.6142387, 2.3841858e-07, 0.78969383)
-visible = false
 minimum = 0.25
 
 [node name="trail" parent="Path3D2/track3" unique_id=879598588 instance=ExtResource("17_apb5h")]

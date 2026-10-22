@@ -3,8 +3,9 @@ extends Node3D
 
 @export var Raceways : Array[PackedScene] = []
 var loadedPlayers : Array = []
-var raceWayInd : int = 0
+var raceWayInd : int = 8
 var currentRaceway:Node3D
+#var playerIndex : int = 0
 
 func _ready() -> void:
 	Actions.resetMic.connect(resetMicFunc)
@@ -14,6 +15,9 @@ func _process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("trackRight"):
 		swap(-1)
+		
+	
+		
 
 func resetMicFunc():
 	#print(currentRaceway.get_node("Microphone"))
@@ -32,6 +36,8 @@ func swap(direction:int):
 	currentRaceway = get_child(0)
 	print(raceWayInd)
 	var racewayInstance = Raceways[raceWayInd].instantiate()
+	#print(racewayInstance.get_node("Path3D2/track1/PlayerHolder").playerInd, " player index of level")
+	#racewayInstance.get_node("Path3D2/track1/PlayerHolder").playerInd = playerIndex
 	self.add_child(racewayInstance)
 	
 	

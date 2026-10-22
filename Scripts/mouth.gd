@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	if volume_mag > minimum:
 		var global_force_vector : Vector3 = Vector3(0,0,volume_mag *multiplier)
 		var path3dVector : Vector3 = owner.get_parent().global_transform.basis * global_force_vector
-		print("owner", owner.get_parent())
+		#print("owner", owner.get_parent())
 		var skeleton: Skeleton3D = get_parent() as Skeleton3D
 		var bone_idx = skeleton.find_bone(bone)
 		var rotVector : Transform3D = skeleton.global_transform * skeleton.get_bone_global_pose(bone_idx)

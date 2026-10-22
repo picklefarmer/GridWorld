@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 		set_bone_pose_position(bone_idx, current_pos)
 		
 func rebus():
-	print("is owner active:" ,owner)
+	#print("is owner active:" ,owner)
 	if owner.get("active") != null:
 		track = "recording"
 		#print("rebus")

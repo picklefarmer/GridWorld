@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://wjg65e8ag0sf"]
+
+[ext_resource type="PackedScene" uid="uid://djdwwx5cmauxg" path="res://Mesh/progress_meter.blend" id="1_vhmqb"]
+[ext_resource type="PackedScene" uid="uid://cnt2wnw4ro6pf" path="res://Mesh/progress_meter_marker.blend" id="2_ia3ci"]
+
+[node name="progress_meter_bar" unique_id=379160676 instance=ExtResource("1_vhmqb")]
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Plane/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1679544257) index="0" unique_id=1239581175]
+bone_name = "Bone"
+bone_idx = 0
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Plane/Armature/Skeleton3D/BoneAttachment3D" index="0" unique_id=1146981010]
+remote_path = NodePath("../../../../../progress_meter_marker")
+update_rotation = false
+update_scale = false
+
+[node name="progress_meter_marker" parent="." index="1" unique_id=1165853336 instance=ExtResource("2_ia3ci")]
