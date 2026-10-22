@@ -11,8 +11,8 @@ func _ready() -> void:
 	#for character in PlayableCharacters:
 		#loadedPlayers.append(character.instantiate())
 	player = get_child(0)
-	#playerInd = Global.globalPlayerIndex
-	#startingCharacter()
+	playerInd = Global.globalPlayerIndex
+	startingCharacter()
 	
 	#playerInd = get_tree().root.get_node("Main").playerIndex 
 	
@@ -24,21 +24,20 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("playerRight"):
 		swap(1)
 
-#func startingCharacter():
-	#var playerInstantiated = PlayableCharacters[playerInd].instantiate()
-	#self.add_child(playerInstantiated)
-	#var newPlayer:Node3D = get_child(1)
-	#playerInstantiated.set("active",true)
-	#Actions.syncLip.emit()
-	#
-	#newPlayer.runSpeed = player.runSpeed
-	#newPlayer.transform = player.transform
-	#
-	#player.queue_free()
-	#player = newPlayer
+func startingCharacter():
+	var playerInstantiated = PlayableCharacters[playerInd].instantiate()
+	self.add_child(playerInstantiated)
+	var newPlayer:Node3D = get_child(1)
+	playerInstantiated.set("active",true)
+	Actions.syncLip.emit()
 	
-	#playerInd = posmod(playerInd, PlayableCharacters.size())
-	#Global.globalPlayerIndex =  playerInd
+	newPlayer.runSpeed = player.runSpeed
+	newPlayer.transform = player.transform
+	
+	player.queue_free()
+	player = newPlayer
+	
+
 	
 func swap(direction:int):
 	var tempInd : int = posmod(playerInd+direction, PlayableCharacters.size())
@@ -57,5 +56,5 @@ func swap(direction:int):
 	
 	
 	playerInd = tempInd
-	#Global.globalPlayerIndex =  playerInd
+	Global.globalPlayerIndex =  tempInd
 	
