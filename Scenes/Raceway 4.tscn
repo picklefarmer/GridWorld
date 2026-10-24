@@ -24,7 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://dok0tv4lxakgx" path="res://Mesh/trail.blend" id="15_eieg8"]
 [ext_resource type="AudioStream" uid="uid://dsrd68lhptraq" path="res://Audio/Past tracks/Track 4/track 1 - track 4.mp3" id="15_so25e"]
 [ext_resource type="AudioStream" uid="uid://ds3vhfqsbm6rf" path="res://Audio/Past tracks/Track 4/track 2 - track 4.mp3" id="17_afnnl"]
+[ext_resource type="PackedScene" uid="uid://inqwvslqoi4c" path="res://Models/watermelonman.tscn" id="18_6k8qg"]
 [ext_resource type="AudioStream" uid="uid://beg315go6ndkj" path="res://Audio/Past tracks/Track 4/track 3 -track 4.mp3" id="18_eieg8"]
+[ext_resource type="PackedScene" uid="uid://crldn2u381y1n" path="res://Scenes/Background/dragon.tscn" id="26_ppby4"]
 
 [sub_resource type="Curve" id="Curve_sdpiv"]
 _data = [Vector2(0.098919265, 0), 0.0, 0.17114195, 0, 0, Vector2(0.4142403, 0.12065345), 0.8054654, 0.8054654, 0, 0, Vector2(0.6288621, 0.30478907), 1.0292553, 1.0292553, 0, 0, Vector2(0.8841704, 0.81066704), 0.24449319, 0.0, 0, 0]
@@ -238,7 +240,7 @@ curve = ExtResource("2_xjxiu")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1273837031]
-transform = Transform3D(0.0006447496, -0.051033713, 0.99877137, -0.98809546, -0.15224253, -0.0071439994, 0.15239443, -0.9868946, -0.050545815, 10.341484, -21.762453, -100.19619)
+transform = Transform3D(0.0006447538, -0.05103375, 0.9987772, -0.9881019, -0.15224263, -0.0071440414, 0.15239543, -0.9868953, -0.050546113, 10.341484, -21.762453, -100.19619)
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 1
@@ -259,14 +261,14 @@ light_specular = 0.523
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1085270310]
 transform = Transform3D(1.0000001, 1.4901161e-08, 4.656613e-10, 0, 1.0000001, 3.7252903e-09, 0, 3.7252903e-09, 1, 0, 0, 0)
 script = ExtResource("6_jj500")
-PlayableCharacters = Array[PackedScene]([ExtResource("7_vt77n"), ExtResource("7_f7s0b"), ExtResource("7_xjy4r"), ExtResource("5_po5p7"), ExtResource("6_ubsab"), ExtResource("11_uwv7w"), ExtResource("12_g6ltt"), ExtResource("13_so25e"), ExtResource("14_afnnl"), ExtResource("4_bu834")])
+PlayableCharacters = Array[PackedScene]([ExtResource("7_vt77n"), ExtResource("7_f7s0b"), ExtResource("7_xjy4r"), ExtResource("5_po5p7"), ExtResource("6_ubsab"), ExtResource("11_uwv7w"), ExtResource("12_g6ltt"), ExtResource("13_so25e"), ExtResource("14_afnnl"), ExtResource("4_bu834"), ExtResource("18_6k8qg")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("4_bu834")]
 transform = Transform3D(0.99966985, 7.450581e-09, -0.025692385, 7.450581e-09, 1.0000004, 0, 0.025692455, 2.9802322e-08, 0.9996698, 1.1060009, 7.6293945e-06, 0.2539959)
 runSpeed = 1.65
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=85182908]
-transform = Transform3D(0.00064475136, -0.051033713, 0.9987708, -0.9880982, -0.15224253, -0.0071439953, 0.15239485, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
+transform = Transform3D(0.00064475206, -0.051033713, 0.9987708, -0.9880993, -0.15224253, -0.0071439953, 0.15239501, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 2
@@ -277,9 +279,10 @@ minimum = 0.275
 
 [node name="trail" parent="Path3D2/track2" unique_id=1344867179 instance=ExtResource("15_eieg8")]
 transform = Transform3D(-5.3085387e-08, -2.9802322e-08, 1, 0, 1, 0, -1.215, 0, -4.284084e-08, -6.1919117, 2.9873047, -0.49881458)
+visible = false
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1360567713]
-transform = Transform3D(0.00064475136, -0.051033713, 0.9987708, -0.9880982, -0.15224253, -0.0071439953, 0.15239485, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
+transform = Transform3D(0.00064475206, -0.051033713, 0.9987708, -0.9880993, -0.15224253, -0.0071439953, 0.15239501, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 3
@@ -299,7 +302,7 @@ cull_mask = 1048567
 fov = 84.6
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1820980794]
-transform = Transform3D(0.00064475136, -0.051033713, 0.9987708, -0.9880982, -0.15224253, -0.0071439953, 0.15239485, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
+transform = Transform3D(0.00064475206, -0.051033713, 0.9987708, -0.9880993, -0.15224253, -0.0071439953, 0.15239501, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 4
@@ -341,362 +344,376 @@ autoplay = true
 bus = &"track4"
 parameters/looping = true
 
-[node name="crystal" parent="." unique_id=1830050833 instance=ExtResource("12_xjy4r")]
-transform = Transform3D(13.9, 0, 0, 0, 13.9, 0, 0, 0, 13.9, 54.871952, -18.104767, 26.33641)
-
-[node name="crystal_002" parent="crystal" index="0" unique_id=299906561]
-transform = Transform3D(0.9901012, -0.0919604, -0.10603211, -0.0985354, 0.08256066, -0.99170285, 0.09995148, 0.9923342, 0.07268202, -0.3743887, 0, 0)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-
-[node name="crystal_003" type="MeshInstance3D" parent="crystal" unique_id=800999961]
-transform = Transform3D(-0.07726529, -0.5495476, 0.0072367117, 0.007949347, -0.008424589, -0.55487907, 0.54953796, -0.0771449, 0.009044079, -3.2529197, 0.18440676, 1.3888298)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_004" type="MeshInstance3D" parent="crystal" unique_id=1325858319]
-transform = Transform3D(-0.40874508, -0.28563035, 0.2436548, -0.22813103, -0.09710743, -0.49653935, 0.29817575, -0.46584362, -0.045889977, -6.220335, -0.6423638, 0.95307577)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal2" parent="." unique_id=2014435146 instance=ExtResource("12_xjy4r")]
-transform = Transform3D(-3.5905097, -5.7395387, 12.139849, 0, 12.566323, 5.9411697, -13.428263, 1.5346638, -3.246008, -0.27183914, -19.394318, 26.33641)
-
-[node name="crystal_002" parent="crystal2" index="0" unique_id=299906561]
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-
-[node name="crystal_003" type="MeshInstance3D" parent="crystal2" unique_id=1860487667]
-transform = Transform3D(-0.038823947, -0.5188657, -0.19312254, 0.08128423, 0.18615678, -0.5164915, 0.54764104, -0.064414605, 0.06296998, 1.1219616, 0.8156761, -2.4517066)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_004" type="MeshInstance3D" parent="crystal2" unique_id=863310487]
-transform = Transform3D(-0.47429687, -0.2351734, -0.16661689, 0.037693057, 0.2674756, -0.48483056, 0.2857393, -0.4256472, -0.2126097, 3.3034296, 0.9144794, -1.8824537)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_005" type="MeshInstance3D" parent="crystal2" unique_id=1082940839]
-transform = Transform3D(-0.364178, 0.18954864, -0.15825844, 0.21636935, 0.109063834, -0.36727288, -0.118990496, -0.38180673, -0.18347989, 4.581402, -0.18264067, 1.0324464)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal3" parent="." unique_id=1294705732 instance=ExtResource("12_xjy4r")]
-transform = Transform3D(-12.119198, 1.534685, -6.631725, 1.2033563, 13.811861, 0.9971976, 6.699774, 0.29531717, -12.175213, -19.914906, -17.984814, -29.279509)
-
-[node name="crystal_002" parent="crystal3" index="0" unique_id=299906561]
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-
-[node name="crystal_003" type="MeshInstance3D" parent="crystal3" unique_id=492291674]
-transform = Transform3D(-0.067847624, -0.5269373, -0.1604951, 0.010485097, 0.16044326, -0.53119934, 0.55073744, -0.06797017, -0.009658895, 0.38166976, -0.33256483, 0.91585827)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_004" type="MeshInstance3D" parent="crystal3" unique_id=1986707424]
-transform = Transform3D(-0.45571846, -0.25657487, -0.1857814, 0.19733898, 0.02467347, -0.518144, 0.24779578, -0.4915133, 0.07096943, -2.2233233, 0.71593285, -0.5251788)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_005" type="MeshInstance3D" parent="crystal3" unique_id=1997972615]
-transform = Transform3D(0.19734085, -0.39256802, -0.023387501, 0.070037454, 0.060831286, -0.4301097, 0.38697726, 0.18918213, 0.08977038, -3.077199, 0.43922132, -0.9393014)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_006" type="MeshInstance3D" parent="crystal3" unique_id=469164149]
-transform = Transform3D(-0.35967112, -0.22773321, 0.11123955, -0.17138712, 0.07626853, -0.39800692, 0.18671665, -0.36867422, -0.15105028, -3.0977807, 0.20174703, 0.061122358)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_007" type="MeshInstance3D" parent="crystal3" unique_id=848531479]
-transform = Transform3D(-0.60473573, 0.40705195, 0.093959205, -0.031140417, 0.12092875, -0.72431445, -0.4165932, -0.59992486, -0.082250565, -3.5229278, 0.82862383, -3.5795693)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal4" parent="." unique_id=697067933 instance=ExtResource("12_xjy4r")]
-transform = Transform3D(16.085, 0, 0, 0, 16.085, 0, 0, 0, 16.085, 214.1911, -12.649977, -12.08522)
-
-[node name="crystal_002" parent="crystal4" index="0" unique_id=299906561]
-transform = Transform3D(0.9901012, -0.0919604, -0.10603211, -0.0985354, 0.08256066, -0.99170285, 0.09995148, 0.9923342, 0.07268202, -5.198023, 0, 6.2676063)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-
-[node name="crystal_003" type="MeshInstance3D" parent="crystal4" unique_id=713187885]
-transform = Transform3D(-0.07726529, -0.5495476, 0.0072367117, 0.007949347, -0.008424589, -0.55487907, 0.54953796, -0.0771449, 0.009044079, -3.2529197, 0.18440676, 1.3888298)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_004" type="MeshInstance3D" parent="crystal4" unique_id=1155640625]
-transform = Transform3D(-0.54577065, 0.054245193, 0.08495304, -0.100315444, -0.24676281, -0.48689812, -0.0098172175, -0.4941562, 0.252464, -8.827093, -2.163465, -5.5380006)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_005" type="MeshInstance3D" parent="crystal4" unique_id=479954610]
-transform = Transform3D(-0.3343459, 0.033231195, 0.05204335, -0.058829296, -0.258493, -0.21288611, 0.01875994, -0.21835078, 0.2599442, -12.954444, -2.163465, -5.648016)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal5" parent="." unique_id=308634870 instance=ExtResource("12_xjy4r")]
-transform = Transform3D(-4.154917, -6.6417613, 14.048162, 0, 14.5416765, 6.8750877, -15.539107, 1.7759042, -3.7562613, -169.02124, -93.531715, -115.40183)
-
-[node name="crystal_002" parent="crystal5" index="0" unique_id=299906561]
-transform = Transform3D(-0.9931551, -0.116001755, -0.013654254, -0.0877348, 0.8180526, -0.5684128, 0.07710673, -0.56332386, -0.82263047, -2.4296918, -0.8135991, 1.7208662)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-
-[node name="crystal_003" type="MeshInstance3D" parent="crystal5" unique_id=2103059816]
-transform = Transform3D(-0.071963765, 0.5367554, 0.12140871, 0.47310296, 0.122886896, -0.26286384, -0.28110495, 0.069409244, -0.47348446, -3.9765124, -1.8058729, 3.0931997)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_004" type="MeshInstance3D" parent="crystal5" unique_id=599656060]
-transform = Transform3D(0.40293905, 0.34731075, 0.15824229, 0.2900615, -0.12911615, -0.4552123, -0.24805164, 0.4131943, -0.27525604, -2.7017097, -2.0768347, 4.444552)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_005" type="MeshInstance3D" parent="crystal5" unique_id=212404429]
-transform = Transform3D(0.4013519, -0.09075535, 0.15582095, 0.08489789, -0.24033464, -0.35865244, 0.15908825, 0.35721526, -0.2017132, -4.68239, -0.6887119, 2.1028547)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal6" parent="." unique_id=349222650 instance=ExtResource("12_xjy4r")]
-transform = Transform3D(-14.024265, 1.7759284, -7.6741924, 1.3925169, 15.983006, 1.1539515, 7.752938, 0.3417395, -14.089087, -19.742378, -11.230993, 136.666)
-
-[node name="crystal_002" parent="crystal6" index="0" unique_id=299906561]
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-
-[node name="crystal_003" type="MeshInstance3D" parent="crystal6" unique_id=783447566]
-transform = Transform3D(-0.067847624, -0.5269373, -0.1604951, 0.010485097, 0.16044326, -0.53119934, 0.55073744, -0.06797017, -0.009658895, 0.38166976, -0.33256483, 0.91585827)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_004" type="MeshInstance3D" parent="crystal6" unique_id=742083532]
-transform = Transform3D(-0.45571846, -0.25657487, -0.1857814, 0.19733898, 0.02467347, -0.518144, 0.24779578, -0.4915133, 0.07096943, -2.2233233, 0.71593285, -0.5251788)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_005" type="MeshInstance3D" parent="crystal6" unique_id=1184227901]
-transform = Transform3D(0.19734085, -0.39256802, -0.023387501, 0.070037454, 0.060831286, -0.4301097, 0.38697726, 0.18918213, 0.08977038, -3.077199, 0.43922132, -0.9393014)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_006" type="MeshInstance3D" parent="crystal6" unique_id=512676324]
-transform = Transform3D(-0.35967112, -0.22773322, 0.11123955, -0.17138714, 0.07626853, -0.3980069, 0.18671662, -0.36867422, -0.15105027, -2.9551883, 0.20803231, -0.19800615)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_007" type="MeshInstance3D" parent="crystal6" unique_id=146499885]
-transform = Transform3D(-0.60473573, 0.40705195, 0.093959205, -0.031140417, 0.12092875, -0.72431445, -0.4165932, -0.59992486, -0.082250565, -3.5229278, 0.82862383, -3.5795693)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal7" parent="." unique_id=2061190588 instance=ExtResource("12_xjy4r")]
-transform = Transform3D(10.946202, 2.1281757, -13.957424, 0, 17.660881, 2.6928644, 14.118742, -1.649966, 10.821135, 20.977718, -162.3611, 53.686775)
-
-[node name="crystal_002" parent="crystal7" index="0" unique_id=299906561]
-transform = Transform3D(0.9901012, -0.0919604, -0.10603211, -0.0985354, 0.08256066, -0.99170285, 0.09995148, 0.9923342, 0.07268202, -0.3743887, 0, 0)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-
-[node name="crystal_003" type="MeshInstance3D" parent="crystal7" unique_id=1461745677]
-transform = Transform3D(-0.07726529, -0.5495476, 0.0072367117, 0.007949347, -0.008424589, -0.55487907, 0.54953796, -0.0771449, 0.009044079, -3.2529197, 0.18440676, 1.3888298)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_004" type="MeshInstance3D" parent="crystal7" unique_id=1883948902]
-transform = Transform3D(-0.40874508, -0.28563035, 0.2436548, -0.22813103, -0.09710743, -0.49653935, 0.29817575, -0.46584362, -0.045889977, -6.220335, -0.6423638, 0.95307577)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal8" parent="." unique_id=504854814 instance=ExtResource("12_xjy4r")]
-transform = Transform3D(10.812069, -7.947243, 11.79401, 0, 14.815365, 9.983144, -14.221723, -6.0418944, 8.966402, 12.413924, -156.53787, 29.282919)
-
-[node name="crystal_002" parent="crystal8" index="0" unique_id=299906561]
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-
-[node name="crystal_003" type="MeshInstance3D" parent="crystal8" unique_id=1571416874]
-transform = Transform3D(-0.038823947, -0.5188657, -0.19312254, 0.08128423, 0.18615678, -0.5164915, 0.54764104, -0.064414605, 0.06296998, 1.1219616, 0.8156761, -2.4517066)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_004" type="MeshInstance3D" parent="crystal8" unique_id=966197545]
-transform = Transform3D(-0.47429687, -0.2351734, -0.16661689, 0.037693057, 0.2674756, -0.48483056, 0.2857393, -0.4256472, -0.2126097, 3.3034296, 0.9144794, -1.8824537)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_005" type="MeshInstance3D" parent="crystal8" unique_id=240883645]
-transform = Transform3D(-0.364178, 0.18954864, -0.15825844, 0.21636935, 0.109063834, -0.36727288, -0.118990496, -0.38180673, -0.18347989, 4.581402, -0.18264067, 1.0324464)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal9" parent="." unique_id=1930893927 instance=ExtResource("12_xjy4r")]
-transform = Transform3D(-16.349033, -0.1786843, 7.1996803, 1.5466161, 17.355705, 3.9427962, -7.033868, 4.2315164, -15.867488, 15.337596, -161.77109, -46.92777)
-
-[node name="crystal_002" parent="crystal9" index="0" unique_id=299906561]
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-
-[node name="crystal_003" type="MeshInstance3D" parent="crystal9" unique_id=1402910477]
-transform = Transform3D(-0.067847624, -0.5269373, -0.1604951, 0.010485097, 0.16044326, -0.53119934, 0.55073744, -0.06797017, -0.009658895, 0.38166976, -0.33256483, 0.91585827)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_004" type="MeshInstance3D" parent="crystal9" unique_id=906854053]
-transform = Transform3D(-0.45571846, -0.25657487, -0.1857814, 0.19733898, 0.02467347, -0.518144, 0.24779578, -0.4915133, 0.07096943, -2.2233233, 0.71593285, -0.5251788)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_005" type="MeshInstance3D" parent="crystal9" unique_id=2097215521]
-transform = Transform3D(0.19734085, -0.39256802, -0.023387501, 0.070037454, 0.060831286, -0.4301097, 0.38697726, 0.18918213, 0.08977038, -3.077199, 0.43922132, -0.9393014)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_006" type="MeshInstance3D" parent="crystal9" unique_id=696245071]
-transform = Transform3D(-0.35967112, -0.22773321, 0.11123955, -0.17138712, 0.07626853, -0.39800692, 0.18671665, -0.36867422, -0.15105028, -3.0977807, 0.20174703, 0.061122358)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_007" type="MeshInstance3D" parent="crystal9" unique_id=824634]
-transform = Transform3D(-0.60473573, 0.40705195, 0.093959205, -0.031140417, 0.12092875, -0.72431445, -0.4165932, -0.59992486, -0.082250565, -3.5229278, 0.82862383, -3.5795693)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal10" parent="." unique_id=604573928 instance=ExtResource("12_xjy4r")]
-transform = Transform3D(10.946201, 2.1281757, -13.957426, 1.1920929e-07, 17.660881, 2.6928644, 14.118744, -1.6499658, 10.821134, 148.96007, -156.90631, 156.05537)
-
-[node name="crystal_002" parent="crystal10" index="0" unique_id=299906561]
-transform = Transform3D(0.9901012, -0.0919604, -0.10603211, -0.0985354, 0.08256066, -0.99170285, 0.09995148, 0.9923342, 0.07268202, -5.198023, 0, 6.2676063)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-
-[node name="crystal_003" type="MeshInstance3D" parent="crystal10" unique_id=1125881263]
-transform = Transform3D(-0.07726529, -0.5495476, 0.0072367117, 0.007949347, -0.008424589, -0.55487907, 0.54953796, -0.0771449, 0.009044079, -3.2529197, 0.18440676, 1.3888298)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_004" type="MeshInstance3D" parent="crystal10" unique_id=925932883]
-transform = Transform3D(-0.54577065, 0.054245193, 0.08495304, -0.100315444, -0.24676281, -0.48689812, -0.0098172175, -0.4941562, 0.252464, -8.827093, -2.163465, -5.5380006)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_005" type="MeshInstance3D" parent="crystal10" unique_id=2144397555]
-transform = Transform3D(-0.3343459, 0.033231195, 0.05204335, -0.058829296, -0.258493, -0.21288611, 0.01875994, -0.21835078, 0.2599442, -12.954444, -2.163465, -5.648016)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal11" parent="." unique_id=1238485680 instance=ExtResource("12_xjy4r")]
-transform = Transform3D(10.812068, -7.9472437, 11.794011, -1.1920929e-07, 14.815365, 9.983144, -14.221724, -6.041894, 8.966401, 21.03418, -230.67526, -190.92557)
-
-[node name="crystal_002" parent="crystal11" index="0" unique_id=299906561]
-transform = Transform3D(-0.9931551, -0.116001755, -0.013654254, -0.0877348, 0.8180526, -0.5684128, 0.07710673, -0.56332386, -0.82263047, -2.4296918, -0.8135991, 1.7208662)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-
-[node name="crystal_003" type="MeshInstance3D" parent="crystal11" unique_id=1673882564]
-transform = Transform3D(-0.071963765, 0.5367554, 0.12140871, 0.47310296, 0.122886896, -0.26286384, -0.28110495, 0.069409244, -0.47348446, -3.9765124, -1.8058729, 3.0931997)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_004" type="MeshInstance3D" parent="crystal11" unique_id=1787420613]
-transform = Transform3D(0.40293905, 0.34731075, 0.15824229, 0.2900615, -0.12911615, -0.4552123, -0.24805164, 0.4131943, -0.27525604, -2.7017097, -2.0768347, 4.444552)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_005" type="MeshInstance3D" parent="crystal11" unique_id=535203939]
-transform = Transform3D(0.4013519, -0.09075535, 0.15582095, 0.08489789, -0.24033464, -0.35865244, 0.15908825, 0.35721526, -0.2017132, -4.68239, -0.6887119, 2.1028547)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal12" parent="." unique_id=542760600 instance=ExtResource("12_xjy4r")]
-transform = Transform3D(-16.349033, -0.178684, 7.1996803, 1.5466161, 17.355705, 3.942796, -7.033868, 4.231516, -15.867488, -115.703735, -155.01726, 54.886326)
-
-[node name="crystal_002" parent="crystal12" index="0" unique_id=299906561]
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-
-[node name="crystal_003" type="MeshInstance3D" parent="crystal12" unique_id=1651260672]
-transform = Transform3D(-0.067847624, -0.5269373, -0.1604951, 0.010485097, 0.16044326, -0.53119934, 0.55073744, -0.06797017, -0.009658895, 0.38166976, -0.33256483, 0.91585827)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_004" type="MeshInstance3D" parent="crystal12" unique_id=1607505198]
-transform = Transform3D(-0.45571846, -0.25657487, -0.1857814, 0.19733898, 0.02467347, -0.518144, 0.24779578, -0.4915133, 0.07096943, -2.2233233, 0.71593285, -0.5251788)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_005" type="MeshInstance3D" parent="crystal12" unique_id=1728388555]
-transform = Transform3D(0.19734085, -0.39256802, -0.023387501, 0.070037454, 0.060831286, -0.4301097, 0.38697726, 0.18918213, 0.08977038, -3.077199, 0.43922132, -0.9393014)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_006" type="MeshInstance3D" parent="crystal12" unique_id=1415252284]
-transform = Transform3D(-0.35967112, -0.22773322, 0.11123955, -0.17138714, 0.07626853, -0.3980069, 0.18671662, -0.36867422, -0.15105027, -2.9551883, 0.20803231, -0.19800615)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
-[node name="crystal_007" type="MeshInstance3D" parent="crystal12" unique_id=233051266]
-transform = Transform3D(-0.60473573, 0.40705195, 0.093959205, -0.031140417, 0.12092875, -0.72431445, -0.4165932, -0.59992486, -0.082250565, -3.5229278, 0.82862383, -3.5795693)
-layers = 8
-mesh = SubResource("ArrayMesh_q6u7a")
-skeleton = NodePath("")
-
 [node name="BirdsEye" type="Camera3D" parent="." unique_id=1756956984]
 transform = Transform3D(1, 0, 0, 0, -0.11852854, 0.9929507, 0, -0.9929507, -0.11852854, 25.848495, 646.8691, -47.805542)
 fov = 48.9
 
+[node name="Background" type="Node3D" parent="." unique_id=1660193458]
+
+[node name="crystal" parent="Background" unique_id=1830050833 instance=ExtResource("12_xjy4r")]
+transform = Transform3D(13.9, 0, 0, 0, 13.9, 0, 0, 0, 13.9, 54.871952, -18.104767, 26.33641)
+
+[node name="crystal_002" parent="Background/crystal" index="0" unique_id=299906561]
+transform = Transform3D(0.9901012, -0.0919604, -0.10603211, -0.0985354, 0.08256066, -0.99170285, 0.09995148, 0.9923342, 0.07268202, -0.3743887, 0, 0)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+
+[node name="crystal_003" type="MeshInstance3D" parent="Background/crystal" unique_id=800999961]
+transform = Transform3D(-0.07726529, -0.5495476, 0.0072367117, 0.007949347, -0.008424589, -0.55487907, 0.54953796, -0.0771449, 0.009044079, -3.2529197, 0.18440676, 1.3888298)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_004" type="MeshInstance3D" parent="Background/crystal" unique_id=1325858319]
+transform = Transform3D(-0.40874508, -0.28563035, 0.2436548, -0.22813103, -0.09710743, -0.49653935, 0.29817575, -0.46584362, -0.045889977, -6.220335, -0.6423638, 0.95307577)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal2" parent="Background" unique_id=2014435146 instance=ExtResource("12_xjy4r")]
+transform = Transform3D(-3.5905097, -5.7395387, 12.139849, 0, 12.566323, 5.9411697, -13.428263, 1.5346638, -3.246008, -0.27183914, -19.394318, 26.33641)
+
+[node name="crystal_002" parent="Background/crystal2" index="0" unique_id=299906561]
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+
+[node name="crystal_003" type="MeshInstance3D" parent="Background/crystal2" unique_id=1860487667]
+transform = Transform3D(-0.038823947, -0.5188657, -0.19312254, 0.08128423, 0.18615678, -0.5164915, 0.54764104, -0.064414605, 0.06296998, 1.1219616, 0.8156761, -2.4517066)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_004" type="MeshInstance3D" parent="Background/crystal2" unique_id=863310487]
+transform = Transform3D(-0.47429687, -0.2351734, -0.16661689, 0.037693057, 0.2674756, -0.48483056, 0.2857393, -0.4256472, -0.2126097, 3.3034296, 0.9144794, -1.8824537)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_005" type="MeshInstance3D" parent="Background/crystal2" unique_id=1082940839]
+transform = Transform3D(-0.364178, 0.18954864, -0.15825844, 0.21636935, 0.109063834, -0.36727288, -0.118990496, -0.38180673, -0.18347989, 4.581402, -0.18264067, 1.0324464)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal3" parent="Background" unique_id=1294705732 instance=ExtResource("12_xjy4r")]
+transform = Transform3D(-12.119198, 1.534685, -6.631725, 1.2033563, 13.811861, 0.9971976, 6.699774, 0.29531717, -12.175213, -19.914906, -17.984814, -29.279509)
+
+[node name="crystal_002" parent="Background/crystal3" index="0" unique_id=299906561]
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+
+[node name="crystal_003" type="MeshInstance3D" parent="Background/crystal3" unique_id=492291674]
+transform = Transform3D(-0.067847624, -0.5269373, -0.1604951, 0.010485097, 0.16044326, -0.53119934, 0.55073744, -0.06797017, -0.009658895, 0.38166976, -0.33256483, 0.91585827)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_004" type="MeshInstance3D" parent="Background/crystal3" unique_id=1986707424]
+transform = Transform3D(-0.45571846, -0.25657487, -0.1857814, 0.19733898, 0.02467347, -0.518144, 0.24779578, -0.4915133, 0.07096943, -2.2233233, 0.71593285, -0.5251788)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_005" type="MeshInstance3D" parent="Background/crystal3" unique_id=1997972615]
+transform = Transform3D(0.19734085, -0.39256802, -0.023387501, 0.070037454, 0.060831286, -0.4301097, 0.38697726, 0.18918213, 0.08977038, -3.077199, 0.43922132, -0.9393014)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_006" type="MeshInstance3D" parent="Background/crystal3" unique_id=469164149]
+transform = Transform3D(-0.35967112, -0.22773321, 0.11123955, -0.17138712, 0.07626853, -0.39800692, 0.18671665, -0.36867422, -0.15105028, -3.0977807, 0.20174703, 0.061122358)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_007" type="MeshInstance3D" parent="Background/crystal3" unique_id=848531479]
+transform = Transform3D(-0.60473573, 0.40705195, 0.093959205, -0.031140417, 0.12092875, -0.72431445, -0.4165932, -0.59992486, -0.082250565, -3.5229278, 0.82862383, -3.5795693)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal4" parent="Background" unique_id=697067933 instance=ExtResource("12_xjy4r")]
+transform = Transform3D(16.085, 0, 0, 0, 16.085, 0, 0, 0, 16.085, 214.1911, -12.649977, -12.08522)
+
+[node name="crystal_002" parent="Background/crystal4" index="0" unique_id=299906561]
+transform = Transform3D(0.9901012, -0.0919604, -0.10603211, -0.0985354, 0.08256066, -0.99170285, 0.09995148, 0.9923342, 0.07268202, -5.198023, 0, 6.2676063)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+
+[node name="crystal_003" type="MeshInstance3D" parent="Background/crystal4" unique_id=713187885]
+transform = Transform3D(-0.07726529, -0.5495476, 0.0072367117, 0.007949347, -0.008424589, -0.55487907, 0.54953796, -0.0771449, 0.009044079, -3.2529197, 0.18440676, 1.3888298)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_004" type="MeshInstance3D" parent="Background/crystal4" unique_id=1155640625]
+transform = Transform3D(-0.54577065, 0.054245193, 0.08495304, -0.100315444, -0.24676281, -0.48689812, -0.0098172175, -0.4941562, 0.252464, -8.827093, -2.163465, -5.5380006)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_005" type="MeshInstance3D" parent="Background/crystal4" unique_id=479954610]
+transform = Transform3D(-0.3343459, 0.033231195, 0.05204335, -0.058829296, -0.258493, -0.21288611, 0.01875994, -0.21835078, 0.2599442, -12.954444, -2.163465, -5.648016)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal5" parent="Background" unique_id=308634870 instance=ExtResource("12_xjy4r")]
+transform = Transform3D(-4.154917, -6.6417613, 14.048162, 0, 14.5416765, 6.8750877, -15.539107, 1.7759042, -3.7562613, -169.02124, -93.531715, -115.40183)
+
+[node name="crystal_002" parent="Background/crystal5" index="0" unique_id=299906561]
+transform = Transform3D(-0.9931551, -0.116001755, -0.013654254, -0.0877348, 0.8180526, -0.5684128, 0.07710673, -0.56332386, -0.82263047, -2.4296918, -0.8135991, 1.7208662)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+
+[node name="crystal_003" type="MeshInstance3D" parent="Background/crystal5" unique_id=2103059816]
+transform = Transform3D(-0.071963765, 0.5367554, 0.12140871, 0.47310296, 0.122886896, -0.26286384, -0.28110495, 0.069409244, -0.47348446, -3.9765124, -1.8058729, 3.0931997)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_004" type="MeshInstance3D" parent="Background/crystal5" unique_id=599656060]
+transform = Transform3D(0.40293905, 0.34731075, 0.15824229, 0.2900615, -0.12911615, -0.4552123, -0.24805164, 0.4131943, -0.27525604, -2.7017097, -2.0768347, 4.444552)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_005" type="MeshInstance3D" parent="Background/crystal5" unique_id=212404429]
+transform = Transform3D(0.4013519, -0.09075535, 0.15582095, 0.08489789, -0.24033464, -0.35865244, 0.15908825, 0.35721526, -0.2017132, -4.68239, -0.6887119, 2.1028547)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal6" parent="Background" unique_id=349222650 instance=ExtResource("12_xjy4r")]
+transform = Transform3D(-14.024265, 1.7759284, -7.6741924, 1.3925169, 15.983006, 1.1539515, 7.752938, 0.3417395, -14.089087, -19.742378, -11.230993, 136.666)
+
+[node name="crystal_002" parent="Background/crystal6" index="0" unique_id=299906561]
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+
+[node name="crystal_003" type="MeshInstance3D" parent="Background/crystal6" unique_id=783447566]
+transform = Transform3D(-0.067847624, -0.5269373, -0.1604951, 0.010485097, 0.16044326, -0.53119934, 0.55073744, -0.06797017, -0.009658895, 0.38166976, -0.33256483, 0.91585827)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_004" type="MeshInstance3D" parent="Background/crystal6" unique_id=742083532]
+transform = Transform3D(-0.45571846, -0.25657487, -0.1857814, 0.19733898, 0.02467347, -0.518144, 0.24779578, -0.4915133, 0.07096943, -2.2233233, 0.71593285, -0.5251788)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_005" type="MeshInstance3D" parent="Background/crystal6" unique_id=1184227901]
+transform = Transform3D(0.19734085, -0.39256802, -0.023387501, 0.070037454, 0.060831286, -0.4301097, 0.38697726, 0.18918213, 0.08977038, -3.077199, 0.43922132, -0.9393014)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_006" type="MeshInstance3D" parent="Background/crystal6" unique_id=512676324]
+transform = Transform3D(-0.35967112, -0.22773322, 0.11123955, -0.17138714, 0.07626853, -0.3980069, 0.18671662, -0.36867422, -0.15105027, -2.9551883, 0.20803231, -0.19800615)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_007" type="MeshInstance3D" parent="Background/crystal6" unique_id=146499885]
+transform = Transform3D(-0.60473573, 0.40705195, 0.093959205, -0.031140417, 0.12092875, -0.72431445, -0.4165932, -0.59992486, -0.082250565, -3.5229278, 0.82862383, -3.5795693)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal7" parent="Background" unique_id=2061190588 instance=ExtResource("12_xjy4r")]
+transform = Transform3D(10.946202, 2.1281757, -13.957424, 0, 17.660881, 2.6928644, 14.118742, -1.649966, 10.821135, 20.977718, -162.3611, 53.686775)
+
+[node name="crystal_002" parent="Background/crystal7" index="0" unique_id=299906561]
+transform = Transform3D(0.9901012, -0.0919604, -0.10603211, -0.0985354, 0.08256066, -0.99170285, 0.09995148, 0.9923342, 0.07268202, -0.3743887, 0, 0)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+
+[node name="crystal_003" type="MeshInstance3D" parent="Background/crystal7" unique_id=1461745677]
+transform = Transform3D(-0.07726529, -0.5495476, 0.0072367117, 0.007949347, -0.008424589, -0.55487907, 0.54953796, -0.0771449, 0.009044079, -3.2529197, 0.18440676, 1.3888298)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_004" type="MeshInstance3D" parent="Background/crystal7" unique_id=1883948902]
+transform = Transform3D(-0.40874508, -0.28563035, 0.2436548, -0.22813103, -0.09710743, -0.49653935, 0.29817575, -0.46584362, -0.045889977, -6.220335, -0.6423638, 0.95307577)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal8" parent="Background" unique_id=504854814 instance=ExtResource("12_xjy4r")]
+transform = Transform3D(10.812069, -7.947243, 11.79401, 0, 14.815365, 9.983144, -14.221723, -6.0418944, 8.966402, 12.413924, -156.53787, 29.282919)
+
+[node name="crystal_002" parent="Background/crystal8" index="0" unique_id=299906561]
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+
+[node name="crystal_003" type="MeshInstance3D" parent="Background/crystal8" unique_id=1571416874]
+transform = Transform3D(-0.038823947, -0.5188657, -0.19312254, 0.08128423, 0.18615678, -0.5164915, 0.54764104, -0.064414605, 0.06296998, 1.1219616, 0.8156761, -2.4517066)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_004" type="MeshInstance3D" parent="Background/crystal8" unique_id=966197545]
+transform = Transform3D(-0.47429687, -0.2351734, -0.16661689, 0.037693057, 0.2674756, -0.48483056, 0.2857393, -0.4256472, -0.2126097, 3.3034296, 0.9144794, -1.8824537)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_005" type="MeshInstance3D" parent="Background/crystal8" unique_id=240883645]
+transform = Transform3D(-0.364178, 0.18954864, -0.15825844, 0.21636935, 0.109063834, -0.36727288, -0.118990496, -0.38180673, -0.18347989, 4.581402, -0.18264067, 1.0324464)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal9" parent="Background" unique_id=1930893927 instance=ExtResource("12_xjy4r")]
+transform = Transform3D(-16.349033, -0.1786843, 7.1996803, 1.5466161, 17.355705, 3.9427962, -7.033868, 4.2315164, -15.867488, 15.337596, -161.77109, -46.92777)
+
+[node name="crystal_002" parent="Background/crystal9" index="0" unique_id=299906561]
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+
+[node name="crystal_003" type="MeshInstance3D" parent="Background/crystal9" unique_id=1402910477]
+transform = Transform3D(-0.067847624, -0.5269373, -0.1604951, 0.010485097, 0.16044326, -0.53119934, 0.55073744, -0.06797017, -0.009658895, 0.38166976, -0.33256483, 0.91585827)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_004" type="MeshInstance3D" parent="Background/crystal9" unique_id=906854053]
+transform = Transform3D(-0.45571846, -0.25657487, -0.1857814, 0.19733898, 0.02467347, -0.518144, 0.24779578, -0.4915133, 0.07096943, -2.2233233, 0.71593285, -0.5251788)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_005" type="MeshInstance3D" parent="Background/crystal9" unique_id=2097215521]
+transform = Transform3D(0.19734085, -0.39256802, -0.023387501, 0.070037454, 0.060831286, -0.4301097, 0.38697726, 0.18918213, 0.08977038, -3.077199, 0.43922132, -0.9393014)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_006" type="MeshInstance3D" parent="Background/crystal9" unique_id=696245071]
+transform = Transform3D(-0.35967112, -0.22773321, 0.11123955, -0.17138712, 0.07626853, -0.39800692, 0.18671665, -0.36867422, -0.15105028, -3.0977807, 0.20174703, 0.061122358)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_007" type="MeshInstance3D" parent="Background/crystal9" unique_id=824634]
+transform = Transform3D(-0.60473573, 0.40705195, 0.093959205, -0.031140417, 0.12092875, -0.72431445, -0.4165932, -0.59992486, -0.082250565, -3.5229278, 0.82862383, -3.5795693)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal10" parent="Background" unique_id=604573928 instance=ExtResource("12_xjy4r")]
+transform = Transform3D(10.946201, 2.1281757, -13.957426, 1.1920929e-07, 17.660881, 2.6928644, 14.118744, -1.6499658, 10.821134, 148.96007, -156.90631, 156.05537)
+
+[node name="crystal_002" parent="Background/crystal10" index="0" unique_id=299906561]
+transform = Transform3D(0.9901012, -0.0919604, -0.10603211, -0.0985354, 0.08256066, -0.99170285, 0.09995148, 0.9923342, 0.07268202, -5.198023, 0, 6.2676063)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+
+[node name="crystal_003" type="MeshInstance3D" parent="Background/crystal10" unique_id=1125881263]
+transform = Transform3D(-0.07726529, -0.5495476, 0.0072367117, 0.007949347, -0.008424589, -0.55487907, 0.54953796, -0.0771449, 0.009044079, -3.2529197, 0.18440676, 1.3888298)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_004" type="MeshInstance3D" parent="Background/crystal10" unique_id=925932883]
+transform = Transform3D(-0.54577065, 0.054245193, 0.08495304, -0.100315444, -0.24676281, -0.48689812, -0.0098172175, -0.4941562, 0.252464, -8.827093, -2.163465, -5.5380006)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_005" type="MeshInstance3D" parent="Background/crystal10" unique_id=2144397555]
+transform = Transform3D(-0.3343459, 0.033231195, 0.05204335, -0.058829296, -0.258493, -0.21288611, 0.01875994, -0.21835078, 0.2599442, -12.954444, -2.163465, -5.648016)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal11" parent="Background" unique_id=1238485680 instance=ExtResource("12_xjy4r")]
+transform = Transform3D(10.812068, -7.9472437, 11.794011, -1.1920929e-07, 14.815365, 9.983144, -14.221724, -6.041894, 8.966401, 21.03418, -230.67526, -190.92557)
+
+[node name="crystal_002" parent="Background/crystal11" index="0" unique_id=299906561]
+transform = Transform3D(-0.9931551, -0.116001755, -0.013654254, -0.0877348, 0.8180526, -0.5684128, 0.07710673, -0.56332386, -0.82263047, -2.4296918, -0.8135991, 1.7208662)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+
+[node name="crystal_003" type="MeshInstance3D" parent="Background/crystal11" unique_id=1673882564]
+transform = Transform3D(-0.071963765, 0.5367554, 0.12140871, 0.47310296, 0.122886896, -0.26286384, -0.28110495, 0.069409244, -0.47348446, -3.9765124, -1.8058729, 3.0931997)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_004" type="MeshInstance3D" parent="Background/crystal11" unique_id=1787420613]
+transform = Transform3D(0.40293905, 0.34731075, 0.15824229, 0.2900615, -0.12911615, -0.4552123, -0.24805164, 0.4131943, -0.27525604, -2.7017097, -2.0768347, 4.444552)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_005" type="MeshInstance3D" parent="Background/crystal11" unique_id=535203939]
+transform = Transform3D(0.4013519, -0.09075535, 0.15582095, 0.08489789, -0.24033464, -0.35865244, 0.15908825, 0.35721526, -0.2017132, -4.68239, -0.6887119, 2.1028547)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal12" parent="Background" unique_id=542760600 instance=ExtResource("12_xjy4r")]
+transform = Transform3D(-16.349033, -0.178684, 7.1996803, 1.5466161, 17.355705, 3.942796, -7.033868, 4.231516, -15.867488, -115.703735, -155.01726, 54.886326)
+
+[node name="crystal_002" parent="Background/crystal12" index="0" unique_id=299906561]
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+
+[node name="crystal_003" type="MeshInstance3D" parent="Background/crystal12" unique_id=1651260672]
+transform = Transform3D(-0.067847624, -0.5269373, -0.1604951, 0.010485097, 0.16044326, -0.53119934, 0.55073744, -0.06797017, -0.009658895, 0.38166976, -0.33256483, 0.91585827)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_004" type="MeshInstance3D" parent="Background/crystal12" unique_id=1607505198]
+transform = Transform3D(-0.45571846, -0.25657487, -0.1857814, 0.19733898, 0.02467347, -0.518144, 0.24779578, -0.4915133, 0.07096943, -2.2233233, 0.71593285, -0.5251788)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_005" type="MeshInstance3D" parent="Background/crystal12" unique_id=1728388555]
+transform = Transform3D(0.19734085, -0.39256802, -0.023387501, 0.070037454, 0.060831286, -0.4301097, 0.38697726, 0.18918213, 0.08977038, -3.077199, 0.43922132, -0.9393014)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_006" type="MeshInstance3D" parent="Background/crystal12" unique_id=1415252284]
+transform = Transform3D(-0.35967112, -0.22773322, 0.11123955, -0.17138714, 0.07626853, -0.3980069, 0.18671662, -0.36867422, -0.15105027, -2.9551883, 0.20803231, -0.19800615)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="crystal_007" type="MeshInstance3D" parent="Background/crystal12" unique_id=233051266]
+transform = Transform3D(-0.60473573, 0.40705195, 0.093959205, -0.031140417, 0.12092875, -0.72431445, -0.4165932, -0.59992486, -0.082250565, -3.5229278, 0.82862383, -3.5795693)
+layers = 8
+mesh = SubResource("ArrayMesh_q6u7a")
+skeleton = NodePath("")
+
+[node name="Dragon" parent="Background" unique_id=817733709 instance=ExtResource("26_ppby4")]
+transform = Transform3D(-0.9991528, -0.0073857787, -0.04043006, 0.04093488, -0.0909369, -0.99501264, 0.003672365, -0.9958243, 0.09116269, -6.949923, -27.176275, 78.35878)
+
+[node name="Dragon2" parent="Background" unique_id=2094556753 instance=ExtResource("26_ppby4")]
+transform = Transform3D(-0.825869, 0.5051863, 0.25044328, 0.10062263, -0.3049841, 0.9470242, 0.5548076, 0.8073177, 0.20104457, 84.627045, -27.414068, 69.406136)
+
+[node name="Dragon3" parent="Background" unique_id=1501784468 instance=ExtResource("26_ppby4")]
+transform = Transform3D(0.1014148, 0.97717106, 0.18666461, -0.1874871, -0.16549626, 0.96822304, 0.9770163, -0.13318935, 0.1664235, 79.9627, -27.309422, -74.60089)
+
+[node name="Dragon4" parent="Background" unique_id=2121195863 instance=ExtResource("26_ppby4")]
+transform = Transform3D(0.6318782, 0.7287936, 0.26378548, -0.096124224, 0.41139862, -0.90636975, -0.7690813, 0.5473588, 0.33001006, -15.957916, -19.293468, -76.74232)
+
 [editable path="raceway 4"]
-[editable path="crystal"]
-[editable path="crystal2"]
-[editable path="crystal3"]
-[editable path="crystal4"]
-[editable path="crystal5"]
-[editable path="crystal6"]
-[editable path="crystal7"]
-[editable path="crystal8"]
-[editable path="crystal9"]
-[editable path="crystal10"]
-[editable path="crystal11"]
-[editable path="crystal12"]
+[editable path="Background/crystal"]
+[editable path="Background/crystal2"]
+[editable path="Background/crystal3"]
+[editable path="Background/crystal4"]
+[editable path="Background/crystal5"]
+[editable path="Background/crystal6"]
+[editable path="Background/crystal7"]
+[editable path="Background/crystal8"]
+[editable path="Background/crystal9"]
+[editable path="Background/crystal10"]
+[editable path="Background/crystal11"]
+[editable path="Background/crystal12"]

@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://ts38hmt4qhiy" path="res://Scripts/BPM.gd" id="15_bgygm"]
 [ext_resource type="AudioStream" uid="uid://x47ecx60nkud" path="res://Audio/Past tracks/Track 9/raceway 9 - 90bpm guitar.mp3" id="16_p2qo6"]
 [ext_resource type="AudioStream" uid="uid://ddfdhmbtt1xsq" path="res://Audio/Past tracks/Track 9/raceway 9 - 90bpm keys.mp3" id="17_ncoeg"]
+[ext_resource type="PackedScene" uid="uid://inqwvslqoi4c" path="res://Models/watermelonman.tscn" id="17_tsy5s"]
 [ext_resource type="PackedScene" uid="uid://c47yc10fjtfn0" path="res://Models/cloud.blend" id="18_55jsm"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_tfmxy"]
@@ -86,7 +87,7 @@ light_specular = 0.523
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1486126738]
 script = ExtResource("4_fy1l5")
-PlayableCharacters = Array[PackedScene]([ExtResource("6_ncoeg"), ExtResource("6_p2qo6"), ExtResource("5_v1win"), ExtResource("7_55jsm"), ExtResource("8_bgygm"), ExtResource("9_p2qo6"), ExtResource("10_ncoeg"), ExtResource("11_tfmxy"), ExtResource("12_tsy5s"), ExtResource("6_eo7v2")])
+PlayableCharacters = Array[PackedScene]([ExtResource("6_ncoeg"), ExtResource("6_p2qo6"), ExtResource("5_v1win"), ExtResource("7_55jsm"), ExtResource("8_bgygm"), ExtResource("9_p2qo6"), ExtResource("10_ncoeg"), ExtResource("11_tfmxy"), ExtResource("12_tsy5s"), ExtResource("6_eo7v2"), ExtResource("17_tsy5s")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("6_eo7v2")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1.0000004, 0, 0, 0, 0.9999999, 1.1060009, 7.6293945e-06, 0.2539959)

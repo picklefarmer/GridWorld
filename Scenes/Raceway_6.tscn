@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="13_a4d2n"]
 [ext_resource type="AudioStream" uid="uid://b1ntlptefsi1o" path="res://Audio/Past tracks/Track 6/Raceway 6 - piano.mp3" id="13_ups11"]
 [ext_resource type="PackedScene" uid="uid://dok0tv4lxakgx" path="res://Mesh/trail.blend" id="14_a4d2n"]
+[ext_resource type="PackedScene" uid="uid://inqwvslqoi4c" path="res://Models/watermelonman.tscn" id="17_13plu"]
 [ext_resource type="PackedScene" uid="uid://c47yc10fjtfn0" path="res://Models/cloud.blend" id="17_u8886"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_5bss4"]
@@ -62,7 +63,7 @@ curve = ExtResource("2_xg55g")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1076679970]
-transform = Transform3D(-0.09493788, -0.9205283, -0.37884837, 0.9947224, -0.1025759, 1.6393311e-06, -0.038860153, -0.37677526, 0.92559284, 19.517391, 98.3894, -1.6191597)
+transform = Transform3D(-0.094937876, -0.92052823, -0.37884837, 0.99472237, -0.10257589, 1.6393311e-06, -0.038860153, -0.37677523, 0.92559284, 19.517391, 98.3894, -1.6191597)
 use_model_front = true
 script = ExtResource("3_4npvc")
 trackNumber = 1
@@ -85,7 +86,7 @@ area_range = 5.3
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=374503058]
 transform = Transform3D(1, 6.519258e-09, 6.519258e-09, -7.683411e-09, 0.99999994, 2.9802322e-08, 3.7252903e-09, 0, 1, 0, 0, 0)
 script = ExtResource("4_ri2ci")
-PlayableCharacters = Array[PackedScene]([ExtResource("6_garwc"), ExtResource("6_fuyv8"), ExtResource("5_nl5lx"), ExtResource("7_qbfiw"), ExtResource("8_ups11"), ExtResource("10_u8886"), ExtResource("11_5bss4"), ExtResource("12_a4d2n"), ExtResource("13_a4d2n"), ExtResource("6_krvlw")])
+PlayableCharacters = Array[PackedScene]([ExtResource("6_garwc"), ExtResource("6_fuyv8"), ExtResource("5_nl5lx"), ExtResource("7_qbfiw"), ExtResource("8_ups11"), ExtResource("10_u8886"), ExtResource("11_5bss4"), ExtResource("12_a4d2n"), ExtResource("13_a4d2n"), ExtResource("6_krvlw"), ExtResource("17_13plu")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("6_krvlw")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1.0000004, 0, 0, 0, 0.9999999, 1.1060009, 7.6293945e-06, 0.2539959)
@@ -97,7 +98,7 @@ fov = 84.6
 near = 0.175
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=1666584912]
-transform = Transform3D(-0.09493799, -0.92052436, -0.37884605, 0.99472356, -0.10257546, 1.639321e-06, -0.038860198, -0.37677366, 0.9255871, 19.517391, 98.3894, -1.6191597)
+transform = Transform3D(-0.09493799, -0.9205243, -0.37884605, 0.99472356, -0.10257545, 1.639321e-06, -0.038860198, -0.37677363, 0.9255871, 19.517391, 98.3894, -1.6191597)
 use_model_front = true
 script = ExtResource("3_4npvc")
 trackNumber = 2
@@ -112,7 +113,7 @@ transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 
 visible = false
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=540026027]
-transform = Transform3D(-0.09493799, -0.92052436, -0.37884605, 0.99472356, -0.10257546, 1.639321e-06, -0.038860198, -0.37677366, 0.9255871, 19.517391, 98.3894, -1.6191597)
+transform = Transform3D(-0.09493799, -0.9205243, -0.37884605, 0.99472356, -0.10257545, 1.639321e-06, -0.038860198, -0.37677363, 0.9255871, 19.517391, 98.3894, -1.6191597)
 use_model_front = true
 script = ExtResource("3_4npvc")
 trackNumber = 3
@@ -127,7 +128,7 @@ transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 
 visible = false
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=479107482]
-transform = Transform3D(-0.09493799, -0.92052436, -0.37884605, 0.99472356, -0.10257546, 1.639321e-06, -0.038860198, -0.37677366, 0.9255871, 19.517391, 98.3894, -1.6191597)
+transform = Transform3D(-0.09493799, -0.9205243, -0.37884605, 0.99472356, -0.10257545, 1.639321e-06, -0.038860198, -0.37677363, 0.9255871, 19.517391, 98.3894, -1.6191597)
 use_model_front = true
 script = ExtResource("3_4npvc")
 trackNumber = 4

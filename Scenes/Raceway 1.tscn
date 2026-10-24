@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="14_jafop"]
 [ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="15_r7h1t"]
 [ext_resource type="PackedScene" uid="uid://dok0tv4lxakgx" path="res://Mesh/trail.blend" id="17_apb5h"]
+[ext_resource type="PackedScene" uid="uid://inqwvslqoi4c" path="res://Models/watermelonman.tscn" id="20_mytkj"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_j3pel"]
 
@@ -252,7 +253,7 @@ current = true
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=887007692]
 script = ExtResource("7_lv0y0")
-PlayableCharacters = Array[PackedScene]([ExtResource("9_cgggu"), ExtResource("9_jpj64"), ExtResource("9_apb5h"), ExtResource("7_r7h1t"), ExtResource("8_jafop"), ExtResource("12_2a25w"), ExtResource("13_r7h1t"), ExtResource("14_jafop"), ExtResource("15_r7h1t"), ExtResource("6_2a25w")])
+PlayableCharacters = Array[PackedScene]([ExtResource("9_cgggu"), ExtResource("9_jpj64"), ExtResource("9_apb5h"), ExtResource("7_r7h1t"), ExtResource("8_jafop"), ExtResource("12_2a25w"), ExtResource("13_r7h1t"), ExtResource("14_jafop"), ExtResource("15_r7h1t"), ExtResource("6_2a25w"), ExtResource("20_mytkj")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=2119852306 instance=ExtResource("6_2a25w")]
 transform = Transform3D(0.9866659, 0, -0.16275842, 0, 1, 0, 0.16275844, 0, 0.9866659, 1.9456673, 0, 0.67497635)

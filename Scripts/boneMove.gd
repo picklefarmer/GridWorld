@@ -13,10 +13,12 @@ var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 @export var multiplier : float = 0.25
 @export var deltav : float = 1.0
 @export var track: String = "recording"
+@export var background :bool = false
 
 func _ready() -> void:
 	
-	Actions.syncLip.connect(rebus)
+	if !background :
+		Actions.syncLip.connect(rebus)
 	#print(get_bone_name(0))
 	bone_idx = find_bone(bone_name)
 	current_pos = get_bone_pose_position(bone_idx)
