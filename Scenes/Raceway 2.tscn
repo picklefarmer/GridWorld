@@ -123,7 +123,8 @@ curve = ExtResource("7_ql3gu")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1928489554]
-transform = Transform3D(-0.12622909, 0.20127526, 0.9713444, -7.4503865e-09, 0.979188, -0.20289604, -0.99197483, -0.025612345, -0.12360386, 10.053501, 7.4647217, 52.339375)
+transform = Transform3D(0.5499419, -0.028660836, -0.834681, -0.07092816, 0.99418443, -0.08086936, 0.83215314, 0.10367979, 0.5447196, -66.35603, 13.445937, -63.662315)
+progress = 229.52444
 use_model_front = true
 script = ExtResource("5_wayxb")
 trackNumber = 1
@@ -153,7 +154,8 @@ transform = Transform3D(0.9996698, 7.450581e-09, -0.025692374, -1.4901161e-08, 1
 runSpeed = 2.0
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=332552274]
-transform = Transform3D(-0.12622806, 0.20127384, 0.9713312, -7.4503257e-09, 0.9791811, -0.20289329, -0.9919668, -0.025612164, -0.12360218, 10.053501, 7.4647217, 52.339375)
+transform = Transform3D(0.54993755, -0.028660612, -0.83466977, -0.07092759, 0.9941767, -0.08086828, 0.8321466, 0.10367898, 0.54471225, -66.35603, 13.445937, -63.662315)
+progress = 229.52444
 use_model_front = true
 script = ExtResource("5_wayxb")
 trackNumber = 2
@@ -174,7 +176,8 @@ max_distance = 405.66
 parameters/looping = true
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1624963294]
-transform = Transform3D(-0.126228, 0.2012753, 0.9713331, -7.450322e-09, 0.97918826, -0.20289369, -0.9919663, -0.02561235, -0.12360242, 10.053501, 7.4647217, 52.339375)
+transform = Transform3D(0.549937, -0.028660845, -0.8346716, -0.07092753, 0.99418473, -0.08086846, 0.8321458, 0.10367982, 0.54471344, -66.35603, 13.445937, -63.662315)
+progress = 229.52444
 use_model_front = true
 script = ExtResource("5_wayxb")
 trackNumber = 3
@@ -195,7 +198,8 @@ max_distance = 405.66
 parameters/looping = true
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=2122196579]
-transform = Transform3D(-0.1262286, 0.20127614, 0.9713395, -7.450357e-09, 0.9791923, -0.20289503, -0.99197096, -0.025612459, -0.12360324, 10.053501, 7.4647217, 52.339375)
+transform = Transform3D(0.5499397, -0.028660959, -0.83467746, -0.07092787, 0.9941887, -0.08086902, 0.83214986, 0.10368023, 0.54471725, -66.35603, 13.445937, -63.662315)
+progress = 229.52444
 use_model_front = true
 script = ExtResource("5_wayxb")
 trackNumber = 4

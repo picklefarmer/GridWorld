@@ -240,7 +240,8 @@ curve = ExtResource("2_xjxiu")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1273837031]
-transform = Transform3D(0.0006447538, -0.05103375, 0.9987772, -0.9881019, -0.15224263, -0.0071440414, 0.15239543, -0.9868953, -0.050546113, 10.341484, -21.762453, -100.19619)
+transform = Transform3D(-0.7138351, 0.3793243, 0.5885215, 0.44903412, 0.8928247, -0.030731883, -0.5370126, 0.24232908, -0.8080016, -78.56978, -21.314888, -38.483604)
+progress = 501.28253
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 1
@@ -268,7 +269,8 @@ transform = Transform3D(0.99966985, 7.450581e-09, -0.025692385, 7.450581e-09, 1.
 runSpeed = 1.65
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=85182908]
-transform = Transform3D(0.00064475206, -0.051033713, 0.9987708, -0.9880993, -0.15224253, -0.0071439953, 0.15239501, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
+transform = Transform3D(-0.7138335, 0.379324, 0.5885163, 0.44903308, 0.892824, -0.030731613, -0.5370113, 0.24232888, -0.8079945, -78.56978, -21.314888, -38.483604)
+progress = 501.28253
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 2
@@ -282,7 +284,8 @@ transform = Transform3D(-5.3085387e-08, -2.9802322e-08, 1, 0, 1, 0, -1.215, 0, -
 visible = false
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1360567713]
-transform = Transform3D(0.00064475206, -0.051033713, 0.9987708, -0.9880993, -0.15224253, -0.0071439953, 0.15239501, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
+transform = Transform3D(-0.7138335, 0.379324, 0.5885163, 0.44903308, 0.892824, -0.030731613, -0.5370113, 0.24232888, -0.8079945, -78.56978, -21.314888, -38.483604)
+progress = 501.28253
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 3
@@ -302,7 +305,8 @@ cull_mask = 1048567
 fov = 84.6
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1820980794]
-transform = Transform3D(0.00064475206, -0.051033713, 0.9987708, -0.9880993, -0.15224253, -0.0071439953, 0.15239501, -0.9868946, -0.050545786, 10.341484, -21.762453, -100.19619)
+transform = Transform3D(-0.7138335, 0.379324, 0.5885163, 0.44903308, 0.892824, -0.030731613, -0.5370113, 0.24232888, -0.8079945, -78.56978, -21.314888, -38.483604)
+progress = 501.28253
 use_model_front = true
 script = ExtResource("3_0a17n")
 trackNumber = 4

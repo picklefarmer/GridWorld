@@ -56,8 +56,8 @@ curve = ExtResource("2_kerbq")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=903517246]
-transform = Transform3D(0.05763817, -0.005933567, 0.99876225, -0.0015676965, -0.99982774, -0.0058564255, 0.99822426, -0.0012276064, -0.057678424, 0.5165692, -24.014503, 6.50455)
-progress = 465.48233
+transform = Transform3D(-0.010735586, -0.008248463, -1.000356, 0.01211721, 0.99973756, -0.00838347, 0.99975646, -0.012205554, -0.010640414, -0.41799816, -171.8219, 7.2712135)
+progress = 232.74117
 use_model_front = true
 script = ExtResource("3_pknt2")
 trackNumber = 1
@@ -89,8 +89,8 @@ transform = Transform3D(0.79751205, -0.6034878, -2.5262125e-08, -3.608875e-09, -
 fov = 84.6
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=40535349]
-transform = Transform3D(0.057638332, -0.005933552, 0.99875015, -0.001567701, -0.99982524, -0.0058563543, 0.9982271, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
-progress = 465.48233
+transform = Transform3D(-0.010735618, -0.008248444, -1.0003436, 0.012117246, 0.9997351, -0.008383366, 0.99975944, -0.012205523, -0.010640283, -0.41799816, -171.8219, 7.2712135)
+progress = 232.74117
 use_model_front = true
 script = ExtResource("3_pknt2")
 trackNumber = 2
@@ -105,8 +105,8 @@ transform = Transform3D(-5.2154064e-08, -1.1641532e-10, 0.99999994, -2.2555469e-
 visible = false
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1702470826]
-transform = Transform3D(0.057638332, -0.005933552, 0.99875015, -0.001567701, -0.99982524, -0.0058563543, 0.9982271, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
-progress = 465.48233
+transform = Transform3D(-0.010735618, -0.008248444, -1.0003436, 0.012117246, 0.9997351, -0.008383366, 0.99975944, -0.012205523, -0.010640283, -0.41799816, -171.8219, 7.2712135)
+progress = 232.74117
 use_model_front = true
 script = ExtResource("3_pknt2")
 trackNumber = 3
@@ -120,8 +120,8 @@ transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 
 visible = false
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=979988124]
-transform = Transform3D(0.057638332, -0.005933552, 0.99875015, -0.001567701, -0.99982524, -0.0058563543, 0.9982271, -0.0012276033, -0.057677723, 0.5165692, -24.014503, 6.50455)
-progress = 465.48233
+transform = Transform3D(-0.010735618, -0.008248444, -1.0003436, 0.012117246, 0.9997351, -0.008383366, 0.99975944, -0.012205523, -0.010640283, -0.41799816, -171.8219, 7.2712135)
+progress = 232.74117
 use_model_front = true
 script = ExtResource("3_pknt2")
 trackNumber = 4
@@ -194,5 +194,3 @@ transform = Transform3D(-15.521639, 0, -2.4576347, 0, 15.715, 0, 2.4576347, 0, -
 
 [node name="cloud2" parent="." unique_id=1203878528 instance=ExtResource("19_v07kg")]
 transform = Transform3D(12.467109, 0, -19.191, 0, 22.885, 0, 19.191, 0, 12.467109, 20.503, -39.71138, -22.36)
-
-[editable path="raceway 7"]

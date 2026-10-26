@@ -7,6 +7,7 @@ var evalTime : float = 11.0
 var trackNorm : float = 1.0
 var micProgress: float = 0.0
 var micSpan : float = 200.0
+var progressOffset : float
 @export var runSpeed: float = 1.0
 var progressNormalized : int 
 
@@ -16,7 +17,7 @@ func _ready() -> void:
 	#progressNormalized/ 6
 	#print(progressNormalized,"progressNormalized")
 	trackNorm = owner.trackMultiplier
-	progress_ratio = 0
+	progressOffset = progress_ratio
 	Actions.goForward.connect(running)
 	if trackNumber != 1:
 		runSpeed = get_child(0).runSpeed
@@ -35,7 +36,7 @@ func _physics_process(delta: float) -> void:
 	#progress_ratio = lerp(progress_ratio,runAmount + progress_ratio,delta*evalTime)
 	progress = lerp(progress,(runAmount*trackNorm) + progress,delta*evalTime)
 	runAmount = lerp(runAmount,0.0, delta* 11.0)
-	Actions.meter_Progress.emit(progress_ratio,trackNumber)
+	Actions.meter_Progress.emit(fposmod(progress_ratio-progressOffset,1.0),trackNumber)
 	
 func running(inch:float,track:int):
 	if track == trackNumber:

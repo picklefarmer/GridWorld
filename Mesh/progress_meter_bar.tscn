@@ -3,11 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://djdwwx5cmauxg" path="res://Mesh/progress_meter.blend" id="1_vhmqb"]
 [ext_resource type="Script" uid="uid://bbcdx4ny8l3cu" path="res://Scripts/progress_meter_bar.gd" id="2_f253n"]
 [ext_resource type="PackedScene" uid="uid://cnt2wnw4ro6pf" path="res://Mesh/progress_meter_marker.blend" id="2_ia3ci"]
+[ext_resource type="PackedScene" uid="uid://dyv2fh6he0iqq" path="res://Mesh/Numbers/0.blend" id="4_f253n"]
+[ext_resource type="PackedScene" uid="uid://djxilwpkb07tb" path="res://Mesh/Numbers/1.blend" id="5_tyve4"]
+[ext_resource type="PackedScene" uid="uid://cnmdpsegb8ssm" path="res://Mesh/Numbers/2.blend" id="6_2pmvl"]
+[ext_resource type="PackedScene" uid="uid://co75ikqludyfk" path="res://Mesh/Numbers/3.blend" id="7_li1ip"]
 
 [node name="progress_meter_bar" unique_id=379160676 instance=ExtResource("1_vhmqb")]
 script = ExtResource("2_f253n")
+lapDisplay = Array[PackedScene]([ExtResource("4_f253n"), ExtResource("5_tyve4"), ExtResource("6_2pmvl"), ExtResource("7_li1ip")])
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Plane/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1679544257) index="0" unique_id=1239581175]
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Plane/Armature/Skeleton3D" parent_id_path=PackedInt32Array(693620556) index="0" unique_id=1239581175]
 bone_name = "Bone"
 bone_idx = 0
 
@@ -18,3 +23,6 @@ update_scale = false
 
 [node name="progress_meter_marker" parent="." index="1" unique_id=1165853336 instance=ExtResource("2_ia3ci")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4214675, 0, 0)
+
+[node name="0" parent="." index="2" unique_id=1942459471 instance=ExtResource("4_f253n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, 0, 0)

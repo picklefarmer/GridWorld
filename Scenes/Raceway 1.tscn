@@ -234,7 +234,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.973629, 2.0780988, -13.22
 curve = SubResource("Curve3D_uu6xs")
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=416138429]
-transform = Transform3D(4.3710358e-08, 0, 0.9999798, 0, 0.9999918, 0, -0.9999764, 0, 4.3710504e-08, 2.7128735, 0.66467476, -23.434544)
+transform = Transform3D(0.9991952, 0.00073548337, 0.03949071, -0.0007326527, 0.9999908, -8.5860345e-05, -0.039490636, 5.6860346e-05, 0.9991988, 25.786333, 0.65092015, -5.945143)
+progress = 32.423325
 use_model_front = true
 script = ExtResource("5_8no50")
 trackNumber = 1
@@ -259,7 +260,8 @@ PlayableCharacters = Array[PackedScene]([ExtResource("9_cgggu"), ExtResource("9_
 transform = Transform3D(0.9866659, 0, -0.16275842, 0, 1, 0, 0.16275844, 0, 0.9866659, 1.9456673, 0, 0.67497635)
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=1852939651]
-transform = Transform3D(4.371033e-08, 0, 0.99997437, 0, 0.99999577, 0, -0.9999758, 0, 4.371027e-08, 2.7128735, 0.66467476, -23.434544)
+transform = Transform3D(0.9991945, 0.0007354863, 0.039490502, -0.0007326522, 0.9999948, -8.585989e-05, -0.039490607, 5.6860576e-05, 0.9991935, 25.786333, 0.65092015, -5.945143)
+progress = 32.423325
 use_model_front = true
 script = ExtResource("5_8no50")
 trackNumber = 2
@@ -273,7 +275,8 @@ transform = Transform3D(-5.3109343e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.3711392e-08
 visible = false
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1232437005]
-transform = Transform3D(4.3710255e-08, 0, 0.99997497, 0, 0.99999565, 0, -0.9999741, 0, 4.3710294e-08, 2.7128735, 0.66467476, -23.434544)
+transform = Transform3D(0.9991927, 0.0007354862, 0.03949054, -0.0007326509, 0.9999947, -8.585997e-05, -0.039490536, 5.686057e-05, 0.9991944, 25.786333, 0.65092015, -5.945143)
+progress = 32.423325
 use_model_front = true
 script = ExtResource("5_8no50")
 trackNumber = 3
@@ -287,7 +290,8 @@ transform = Transform3D(-5.3109336e-08, 0, 0.99999994, 0, 0.99999994, 0, -1.215,
 visible = false
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1839449494]
-transform = Transform3D(4.3710255e-08, 0, 0.99997497, 0, 0.99999565, 0, -0.9999741, 0, 4.3710294e-08, 2.7128735, 0.66467476, -23.434544)
+transform = Transform3D(0.9991927, 0.0007354862, 0.03949054, -0.0007326509, 0.9999947, -8.585997e-05, -0.039490536, 5.686057e-05, 0.9991944, 25.786333, 0.65092015, -5.945143)
+progress = 32.423325
 use_model_front = true
 script = ExtResource("5_8no50")
 trackNumber = 4
