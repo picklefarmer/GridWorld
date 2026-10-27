@@ -11,7 +11,7 @@ var colors : Array = [Color.AQUAMARINE,Color.WEB_PURPLE,Color.MIDNIGHT_BLUE]
 func _ready() -> void:
 	
 	material = StandardMaterial3D.new()
-	currentLapDisplay = get_child(2)
+	currentLapDisplay = get_child(3)
 	#materialOve =  as StandardMaterial3D
 	
 	Actions.meterColor.connect(changeColor)
@@ -30,7 +30,7 @@ func lapNumberSwap(lap:int):
 	#var tempInd : int = posmod(lap, lapDisplay.size())
 	var lapInstantiated = lapDisplay[lap+1].instantiate()
 	self.add_child(lapInstantiated)
-	var newLap:Node3D = get_child(3)
+	var newLap:Node3D = get_child(4)
 
 	
 	

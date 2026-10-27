@@ -234,7 +234,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.973629, 2.0780988, -13.22
 curve = SubResource("Curve3D_uu6xs")
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=416138429]
-transform = Transform3D(0.9991952, 0.00073548337, 0.03949071, -0.0007326527, 0.9999908, -8.5860345e-05, -0.039490636, 5.6860346e-05, 0.9991988, 25.786333, 0.65092015, -5.945143)
+transform = Transform3D(0.9991949, 0.00073548313, 0.0394907, -0.0007326525, 0.9999905, -8.5860316e-05, -0.03949062, 5.6860332e-05, 0.9991985, 25.786333, 0.65092015, -5.945143)
 progress = 32.423325
 use_model_front = true
 script = ExtResource("5_8no50")
@@ -260,7 +260,7 @@ PlayableCharacters = Array[PackedScene]([ExtResource("9_cgggu"), ExtResource("9_
 transform = Transform3D(0.9866659, 0, -0.16275842, 0, 1, 0, 0.16275844, 0, 0.9866659, 1.9456673, 0, 0.67497635)
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=1852939651]
-transform = Transform3D(0.9991945, 0.0007354863, 0.039490502, -0.0007326522, 0.9999948, -8.585989e-05, -0.039490607, 5.6860576e-05, 0.9991935, 25.786333, 0.65092015, -5.945143)
+transform = Transform3D(0.9991942, 0.00073548604, 0.03949049, -0.00073265197, 0.9999945, -8.5859865e-05, -0.039490595, 5.6860557e-05, 0.9991932, 25.786333, 0.65092015, -5.945143)
 progress = 32.423325
 use_model_front = true
 script = ExtResource("5_8no50")
@@ -269,13 +269,14 @@ trackNumber = 2
 [node name="Strawberry" parent="Path3D2/track2" unique_id=2136539647 instance=ExtResource("7_r7h1t")]
 transform = Transform3D(1.0000159, 0, 0, 0, 1, 0, -3.5527137e-15, 0, 1.000016, -8.257944, -0.03464341, 0.3673973)
 minimum = 0.25
+runSpeed = 0.55
 
 [node name="trail" parent="Path3D2/track2" unique_id=1344867179 instance=ExtResource("17_apb5h")]
 transform = Transform3D(-5.3109343e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.3711392e-08, -8.272463, 3.0000002, -0.7480011)
 visible = false
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1232437005]
-transform = Transform3D(0.9991927, 0.0007354862, 0.03949054, -0.0007326509, 0.9999947, -8.585997e-05, -0.039490536, 5.686057e-05, 0.9991944, 25.786333, 0.65092015, -5.945143)
+transform = Transform3D(0.9991924, 0.000735486, 0.039490525, -0.0007326507, 0.9999944, -8.585994e-05, -0.039490525, 5.686055e-05, 0.9991941, 25.786333, 0.65092015, -5.945143)
 progress = 32.423325
 use_model_front = true
 script = ExtResource("5_8no50")
@@ -283,14 +284,15 @@ trackNumber = 3
 
 [node name="Blueberryman" parent="Path3D2/track3" unique_id=539657863 instance=ExtResource("8_jafop")]
 transform = Transform3D(0.98840666, 0, -0.15184163, 0, 0.99999994, 0, 0.15184166, 0, 0.98840666, 6.6142387, 2.3841858e-07, 0.78969383)
-minimum = 0.25
+minimum = 0.475
+runSpeed = 0.8
 
 [node name="trail" parent="Path3D2/track3" unique_id=879598588 instance=ExtResource("17_apb5h")]
 transform = Transform3D(-5.3109336e-08, 0, 0.99999994, 0, 0.99999994, 0, -1.215, 0, -4.371139e-08, 6.726597, 3.0000002, -0.7479992)
 visible = false
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1839449494]
-transform = Transform3D(0.9991927, 0.0007354862, 0.03949054, -0.0007326509, 0.9999947, -8.585997e-05, -0.039490536, 5.686057e-05, 0.9991944, 25.786333, 0.65092015, -5.945143)
+transform = Transform3D(0.9991924, 0.000735486, 0.039490525, -0.0007326507, 0.9999944, -8.585994e-05, -0.039490525, 5.686055e-05, 0.9991941, 25.786333, 0.65092015, -5.945143)
 progress = 32.423325
 use_model_front = true
 script = ExtResource("5_8no50")

@@ -24,5 +24,8 @@ update_scale = false
 [node name="progress_meter_player_marker" parent="." index="1" unique_id=355391382 instance=ExtResource("3_2xwy3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4214675, 0, 0)
 
-[node name="0" parent="." index="2" unique_id=249677274 instance=ExtResource("4_6kuci")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024997443, 0, 0)
+[node name="progress_meter_player_marker2" parent="." index="2" unique_id=482202010 instance=ExtResource("3_2xwy3")]
+transform = Transform3D(-1.14, 0, -9.966197e-08, 0, 1.14, 0, 9.966197e-08, 0, -1.14, 0, 0.0031814575, -0.0032420047)
+
+[node name="0" parent="." index="3" unique_id=249677274 instance=ExtResource("4_6kuci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015258789, 0)

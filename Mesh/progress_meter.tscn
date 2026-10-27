@@ -9,16 +9,16 @@ transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0
 script = ExtResource("1_2y8rs")
 
 [node name="progress_meter_bar_player" parent="." unique_id=400981961 instance=ExtResource("2_plfkb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5504907e-09, 0.052051544)
 trackMeterIndex = 1
 
 [node name="progress_meter_bar2" parent="." unique_id=1066932079 instance=ExtResource("2_2y8rs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.542925e-09, 0.051965006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.8519231e-10, 0.16026223)
 trackMeterIndex = 2
 
 [node name="progress_meter_bar3" parent="." unique_id=1808620194 instance=ExtResource("2_2y8rs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.180636e-09, 0.105014235)
 trackMeterIndex = 3
 
 [node name="progress_meter_bar4" parent="." unique_id=1840191378 instance=ExtResource("2_2y8rs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3765123e-08, 0.15745465)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.106)
 trackMeterIndex = 4

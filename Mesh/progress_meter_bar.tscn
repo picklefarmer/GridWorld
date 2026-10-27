@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://djxilwpkb07tb" path="res://Mesh/Numbers/1.blend" id="5_tyve4"]
 [ext_resource type="PackedScene" uid="uid://cnmdpsegb8ssm" path="res://Mesh/Numbers/2.blend" id="6_2pmvl"]
 [ext_resource type="PackedScene" uid="uid://co75ikqludyfk" path="res://Mesh/Numbers/3.blend" id="7_li1ip"]
+[ext_resource type="Material" uid="uid://bvwxkwf8qql4a" path="res://Materials/Crystal.tres" id="8_g6bg5"]
 
 [node name="progress_meter_bar" unique_id=379160676 instance=ExtResource("1_vhmqb")]
 script = ExtResource("2_f253n")
@@ -21,8 +22,16 @@ remote_path = NodePath("../../../../../progress_meter_marker")
 update_rotation = false
 update_scale = false
 
-[node name="progress_meter_marker" parent="." index="1" unique_id=1165853336 instance=ExtResource("2_ia3ci")]
+[node name="progress_meter_marker" parent="." index="1" unique_id=546361213 instance=ExtResource("2_ia3ci")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4214675, 0, 0)
 
-[node name="0" parent="." index="2" unique_id=1942459471 instance=ExtResource("4_f253n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, 0, 0)
+[node name="progress_meter_marker2" parent="." index="2" unique_id=1165853336 instance=ExtResource("2_ia3ci")]
+transform = Transform3D(-1.12, 0, -1.691153e-07, 0, 1.12, 0, 1.691153e-07, 0, -1.12, 0.00041266344, 0.0033808593, -0.003)
+
+[node name="Circle" parent="progress_meter_marker2" index="0" unique_id=875576975]
+surface_material_override/0 = ExtResource("8_g6bg5")
+
+[node name="0" parent="." index="3" unique_id=1942459471 instance=ExtResource("4_f253n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00041268766, 0.015380859, 0)
+
+[editable path="progress_meter_marker2"]
