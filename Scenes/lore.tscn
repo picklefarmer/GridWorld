@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cbtukkq4fgj13"]
+
+[ext_resource type="Script" uid="uid://bnrriuqjnuanc" path="res://Scripts/introduction.gd" id="1_oqjcs"]
+[ext_resource type="PackedScene" uid="uid://dobwqy1xnmaes" path="res://Scenes/title_screen_2d.tscn" id="2_e7hpk"]
+
+[sub_resource type="Theme" id="Theme_oqjcs"]
+default_font_size = 44
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7hpk"]
+content_margin_left = 108.0
+content_margin_top = 108.0
+content_margin_right = 108.0
+content_margin_bottom = 108.0
+bg_color = Color(0.0060818917, 0.0016650987, 3.760215e-10, 0.87058824)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0.60090035, 0.38422284, 1)
+
+[node name="Lore" type="Node" unique_id=897700427]
+script = ExtResource("1_oqjcs")
+lore = Array[String](["The worlds, they didn't know. It came on like a dream.  There were many missed. And that's what they had seen.", "Beginning at a time when obedience had won. [br][/br] Where commitment to ourselves was little to none.", "Bringing life into our worlds, again and again. [br] Seeking only a peace that would surely begin.", "For as dimensions unfold, though their existence unknown [br] The Vitamen had arrived so that the planets may thrive", "With them it was a time for collection [br] Engaging our minds in self reflection", "Their solution- pliable, viable, oh-so-desirable", "To take time on a race [br] To set at your own pace"])
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1758505057]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_oqjcs")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/line_separation = 12
+theme_override_font_sizes/normal_font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_e7hpk")
+bbcode_enabled = true
+vertical_alignment = 1
+
+[node name="TitleScreen2d" parent="." unique_id=2053449483 instance=ExtResource("2_e7hpk")]

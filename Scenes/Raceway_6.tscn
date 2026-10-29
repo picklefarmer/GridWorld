@@ -63,7 +63,7 @@ curve = ExtResource("2_xg55g")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1076679970]
-transform = Transform3D(-0.094937876, -0.92052823, -0.37884837, 0.99472237, -0.10257589, 1.6393311e-06, -0.038860153, -0.37677523, 0.92559284, 19.517391, 98.3894, -1.6191597)
+transform = Transform3D(-0.09493787, -0.92052823, -0.37884837, 0.9947223, -0.10257588, 1.6393311e-06, -0.03886015, -0.37677523, 0.92559284, 19.517391, 98.3894, -1.6191597)
 use_model_front = true
 script = ExtResource("3_4npvc")
 trackNumber = 1
@@ -76,6 +76,7 @@ fov = 60.0
 
 [node name="Progress_Meter" parent="Path3D2/track1/Camera3D" unique_id=628590229 instance=ExtResource("5_i35c3")]
 transform = Transform3D(1, 0, 0, 0, -4.371138e-08, -1.0000001, 0, 0.9999998, -4.3711392e-08, -0.73176163, -0.5784673, -1.3911748)
+lapCap = 0
 
 [node name="OmniLight3D" type="AreaLight3D" parent="Path3D2/track1" unique_id=487245161]
 transform = Transform3D(1, 0, 0, 0, 0.7527585, -0.6582967, 0, 0.6582967, 0.7527585, 0.99999994, 3.258231, 4.6411386)
@@ -98,7 +99,7 @@ fov = 84.6
 near = 0.175
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=1666584912]
-transform = Transform3D(-0.09493799, -0.9205243, -0.37884605, 0.99472356, -0.10257545, 1.639321e-06, -0.038860198, -0.37677363, 0.9255871, 19.517391, 98.3894, -1.6191597)
+transform = Transform3D(-0.09493799, -0.92052424, -0.37884605, 0.99472356, -0.10257544, 1.639321e-06, -0.038860198, -0.3767736, 0.9255871, 19.517391, 98.3894, -1.6191597)
 use_model_front = true
 script = ExtResource("3_4npvc")
 trackNumber = 2
@@ -113,7 +114,7 @@ transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 
 visible = false
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=540026027]
-transform = Transform3D(-0.09493799, -0.9205243, -0.37884605, 0.99472356, -0.10257545, 1.639321e-06, -0.038860198, -0.37677363, 0.9255871, 19.517391, 98.3894, -1.6191597)
+transform = Transform3D(-0.09493799, -0.92052424, -0.37884605, 0.99472356, -0.10257544, 1.639321e-06, -0.038860198, -0.3767736, 0.9255871, 19.517391, 98.3894, -1.6191597)
 use_model_front = true
 script = ExtResource("3_4npvc")
 trackNumber = 3
@@ -128,7 +129,7 @@ transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 
 visible = false
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=479107482]
-transform = Transform3D(-0.09493799, -0.9205243, -0.37884605, 0.99472356, -0.10257545, 1.639321e-06, -0.038860198, -0.37677363, 0.9255871, 19.517391, 98.3894, -1.6191597)
+transform = Transform3D(-0.09493799, -0.92052424, -0.37884605, 0.99472356, -0.10257544, 1.639321e-06, -0.038860198, -0.3767736, 0.9255871, 19.517391, 98.3894, -1.6191597)
 use_model_front = true
 script = ExtResource("3_4npvc")
 trackNumber = 4

@@ -31,6 +31,8 @@ func changeColor(length:float,trackInd:int):
 			Actions.meterColor.emit(tracks[trackInd-1],trackInd)
 			tracks[trackInd-1] = tracks[trackInd-1] +1
 		else:
+			if trackInd == 1:
+				Actions.changeLevel.emit(1)
 			print(trackInd, " Won ")
 		
 		
