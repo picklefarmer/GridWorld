@@ -46,10 +46,10 @@ func startGame():
 
 		
 func assignRandomCharacters(raceway:Node3D):
-	var trackIdx = 2
+	var trackIdx :int = 2
 	for v in getTracks(raceway):
 		createCharacter(v,trackIdx)
-		trackIdx+=1
+		trackIdx = trackIdx + 1
 	Vitamen = _Vitamen.duplicate()
 	
 func getTracks(raceway:Node3D):
@@ -57,7 +57,7 @@ func getTracks(raceway:Node3D):
 	
 	var base = raceway.get_node("Path3D2")
 	var tracks : Array =[]
-	for i in range(2,4):
+	for i in range(2,5):
 		print(i ,"idx of track ")
 		tracks.append( base.get_node("track"+str(i)))
 	return tracks
