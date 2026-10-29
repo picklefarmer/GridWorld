@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://crldn2u381y1n"]
 
 [ext_resource type="PackedScene" uid="uid://1rrgwvi0j33t" path="res://Models/dragon.blend" id="1_78hxl"]
-[ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="2_odqgo"]
+[ext_resource type="Script" uid="uid://cj6val3nri2cp" path="res://Scripts/boneMoveBackground.gd" id="2_odqgo"]
 
 [node name="Dragon" type="Node3D" unique_id=817733709]
 
@@ -9,8 +9,6 @@
 
 [node name="Skeleton3D" parent="dragon/Armature" parent_id_path=PackedInt32Array(1503352618, 1143304239) index="0" unique_id=906979155]
 script = ExtResource("2_odqgo")
-multiplier = 4.75
-background = true
 
 [node name="Head" type="SpringBoneSimulator3D" parent="dragon/Armature/Skeleton3D" index="1" unique_id=1098291204]
 setting_count = 1

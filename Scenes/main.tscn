@@ -11,11 +11,23 @@
 [ext_resource type="PackedScene" uid="uid://cag3hbu5f3qpy" path="res://Scenes/Raceway 8.tscn" id="8_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://b2eq88hf7tec1" path="res://Scenes/Raceway 9.tscn" id="9_6iyac"]
 [ext_resource type="PackedScene" uid="uid://cbtukkq4fgj13" path="res://Scenes/lore.tscn" id="11_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://cvhhbyfkukdgx" path="res://Models/grape_man_redo_2.tscn" id="11_gt3je"]
+[ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="12_3pmx8"]
 [ext_resource type="PackedScene" uid="uid://dobwqy1xnmaes" path="res://Scenes/title_screen_2d.tscn" id="12_6iyac"]
+[ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="13_u50mg"]
+[ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="14_cbgmd"]
+[ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="15_1w6v2"]
+[ext_resource type="PackedScene" uid="uid://brot8tvj4oaou" path="res://Models/pearman.tscn" id="16_ueoa1"]
+[ext_resource type="PackedScene" uid="uid://4disebtdqhdv" path="res://Models/cherryman.tscn" id="17_6vcvc"]
+[ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="18_7k868"]
+[ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="19_hpc6h"]
+[ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="20_kltya"]
+[ext_resource type="PackedScene" uid="uid://inqwvslqoi4c" path="res://Models/watermelonman.tscn" id="21_e08e2"]
 
 [node name="Main" type="Node3D" unique_id=1519358469]
 script = ExtResource("1_jjgbg")
 Raceways = Array[PackedScene]([ExtResource("3_21xkr"), ExtResource("4_6bp64"), ExtResource("5_344ge"), ExtResource("6_ynf5e"), ExtResource("7_6bp64"), ExtResource("7_hptm8"), ExtResource("8_d1ilt"), ExtResource("9_6iyac"), ExtResource("2_bo1nx")])
+Vitamen = Array[PackedScene]([ExtResource("11_gt3je"), ExtResource("12_3pmx8"), ExtResource("13_u50mg"), ExtResource("14_cbgmd"), ExtResource("15_1w6v2"), ExtResource("16_ueoa1"), ExtResource("17_6vcvc"), ExtResource("18_7k868"), ExtResource("19_hpc6h"), ExtResource("20_kltya"), ExtResource("21_e08e2")])
 
 [node name="Lore" parent="." unique_id=897700427 instance=ExtResource("11_d1ilt")]
 lore = Array[String](["The worlds, they didn't know. It came on like a dream. [br] [br] There were many missed. And that's what they had seen.", "Beginning at a time when obedience had won. [br] [br] Where commitment to ourselves was little to none.", "Bringing life into our worlds, again and again. [br] [br] Seeking only a peace that would surely begin.", "For as dimensions unfold, though their existence unknown [br] [br] The Vitamen had arrived so that the planets may thrive", "With them it was a time for collection [br] [br] Engaging our minds in self reflection", "Their solution- pliable, viable, oh-so-desirable", "To take time on a race [br] [br] To set at your own pace"])

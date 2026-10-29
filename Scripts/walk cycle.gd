@@ -24,6 +24,10 @@ var runSpeed : float = 1.0
 var skeleton : Skeleton3D
 var canMove : bool = true
 func _ready() -> void:
+	if owner.track:
+		track = owner.track
+		bus = "track"+str(owner.track)
+		
 	Actions.syncLip.connect(rebus)
 	skeleton = get_parent() as Skeleton3D
 	bone_idx = skeleton.find_bone(bone_name)

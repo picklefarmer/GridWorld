@@ -8,15 +8,17 @@ var record_bus_index : int
 #var audio_stream_player : AudioStreamPlayer
 #var record_effect: AudioEffectRecord
 var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
+
 @export var MIN_DB: int = 82
 @export var minimum = 0.05
 @export var multiplier : float = 0.25
 @export var deltav : float = 1.0
 @export var track: String = "recording"
 @export var background :bool = false
-
 func _ready() -> void:
 	
+	if owner.owner.track:
+		track = "track"+str(owner.owner.track)
 	if !background :
 		Actions.syncLip.connect(rebus)
 	#print(get_bone_name(0))

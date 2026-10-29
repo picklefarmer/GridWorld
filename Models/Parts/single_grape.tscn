@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://cwcgfrejfpcxo"]
 
 [ext_resource type="PackedScene" uid="uid://benway5affrc3" path="res://Models/Parts/grape_single.blend" id="1_qb2sh"]
+[ext_resource type="Script" uid="uid://b628phxlf83a8" path="res://Scripts/boneMoveEmbedded.gd" id="1_x3df0"]
 [ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="2_yp4vc"]
 
 [node name="single_grape" type="Node3D" unique_id=1591084565]
 transform = Transform3D(-4.3711385e-08, -1, 4.3711385e-08, 1, -4.3711385e-08, 4.371139e-08, -4.3711385e-08, 4.371139e-08, 1, 0, 0, 0)
+script = ExtResource("1_x3df0")
 
 [node name="grape_single" parent="." unique_id=1340839860 instance=ExtResource("1_qb2sh")]
 
