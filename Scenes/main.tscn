@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cbtukkq4fgj13" path="res://Scenes/lore.tscn" id="11_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://cvhhbyfkukdgx" path="res://Models/grape_man_redo_2.tscn" id="11_gt3je"]
 [ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="12_3pmx8"]
-[ext_resource type="PackedScene" uid="uid://dobwqy1xnmaes" path="res://Scenes/title_screen_2d.tscn" id="12_6iyac"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="13_u50mg"]
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="14_cbgmd"]
 [ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="15_1w6v2"]
@@ -25,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://inqwvslqoi4c" path="res://Models/watermelonman.tscn" id="21_e08e2"]
 [ext_resource type="PackedScene" uid="uid://ekhlj2fr6t0f" path="res://Models/starfruitman.tscn" id="22_3pmx8"]
 [ext_resource type="AudioStream" uid="uid://dueptwjur1abn" path="res://Audio/Intro loop guitar and jazz 1.mp3" id="25_u50mg"]
+[ext_resource type="PackedScene" uid="uid://bjh8orpda3weh" path="res://Scenes/character_select.tscn" id="26_cbgmd"]
 
 [node name="Main" type="Node3D" unique_id=1519358469]
 script = ExtResource("1_jjgbg")
@@ -40,4 +40,10 @@ volume_db = 1.0
 autoplay = true
 parameters/looping = true
 
-[node name="TitleScreen2d" parent="." unique_id=644351830 instance=ExtResource("12_6iyac")]
+[node name="CharacterSelect" parent="." unique_id=338064043 instance=ExtResource("26_cbgmd")]
+
+[node name="Camera3D" parent="CharacterSelect" index="3" unique_id=764456810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.314, 7.433, 47.126)
+
+[editable path="CharacterSelect"]
+[editable path="CharacterSelect/TitleScreen2d"]

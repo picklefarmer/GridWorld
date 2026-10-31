@@ -7,21 +7,23 @@ var _Vitamen : Array
 var loadedPlayers : Array = []
 var raceWayInd : int = 8
 var currentRaceway:Node3D
-
+var intro = true
 #var playerIndex : int = 0
 
 func _ready() -> void:
 	Actions.resetMic.connect(resetMicFunc)
 	Actions.changeLevel.connect(swap)
 	startingTrack = Raceways[8]
+	
 	_Vitamen = Vitamen.duplicate()
 	
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("trackLeft"):
-		swap(1)
+	if $Lore.gameStart:
+		if Input.is_action_just_pressed("trackLeft"):
+			swap(1)
 		
-	if Input.is_action_just_pressed("trackRight"):
-		swap(-1)
+		if Input.is_action_just_pressed("trackRight"):
+			swap(-1)
 		
 	
 		
@@ -39,6 +41,7 @@ func resetMicFunc():
 	print(currentRaceway.get_node("Microphone").playing,"raceway instance")
 
 func startGame():
+	Vitamen.remove_at(Global.globalPlayerIndex)
 	add_child(startingTrack.instantiate())
 	currentRaceway = get_child(2)
 	assignRandomCharacters(currentRaceway)

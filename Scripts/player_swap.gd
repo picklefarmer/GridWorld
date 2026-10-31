@@ -10,6 +10,7 @@ var playerInd : int = 9
 func _ready() -> void:
 	#for character in PlayableCharacters:
 		#loadedPlayers.append(character.instantiate())
+	
 	player = get_child(0)
 	playerInd = Global.globalPlayerIndex
 	startingCharacter()

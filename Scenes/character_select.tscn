@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://bjh8orpda3weh"]
+
+[ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="1_li0db"]
+[ext_resource type="Script" uid="uid://ck3gn1e4aml4p" path="res://Scripts/character_select.gd" id="1_vueyu"]
+[ext_resource type="PackedScene" uid="uid://dobwqy1xnmaes" path="res://Scenes/title_screen_2d.tscn" id="2_vueyu"]
+[ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="3_a4vvp"]
+[ext_resource type="PackedScene" uid="uid://4disebtdqhdv" path="res://Models/cherryman.tscn" id="4_se7r8"]
+[ext_resource type="PackedScene" uid="uid://cvhhbyfkukdgx" path="res://Models/grape_man_redo_2.tscn" id="5_ma4qd"]
+[ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="6_nq02w"]
+[ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="7_a4vvp"]
+[ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="7_jxsgu"]
+[ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="8_jp3rh"]
+[ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="8_se7r8"]
+[ext_resource type="PackedScene" uid="uid://brot8tvj4oaou" path="res://Models/pearman.tscn" id="9_y3dkq"]
+[ext_resource type="PackedScene" uid="uid://ekhlj2fr6t0f" path="res://Models/starfruitman.tscn" id="10_62io2"]
+[ext_resource type="PackedScene" uid="uid://inqwvslqoi4c" path="res://Models/watermelonman.tscn" id="11_qgsok"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2kyu5"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.06666667, 0, 0.2784314, 1)
+ground_bottom_color = Color(0.15300292, 0.04301557, 0.1375291, 1)
+ground_horizon_color = Color(0.06666667, 0, 0.2784314, 1)
+
+[sub_resource type="Sky" id="Sky_li0db"]
+sky_material = SubResource("ProceduralSkyMaterial_2kyu5")
+
+[sub_resource type="Environment" id="Environment_vueyu"]
+background_mode = 2
+sky = SubResource("Sky_li0db")
+tonemap_mode = 2
+
+[node name="Character Select" type="Node3D" unique_id=338064043]
+script = ExtResource("1_vueyu")
+
+[node name="TitleScreen2d" parent="." unique_id=1642162364 instance=ExtResource("2_vueyu")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=953813366]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2090831230]
+environment = SubResource("Environment_vueyu")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=764456810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31390476, 7.432659, 47.12597)
+fov = 23.6
+
+[node name="AreaLight3D" type="AreaLight3D" parent="Camera3D" unique_id=562784060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18, -2.982, -40.35)
+light_energy = 2.669
+distance_fade_begin = 0.0
+area_size = Vector2(3.6498418, 9.0896015)
+
+[node name="Appleman" parent="." unique_id=4949676 instance=ExtResource("1_li0db")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.290239, 0, 2.6476574)
+
+[node name="Bananaman" parent="." unique_id=602892636 instance=ExtResource("3_a4vvp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.593956, 0, 2.4497051)
+
+[node name="Cherryman" parent="." unique_id=1381617479 instance=ExtResource("4_se7r8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.853725, 0, 2.0503283)
+
+[node name="GrapeMan" parent="." unique_id=2033235155 instance=ExtResource("5_ma4qd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.121767, 0, 2.8404427)
+
+[node name="Strawberry" parent="." unique_id=1848394695 instance=ExtResource("7_a4vvp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.016796, 0, 3.175003)
+
+[node name="Blueberryman" parent="." unique_id=539657863 instance=ExtResource("8_se7r8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.53542, 0, 3.1772823)
+
+[node name="Lemonman" parent="." unique_id=1507723498 instance=ExtResource("6_nq02w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.617362, 0, 2.119914)
+
+[node name="Orangeman" parent="." unique_id=549132479 instance=ExtResource("7_jxsgu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12823057, 0, 2.4892292)
+
+[node name="Peachman" parent="." unique_id=1887923755 instance=ExtResource("8_jp3rh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.462883, 0, 3.1284733)
+
+[node name="Pearman" parent="." unique_id=153210497 instance=ExtResource("9_y3dkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.533913, 0, 2.4268093)
+
+[node name="Starfruitman" parent="." unique_id=1286964837 instance=ExtResource("10_62io2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5933223, 0, 2.0247064)
+
+[node name="Watermelonman" parent="." unique_id=52613899 instance=ExtResource("11_qgsok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.704312, 0, 2.7117558)

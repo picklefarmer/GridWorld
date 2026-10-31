@@ -5,7 +5,9 @@ var loreIndex : int = 0
 var loreWindow : RichTextLabel
 var titleScreen : Label
 var loreTween : Tween
+var charSelect : bool = false
 var gameStart : bool = false
+var introDone : bool = false
 func _ready() -> void:
 	$IntroMusic.play()
 	loreWindow = $RichTextLabel
@@ -18,18 +20,25 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("confirm") and gameStart == false:
 		loreIndex = loreIndex+1
-		if loreIndex == lore.size():
-			loreWindow.visible = false
+		if charSelect:
+			$"../CharacterSelect".visible= false
+			$"../CharacterSelect/TitleScreen2d/Label".visible = false
 			$IntroMusic.stop()
-			titleScreen.visible = true
-			get_tree().create_timer(1.5).timeout.connect(fadeTitle)
 			gameStart = true
+			
 			$"..".startGame()
+		elif loreIndex == lore.size():
+			loreWindow.visible = false
+			$"../CharacterSelect/TitleScreen2d/Label".visible = true
+			introDone = true
+			#$TitleScreen2d.titleScreen.visible = true
+			#get_tree().create_timer(1.5).timeout.connect(fadeTitle)
 		else:
 			updateLabel()
 	
 func fadeTitle():
 	titleScreen.visible = false
+	
 func updateLabel():
 	#
 	if loreTween and loreTween.is_valid():
