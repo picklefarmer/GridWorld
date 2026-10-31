@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://kg15ygp6p045" path="res://Audio/Past tracks/Track 2/raceway 2 near 2.mp3" id="19_w8i87"]
 [ext_resource type="AudioStream" uid="uid://df66i4uvc0isq" path="res://Audio/Past tracks/Track 2/raceway 2 near 1.mp3" id="20_cfm87"]
 [ext_resource type="PackedScene" uid="uid://inqwvslqoi4c" path="res://Models/watermelonman.tscn" id="23_mgg3m"]
+[ext_resource type="PackedScene" uid="uid://ekhlj2fr6t0f" path="res://Models/starfruitman.tscn" id="24_77k7u"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_glv2v"]
 rayleigh_coefficient = 1.11
@@ -149,7 +150,7 @@ fov = 40.2
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1953451184]
 script = ExtResource("10_7nbvk")
-PlayableCharacters = Array[PackedScene]([ExtResource("12_4wofl"), ExtResource("12_w2k2d"), ExtResource("9_juxwo"), ExtResource("7_pxnv1"), ExtResource("8_cfm87"), ExtResource("15_wayxb"), ExtResource("16_jv81l"), ExtResource("17_pxnv1"), ExtResource("15_jv81l"), ExtResource("6_jv81l"), ExtResource("23_mgg3m")])
+PlayableCharacters = Array[PackedScene]([ExtResource("12_4wofl"), ExtResource("12_w2k2d"), ExtResource("9_juxwo"), ExtResource("7_pxnv1"), ExtResource("8_cfm87"), ExtResource("15_wayxb"), ExtResource("16_jv81l"), ExtResource("17_pxnv1"), ExtResource("15_jv81l"), ExtResource("6_jv81l"), ExtResource("23_mgg3m"), ExtResource("24_77k7u")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("6_jv81l")]
 transform = Transform3D(0.9996698, 7.450581e-09, -0.025692374, -1.4901161e-08, 1.0000002, -1.4901161e-08, 0.025692433, 2.2351742e-08, 0.9996698, 0.77378845, -0.21323013, 0.24564266)

@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://ds3vhfqsbm6rf" path="res://Audio/Past tracks/Track 4/track 2 - track 4.mp3" id="17_afnnl"]
 [ext_resource type="PackedScene" uid="uid://inqwvslqoi4c" path="res://Models/watermelonman.tscn" id="18_6k8qg"]
 [ext_resource type="AudioStream" uid="uid://beg315go6ndkj" path="res://Audio/Past tracks/Track 4/track 3 -track 4.mp3" id="18_eieg8"]
+[ext_resource type="PackedScene" uid="uid://ekhlj2fr6t0f" path="res://Models/starfruitman.tscn" id="19_skn80"]
 [ext_resource type="PackedScene" uid="uid://crldn2u381y1n" path="res://Scenes/Background/dragon.tscn" id="26_ppby4"]
 
 [sub_resource type="Curve" id="Curve_sdpiv"]
@@ -264,7 +265,7 @@ light_specular = 0.523
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1085270310]
 transform = Transform3D(1.0000001, 1.4901161e-08, 4.656613e-10, 0, 1.0000001, 3.7252903e-09, 0, 3.7252903e-09, 1, 0, 0, 0)
 script = ExtResource("6_jj500")
-PlayableCharacters = Array[PackedScene]([ExtResource("7_vt77n"), ExtResource("7_f7s0b"), ExtResource("7_xjy4r"), ExtResource("5_po5p7"), ExtResource("6_ubsab"), ExtResource("11_uwv7w"), ExtResource("12_g6ltt"), ExtResource("13_so25e"), ExtResource("14_afnnl"), ExtResource("4_bu834"), ExtResource("18_6k8qg")])
+PlayableCharacters = Array[PackedScene]([ExtResource("7_vt77n"), ExtResource("7_f7s0b"), ExtResource("7_xjy4r"), ExtResource("5_po5p7"), ExtResource("6_ubsab"), ExtResource("11_uwv7w"), ExtResource("12_g6ltt"), ExtResource("13_so25e"), ExtResource("14_afnnl"), ExtResource("4_bu834"), ExtResource("18_6k8qg"), ExtResource("19_skn80")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("4_bu834")]
 transform = Transform3D(0.99966985, 7.450581e-09, -0.025692385, 7.450581e-09, 1.0000004, 0, 0.025692455, 2.9802322e-08, 0.9996698, 1.1060009, 7.6293945e-06, 0.2539959)

@@ -7,6 +7,7 @@ var titleScreen : Label
 var loreTween : Tween
 var gameStart : bool = false
 func _ready() -> void:
+	$IntroMusic.play()
 	loreWindow = $RichTextLabel
 	titleScreen = $TitleScreen2d.get_child(0)
 	#loreTween = create_tween()
@@ -19,6 +20,7 @@ func _process(delta: float) -> void:
 		loreIndex = loreIndex+1
 		if loreIndex == lore.size():
 			loreWindow.visible = false
+			$IntroMusic.stop()
 			titleScreen.visible = true
 			get_tree().create_timer(1.5).timeout.connect(fadeTitle)
 			gameStart = true
@@ -42,7 +44,8 @@ func updateLabel():
 	
 	
 func updateText():
-	loreWindow.text = "[center]"+lore[loreIndex]+"[/center]"
+	if gameStart == false:
+		loreWindow.text = "[center]"+lore[loreIndex]+"[/center]"
 	
 	
 	
