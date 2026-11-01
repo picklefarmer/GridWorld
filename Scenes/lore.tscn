@@ -12,11 +12,16 @@ content_margin_top = 108.0
 content_margin_right = 108.0
 content_margin_bottom = 108.0
 bg_color = Color(0.01, 0.0026666664, 0, 0.6431373)
-border_width_left = 12
-border_width_top = 12
-border_width_right = 12
-border_width_bottom = 12
+border_width_left = 24
+border_width_top = 24
+border_width_right = 24
+border_width_bottom = 24
 border_color = Color(0, 0.60090035, 0.38422284, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="Lore" type="Node" unique_id=897700427]
 script = ExtResource("1_oqjcs")

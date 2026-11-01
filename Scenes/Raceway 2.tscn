@@ -142,7 +142,7 @@ fov = 60.0
 
 [node name="Progress_Meter" parent="Path3D2/track1/Camera3D" unique_id=1292900729 instance=ExtResource("11_w6ccu")]
 transform = Transform3D(1, 0, 0, 0, -4.371138e-08, -1.0000001, 0, 0.9999998, -4.3711392e-08, -0.73176163, -0.5784673, -1.3911748)
-lapCap = 0
+lapCap = 1
 
 [node name="followPlayer" type="Camera3D" parent="Path3D2/track1" unique_id=1004571524]
 transform = Transform3D(0.7419935, 0.6704436, 3.5390258e-08, 1.1175871e-08, -8.288771e-08, 1.0000114, 0.6704427, -0.74199253, -6.519258e-08, 1.504, 60, 1.01)

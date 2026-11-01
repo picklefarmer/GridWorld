@@ -5,7 +5,7 @@ extends Node3D
 @export var Vitamen: Array[PackedScene]= []
 var _Vitamen : Array
 var loadedPlayers : Array = []
-var raceWayInd : int = 8
+var raceWayInd : int = 0
 var currentRaceway:Node3D
 var intro = true
 #var playerIndex : int = 0
@@ -13,8 +13,9 @@ var intro = true
 func _ready() -> void:
 	Actions.resetMic.connect(resetMicFunc)
 	Actions.changeLevel.connect(swap)
-	startingTrack = Raceways[8]
-	
+	Actions.endGame.connect(endGame)
+	startingTrack = Raceways[0]
+	Global.globalRacewaySize = Raceways.size()
 	_Vitamen = Vitamen.duplicate()
 	
 func _process(delta: float) -> void:
@@ -47,7 +48,14 @@ func startGame():
 	assignRandomCharacters(currentRaceway)
 
 
-		
+func endGame():
+	currentRaceway.queue_free()
+	$Lore/OutroMusic.play()	
+	var label = $Lore/TitleScreen2d/EndScreen
+	label.visible = true
+	
+	
+	
 func assignRandomCharacters(raceway:Node3D):
 	var trackIdx :int = 2
 	for v in getTracks(raceway):
@@ -82,6 +90,7 @@ func createCharacter(track:PathFollow3D,trackIdx:int):
 		
 func swap(direction:int):
 	raceWayInd = posmod(raceWayInd+direction, Raceways.size())
+	Global.globalRacewayIndex = raceWayInd
 	currentRaceway = get_child(2)
 	print(raceWayInd)
 	var racewayInstance = Raceways[raceWayInd].instantiate()

@@ -1,5 +1,18 @@
 [gd_scene format=3 uid="uid://dobwqy1xnmaes"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk1ks"]
+bg_color = Color(0.16746086, 0.020104576, 0.27382907, 1)
+border_width_left = 24
+border_width_top = 24
+border_width_right = 24
+border_width_bottom = 24
+border_color = Color(9.62615e-07, 0.94017583, 0.68032515, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [node name="TitleScreen2d" type="Node" unique_id=1642162364]
 
 [node name="Label" type="Label" parent="." unique_id=898577245]
@@ -21,5 +34,28 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 129
 text = "Vitamen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EndScreen" type="RichTextLabel" parent="." unique_id=291964157]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.0
+offset_top = -322.5
+offset_right = 324.0
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 103
+theme_override_styles/normal = SubResource("StyleBoxFlat_fk1ks")
+text = "Thanks for Playing"
 horizontal_alignment = 1
 vertical_alignment = 1

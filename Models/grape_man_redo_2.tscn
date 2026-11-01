@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cwcgfrejfpcxo" path="res://Models/Parts/single_grape.tscn" id="6_8iv5a"]
 [ext_resource type="PackedScene" uid="uid://8r66627kkomc" path="res://Models/Parts/single_grape_eye.tscn" id="7_o54dl"]
 [ext_resource type="PackedScene" uid="uid://bmw00lcr8axyu" path="res://Models/Parts/single_grape_mouth.tscn" id="8_613kt"]
+[ext_resource type="Script" uid="uid://b628phxlf83a8" path="res://Scripts/boneMoveEmbedded.gd" id="9_dsh10"]
 
 [node name="GrapeMan_Redo" type="Node3D" unique_id=2033235155]
 script = ExtResource("1_1erxo")
@@ -269,6 +270,7 @@ bone_idx = 4
 
 [node name="single_grape_mouth" parent="grape/Armature/Skeleton3D/4" unique_id=487679516 instance=ExtResource("8_613kt")]
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -1.12731415e-08, 0.3868761, -6.316384e-09)
+script = ExtResource("9_dsh10")
 
 [node name="single_grape2" parent="grape/Armature/Skeleton3D/4" unique_id=1298832785 instance=ExtResource("6_8iv5a")]
 transform = Transform3D(0.9612617, -0.27563727, 1.16104005e-07, 0.14810741, 0.51651233, 0.84337366, -0.2324653, -0.8107028, 0.53732747, -0.36489645, 0.32700038, 0.16842155)

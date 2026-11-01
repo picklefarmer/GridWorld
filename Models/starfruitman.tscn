@@ -12,10 +12,10 @@ script = ExtResource("1_h4q3r")
 [node name="starfruit" parent="." unique_id=1183213 instance=ExtResource("1_fu3c2")]
 
 [node name="Skeleton3D" parent="starfruit/Armature" parent_id_path=PackedInt32Array(1183213, 369297204) index="0" unique_id=1182279306]
-bones/6/rotation = Quaternion(0.976187, 0, 0, 0.21693)
-bones/9/rotation = Quaternion(0.637253, 0, 0, 0.569122)
+bones/7/rotation = Quaternion(-0.219348, 0, 0, 0.998522)
+bones/9/rotation = Quaternion(1.052253, 0, 0, 0.569122)
 script = ExtResource("2_iucq6")
-multiplier = -2.44
+multiplier = 2.44
 
 [node name="Mouth" type="SpringBoneSimulator3D" parent="starfruit/Armature/Skeleton3D" index="2" unique_id=1009472572]
 setting_count = 1
@@ -33,11 +33,11 @@ settings/0/individual_config = false
 settings/0/rotation_axis = 0
 settings/0/radius/value = 0.02
 settings/0/radius/damping_curve = null
-settings/0/stiffness/value = 4.0
+settings/0/stiffness/value = 12.65
 settings/0/stiffness/damping_curve = null
-settings/0/drag/value = 1.0
+settings/0/drag/value = 0.4
 settings/0/drag/damping_curve = null
-settings/0/gravity/value = 1.0
+settings/0/gravity/value = 0.0
 settings/0/gravity/damping_curve = null
 settings/0/gravity/direction = Vector3(0, 0, 2)
 settings/0/joints/0/bone_name = "Bone.002_2"
@@ -49,9 +49,10 @@ settings/0/joints/2/bone = 8
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("2_eds6y")
-multiplier = -34.0
+multiplier = -140.0
 
 [node name="Head" type="SpringBoneSimulator3D" parent="starfruit/Armature/Skeleton3D" index="3" unique_id=1406764267]
+influence = 0.309
 setting_count = 1
 settings/0/root_bone_name = "Bone_2"
 settings/0/root_bone = 4
@@ -67,9 +68,9 @@ settings/0/individual_config = false
 settings/0/rotation_axis = 0
 settings/0/radius/value = 0.02
 settings/0/radius/damping_curve = null
-settings/0/stiffness/value = 22.0
+settings/0/stiffness/value = 18.0
 settings/0/stiffness/damping_curve = null
-settings/0/drag/value = 1.0
+settings/0/drag/value = 0.37
 settings/0/drag/damping_curve = null
 settings/0/gravity/value = 0.0
 settings/0/gravity/damping_curve = null
@@ -99,9 +100,9 @@ settings/0/individual_config = false
 settings/0/rotation_axis = 2
 settings/0/radius/value = 0.02
 settings/0/radius/damping_curve = null
-settings/0/stiffness/value = 24.45
+settings/0/stiffness/value = 4.0
 settings/0/stiffness/damping_curve = null
-settings/0/drag/value = 0.24
+settings/0/drag/value = 1.0
 settings/0/drag/damping_curve = null
 settings/0/gravity/value = 0.0
 settings/0/gravity/damping_curve = null

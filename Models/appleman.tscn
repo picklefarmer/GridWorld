@@ -33,7 +33,7 @@ settings/0/stiffness/value = 6.0
 settings/0/stiffness/damping_curve = null
 settings/0/drag/value = 0.4
 settings/0/drag/damping_curve = null
-settings/0/gravity/value = 1.0
+settings/0/gravity/value = 0.0
 settings/0/gravity/damping_curve = null
 settings/0/gravity/direction = Vector3(0, -1, 0)
 settings/0/joints/0/bone_name = "Bone.002"
@@ -46,13 +46,6 @@ settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("2_lfxht")
 multiplier = 25.0
-
-[node name="SpringBoneCollisionPlane3D" type="SpringBoneCollisionPlane3D" parent="apple/Armature/Skeleton3D/Mouth" unique_id=2083446444]
-transform = Transform3D(1, 4.7679363e-09, 2.3837086e-07, 1.2789769e-13, -0.9997999, 0.01999764, 2.3841855e-07, -0.01999764, -0.9997999, -6.67572e-08, 4.852599, 0.17145297)
-bone_name = "Bone.006"
-bone = 6
-position_offset = Vector3(0, -0.19, -0.28)
-rotation_offset = Quaternion(0.01, 0, 0, 1)
 
 [node name="Body" type="SpringBoneSimulator3D" parent="apple/Armature/Skeleton3D" index="2" unique_id=1348034259]
 influence = 0.305

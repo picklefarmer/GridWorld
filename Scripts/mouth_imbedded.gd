@@ -15,7 +15,8 @@ var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 @export var bone : String = "Bone"
 
 func _ready() -> void:
-	
+	if owner.owner.track:
+		bus = "track"+str(owner.owner.track)
 	Actions.syncLip.connect(rebus)
 	#print(AudioServer.get_input_device_list())
 	record_bus_index = AudioServer.get_bus_index(bus)

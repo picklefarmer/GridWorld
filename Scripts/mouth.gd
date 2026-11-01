@@ -15,9 +15,10 @@ var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 @export var bone : String = "Bone"
 
 func _ready() -> void:
-	if bus != "recording":
-		if owner.track:
-			bus = "track"+str(owner.track)
+	#if bus != "recording":
+	if owner.track:
+		bus = "track"+str(owner.track)
+	minimum = owner.minimum 
 	Actions.syncLip.connect(rebus)
 	#print(AudioServer.get_input_device_list())
 	record_bus_index = AudioServer.get_bus_index(bus)
@@ -25,6 +26,7 @@ func _ready() -> void:
 	spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
 	#record_effect.set_recording_active(true)
 	
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -47,6 +49,7 @@ func _physics_process(delta: float) -> void:
 		
 	else:
 		external_force = Vector3.ZERO
+
 
 
 func rebus():

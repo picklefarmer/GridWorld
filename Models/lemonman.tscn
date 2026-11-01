@@ -55,17 +55,21 @@ settings/0/root_bone_name = "Bone.004"
 settings/0/root_bone = 4
 settings/0/end_bone_name = "Bone.006"
 settings/0/end_bone = 6
-settings/0/extend_end_bone = false
-settings/0/center_from = 0
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.348
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
 settings/0/individual_config = false
-settings/0/rotation_axis = 3
+settings/0/rotation_axis = 0
 settings/0/radius/value = 0.02
 settings/0/radius/damping_curve = null
 settings/0/stiffness/value = 11.0
 settings/0/stiffness/damping_curve = null
 settings/0/drag/value = 0.61
 settings/0/drag/damping_curve = null
-settings/0/gravity/value = 1.0
+settings/0/gravity/value = 0.0
 settings/0/gravity/damping_curve = null
 settings/0/gravity/direction = Vector3(0, 2, 0)
 settings/0/joints/0/bone_name = "Bone.004"
@@ -111,7 +115,6 @@ settings/0/exclude_collision_count = 0
 script = ExtResource("4_ljf0i")
 multiplier = 300.0
 isLeg = true
-runSpeed = 0.274
 
 [node name="LL" type="SpringBoneSimulator3D" parent="lemon/Armature/Skeleton3D" index="4" unique_id=498731325]
 setting_count = 1
@@ -145,7 +148,6 @@ settings/0/exclude_collision_count = 0
 script = ExtResource("4_ljf0i")
 multiplier = -300.0
 isLeg = true
-runSpeed = 0.274
 
 [node name="Head" type="SpringBoneSimulator3D" parent="lemon/Armature/Skeleton3D" index="5" unique_id=1271454375]
 setting_count = 1
@@ -210,7 +212,6 @@ settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("4_ljf0i")
 multiplier = 150.0
-runSpeed = 0.174
 
 [node name="RA" type="SpringBoneSimulator3D" parent="lemon/Armature/Skeleton3D" index="7" unique_id=33575117]
 setting_count = 1

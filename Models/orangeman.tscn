@@ -33,7 +33,7 @@ settings/0/stiffness/value = 11.0
 settings/0/stiffness/damping_curve = null
 settings/0/drag/value = 0.4
 settings/0/drag/damping_curve = null
-settings/0/gravity/value = 2.0
+settings/0/gravity/value = 3.05
 settings/0/gravity/damping_curve = null
 settings/0/gravity/direction = Vector3(0, -1, 0)
 settings/0/joints/0/bone_name = "Bone.008"
@@ -45,7 +45,7 @@ settings/0/joints/2/bone = 40
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("4_0nvvi")
-multiplier = 40.0
+multiplier = 30.0
 
 [node name="Body" type="SpringBoneSimulator3D" parent="orange/Armature/Skeleton3D" index="3" unique_id=2000274924]
 influence = 0.34

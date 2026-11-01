@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://inqwvslqoi4c" path="res://Models/watermelonman.tscn" id="21_e08e2"]
 [ext_resource type="PackedScene" uid="uid://ekhlj2fr6t0f" path="res://Models/starfruitman.tscn" id="22_3pmx8"]
 [ext_resource type="AudioStream" uid="uid://dueptwjur1abn" path="res://Audio/Intro loop guitar and jazz 1.mp3" id="25_u50mg"]
+[ext_resource type="AudioStream" uid="uid://dh825lhlgp6of" path="res://Audio/outro guitar and keys bpm 117.mp3" id="25_ueoa1"]
 [ext_resource type="PackedScene" uid="uid://0ss2sux6ukbd" path="res://Models/introStar.blend" id="26_1w6v2"]
 [ext_resource type="PackedScene" uid="uid://bjh8orpda3weh" path="res://Scenes/character_select.tscn" id="26_cbgmd"]
 [ext_resource type="Texture2D" uid="uid://cyisp87jd0kx2" path="res://Models/textures/Nightsky.png" id="27_ueoa1"]
@@ -72,7 +73,7 @@ shadow_mesh = SubResource("ArrayMesh_5uvei")
 
 [node name="Main" type="Node3D" unique_id=1519358469]
 script = ExtResource("1_jjgbg")
-Raceways = Array[PackedScene]([ExtResource("3_21xkr"), ExtResource("4_6bp64"), ExtResource("5_344ge"), ExtResource("6_ynf5e"), ExtResource("7_6bp64"), ExtResource("7_hptm8"), ExtResource("8_d1ilt"), ExtResource("9_6iyac"), ExtResource("2_bo1nx")])
+Raceways = Array[PackedScene]([ExtResource("2_bo1nx"), ExtResource("3_21xkr"), ExtResource("4_6bp64"), ExtResource("5_344ge"), ExtResource("6_ynf5e"), ExtResource("7_6bp64"), ExtResource("7_hptm8"), ExtResource("8_d1ilt"), ExtResource("9_6iyac")])
 Vitamen = Array[PackedScene]([ExtResource("11_gt3je"), ExtResource("12_3pmx8"), ExtResource("13_u50mg"), ExtResource("14_cbgmd"), ExtResource("15_1w6v2"), ExtResource("16_ueoa1"), ExtResource("17_6vcvc"), ExtResource("18_7k868"), ExtResource("19_hpc6h"), ExtResource("20_kltya"), ExtResource("21_e08e2"), ExtResource("22_3pmx8")])
 
 [node name="Lore" parent="." unique_id=897700427 instance=ExtResource("11_d1ilt")]
@@ -82,6 +83,13 @@ lore = Array[String](["The worlds, they didn't know. It came on like a dream. [b
 stream = ExtResource("25_u50mg")
 volume_db = 1.0
 autoplay = true
+bus = &"track2"
+parameters/looping = true
+
+[node name="OutroMusic" type="AudioStreamPlayer" parent="Lore" unique_id=1111225154]
+stream = ExtResource("25_ueoa1")
+volume_db = 1.0
+bus = &"track2"
 parameters/looping = true
 
 [node name="CharacterSelect" parent="." unique_id=338064043 instance=ExtResource("26_cbgmd")]
@@ -95,6 +103,8 @@ transform = Transform3D(6.114194e-14, 1.3987644e-06, 32, 32, -1.3987644e-06, -4.
 [node name="Plane" parent="CharacterSelect/introStar" index="0" unique_id=1196324003]
 mesh = SubResource("ArrayMesh_7k868")
 
+[editable path="Lore"]
+[editable path="Lore/TitleScreen2d"]
 [editable path="CharacterSelect"]
 [editable path="CharacterSelect/TitleScreen2d"]
 [editable path="CharacterSelect/introStar"]
