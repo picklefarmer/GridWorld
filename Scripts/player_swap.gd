@@ -31,7 +31,7 @@ func startingCharacter():
 	var newPlayer:Node3D = get_child(1)
 	playerInstantiated.set("active",true)
 	Actions.syncLip.emit()
-	
+	newPlayer.minimum = Global.minimum
 	newPlayer.runSpeed = player.runSpeed
 	newPlayer.transform = player.transform
 	
@@ -48,6 +48,7 @@ func swap(direction:int):
 	playerInstantiated.set("active",true)
 	Actions.syncLip.emit()
 	
+	newPlayer.minimum = Global.minimum
 	newPlayer.runSpeed = player.runSpeed
 	newPlayer.transform = player.transform
 	

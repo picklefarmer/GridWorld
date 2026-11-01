@@ -94,6 +94,7 @@ PlayableCharacters = Array[PackedScene]([ExtResource("6_2f62b"), ExtResource("6_
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("6_cbjio")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1.0000004, 0, 0, 0, 0.9999999, 1.1060009, 7.6293945e-06, 0.2539959)
+runSpeed = 1.6
 
 [node name="followPlayer" type="Camera3D" parent="Path3D2/track1" unique_id=227777700]
 transform = Transform3D(0.9317014, 0.3635202, -1.4901161e-08, 1.8626451e-09, 1.6763806e-08, 1.0001248, 0.36325532, -0.93102264, 1.3038516e-08, -5.1749954, 80.00001, 11.429005)

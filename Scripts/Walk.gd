@@ -15,7 +15,7 @@ var record_effect
 var model
 func _ready() -> void:
 	model = get_node(modelPath)
-	AudioServer.set_input_device("Microphone (fifine Microphone)")
+	#AudioServer.set_input_device("Microphone (fifine Microphone)")
 	
 	#AudioServer.set_input_device_active(0)
 

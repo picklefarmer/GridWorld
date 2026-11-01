@@ -56,7 +56,7 @@ func updateLabel():
 	
 	
 func updateText():
-	if gameStart == false:
+	if introDone == false:
 		loreWindow.text = "[center]"+lore[loreIndex]+"[/center]"
 	
 	

@@ -1,5 +1,6 @@
 extends Node3D
 
+@export var minimum : float = 0.05
 @export var startingTrack : PackedScene
 @export var Raceways : Array[PackedScene] = []
 @export var Vitamen: Array[PackedScene]= []
@@ -8,9 +9,11 @@ var loadedPlayers : Array = []
 var raceWayInd : int = 0
 var currentRaceway:Node3D
 var intro = true
+
 #var playerIndex : int = 0
 
 func _ready() -> void:
+	Global.minimum = minimum
 	Actions.resetMic.connect(resetMicFunc)
 	Actions.changeLevel.connect(swap)
 	Actions.endGame.connect(endGame)

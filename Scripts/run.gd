@@ -23,7 +23,8 @@ func _ready() -> void:
 		runSpeed = get_child(0).runSpeed
 		Actions.updateProgress.connect(errorBoost)
 	else:
-		trackNorm = runSpeed
+		runSpeed = $PlayerHolder.get_child(0).runSpeed
+		#trackNorm = runSpeed
 	#if trackNumber == 1:
 		#Actions.beatOff.connect(modRun)
 	#else:
