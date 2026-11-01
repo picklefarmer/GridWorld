@@ -24,7 +24,51 @@
 [ext_resource type="PackedScene" uid="uid://inqwvslqoi4c" path="res://Models/watermelonman.tscn" id="21_e08e2"]
 [ext_resource type="PackedScene" uid="uid://ekhlj2fr6t0f" path="res://Models/starfruitman.tscn" id="22_3pmx8"]
 [ext_resource type="AudioStream" uid="uid://dueptwjur1abn" path="res://Audio/Intro loop guitar and jazz 1.mp3" id="25_u50mg"]
+[ext_resource type="PackedScene" uid="uid://0ss2sux6ukbd" path="res://Models/introStar.blend" id="26_1w6v2"]
 [ext_resource type="PackedScene" uid="uid://bjh8orpda3weh" path="res://Scenes/character_select.tscn" id="26_cbgmd"]
+[ext_resource type="Texture2D" uid="uid://cyisp87jd0kx2" path="res://Models/textures/Nightsky.png" id="27_ueoa1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vcvc"]
+resource_name = "Material.001"
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission_energy_multiplier = 2.21
+emission_texture = ExtResource("27_ueoa1")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5uvei"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7k868"]
+resource_name = "introStar_Plane"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": SubResource("StandardMaterial3D_6vcvc"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_5uvei")
 
 [node name="Main" type="Node3D" unique_id=1519358469]
 script = ExtResource("1_jjgbg")
@@ -45,5 +89,12 @@ parameters/looping = true
 [node name="Camera3D" parent="CharacterSelect" index="3" unique_id=764456810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.314, 7.433, 47.126)
 
+[node name="introStar" parent="CharacterSelect" unique_id=873956865 instance=ExtResource("26_1w6v2")]
+transform = Transform3D(6.114194e-14, 1.3987644e-06, 32, 32, -1.3987644e-06, -4.5137477e-21, 1.3987644e-06, 32, -1.3987644e-06, 2.2774734, 15.737549, 0)
+
+[node name="Plane" parent="CharacterSelect/introStar" index="0" unique_id=1196324003]
+mesh = SubResource("ArrayMesh_7k868")
+
 [editable path="CharacterSelect"]
 [editable path="CharacterSelect/TitleScreen2d"]
+[editable path="CharacterSelect/introStar"]

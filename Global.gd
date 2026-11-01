@@ -1,4 +1,4 @@
 extends Node
 
 
-var globalPlayerIndex :int = 9
+var globalPlayerIndex :int = 1

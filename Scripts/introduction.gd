@@ -20,19 +20,22 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("confirm") and gameStart == false:
 		loreIndex = loreIndex+1
-		if charSelect:
-			$"../CharacterSelect".visible= false
-			$"../CharacterSelect/TitleScreen2d/Label".visible = false
-			$IntroMusic.stop()
-			gameStart = true
-			
-			$"..".startGame()
-		elif loreIndex == lore.size():
+		if loreIndex == lore.size():
 			loreWindow.visible = false
 			$"../CharacterSelect/TitleScreen2d/Label".visible = true
 			introDone = true
 			#$TitleScreen2d.titleScreen.visible = true
 			#get_tree().create_timer(1.5).timeout.connect(fadeTitle)
+		elif charSelect or introDone:
+			$"../CharacterSelect/".visible = false
+			$"../CharacterSelect/WorldEnvironment".queue_free()
+			$"../CharacterSelect/TitleScreen2d/Label".visible = false
+			
+			$IntroMusic.stop()
+			gameStart = true
+			
+			$"..".startGame()
+		
 		else:
 			updateLabel()
 	
