@@ -22,3 +22,6 @@ trackMeterIndex = 3
 [node name="progress_meter_bar4" parent="." unique_id=1840191378 instance=ExtResource("2_2y8rs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.106)
 trackMeterIndex = 4
+
+[node name="RaceTime" type="Timer" parent="." unique_id=1362244565]
+autostart = true

@@ -326,7 +326,6 @@ visible = false
 [node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=733533348]
 stream = SubResource("AudioStreamMicrophone_fh4fj")
 volume_db = 1.0
-autoplay = true
 bus = &"recording"
 
 [node name="Track 2 streamer" type="AudioStreamPlayer" parent="." unique_id=2079140832]

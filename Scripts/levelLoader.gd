@@ -9,6 +9,7 @@ var loadedPlayers : Array = []
 var raceWayInd : int = 0
 var currentRaceway:Node3D
 var intro = true
+var initialTrack :bool = true
 
 #var playerIndex : int = 0
 
@@ -49,7 +50,7 @@ func startGame():
 	add_child(startingTrack.instantiate())
 	currentRaceway = get_child(2)
 	assignRandomCharacters(currentRaceway)
-
+	Global.loadedPlayers.insert(0,Global.playerName)
 
 func endGame():
 	currentRaceway.queue_free()
@@ -60,6 +61,7 @@ func endGame():
 	
 	
 func assignRandomCharacters(raceway:Node3D):
+	Global.loadedPlayers.clear()
 	var trackIdx :int = 2
 	for v in getTracks(raceway):
 		createCharacter(v,trackIdx)
@@ -82,6 +84,7 @@ func createCharacter(track:PathFollow3D,trackIdx:int):
 	var opponent : Node3D = Vitamen[rnd_idx].instantiate()
 	Vitamen.erase(Vitamen[rnd_idx])
 	
+	Global.loadedPlayers.append(opponent.name)
 	
 	opponent.transform = oldOpp.transform
 	opponent.minimum = oldOpp.minimum
@@ -101,8 +104,12 @@ func swap(direction:int):
 	#racewayInstance.get_node("Path3D2/track1/PlayerHolder").playerInd = playerIndex
 	self.add_child(racewayInstance)
 	
+	racewayInstance.pauseMusic()
+	$Lore/StatScreen.visible = true
+	$Lore/StatScreen.isActive = true
 	
-
+	Actions.winnerOrder.emit(Global.winners.duplicate())
+	#racewayInstance.playMusic()
 	#racewayInstance.get_node("Path3D2/track1/PlayerHolder").get_child(0).active = true
 	Actions.syncLip.emit()
 	#currentRaceway.get_node("Microphone").stop()
@@ -110,8 +117,12 @@ func swap(direction:int):
 	
 	currentRaceway = racewayInstance
 	assignRandomCharacters(currentRaceway)
+	Global.loadedPlayers.insert(0,Global.playerName)
 	
-	resetMicFunc()
+	Global.winners.clear()
+	
+
+	#resetMicFunc()
 
 	
 	

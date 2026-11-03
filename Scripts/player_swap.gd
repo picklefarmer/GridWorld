@@ -13,6 +13,7 @@ func _ready() -> void:
 	
 	player = get_child(0)
 	playerInd = Global.globalPlayerIndex
+	
 	startingCharacter()
 	
 	#playerInd = get_tree().root.get_node("Main").playerIndex 
@@ -26,15 +27,16 @@ func _process(delta: float) -> void:
 			swap(1)
 
 func startingCharacter():
-	var playerInstantiated = PlayableCharacters[playerInd].instantiate()
+	var playerInstantiated = PlayableCharacters[Global.globalPlayerIndex].instantiate()
 	self.add_child(playerInstantiated)
-	var newPlayer:Node3D = get_child(1)
+	var newPlayer = get_child(1)
 	playerInstantiated.set("active",true)
 	Actions.syncLip.emit()
 	newPlayer.minimum = Global.minimum
 	newPlayer.runSpeed = player.runSpeed
 	newPlayer.transform = player.transform
-	
+	if Global.globalPlayerIndex != 9:
+		Global.playerName = newPlayer.name
 	player.queue_free()
 	player = newPlayer
 	

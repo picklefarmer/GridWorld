@@ -2,12 +2,15 @@ extends Node3D
 
 var tracks : Array = [0,0,0,0]
 var trackEnds : Array = [false,false,false,false]
+var timer : int = 0
+#var winners : Array[int] = []
+@onready var raceTime : Timer = $RaceTime
 @export var lapCap : int = 2
 
 func _ready() -> void:
 	Actions.meter_Progress.connect(meter_length)
 	Actions.meter_Progress.connect(changeColor)
-
+	raceTime.timeout.emit(countTime)
 
 func _process(delta: float) -> void:
 	
@@ -32,15 +35,23 @@ func changeColor(length:float,trackInd:int):
 			tracks[trackInd-1] = tracks[trackInd-1] +1
 		else:
 			
-				
+			if !Global.winners.has(trackInd):
+				Global.winners.append(trackInd)
+				print(trackInd, " Won ")	
+		
 			if trackInd == 1:
 				if Global.globalRacewayIndex+1 == Global.globalRacewaySize:
 					thanksForPlaying()
 				else:
+					
+					#Global.winners.clear()
 					Actions.changeLevel.emit(1)
-			print(trackInd, " Won ")
+					
+			
 		
-		
+
 func thanksForPlaying():
 	Actions.endGame.emit()
 	print("game over")
+func countTime():
+	timer = timer + 1		

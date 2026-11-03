@@ -12,6 +12,7 @@ var ischecked : bool = true
 @export var top : Camera3D 
 @onready var zoomin :Tween
 
+@onready var music : Array[AudioStreamPlayer] = [$Microphone,$"Track 2 streamer", $"Track 3 streamer", $"Track 4 streamer"]
 func _ready() -> void:
 	if !top:
 		top = $BirdsEye
@@ -26,7 +27,15 @@ func _process(delta: float) -> void:
 			generateTween()
 			zoom(main,top)
 			
-			
+func pauseMusic():
+	for instrument in music:
+		instrument.stop()
+
+func playMusic():
+	for instrument in music:
+		instrument.play()		
+		
+		
 func zoom(reference:Camera3D,out: Camera3D):
 	
 	if ischecked:		
