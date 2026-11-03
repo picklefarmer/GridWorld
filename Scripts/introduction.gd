@@ -24,6 +24,8 @@ func _process(delta: float) -> void:
 			loreWindow.visible = false
 			$"../CharacterSelect/TitleScreen2d/Label".visible = true
 			introDone = true
+			$IntroMusic.stop()
+			$CharacterSelectMusic.play()
 			#$TitleScreen2d.titleScreen.visible = true
 			#get_tree().create_timer(1.5).timeout.connect(fadeTitle)
 		elif charSelect or introDone:
@@ -31,7 +33,7 @@ func _process(delta: float) -> void:
 			$"../CharacterSelect/WorldEnvironment".queue_free()
 			$"../CharacterSelect/TitleScreen2d/Label".visible = false
 			
-			$IntroMusic.stop()
+			$CharacterSelectMusic.stop()
 			gameStart = true
 			
 			$"..".startGame()

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gc201s2h1t7r"
+path="res://.godot/imported/guitar chords for intro.mp3-9162e71f6c5b1537741368066ed5d4ed.mp3str"
+
+[deps]
+
+source_file="res://Audio/Intro/guitar chords for intro.mp3"
+dest_files=["res://.godot/imported/guitar chords for intro.mp3-9162e71f6c5b1537741368066ed5d4ed.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

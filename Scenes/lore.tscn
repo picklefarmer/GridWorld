@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnrriuqjnuanc" path="res://Scripts/introduction.gd" id="1_oqjcs"]
 [ext_resource type="PackedScene" uid="uid://dobwqy1xnmaes" path="res://Scenes/title_screen_2d.tscn" id="2_e7hpk"]
+[ext_resource type="AudioStream" uid="uid://dueptwjur1abn" path="res://Audio/Intro loop guitar and jazz 1.mp3" id="3_21vvj"]
 
 [sub_resource type="Theme" id="Theme_oqjcs"]
 default_font_size = 44
@@ -44,3 +45,8 @@ bbcode_enabled = true
 vertical_alignment = 1
 
 [node name="TitleScreen2d" parent="." unique_id=2053449483 instance=ExtResource("2_e7hpk")]
+
+[node name="CharacterSelectMusic" type="AudioStreamPlayer" parent="." unique_id=1128724966]
+stream = ExtResource("3_21vvj")
+bus = &"track2"
+parameters/looping = true
