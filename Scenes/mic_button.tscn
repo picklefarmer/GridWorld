@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ci0k2ljakln52"]
+
+[ext_resource type="Script" uid="uid://qkqdyuk8vi0f" path="res://Scripts/mic_button.gd" id="1_6ery7"]
+
+[node name="MicButton" type="OptionButton" unique_id=474995188]
+offset_right = 32.0
+offset_bottom = 20.0
+script = ExtResource("1_6ery7")

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="1_li0db"]
 [ext_resource type="Script" uid="uid://ck3gn1e4aml4p" path="res://Scripts/character_select.gd" id="1_vueyu"]
+[ext_resource type="PackedScene" uid="uid://sfuklkiruvr5" path="res://Scenes/mic_input_selection.tscn" id="2_ma4qd"]
 [ext_resource type="PackedScene" uid="uid://dobwqy1xnmaes" path="res://Scenes/title_screen_2d.tscn" id="2_vueyu"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="3_a4vvp"]
 [ext_resource type="PackedScene" uid="uid://4disebtdqhdv" path="res://Models/cherryman.tscn" id="4_se7r8"]
@@ -31,6 +32,9 @@ tonemap_mode = 2
 
 [node name="Character Select" type="Node3D" unique_id=338064043]
 script = ExtResource("1_vueyu")
+
+[node name="MicInputSelection" parent="." unique_id=2012471788 instance=ExtResource("2_ma4qd")]
+visible = false
 
 [node name="TitleScreen2d" parent="." unique_id=1642162364 instance=ExtResource("2_vueyu")]
 

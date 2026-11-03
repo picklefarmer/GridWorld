@@ -19,11 +19,11 @@ func _ready() -> void:
 	
 	
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("playerLeft"):
-		swap(-1)
-		
-	if Input.is_action_just_pressed("playerRight"):
-		swap(1)
+	if !Global.startMenu:
+		if Input.is_action_just_pressed("playerLeft"):
+			swap(-1)
+		if Input.is_action_just_pressed("playerRight"):
+			swap(1)
 
 func startingCharacter():
 	var playerInstantiated = PlayableCharacters[playerInd].instantiate()

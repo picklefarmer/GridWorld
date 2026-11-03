@@ -22,7 +22,7 @@ func _ready() -> void:
 	_Vitamen = Vitamen.duplicate()
 	
 func _process(delta: float) -> void:
-	if $Lore.gameStart:
+	if $Lore.gameStart and !Global.startMenu:
 		if Input.is_action_just_pressed("trackLeft"):
 			swap(1)
 		

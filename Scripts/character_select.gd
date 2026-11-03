@@ -23,7 +23,7 @@ func _ready() -> void:
 	
 	
 func _process(delta: float) -> void:
-	if $"../Lore".introDone and !$"../Lore".gameStart:
+	if $"../Lore".introDone and !$"../Lore".gameStart and !Global.startMenu:
 		if Input.is_action_just_pressed("trackLeft"):
 			switchCharacter(-1)
 		if Input.is_action_just_pressed("trackRight"):

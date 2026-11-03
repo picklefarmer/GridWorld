@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://sfuklkiruvr5"]
+
+[ext_resource type="Script" uid="uid://bti4qjs22a01a" path="res://Scripts/mic_input_selection.gd" id="1_syq3v"]
+
+[node name="MicInputSelection" type="VBoxContainer" unique_id=1513909188]
+offset_left = 156.0
+offset_top = 52.0
+offset_right = 523.0
+offset_bottom = 174.0
+script = ExtResource("1_syq3v")
