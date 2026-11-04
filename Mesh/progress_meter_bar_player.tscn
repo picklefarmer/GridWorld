@@ -11,6 +11,7 @@
 [node name="progress_meter_bar_player" unique_id=379160676 instance=ExtResource("1_ncstt")]
 script = ExtResource("2_ncstt")
 lapDisplay = Array[PackedScene]([ExtResource("4_6kuci"), ExtResource("5_2xwy3"), ExtResource("6_aoe1b"), ExtResource("7_08uk8")])
+isPlayer = true
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Plane/Armature/Skeleton3D" parent_id_path=PackedInt32Array(693620556) index="0" unique_id=1239581175]
 bone_name = "Bone"

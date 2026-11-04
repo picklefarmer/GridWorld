@@ -27,6 +27,7 @@ var volumeMag : float = 0.0
 var audioLatency :float = 0.0
 
 func _ready() -> void:
+	minimum = Global.minimum
 	Actions.floatMic.connect(beatBonus)
 	Actions.updateVol.connect(updateMag)
 	seconds_per_beat = 60.0 / bpm
@@ -44,10 +45,13 @@ func _physics_process(delta: float) -> void:
 		currentMeasure =  (song_position_in_beats/4)%4
 		#print(currentMeasure," : ",currentStep)
 		if currentStep == section:
+			
 			toggleHeld()
 			#print(song_position_in_beats,"return")
 			return
 		else:
+			if currentMeasure == 0 and currentStep == 0 or currentMeasure == 2 and currentStep == 0:
+				Actions.bumpTempo.emit()			
 			section = currentStep	
 			#match currentMeasure:
 				#0:
@@ -84,6 +88,7 @@ func toggleHeld():
 func assignBonus():
 	match currentMeasure:
 		0:
+			
 			if currentStep == 0 or currentStep == 3:
 				return (beatWhole)
 			else:
@@ -120,7 +125,7 @@ func compare(beatIndex,delta):
 	
 	var volume_mag = mic_spectrum.get_magnitude_for_frequency_range(350.0,3000.0,AudioEffectSpectrumAnalyzerInstance.MAGNITUDE_AVERAGE).length()
 	volume_mag = clamp((MIN_DB + linear_to_db(volume_mag))/MIN_DB,0,1)
-	#print("fired",beatIndex,volume_mag)
+	print("fired",beatIndex,volume_mag)
 	#print(heldStop)
 	
 	if volume_mag > minimum:

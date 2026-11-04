@@ -36,6 +36,17 @@ script = ExtResource("1_vueyu")
 [node name="MicInputSelection" parent="." unique_id=2012471788 instance=ExtResource("2_ma4qd")]
 visible = false
 
+[node name="Label" type="Label" parent="MicInputSelection" unique_id=396323176]
+layout_mode = 2
+text = "Mic Sensitivity"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="MicInputSelection" unique_id=2014084882]
+layout_mode = 2
+max_value = 0.5
+step = 0.015
+value = 0.045
+
 [node name="TitleScreen2d" parent="." unique_id=1642162364 instance=ExtResource("2_vueyu")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=953813366]

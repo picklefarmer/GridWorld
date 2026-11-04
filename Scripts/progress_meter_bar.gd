@@ -5,7 +5,8 @@ var lapInd : int = 0
 var currentLapDisplay : Node3D
 var material : StandardMaterial3D
 var materialOve : StandardMaterial3D
-
+var materialOveride : StandardMaterial3D = load("res://Materials/Crystal.tres")
+@export var isPlayer : bool = false
 var colors : Array = [Color.AQUAMARINE,Color.WEB_PURPLE,Color.MIDNIGHT_BLUE]
 
 func _ready() -> void:
@@ -13,7 +14,8 @@ func _ready() -> void:
 	material = StandardMaterial3D.new()
 	currentLapDisplay = get_child(3)
 	#materialOve =  as StandardMaterial3D
-	
+	if isPlayer:
+		Actions.bumpTempo.connect(tempoBump)
 	Actions.meterColor.connect(changeColor)
 	
 	
@@ -25,6 +27,15 @@ func changeColor(lap:int,trackInd:int):
 		$Plane.set_surface_override_material(0,material)
 		lapNumberSwap(lap)
 		
+
+func tempoBump():
+	print("bump")
+	$Plane.set_surface_override_material(1,materialOveride)
+	get_tree().create_timer(0.14).timeout.connect(resetMaterial)
+	
+func resetMaterial():
+	print("bip")
+	$Plane.set_surface_override_material(1,null)
 
 func lapNumberSwap(lap:int):
 	#var tempInd : int = posmod(lap, lapDisplay.size())

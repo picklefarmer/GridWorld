@@ -15,3 +15,4 @@ signal winnerOrder(winners:Array)
 signal timerStart
 signal timerStop
 signal timeDisplay
+signal bumpTempo
