@@ -56,7 +56,7 @@ func flip():
 		top.clear_current()
 		main.make_current()
 	
-	print(main.current,top.current,ischecked)
+	#print(main.current,top.current,ischecked)
 	ischecked = !ischecked
 	
 func generateTween():

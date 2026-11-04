@@ -39,11 +39,11 @@ func resetMicFunc():
 	#currentRaceway.get_node("Microphone").play()
 	#print("resetMicFunc")
 	#
-	print(currentRaceway.get_node("Microphone"),"raceway instance")
+	#print(currentRaceway.get_node("Microphone"),"raceway instance")
 	currentRaceway.get_node("Microphone").stop()
 	await get_tree().create_timer(0.15).timeout
 	currentRaceway.get_node("Microphone").play()
-	print(currentRaceway.get_node("Microphone").playing,"raceway instance")
+	#print(currentRaceway.get_node("Microphone").playing,"raceway instance")
 
 func startGame():
 	Vitamen.remove_at(Global.globalPlayerIndex)
@@ -51,7 +51,8 @@ func startGame():
 	currentRaceway = get_child(2)
 	assignRandomCharacters(currentRaceway)
 	Global.loadedPlayers.insert(0,Global.playerName)
-
+	Actions.timerStart.emit()
+	
 func endGame():
 	currentRaceway.queue_free()
 	$Lore/OutroMusic.play()	
@@ -74,7 +75,7 @@ func getTracks(raceway:Node3D):
 	var base = raceway.get_node("Path3D2")
 	var tracks : Array =[]
 	for i in range(2,5):
-		print(i ,"idx of track ")
+		#print(i ,"idx of track ")
 		tracks.append( base.get_node("track"+str(i)))
 	return tracks
 		
@@ -95,20 +96,23 @@ func createCharacter(track:PathFollow3D,trackIdx:int):
 	oldOpp.queue_free()
 		
 func swap(direction:int):
+	Actions.timerStop.emit()
 	raceWayInd = posmod(raceWayInd+direction, Raceways.size())
 	Global.globalRacewayIndex = raceWayInd
 	currentRaceway = get_child(2)
-	print(raceWayInd)
+	#print(raceWayInd)
 	var racewayInstance = Raceways[raceWayInd].instantiate()
 	#print(racewayInstance.get_node("Path3D2/track1/PlayerHolder").playerInd, " player index of level")
 	#racewayInstance.get_node("Path3D2/track1/PlayerHolder").playerInd = playerIndex
 	self.add_child(racewayInstance)
 	
 	racewayInstance.pauseMusic()
+
 	$Lore/StatScreen.visible = true
 	$Lore/StatScreen.isActive = true
 	
 	Actions.winnerOrder.emit(Global.winners.duplicate())
+	Actions.timeDisplay.emit()
 	#racewayInstance.playMusic()
 	#racewayInstance.get_node("Path3D2/track1/PlayerHolder").get_child(0).active = true
 	Actions.syncLip.emit()

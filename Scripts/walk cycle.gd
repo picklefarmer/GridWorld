@@ -80,4 +80,4 @@ func rebus():
 		bus = "recording"
 		record_bus_index = AudioServer.get_bus_index("recording")
 		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0) as AudioEffectSpectrumAnalyzerInstance
-		print(track,spectrum_analyzer)
+		#print(track,spectrum_analyzer)

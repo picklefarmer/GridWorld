@@ -4,19 +4,30 @@ var tracks : Array = [0,0,0,0]
 var trackEnds : Array = [false,false,false,false]
 var timer : int = 0
 #var winners : Array[int] = []
-@onready var raceTime : Timer = $RaceTime
+#var raceTime : Timer = $RaceTime
 @export var lapCap : int = 2
 
 func _ready() -> void:
 	Actions.meter_Progress.connect(meter_length)
 	Actions.meter_Progress.connect(changeColor)
-	raceTime.timeout.emit(countTime)
+	Actions.timerStart.connect(startTimer)
+	Actions.timerStop.connect(stopTimer)
+
+	$RaceTime.timeout.connect(countTime)
 
 func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ProgressMeter"):
 		visible = !visible
-		
+
+func startTimer():
+	print("time of start")
+	$RaceTime.start()	
+	
+func stopTimer():
+	print("time of stop")
+	$RaceTime.stop()		
+
 func meter_length(length:float,trackInd:int):
 
 	match trackInd:
@@ -45,7 +56,11 @@ func changeColor(length:float,trackInd:int):
 				else:
 					
 					#Global.winners.clear()
+					print("timer in progress meter",Global.time,timer)
+					Global.time = str(timer)
+					timer = 0
 					Actions.changeLevel.emit(1)
+					
 					
 			
 		
@@ -54,4 +69,6 @@ func thanksForPlaying():
 	Actions.endGame.emit()
 	print("game over")
 func countTime():
+	print(timer)
 	timer = timer + 1		
+	Global.time = str(timer)

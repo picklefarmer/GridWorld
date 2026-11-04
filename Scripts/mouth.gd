@@ -54,8 +54,8 @@ func _physics_process(delta: float) -> void:
 
 func rebus():
 	if owner.active:
-		print("rebus")
+		#print("rebus")
 		bus = "recording"
 		record_bus_index = AudioServer.get_bus_index("recording")
 		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
-		print(spectrum_analyzer)	
+		#print(spectrum_analyzer)	

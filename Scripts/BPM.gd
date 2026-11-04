@@ -105,12 +105,12 @@ func assignBonus():
 				return (off)
 				
 func beatBonus(volImp,delta):
-	print(heldStop)
+	#print(heldStop)
 	
 	if heldStop:
 		var bonus : float = assignBonus()
 		var micProg : float = $"../Path3D2/track1".progress
-		print("beat ","section: ",currentMeasure," : currentStep ",currentStep)
+		#print("beat ","section: ",currentMeasure," : currentStep ",currentStep)
 		if bonus <= 1:
 			Actions.updateProgress.emit(volImp,micProg)
 		Actions.goForward.emit(bonus*volImp,1)
@@ -121,13 +121,13 @@ func compare(beatIndex,delta):
 	var volume_mag = mic_spectrum.get_magnitude_for_frequency_range(350.0,3000.0,AudioEffectSpectrumAnalyzerInstance.MAGNITUDE_AVERAGE).length()
 	volume_mag = clamp((MIN_DB + linear_to_db(volume_mag))/MIN_DB,0,1)
 	#print("fired",beatIndex,volume_mag)
-	print(heldStop)
+	#print(heldStop)
 	
 	if volume_mag > minimum:
 		
 		if heldStop:
 			heldStop = false
-			print("beat ","section: ",currentMeasure," : ",beatIndex," : ",currentStep )
+			#print("beat ","section: ",currentMeasure," : ",beatIndex," : ",currentStep )
 			Actions.beatOff.emit(beatIndex,delta,time)
 			
 	else:

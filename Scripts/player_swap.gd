@@ -53,7 +53,7 @@ func swap(direction:int):
 	newPlayer.minimum = Global.minimum
 	newPlayer.runSpeed = player.runSpeed
 	newPlayer.transform = player.transform
-	
+	Global.loadedPlayers[0] = newPlayer.name
 	player.queue_free()
 	player = newPlayer
 	

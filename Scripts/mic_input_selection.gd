@@ -31,5 +31,5 @@ func createButton(device:String):
 	#micArray.append(button)
 	
 func assignMic(device:String):
-	print(device)
+	#print(device)
 	AudioServer.set_input_device(device)

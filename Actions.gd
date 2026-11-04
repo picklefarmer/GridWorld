@@ -12,3 +12,6 @@ signal meterColor(color:int,track: int)
 signal changeLevel()
 signal endGame()
 signal winnerOrder(winners:Array)
+signal timerStart
+signal timerStop
+signal timeDisplay

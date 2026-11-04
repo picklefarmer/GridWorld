@@ -9,3 +9,4 @@ var startMenu : bool = false
 var loadedPlayers : Array = []
 var playerName: String = "Peachman"
 var winners: Array = []
+var time : String = "0"
