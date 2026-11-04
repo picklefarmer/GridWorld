@@ -24,6 +24,8 @@ func displayWinners(winnerOrder:Array):
 	clearWinner()
 	for player in winnerOrder:
 		var label : Label = Label.new()
+		label.add_theme_color_override("font_color",Color(.8,.4,1,.75))
+		
 		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		label.text = Global.loadedPlayers[player-1]
 		
