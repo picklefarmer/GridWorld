@@ -31,8 +31,8 @@ func _ready() -> void:
 	Actions.floatMic.connect(beatBonus)
 	Actions.updateVol.connect(updateMag)
 	seconds_per_beat = 60.0 / bpm
-	mic_input_index = AudioServer.get_bus_index("recording")
-	mic_spectrum = AudioServer.get_bus_effect_instance(mic_input_index,0)
+	#mic_input_index = AudioServer.get_bus_index("recording")
+	#mic_spectrum = AudioServer.get_bus_effect_instance(mic_input_index,0)
 	audioLatency = AudioServer.get_output_latency()
 	
 func _physics_process(delta: float) -> void:

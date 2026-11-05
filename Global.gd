@@ -10,3 +10,4 @@ var loadedPlayers : Array = []
 var playerName: String = "Peachman"
 var winners: Array = []
 var time : String = "0"
+var difficulty : int = 6

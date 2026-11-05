@@ -161,6 +161,7 @@ outOut = 90.0
 inIn = 80.0
 trackMultiplier = 2.0
 micSpan = 20.0
+proximityTracks = true
 top = NodePath("BirdsEye")
 
 [node name="raceway 5" parent="." unique_id=683107211 instance=ExtResource("1_e1vjn")]
@@ -224,7 +225,7 @@ minimum = 0.255
 transform = Transform3D(-5.401671e-08, 0, 1, 6.091432e-08, 1, 0, -1.215, 4.3437467e-08, -4.284084e-08, -6.1930084, 3.0000153, -0.48073134)
 visible = false
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D2/track2" unique_id=322831708]
+[node name="Track 2 Proximity" type="AudioStreamPlayer3D" parent="Path3D2/track2" unique_id=322831708]
 stream = ExtResource("17_j2qj2")
 volume_db = 13.55
 autoplay = true
@@ -245,7 +246,7 @@ minimum = 0.3
 transform = Transform3D(-5.401671e-08, 0, 1, 6.091432e-08, 1, 0, -1.215, 4.3437467e-08, -4.284084e-08, 5.7669907, 3.0000153, -0.74798584)
 visible = false
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D2/track3" unique_id=1521518153]
+[node name="Track 3 Proximity" type="AudioStreamPlayer3D" parent="Path3D2/track3" unique_id=1521518153]
 stream = ExtResource("18_xosex")
 volume_db = 10.163
 autoplay = true
@@ -266,7 +267,7 @@ minimum = 0.2
 transform = Transform3D(-5.401671e-08, 0, 1, 6.091432e-08, 1, 0, -1.215, 4.3437467e-08, -4.284084e-08, -2.6830063, 3.0000153, -0.74798584)
 visible = false
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D2/track4" unique_id=993736920]
+[node name="Track 4 Proximity" type="AudioStreamPlayer3D" parent="Path3D2/track4" unique_id=993736920]
 stream = ExtResource("19_174b6")
 volume_db = 1.303
 autoplay = true
@@ -349,7 +350,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1765137, 133.68167, -73.566
 curve = SubResource("Curve3D_oby42")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="ship2 patrol2" unique_id=706926250]
-transform = Transform3D(-0.18074596, 0.0008151571, 0.983504, 0.0045084963, 0.99996537, -2.3934393e-07, -0.98349404, 0.0044341944, -0.1807478, -71.99847, 9.843416e-07, 186.6596)
+transform = Transform3D(-0.18074596, 0.000815157, 0.983504, 0.0045084963, 0.9999653, -2.3934393e-07, -0.98349404, 0.0044341944, -0.1807478, -71.99847, 9.843416e-07, 186.6596)
 progress = 448.82913
 use_model_front = true
 script = ExtResource("20_s87fk")

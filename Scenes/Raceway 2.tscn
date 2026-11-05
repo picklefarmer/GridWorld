@@ -59,6 +59,7 @@ outOut = 80.0
 inOut = 60.0
 trackMultiplier = 0.75
 micSpan = 50.0
+proximityTracks = true
 top = NodePath("BirdsEye")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=226806084]
@@ -171,8 +172,7 @@ minimum = 0.15
 transform = Transform3D(-5.9604645e-08, 0, 1, -2.7008355e-08, 1, 1.8626451e-09, -1.215, 3.259629e-09, -5.2154064e-08, -6.5313683, 2.9912624, -0.24478102)
 visible = false
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D2/track2" unique_id=1743186264]
-visible = false
+[node name="Track 2 Proximity" type="AudioStreamPlayer3D" parent="Path3D2/track2" unique_id=1743186264]
 stream = ExtResource("18_w8i87")
 volume_db = 15.182
 max_distance = 405.66
@@ -193,8 +193,7 @@ runSpeed = 2.0
 transform = Transform3D(-2.9802322e-08, -7.450581e-09, 1, 2.3515895e-08, 1.0000002, 1.8626451e-09, -1.215, -9.313226e-09, -2.2351742e-08, 5.237793, 2.9863358, -0.8139415)
 visible = false
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D2/track3" unique_id=1013994027]
-visible = false
+[node name="Track 3 Proximity" type="AudioStreamPlayer3D" parent="Path3D2/track3" unique_id=1013994027]
 stream = ExtResource("19_w8i87")
 volume_db = 15.182
 max_distance = 405.66
@@ -214,8 +213,7 @@ transform = Transform3D(1, -7.450581e-09, -2.9802322e-08, 1.8626451e-09, 1, -4.2
 transform = Transform3D(-5.9604645e-08, -3.7252903e-09, 1, 1.3038516e-08, 1, 3.7252903e-09, -1.2150003, -2.0954758e-09, -4.4703484e-08, -3.1339607, 2.9883556, -0.804193)
 visible = false
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D2/track4" unique_id=1600108055]
-visible = false
+[node name="Track 4 Proximity" type="AudioStreamPlayer3D" parent="Path3D2/track4" unique_id=1600108055]
 stream = ExtResource("20_cfm87")
 volume_db = 15.182
 max_distance = 405.66

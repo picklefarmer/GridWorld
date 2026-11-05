@@ -29,12 +29,12 @@ func changeColor(lap:int,trackInd:int):
 		
 
 func tempoBump():
-	print("bump")
+	
 	$Plane.set_surface_override_material(1,materialOveride)
 	get_tree().create_timer(0.14).timeout.connect(resetMaterial)
 	
 func resetMaterial():
-	print("bip")
+	
 	$Plane.set_surface_override_material(1,null)
 
 func lapNumberSwap(lap:int):

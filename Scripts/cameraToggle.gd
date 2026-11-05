@@ -7,13 +7,17 @@ var ischecked : bool = true
 @export var inOut : float = 78
 @export var trackMultiplier : float = 1.0
 @export var micSpan : float = 200
-
+@export var proximityTracks : bool = false
 @onready var main : Camera3D = $Path3D2/track1/Camera3D
 @export var top : Camera3D 
 @onready var zoomin :Tween
 
 @onready var music : Array[AudioStreamPlayer] = [$Microphone,$"Track 2 streamer", $"Track 3 streamer", $"Track 4 streamer"]
+var musicProximity : Array[AudioStreamPlayer3D] = []
+
 func _ready() -> void:
+	if proximityTracks:
+		musicProximity = [$"Path3D2/track2/Track 2 Proximity",$"Path3D2/track3/Track 3 Proximity",$"Path3D2/track4/Track 4 Proximity"]
 	if !top:
 		top = $BirdsEye
 	
@@ -30,11 +34,16 @@ func _process(delta: float) -> void:
 func pauseMusic():
 	for instrument in music:
 		instrument.stop()
+	if proximityTracks:
+		for proximity in musicProximity:
+			proximity.stop()
 
 func playMusic():
 	for instrument in music:
 		instrument.play()		
-		
+	if proximityTracks:
+		for proximity in musicProximity:
+			proximity.play()	
 		
 func zoom(reference:Camera3D,out: Camera3D):
 	

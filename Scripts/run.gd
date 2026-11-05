@@ -14,6 +14,7 @@ var progressNormalized : int
 func _ready() -> void:
 	progressNormalized = get_parent().curve.get_baked_length()
 	micSpan = owner.micSpan
+	runAmount = 0.0
 	#progressNormalized/ 6
 	#print(progressNormalized,"progressNormalized")
 	trackNorm = owner.trackMultiplier
@@ -36,7 +37,10 @@ func _physics_process(delta: float) -> void:
 	
 	#progress_ratio = lerp(progress_ratio,runAmount + progress_ratio,delta*evalTime)
 	progress = lerp(progress,(runAmount*trackNorm) + progress,delta*evalTime)
-	runAmount = lerp(runAmount,0.0, delta* 11.0)
+	if trackNumber == 1:
+		runAmount = lerp(runAmount,0.0, delta* Global.difficulty)
+	else:
+		runAmount = lerp(runAmount,0.0, delta* 11.0)
 	Actions.meter_Progress.emit(fposmod(progress_ratio-progressOffset,1.0),trackNumber)
 	
 func running(inch:float,track:int):

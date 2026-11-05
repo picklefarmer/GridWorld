@@ -196,6 +196,7 @@ inIn = 93.82
 inOut = 20.0
 trackMultiplier = 0.75
 micSpan = 20.0
+proximityTracks = true
 top = NodePath("BirdsEye")
 
 [node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=1484263528]
@@ -231,7 +232,7 @@ curve = ExtResource("1_dwhon")
 debug_custom_color = Color(1, 1, 1, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1456456726]
-transform = Transform3D(-0.18159889, -0.9821929, -0.047691133, -0.9831998, 0.18215773, -0.007534355, 0.01608693, 0.045521792, -0.99885017, 66.57474, -19.191137, 0.03372462)
+transform = Transform3D(-0.18159889, -0.9821929, -0.04769114, -0.9831998, 0.18215773, -0.007534356, 0.01608693, 0.045521792, -0.9988503, 66.57474, -19.191137, 0.03372462)
 rotation_mode = 1
 use_model_front = true
 script = ExtResource("1_sx8qh")
@@ -269,7 +270,7 @@ transform = Transform3D(0.99966985, 0, -0.025692403, 2.9802322e-08, 1.0000002, 5
 runSpeed = 0.875
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=775808202]
-transform = Transform3D(-0.18159968, -0.9825867, -0.038640868, -0.98320407, 0.18207987, -0.009212145, 0.016087, 0.036318675, -0.99922836, 66.57474, -19.191137, 0.03372462)
+transform = Transform3D(-0.18159968, -0.9825867, -0.03864087, -0.98320407, 0.18207987, -0.0092121465, 0.016087, 0.036318675, -0.9992285, 66.57474, -19.191137, 0.03372462)
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 2
@@ -281,7 +282,7 @@ transform = Transform3D(1.000016, -3.5506673e-09, -3.7252903e-09, -2.0838343e-08
 transform = Transform3D(-5.2154064e-08, -1.8277206e-08, 1.0000002, 0, 1.0000001, -2.9045623e-08, -1.215, 3.7252903e-09, -4.4703484e-08, -6.193, 3, -0.50635976)
 visible = false
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D2/track2" unique_id=1375332166]
+[node name="Track 2 Proximity" type="AudioStreamPlayer3D" parent="Path3D2/track2" unique_id=1375332166]
 stream = ExtResource("14_5b8p6")
 volume_db = 5.255
 autoplay = true
@@ -289,7 +290,7 @@ max_distance = 418.57
 parameters/looping = true
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1070217300]
-transform = Transform3D(-0.18159968, -0.9825934, -0.038640868, -0.98320407, 0.18208112, -0.009212145, 0.016087, 0.03631892, -0.99922836, 66.57474, -19.191137, 0.03372462)
+transform = Transform3D(-0.18159968, -0.9825934, -0.03864087, -0.98320407, 0.18208112, -0.0092121465, 0.016087, 0.03631892, -0.9992285, 66.57474, -19.191137, 0.03372462)
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 3
@@ -301,7 +302,7 @@ transform = Transform3D(0.9884067, 6.4028427e-10, -0.15184163, -1.8626451e-08, 0
 transform = Transform3D(-5.5879354e-08, 5.820766e-10, 1.0000002, -3.7252903e-09, 1.0000001, -3.3178367e-09, -1.215, 3.7252903e-09, -4.0978193e-08, 5.468756, 3, -0.74800014)
 visible = false
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D2/track3" unique_id=856889446]
+[node name="Track 3 Proximity" type="AudioStreamPlayer3D" parent="Path3D2/track3" unique_id=856889446]
 stream = ExtResource("16_5b8p6")
 volume_db = 3.503
 autoplay = true
@@ -309,7 +310,7 @@ max_distance = 418.57
 parameters/looping = true
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1019939291]
-transform = Transform3D(-0.18159968, -0.9825934, -0.038640868, -0.98320407, 0.18208112, -0.009212145, 0.016087, 0.03631892, -0.99922836, 66.57474, -19.191137, 0.03372462)
+transform = Transform3D(-0.18159968, -0.9825934, -0.03864087, -0.98320407, 0.18208112, -0.0092121465, 0.016087, 0.03631892, -0.9992285, 66.57474, -19.191137, 0.03372462)
 use_model_front = true
 script = ExtResource("1_sx8qh")
 trackNumber = 4
@@ -322,7 +323,7 @@ runSpeed = 1.5
 transform = Transform3D(-5.5879354e-08, 1.5483238e-08, 1.0000005, 7.450581e-09, 1.0000002, -3.2014214e-09, -1.215, 7.450581e-09, -3.9115548e-08, -2.6829977, 3.0000114, -0.7479999)
 visible = false
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D2/track4" unique_id=254099400]
+[node name="Track 4 Proximity" type="AudioStreamPlayer3D" parent="Path3D2/track4" unique_id=254099400]
 stream = ExtResource("17_mbsru")
 volume_db = 9.343
 autoplay = true

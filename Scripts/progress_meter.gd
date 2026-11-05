@@ -69,6 +69,6 @@ func thanksForPlaying():
 	Actions.endGame.emit()
 	print("game over")
 func countTime():
-	print(timer)
+	#print(timer)
 	timer = timer + 1		
 	Global.time = str(timer)
