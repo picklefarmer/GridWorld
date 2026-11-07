@@ -14,7 +14,9 @@ var tween2: Tween
 	$Peachman,
 	$Watermelonman,
 	$Starfruitman,
-	$PineappleMan
+	$PineappleMan,
+	$MangoMan,
+	$CoconutMan
 	]
 
 func _ready() -> void:

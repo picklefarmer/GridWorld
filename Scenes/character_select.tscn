@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://brot8tvj4oaou" path="res://Models/pearman.tscn" id="9_y3dkq"]
 [ext_resource type="PackedScene" uid="uid://ekhlj2fr6t0f" path="res://Models/starfruitman.tscn" id="10_62io2"]
 [ext_resource type="PackedScene" uid="uid://inqwvslqoi4c" path="res://Models/watermelonman.tscn" id="11_qgsok"]
+[ext_resource type="PackedScene" uid="uid://cse8fqn1pcsq6" path="res://Models/pineappleman.tscn" id="16_nq02w"]
+[ext_resource type="PackedScene" uid="uid://c5ufo20cwwt7g" path="res://Models/mangoman.tscn" id="17_jxsgu"]
+[ext_resource type="PackedScene" uid="uid://ccod2crv7yv3g" path="res://Models/coconutman.tscn" id="18_jp3rh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ma4qd"]
 content_margin_left = 0.0
@@ -159,3 +162,14 @@ track = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.704312, 0, 2.7117558)
 minimum = 0.45
 track = 2
+
+[node name="PineappleMan" parent="." unique_id=2113251799 instance=ExtResource("16_nq02w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2851, -0.020390272, 3.1407647)
+track = 2
+
+[node name="MangoMan" parent="." unique_id=1614195463 instance=ExtResource("17_jxsgu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.097534, -0.050926447, 3.1266026)
+track = 2
+
+[node name="CoconutMan" parent="." unique_id=1728257053 instance=ExtResource("18_jp3rh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.18576, 0, 3.206629)

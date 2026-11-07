@@ -1,0 +1,224 @@
+[gd_scene format=3 uid="uid://ccod2crv7yv3g"]
+
+[ext_resource type="Script" uid="uid://dqf1wfabyxm1u" path="res://Scripts/playerMain.gd" id="1_2xf0g"]
+[ext_resource type="PackedScene" uid="uid://b1o4m8ix4nxlc" path="res://Models/coconutman.blend" id="1_morb0"]
+[ext_resource type="Script" uid="uid://cd6ig180cvpii" path="res://Scripts/walk cycle.gd" id="2_gldmn"]
+[ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="2_tquec"]
+[ext_resource type="Script" uid="uid://0oruccicihmn" path="res://Scripts/mouth.gd" id="4_vcctq"]
+
+[node name="CoconutMan" type="Node3D" unique_id=1728257053]
+script = ExtResource("1_2xf0g")
+
+[node name="coconutman" parent="." unique_id=1951531010 instance=ExtResource("1_morb0")]
+
+[node name="Skeleton3D" parent="coconutman/Armature" parent_id_path=PackedInt32Array(1951531010, 816224991) index="0" unique_id=326274455]
+script = ExtResource("2_tquec")
+multiplier = 2.0
+
+[node name="Body" type="SpringBoneSimulator3D" parent="coconutman/Armature/Skeleton3D" index="1" unique_id=1036526482]
+setting_count = 1
+settings/0/root_bone_name = "Bone.001"
+settings/0/root_bone = 1
+settings/0/end_bone_name = "Bone.004"
+settings/0/end_bone = 4
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.0
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 0
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone.001"
+settings/0/joints/0/bone = 1
+settings/0/joints/1/bone_name = "Bone.004"
+settings/0/joints/1/bone = 4
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+
+[node name="Mouth" type="SpringBoneSimulator3D" parent="coconutman/Armature/Skeleton3D" index="2" unique_id=356315287]
+setting_count = 1
+settings/0/root_bone_name = "Bone.005"
+settings/0/root_bone = 5
+settings/0/end_bone_name = "Bone.007"
+settings/0/end_bone = 7
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.337
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 0
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 3.15
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone.005"
+settings/0/joints/0/bone = 5
+settings/0/joints/1/bone_name = "Bone.006"
+settings/0/joints/1/bone = 6
+settings/0/joints/2/bone_name = "Bone.007"
+settings/0/joints/2/bone = 7
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+script = ExtResource("4_vcctq")
+multiplier = 20.0
+
+[node name="LA" type="SpringBoneSimulator3D" parent="coconutman/Armature/Skeleton3D" index="3" unique_id=2095378891]
+setting_count = 1
+settings/0/root_bone_name = "Bone_L.001"
+settings/0/root_bone = 22
+settings/0/end_bone_name = "Bone_L.003"
+settings/0/end_bone = 24
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.32
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 2
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone_L.001"
+settings/0/joints/0/bone = 22
+settings/0/joints/1/bone_name = "Bone_L.002"
+settings/0/joints/1/bone = 23
+settings/0/joints/2/bone_name = "Bone_L.003"
+settings/0/joints/2/bone = 24
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+script = ExtResource("2_gldmn")
+multiplier = -150.0
+
+[node name="RA" type="SpringBoneSimulator3D" parent="coconutman/Armature/Skeleton3D" index="4" unique_id=1225233965]
+setting_count = 1
+settings/0/root_bone_name = "Bone_R.001"
+settings/0/root_bone = 26
+settings/0/end_bone_name = "Bone_R.003"
+settings/0/end_bone = 28
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.353
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 2
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone_R.001"
+settings/0/joints/0/bone = 26
+settings/0/joints/1/bone_name = "Bone_R.002"
+settings/0/joints/1/bone = 27
+settings/0/joints/2/bone_name = "Bone_R.003"
+settings/0/joints/2/bone = 28
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+script = ExtResource("2_gldmn")
+multiplier = 150.0
+
+[node name="LL" type="SpringBoneSimulator3D" parent="coconutman/Armature/Skeleton3D" index="5" unique_id=1263346069]
+setting_count = 1
+settings/0/root_bone_name = "Bone.010_L.001"
+settings/0/root_bone = 12
+settings/0/end_bone_name = "Bone.010_L.004"
+settings/0/end_bone = 15
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.353
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 0
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone.010_L.001"
+settings/0/joints/0/bone = 12
+settings/0/joints/1/bone_name = "Bone.010_L.002"
+settings/0/joints/1/bone = 13
+settings/0/joints/2/bone_name = "Bone.010_L.003"
+settings/0/joints/2/bone = 14
+settings/0/joints/3/bone_name = "Bone.010_L.004"
+settings/0/joints/3/bone = 15
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+script = ExtResource("2_gldmn")
+multiplier = 250.0
+isLeg = true
+
+[node name="RL" type="SpringBoneSimulator3D" parent="coconutman/Armature/Skeleton3D" index="6" unique_id=1437430768]
+setting_count = 1
+settings/0/root_bone_name = "Bone.010_R.001"
+settings/0/root_bone = 17
+settings/0/end_bone_name = "Bone.010_R.004"
+settings/0/end_bone = 20
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.353
+settings/0/center_from = 2
+settings/0/center_bone_name = "Bone"
+settings/0/center_bone = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 0
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 11.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "Bone.010_R.001"
+settings/0/joints/0/bone = 17
+settings/0/joints/1/bone_name = "Bone.010_R.002"
+settings/0/joints/1/bone = 18
+settings/0/joints/2/bone_name = "Bone.010_R.003"
+settings/0/joints/2/bone = 19
+settings/0/joints/3/bone_name = "Bone.010_R.004"
+settings/0/joints/3/bone = 20
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+script = ExtResource("2_gldmn")
+multiplier = -250.0
+isLeg = true
+
+[editable path="coconutman"]

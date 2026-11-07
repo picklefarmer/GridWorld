@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://dd46vdb83ta8c"]
+
+[ext_resource type="PackedScene" uid="uid://ho0xu884kq4a" path="res://Mesh/raceway 10.blend" id="1_2qfkj"]
+[ext_resource type="Script" uid="uid://dns0bthdf5pwo" path="res://Scripts/cameraToggle.gd" id="1_26l6j"]
+[ext_resource type="Curve3D" uid="uid://ca8fchbsn3dlg" path="res://Curves/raceway10.tres" id="2_hkd8o"]
+[ext_resource type="Script" uid="uid://d0y26xbn6k0b1" path="res://Scripts/run.gd" id="3_26l6j"]
+[ext_resource type="PackedScene" uid="uid://d2q8e4hxbj834" path="res://Mesh/progress_meter.tscn" id="4_srkr2"]
+[ext_resource type="Script" uid="uid://dad14bax8o1t2" path="res://Scripts/player_swap.gd" id="5_wfxae"]
+[ext_resource type="PackedScene" uid="uid://cvhhbyfkukdgx" path="res://Models/grape_man_redo_2.tscn" id="6_basx1"]
+[ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="7_h45kk"]
+[ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="8_pne3y"]
+[ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="9_v7bjd"]
+[ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="10_e3ai7"]
+[ext_resource type="PackedScene" uid="uid://brot8tvj4oaou" path="res://Models/pearman.tscn" id="11_p2mi1"]
+[ext_resource type="PackedScene" uid="uid://4disebtdqhdv" path="res://Models/cherryman.tscn" id="12_g77l2"]
+[ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="13_vy0us"]
+[ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="14_or61b"]
+[ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="15_pyoxk"]
+[ext_resource type="PackedScene" uid="uid://inqwvslqoi4c" path="res://Models/watermelonman.tscn" id="16_8fjkj"]
+[ext_resource type="PackedScene" uid="uid://ekhlj2fr6t0f" path="res://Models/starfruitman.tscn" id="17_i3v03"]
+[ext_resource type="PackedScene" uid="uid://cse8fqn1pcsq6" path="res://Models/pineappleman.tscn" id="18_3x0kk"]
+[ext_resource type="PackedScene" uid="uid://c5ufo20cwwt7g" path="res://Models/mangoman.tscn" id="19_y5ahd"]
+[ext_resource type="PackedScene" uid="uid://ccod2crv7yv3g" path="res://Models/coconutman.tscn" id="20_gdq43"]
+[ext_resource type="PackedScene" uid="uid://dok0tv4lxakgx" path="res://Mesh/trail.blend" id="21_0c711"]
+[ext_resource type="Script" uid="uid://ts38hmt4qhiy" path="res://Scripts/BPM.gd" id="22_8bqf1"]
+[ext_resource type="AudioStream" uid="uid://bua5ymchrhco5" path="res://Audio/Past tracks/Track 10/Track 10 - bpm 151 - guitar.mp3" id="23_basx1"]
+[ext_resource type="AudioStream" uid="uid://dt6braqcj457c" path="res://Audio/Past tracks/Track 10/Track 10 - bpm 151 - keys.mp3" id="25_h45kk"]
+[ext_resource type="AudioStream" uid="uid://8qpik32nw1qu" path="res://Audio/Past tracks/Track 10/Track 10 - bpm 151 - bass.mp3" id="26_pne3y"]
+[ext_resource type="PackedScene" uid="uid://c47yc10fjtfn0" path="res://Models/cloud.blend" id="27_h45kk"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_qty0d"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6emrp"]
+sky_top_color = Color(0.7251138, 0.8524773, 0.9999985, 1)
+sky_horizon_color = Color(0.047679633, 0.37949935, 0.794836, 1)
+ground_bottom_color = Color(0.29224792, 0.0006788842, 0.44769925, 1)
+ground_horizon_color = Color(0.047679633, 0.37949935, 0.794836, 1)
+ground_curve = 0.15999997
+sun_curve = 0.42426395
+
+[sub_resource type="Sky" id="Sky_5bss4"]
+sky_material = SubResource("ProceduralSkyMaterial_6emrp")
+
+[sub_resource type="Environment" id="Environment_1htbo"]
+background_mode = 2
+sky = SubResource("Sky_5bss4")
+ambient_light_source = 3
+ambient_light_color = Color(0.09922416, 0.3832445, 0.5481852, 1)
+ambient_light_sky_contribution = 0.31
+ambient_light_energy = 1.5
+
+[node name="Raceway 10" type="Node3D" unique_id=2021777142]
+script = ExtResource("1_26l6j")
+outIn = 60.0
+outOut = 80.0
+inIn = 80.0
+inOut = 60.0
+micSpan = 20.0
+
+[node name="raceway 10" parent="." unique_id=98726678 instance=ExtResource("1_2qfkj")]
+
+[node name="Path3D2" type="Path3D" parent="." unique_id=806725455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2063179, 98.11706, -0.16120148)
+curve = ExtResource("2_hkd8o")
+debug_custom_color = Color(1, 0, 0, 1)
+
+[node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=106998745]
+transform = Transform3D(-0.67948323, 0.7335136, -0.011876478, 0.73147005, 0.6761413, -0.08758756, -0.056210738, -0.06819144, -0.99621195, 19.069723, -31.975483, 4.927646)
+progress = 1322.0394
+use_model_front = true
+script = ExtResource("3_26l6j")
+trackNumber = 1
+runSpeed = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="Path3D2/track1" unique_id=1352932594]
+transform = Transform3D(0.9945254, -0.10341303, -0.01513591, 0.104495995, 0.9806152, 0.1661954, -0.0023438185, -0.16683394, 0.9858565, -0.10391235, 6.295212, 13.533117)
+current = true
+fov = 60.0
+
+[node name="Progress_Meter" parent="Path3D2/track1/Camera3D" unique_id=628590229 instance=ExtResource("4_srkr2")]
+transform = Transform3D(1, 0, 0, 0, -4.371138e-08, -1.0000001, 0, 0.9999998, -4.3711392e-08, -0.73176163, -0.5784673, -1.3911748)
+lapCap = 0
+
+[node name="OmniLight3D" type="AreaLight3D" parent="Path3D2/track1" unique_id=424473808]
+transform = Transform3D(1, 0, 0, 0, 0.7527585, -0.6582967, 0, 0.6582967, 0.7527585, 0.99999994, 3.258231, 4.6411386)
+light_energy = 15.367
+light_specular = 0.523
+area_range = 5.3
+
+[node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1676707902]
+transform = Transform3D(1, 6.519258e-09, 6.519258e-09, -7.683411e-09, 0.99999994, 2.9802322e-08, 3.7252903e-09, 0, 1, 0, 0, 0)
+script = ExtResource("5_wfxae")
+PlayableCharacters = Array[PackedScene]([ExtResource("6_basx1"), ExtResource("7_h45kk"), ExtResource("8_pne3y"), ExtResource("9_v7bjd"), ExtResource("10_e3ai7"), ExtResource("11_p2mi1"), ExtResource("12_g77l2"), ExtResource("13_vy0us"), ExtResource("14_or61b"), ExtResource("15_pyoxk"), ExtResource("16_8fjkj"), ExtResource("17_i3v03"), ExtResource("18_3x0kk"), ExtResource("19_y5ahd"), ExtResource("20_gdq43")])
+
+[node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("15_pyoxk")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1.0000004, 0, 0, 0, 0.9999999, 1.1060009, 7.6293945e-06, 0.2539959)
+runSpeed = 2.0
+
+[node name="followPlayer" type="Camera3D" parent="Path3D2/track1" unique_id=161643504]
+transform = Transform3D(0.7975493, -0.60325706, 9.49949e-08, -8.940697e-08, -5.9604645e-08, 1.0000731, -0.60318106, -0.79744875, -1.7881393e-07, -2.6275654, 78.18189, 17.725462)
+fov = 84.6
+near = 0.175
+
+[node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=1044740307]
+transform = Transform3D(-0.67948943, 0.7335075, -0.011876329, 0.7314767, 0.6761357, -0.08758646, -0.05621125, -0.06819087, -0.9961995, 19.069723, -31.975483, 4.927646)
+progress = 1322.0394
+use_model_front = true
+script = ExtResource("3_26l6j")
+trackNumber = 2
+runSpeed = 2.0
+
+[node name="Strawberry" parent="Path3D2/track2" unique_id=1848394695 instance=ExtResource("9_v7bjd")]
+transform = Transform3D(1.0000157, 1.8626451e-09, 0, 0, 0.9999999, -1.7695129e-08, -1.4901161e-08, 3.259629e-09, 1.0000161, -6.192, 0, 0.559)
+minimum = 0.39
+runSpeed = 2.0
+
+[node name="trail" parent="Path3D2/track2" unique_id=1344867179 instance=ExtResource("21_0c711")]
+transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, -6.193, 3, -0.3971684)
+visible = false
+
+[node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=518840703]
+transform = Transform3D(-0.67948943, 0.7335075, -0.011876329, 0.7314767, 0.6761357, -0.08758646, -0.05621125, -0.06819087, -0.9961995, 19.069723, -31.975483, 4.927646)
+progress = 1322.0394
+use_model_front = true
+script = ExtResource("3_26l6j")
+trackNumber = 3
+runSpeed = 2.0
+
+[node name="Blueberryman" parent="Path3D2/track3" unique_id=539657863 instance=ExtResource("10_e3ai7")]
+transform = Transform3D(0.98840487, 8.839803e-09, -0.1518414, -7.450568e-09, 1, 9.718198e-09, 0.1518414, -8.474209e-09, 0.98840487, 5.51, 0, 0.7)
+minimum = 0.3
+runSpeed = 1.1
+
+[node name="trail" parent="Path3D2/track3" unique_id=711990916 instance=ExtResource("21_0c711")]
+transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 5.767, 3, -0.748)
+visible = false
+
+[node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=412402230]
+transform = Transform3D(-0.67948943, 0.7335075, -0.011876329, 0.7314767, 0.6761357, -0.08758646, -0.05621125, -0.06819087, -0.9961995, 19.069723, -31.975483, 4.927646)
+progress = 1322.0394
+use_model_front = true
+script = ExtResource("3_26l6j")
+trackNumber = 4
+runSpeed = 2.0
+
+[node name="Bananaman" parent="Path3D2/track4" unique_id=602892636 instance=ExtResource("8_pne3y")]
+transform = Transform3D(1, -3.7252903e-09, -1.4901161e-08, 1.8626451e-09, 0.99999994, -1.071021e-08, 0, -2.0954758e-09, 1.0000001, -2.673, 0, -0.043)
+minimum = 0.35
+runSpeed = 2.175
+
+[node name="trail" parent="Path3D2/track4" unique_id=1547621536 instance=ExtResource("21_0c711")]
+transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, -2.683, 3, -0.748)
+visible = false
+
+[node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=1022992817]
+stream = SubResource("AudioStreamMicrophone_qty0d")
+volume_db = 1.0
+autoplay = true
+bus = &"recording"
+
+[node name="Track 2 streamer" type="AudioStreamPlayer" parent="." unique_id=517188991]
+stream = ExtResource("23_basx1")
+autoplay = true
+bus = &"track2"
+parameters/looping = true
+script = ExtResource("22_8bqf1")
+bpm = 151.0
+
+[node name="Track 3 streamer" type="AudioStreamPlayer" parent="." unique_id=2129740361]
+stream = ExtResource("25_h45kk")
+autoplay = true
+bus = &"track3"
+parameters/looping = true
+
+[node name="Track 4 streamer" type="AudioStreamPlayer" parent="." unique_id=12754257]
+stream = ExtResource("26_pne3y")
+autoplay = true
+bus = &"track4"
+parameters/looping = true
+
+[node name="BirdsEye" type="Camera3D" parent="." unique_id=1085653449]
+transform = Transform3D(1, 0, 0, 0, -0.11852854, 0.9929507, 0, -0.9929507, -0.11852854, 2.763, 646.869, -68.106)
+fov = 48.9
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1427374361]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_energy = 0.477
+light_indirect_energy = 2.322
+light_angular_distance = 44.9
+light_specular = 0.468
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=912939130]
+environment = SubResource("Environment_1htbo")
+
+[node name="cloud" parent="." unique_id=1972854392 instance=ExtResource("27_h45kk")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -8.163811, 18.001, 0.04803276)
+
+[node name="cloud2" parent="." unique_id=1105528878 instance=ExtResource("27_h45kk")]
+transform = Transform3D(7.885, 0, 0, 0, 7.885, 0, 0, 0, 7.885, -8.163811, 102.729576, 0.04803276)
+
+[node name="cloud3" parent="." unique_id=2017677446 instance=ExtResource("27_h45kk")]
+transform = Transform3D(-7.7963448, 0, -1.1790856, 0, 7.885, 0, 1.1790856, 0, -7.7963448, -8.163811, -68.41369, 0.04803276)
+
+[node name="cloud4" parent="." unique_id=971095045 instance=ExtResource("27_h45kk")]
+transform = Transform3D(-21.881178, 0, -3.3092153, 0, 22.13, 0, 3.3092153, 0, -21.881178, 7.9626465, 43.236153, -8.76511)

@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cag3hbu5f3qpy" path="res://Scenes/Raceway 8.tscn" id="8_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://b2eq88hf7tec1" path="res://Scenes/Raceway 9.tscn" id="9_6iyac"]
 [ext_resource type="PackedScene" uid="uid://cbtukkq4fgj13" path="res://Scenes/lore.tscn" id="11_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://dd46vdb83ta8c" path="res://Scenes/raceway_10.tscn" id="11_e08e2"]
 [ext_resource type="PackedScene" uid="uid://cvhhbyfkukdgx" path="res://Models/grape_man_redo_2.tscn" id="11_gt3je"]
 [ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="12_3pmx8"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="13_u50mg"]
@@ -25,7 +26,9 @@
 [ext_resource type="PackedScene" uid="uid://ekhlj2fr6t0f" path="res://Models/starfruitman.tscn" id="22_3pmx8"]
 [ext_resource type="PackedScene" uid="uid://cse8fqn1pcsq6" path="res://Models/pineappleman.tscn" id="23_7k868"]
 [ext_resource type="PackedScene" uid="uid://otn2obxypccm" path="res://Scenes/stat_screen.tscn" id="24_6vcvc"]
+[ext_resource type="PackedScene" uid="uid://c5ufo20cwwt7g" path="res://Models/mangoman.tscn" id="24_hpc6h"]
 [ext_resource type="AudioStream" uid="uid://dusaf0qt8blus" path="res://Audio/Intro/intro full 142.mp3" id="24_ueoa1"]
+[ext_resource type="PackedScene" uid="uid://ccod2crv7yv3g" path="res://Models/coconutman.tscn" id="25_kltya"]
 [ext_resource type="AudioStream" uid="uid://dh825lhlgp6of" path="res://Audio/outro guitar and keys bpm 117.mp3" id="25_ueoa1"]
 [ext_resource type="PackedScene" uid="uid://0ss2sux6ukbd" path="res://Models/introStar.blend" id="26_1w6v2"]
 [ext_resource type="PackedScene" uid="uid://bjh8orpda3weh" path="res://Scenes/character_select.tscn" id="26_cbgmd"]
@@ -48,7 +51,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="Theme" id="Theme_7k868"]
+[sub_resource type="Theme" id="Theme_neg2b"]
 resource_local_to_scene = true
 default_font_size = 40
 
@@ -97,8 +100,8 @@ shadow_mesh = SubResource("ArrayMesh_5uvei")
 [node name="Main" type="Node3D" unique_id=1519358469]
 script = ExtResource("1_jjgbg")
 minimum = 0.25
-Raceways = Array[PackedScene]([ExtResource("2_bo1nx"), ExtResource("3_21xkr"), ExtResource("4_6bp64"), ExtResource("5_344ge"), ExtResource("6_ynf5e"), ExtResource("7_6bp64"), ExtResource("7_hptm8"), ExtResource("8_d1ilt"), ExtResource("9_6iyac")])
-Vitamen = Array[PackedScene]([ExtResource("11_gt3je"), ExtResource("12_3pmx8"), ExtResource("13_u50mg"), ExtResource("14_cbgmd"), ExtResource("15_1w6v2"), ExtResource("16_ueoa1"), ExtResource("17_6vcvc"), ExtResource("18_7k868"), ExtResource("19_hpc6h"), ExtResource("20_kltya"), ExtResource("21_e08e2"), ExtResource("22_3pmx8"), ExtResource("23_7k868")])
+Raceways = Array[PackedScene]([ExtResource("2_bo1nx"), ExtResource("3_21xkr"), ExtResource("4_6bp64"), ExtResource("5_344ge"), ExtResource("6_ynf5e"), ExtResource("7_6bp64"), ExtResource("7_hptm8"), ExtResource("8_d1ilt"), ExtResource("9_6iyac"), ExtResource("11_e08e2")])
+Vitamen = Array[PackedScene]([ExtResource("11_gt3je"), ExtResource("12_3pmx8"), ExtResource("13_u50mg"), ExtResource("14_cbgmd"), ExtResource("15_1w6v2"), ExtResource("16_ueoa1"), ExtResource("17_6vcvc"), ExtResource("18_7k868"), ExtResource("19_hpc6h"), ExtResource("20_kltya"), ExtResource("21_e08e2"), ExtResource("22_3pmx8"), ExtResource("23_7k868"), ExtResource("24_hpc6h"), ExtResource("25_kltya")])
 
 [node name="Lore" parent="." unique_id=897700427 instance=ExtResource("11_d1ilt")]
 lore = Array[String](["The worlds, they didn't know. It came on like a dream. [br] [br] There were many missed. And that's what they had seen.", "Beginning at a time when obedience had won. [br] [br] Where commitment to ourselves was little to none.", "Bringing life into our worlds, again and again. [br] [br] Seeking only a peace that would surely begin.", "For as dimensions unfold, though their existence unknown [br] [br] The Vitamen had arrived so that the planets may thrive", "With them it was a time for collection [br] [br] Engaging our minds in self reflection", "Their solution- pliable, viable, oh-so-desirable", "To take time on a race [br] [br] To set at your own pace"])
@@ -115,7 +118,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ueoa1")
 
 [node name="StatScreen" parent="Lore" unique_id=224236459 instance=ExtResource("24_6vcvc")]
 visible = false
-theme = SubResource("Theme_7k868")
+theme = SubResource("Theme_neg2b")
 
 [node name="IntroMusic" type="AudioStreamPlayer" parent="Lore" unique_id=230010655]
 stream = ExtResource("24_ueoa1")
@@ -174,12 +177,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.441608, 0, 2.0247064)
 [node name="Watermelonman" parent="CharacterSelect" index="16" unique_id=52613899]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.404873, 0, 2.7117558)
 
-[node name="PineappleMan" parent="CharacterSelect" unique_id=2113251799 instance=ExtResource("23_7k868")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2851, -0.020390272, 2.6882095)
+[node name="CoconutMan" parent="CharacterSelect" index="19" unique_id=1728257053]
 track = 2
 
 [node name="introStar" parent="CharacterSelect" unique_id=873956865 instance=ExtResource("26_1w6v2")]
-transform = Transform3D(6.114194e-14, 1.3987644e-06, 32, 32, -1.3987644e-06, -4.5137477e-21, 1.3987644e-06, 32, -1.3987644e-06, 2.2774734, 15.737549, 0)
+transform = Transform3D(7.763116e-14, 1.7759937e-06, 40.63, 40.63, -1.7759937e-06, -5.731049e-21, 1.7759937e-06, 40.63, -1.7759937e-06, 10.297234, 15.737549, 0)
 
 [node name="Plane" parent="CharacterSelect/introStar" index="0" unique_id=1196324003]
 mesh = SubResource("ArrayMesh_7k868")
