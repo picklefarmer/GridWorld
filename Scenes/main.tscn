@@ -51,7 +51,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="Theme" id="Theme_neg2b"]
+[sub_resource type="Theme" id="Theme_e08e2"]
 resource_local_to_scene = true
 default_font_size = 40
 
@@ -105,6 +105,7 @@ Vitamen = Array[PackedScene]([ExtResource("11_gt3je"), ExtResource("12_3pmx8"), 
 
 [node name="Lore" parent="." unique_id=897700427 instance=ExtResource("11_d1ilt")]
 lore = Array[String](["The worlds, they didn't know. It came on like a dream. [br] [br] There were many missed. And that's what they had seen.", "Beginning at a time when obedience had won. [br] [br] Where commitment to ourselves was little to none.", "Bringing life into our worlds, again and again. [br] [br] Seeking only a peace that would surely begin.", "For as dimensions unfold, though their existence unknown [br] [br] The Vitamen had arrived so that the planets may thrive", "With them it was a time for collection [br] [br] Engaging our minds in self reflection", "Their solution- pliable, viable, oh-so-desirable", "To take time on a race [br] [br] To set at your own pace"])
+zoomAmount = -7.71
 
 [node name="RichTextLabel" parent="Lore" index="0" unique_id=1758505057]
 theme_override_constants/line_separation = -7
@@ -118,7 +119,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ueoa1")
 
 [node name="StatScreen" parent="Lore" unique_id=224236459 instance=ExtResource("24_6vcvc")]
 visible = false
-theme = SubResource("Theme_neg2b")
+theme = SubResource("Theme_e08e2")
 
 [node name="IntroMusic" type="AudioStreamPlayer" parent="Lore" unique_id=230010655]
 stream = ExtResource("24_ueoa1")
@@ -140,6 +141,7 @@ z_index = 1
 
 [node name="Camera3D" parent="CharacterSelect" index="4" unique_id=764456810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.520847, 7.433, 47.126)
+fov = 65.7
 
 [node name="Appleman" parent="CharacterSelect" index="5" unique_id=4949676]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.556235, 0, 2.6476574)

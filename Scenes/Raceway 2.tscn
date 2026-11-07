@@ -62,7 +62,6 @@ outOut = 80.0
 inOut = 60.0
 trackMultiplier = 0.75
 micSpan = 50.0
-proximityTracks = true
 top = NodePath("BirdsEye")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=226806084]

@@ -2,6 +2,8 @@ extends Node
 
 @export var lore : Array[String]
 var loreIndex : int = 0
+@export var zoomAmount :float = 0.3
+var camera : Camera3D 
 var loreWindow : RichTextLabel
 var titleScreen : Label
 var loreTween : Tween
@@ -9,6 +11,7 @@ var charSelect : bool = false
 var gameStart : bool = false
 var introDone : bool = false
 func _ready() -> void:
+	camera = $"../CharacterSelect/Camera3D"
 	$IntroMusic.play()
 	loreWindow = $RichTextLabel
 	titleScreen = $TitleScreen2d.get_child(0)
@@ -45,7 +48,7 @@ func fadeTitle():
 	titleScreen.visible = false
 	
 func updateLabel():
-	#
+	
 	if loreTween and loreTween.is_valid():
 		loreTween.kill()
 	loreTween = create_tween()
@@ -54,7 +57,8 @@ func updateLabel():
 	loreTween.tween_property(loreWindow,"theme_override_colors/default_color",Color(0.0,0.0,0.0,0.5),0.5)
 	loreTween.tween_callback(updateText)
 	loreTween.tween_property(loreWindow,"theme_override_colors/default_color",Color(1.0,1.0,1.0,1.0),0.5)
-	
+	if !loreIndex == 0:
+		loreTween.tween_property(camera,"fov",zoomAmount+camera.fov,0.5)
 	
 	
 func updateText():
