@@ -81,7 +81,6 @@ fov = 60.0
 
 [node name="Progress_Meter" parent="Path3D2/track1/Camera3D" unique_id=628590229 instance=ExtResource("4_srkr2")]
 transform = Transform3D(1, 0, 0, 0, -4.371138e-08, -1.0000001, 0, 0.9999998, -4.3711392e-08, -0.73176163, -0.5784673, -1.3911748)
-lapCap = 3
 
 [node name="OmniLight3D" type="AreaLight3D" parent="Path3D2/track1" unique_id=424473808]
 transform = Transform3D(1, 0, 0, 0, 0.7527585, -0.6582967, 0, 0.6582967, 0.7527585, 0.99999994, 3.258231, 4.6411386)
@@ -110,12 +109,11 @@ progress = 1322.0394
 use_model_front = true
 script = ExtResource("3_26l6j")
 trackNumber = 2
-runSpeed = 2.0
 
 [node name="Strawberry" parent="Path3D2/track2" unique_id=1848394695 instance=ExtResource("9_v7bjd")]
 transform = Transform3D(1.0000157, 1.8626451e-09, 0, 0, 0.9999999, -1.7695129e-08, -1.4901161e-08, 3.259629e-09, 1.0000161, -6.192, 0, 0.559)
-minimum = 0.39
-runSpeed = 2.0
+minimum = 0.065
+runSpeed = 8.0
 
 [node name="trail" parent="Path3D2/track2" unique_id=1344867179 instance=ExtResource("21_0c711")]
 transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, -6.193, 3, -0.3971684)

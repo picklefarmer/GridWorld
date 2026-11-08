@@ -15,6 +15,7 @@ var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
 @export var deltav : float = 1.0
 @export var track: String = "recording"
 @export var background :bool = false
+@export var embedded : bool = false
 func _ready() -> void:
 	
 	if owner.owner.track:
@@ -49,10 +50,17 @@ func _process(delta: float) -> void:
 		set_bone_pose_position(bone_idx, current_pos)
 		
 func rebus():
-	#print("is owner active:" ,owner)
-	if owner.get("active") != null:
+	print("is owner active:" ,owner,owner.name)
+	if embedded:
+		return
+	if owner.active:
 		track = "recording"
-		#print("rebus")
+		print(owner.active,owner.name)
 		record_bus_index = AudioServer.get_bus_index("recording")
 		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
-	
+	elif !Global.gameStart:
+		#track = owner.owner.track
+		track = "track2"
+		record_bus_index = AudioServer.get_bus_index(track)
+		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
+	print("boneMove", track,owner.name)

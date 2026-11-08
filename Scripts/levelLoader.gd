@@ -23,7 +23,7 @@ func _ready() -> void:
 	_Vitamen = Vitamen.duplicate()
 	
 func _process(delta: float) -> void:
-	if $Lore.gameStart and !Global.startMenu:
+	if Global.gameStart and !Global.startMenu:
 		if Input.is_action_just_pressed("trackLeft"):
 			swap(1)
 		
@@ -50,6 +50,9 @@ func startGame():
 	add_child(startingTrack.instantiate())
 	currentRaceway = get_child(2)
 	assignRandomCharacters(currentRaceway)
+	
+	currentRaceway.playMusic()
+	Actions.resetMic.emit()
 	Global.loadedPlayers.insert(0,Global.playerName)
 	Actions.timerStart.emit()
 	

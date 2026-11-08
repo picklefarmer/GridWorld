@@ -28,10 +28,13 @@ func _process(delta: float) -> void:
 
 func startingCharacter():
 	var playerInstantiated = PlayableCharacters[Global.globalPlayerIndex].instantiate()
+	
 	self.add_child(playerInstantiated)
 	var newPlayer = get_child(1)
 	playerInstantiated.set("active",true)
+	
 	Actions.syncLip.emit()
+	
 	newPlayer.minimum = Global.minimum
 	newPlayer.runSpeed = player.runSpeed
 	newPlayer.transform = player.transform

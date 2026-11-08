@@ -1,6 +1,6 @@
 extends Node3D
 
-var ischecked : bool = true
+#var ischecked : bool = true
 @export var outIn : float = 40
 @export var outOut : float = 20
 @export var inIn : float = 120
@@ -43,18 +43,7 @@ func _process(delta: float) -> void:
 				zoom(top,main)
 				#moveProgressMeter(main)
 				currentCamera = cameraState.MAIN
-			
-				#
-		#
-		#
-		#if ischecked:
-			#generateTween()
-			#zoom(main,top)
-			#
-		#else:
-			#generateTween()
-			#zoom(main,top)
-			#
+
 func pauseMusic():
 	for instrument in music:
 		instrument.stop()
@@ -88,16 +77,7 @@ func switchCamera(reference:Camera3D):
 func moveProgressMeter(parent:Camera3D):
 	pass 
 	#progressMeter.reparent(parent,false)
-func flip():
-	if ischecked:
-		main.clear_current()
-		top.make_current()	
-	else:
-		top.clear_current()
-		main.make_current()
-	
-	#print(main.current,top.current,ischecked)
-	ischecked = !ischecked
+
 	
 func generateTween():
 	if zoomin and zoomin.is_valid():

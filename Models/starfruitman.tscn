@@ -11,7 +11,7 @@ script = ExtResource("1_h4q3r")
 
 [node name="starfruit" parent="." unique_id=1183213 instance=ExtResource("1_fu3c2")]
 
-[node name="Skeleton3D" parent="starfruit/Armature" parent_id_path=PackedInt32Array(1183213, 369297204) index="0" unique_id=1182279306]
+[node name="Skeleton3D" parent="starfruit/Armature" parent_id_path=PackedInt32Array(1183213, 157528872) index="0" unique_id=1641784982]
 bones/7/rotation = Quaternion(-0.219348, 0, 0, 0.998522)
 bones/9/rotation = Quaternion(1.052253, 0, 0, 0.569122)
 script = ExtResource("2_iucq6")
@@ -33,7 +33,7 @@ settings/0/individual_config = false
 settings/0/rotation_axis = 0
 settings/0/radius/value = 0.02
 settings/0/radius/damping_curve = null
-settings/0/stiffness/value = 12.65
+settings/0/stiffness/value = 11.0
 settings/0/stiffness/damping_curve = null
 settings/0/drag/value = 0.4
 settings/0/drag/damping_curve = null

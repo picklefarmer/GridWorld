@@ -21,7 +21,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("confirm") and gameStart == false and !Global.startMenu:
+	if Input.is_action_just_pressed("confirm") and Global.gameStart == false and !Global.startMenu:
 		loreIndex = loreIndex+1
 		if loreIndex == lore.size():
 			loreWindow.visible = false
@@ -36,8 +36,10 @@ func _process(delta: float) -> void:
 			$"../CharacterSelect/WorldEnvironment".queue_free()
 			$"../CharacterSelect/TitleScreen2d/Label".visible = false
 			
-			$CharacterSelectMusic.stop()
-			gameStart = true
+			$CharacterSelectMusic.stop()	
+			$"../CharacterSelect/Microphone".stop()
+			$"../CharacterSelect/Microphone".queue_free()
+			Global.gameStart = true
 			
 			$"..".startGame()
 		

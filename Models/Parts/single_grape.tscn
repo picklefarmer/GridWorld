@@ -13,6 +13,7 @@ script = ExtResource("1_x3df0")
 [node name="Skeleton3D" parent="grape_single/Armature" parent_id_path=PackedInt32Array(1340839860, 264588471) index="0" unique_id=2145713486]
 script = ExtResource("2_yp4vc")
 multiplier = 1.25
+embedded = true
 
 [node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="grape_single/Armature/Skeleton3D" index="1" unique_id=549071314]
 setting_count = 1

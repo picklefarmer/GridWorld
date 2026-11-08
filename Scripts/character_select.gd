@@ -26,7 +26,7 @@ func _ready() -> void:
 	
 	
 func _process(delta: float) -> void:
-	if $"../Lore".introDone and !$"../Lore".gameStart and !Global.startMenu:
+	if $"../Lore".introDone and !Global.gameStart and !Global.startMenu:
 		if Input.is_action_just_pressed("trackLeft"):
 			switchCharacter(-1)
 		if Input.is_action_just_pressed("trackRight"):
@@ -34,8 +34,14 @@ func _process(delta: float) -> void:
 		
 func switchCharacter(direction:int):
 	
-	Global.globalPlayerIndex = posmod(Global.globalPlayerIndex+direction, characters.size())
+	for character in characters:
+		character.active = false
+		character.track = 2
 	
+	Global.globalPlayerIndex = posmod(Global.globalPlayerIndex+direction, characters.size())
+	characters[Global.globalPlayerIndex].active = true
+	characters[Global.globalPlayerIndex].track = 1
+	Actions.syncLip.emit()
 	
 	$Camera3D/AreaLight3D.light_energy = 0.0
 	centerCamera()

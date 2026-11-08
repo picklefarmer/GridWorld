@@ -214,7 +214,6 @@ metadata/_editor_floor_ = Vector3(0, 2, 0)
 [node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=190006111]
 stream = SubResource("AudioStreamMicrophone_j3pel")
 volume_db = 1.0
-autoplay = true
 bus = &"recording"
 
 [node name="Track 2 streamer" type="AudioStreamPlayer" parent="." unique_id=536204235]
@@ -242,7 +241,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.973629, 2.0780988, -13.22
 curve = SubResource("Curve3D_uu6xs")
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=416138429]
-transform = Transform3D(0.99919367, 0.0007354822, 0.03949065, -0.0007326516, 0.9999893, -8.5860214e-05, -0.039490573, 5.686026e-05, 0.99919724, 25.786333, 0.65092015, -5.945143)
+transform = Transform3D(0.9991935, 0.0007354821, 0.039490644, -0.00073265145, 0.9999891, -8.58602e-05, -0.039490566, 5.6860248e-05, 0.99919707, 25.786333, 0.65092015, -5.945143)
 progress = 32.423325
 use_model_front = true
 script = ExtResource("5_8no50")
@@ -274,7 +273,7 @@ transform = Transform3D(0.9866659, 0, -0.16275842, 0, 1, 0, 0.16275844, 0, 0.986
 minimum = 0.25
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=1852939651]
-transform = Transform3D(0.99919295, 0.00073548517, 0.039490443, -0.0007326511, 0.99999326, -8.5859756e-05, -0.039490547, 5.6860485e-05, 0.99919194, 25.786333, 0.65092015, -5.945143)
+transform = Transform3D(0.9991928, 0.000735485, 0.039490435, -0.0007326509, 0.9999931, -8.585974e-05, -0.03949054, 5.6860477e-05, 0.99919176, 25.786333, 0.65092015, -5.945143)
 progress = 32.423325
 use_model_front = true
 script = ExtResource("5_8no50")
@@ -290,7 +289,7 @@ transform = Transform3D(-5.3109343e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.3711392e-08
 visible = false
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1232437005]
-transform = Transform3D(0.99919116, 0.00073548505, 0.039490476, -0.00073264976, 0.99999315, -8.5859836e-05, -0.039490476, 5.686048e-05, 0.99919283, 25.786333, 0.65092015, -5.945143)
+transform = Transform3D(0.999191, 0.00073548494, 0.03949047, -0.00073264964, 0.99999297, -8.585982e-05, -0.03949047, 5.686047e-05, 0.99919266, 25.786333, 0.65092015, -5.945143)
 progress = 32.423325
 use_model_front = true
 script = ExtResource("5_8no50")
@@ -306,7 +305,7 @@ transform = Transform3D(-5.3109336e-08, 0, 0.99999994, 0, 0.99999994, 0, -1.215,
 visible = false
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1839449494]
-transform = Transform3D(0.99919116, 0.00073548505, 0.039490476, -0.00073264976, 0.99999315, -8.5859836e-05, -0.039490476, 5.686048e-05, 0.99919283, 25.786333, 0.65092015, -5.945143)
+transform = Transform3D(0.999191, 0.00073548494, 0.03949047, -0.00073264964, 0.99999297, -8.585982e-05, -0.03949047, 5.686047e-05, 0.99919266, 25.786333, 0.65092015, -5.945143)
 progress = 32.423325
 use_model_front = true
 script = ExtResource("5_8no50")

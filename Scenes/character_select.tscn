@@ -51,6 +51,8 @@ background_mode = 2
 sky = SubResource("Sky_li0db")
 tonemap_mode = 2
 
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_fk1ks"]
+
 [node name="Character Select" type="Node3D" unique_id=338064043]
 script = ExtResource("1_vueyu")
 
@@ -173,3 +175,9 @@ track = 2
 
 [node name="CoconutMan" parent="." unique_id=1728257053 instance=ExtResource("18_jp3rh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.18576, 0, 3.206629)
+
+[node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=1892974747]
+stream = SubResource("AudioStreamMicrophone_fk1ks")
+volume_db = 13.227
+autoplay = true
+bus = &"recording"
