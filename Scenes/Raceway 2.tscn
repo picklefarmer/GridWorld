@@ -55,14 +55,15 @@ ambient_light_color = Color(0, 0, 0.81960785, 1)
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_j3pel"]
 
-[node name="Raceway 2" type="Node3D" unique_id=1756663993 node_paths=PackedStringArray("top")]
+[node name="Raceway 2" type="Node3D" unique_id=1756663993 node_paths=PackedStringArray("top", "birdsEye")]
 script = ExtResource("1_7nbvk")
-outIn = 60.0
+outIn = 100.0
 outOut = 80.0
 inOut = 60.0
 trackMultiplier = 0.75
 micSpan = 50.0
-top = NodePath("BirdsEye")
+top = NodePath("Path3D2/track1/followPlayer")
+birdsEye = NodePath("BirdsEye")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=226806084]
 mesh_library = ExtResource("1_r0pcp")

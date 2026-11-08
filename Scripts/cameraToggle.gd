@@ -10,8 +10,10 @@ var ischecked : bool = true
 @export var proximityTracks : bool = false
 @onready var main : Camera3D = $Path3D2/track1/Camera3D
 @export var top : Camera3D 
+@export var birdsEye :Camera3D
 @onready var zoomin :Tween
-
+enum cameraState {MAIN, BIRDSEYE,FOllOW}
+var currentCamera : cameraState = cameraState.MAIN
 @onready var music : Array[AudioStreamPlayer] = [$Microphone,$"Track 2 streamer", $"Track 3 streamer", $"Track 4 streamer"]
 var musicProximity : Array[AudioStreamPlayer3D] = []
 
@@ -23,14 +25,33 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("SwapCamera"):
-		if ischecked:
-			generateTween()
-			zoom(main,top)
+		
+		
+		match currentCamera:
+			cameraState.MAIN:
+				generateTween()
+				zoom(main,birdsEye)
+				currentCamera = cameraState.BIRDSEYE
+			cameraState.BIRDSEYE:
+				generateTween()
+				zoom(birdsEye,top)
+				currentCamera = cameraState.FOllOW
+			cameraState.FOllOW:
+				generateTween()
+				zoom(top,main)
+				currentCamera = cameraState.MAIN
 			
-		else:
-			generateTween()
-			zoom(main,top)
-			
+				#
+		#
+		#
+		#if ischecked:
+			#generateTween()
+			#zoom(main,top)
+			#
+		#else:
+			#generateTween()
+			#zoom(main,top)
+			#
 func pauseMusic():
 	for instrument in music:
 		instrument.stop()
@@ -47,15 +68,19 @@ func playMusic():
 		
 func zoom(reference:Camera3D,out: Camera3D):
 	
-	if ischecked:		
+	if currentCamera != cameraState.FOllOW:		
 		zoomin.tween_property(reference,"fov",inIn,0.5)
-		zoomin.tween_callback(flip)
+		zoomin.tween_callback(switchCamera.bind(out))
 		zoomin.tween_property(out,"fov",outOut,1.0)
 		
 	else :
-		zoomin.tween_property(out,"fov",inOut,1.0)
-		zoomin.tween_callback(flip)
-		zoomin.tween_property(reference,"fov",outIn,0.25)
+		zoomin.tween_property(reference,"fov",inOut,1.0)
+		zoomin.tween_callback(switchCamera.bind(out))
+		zoomin.tween_property(out,"fov",outIn,0.25)
+		
+func switchCamera(reference:Camera3D):
+	reference.make_current()
+	
 
 func flip():
 	if ischecked:
@@ -69,8 +94,8 @@ func flip():
 	ischecked = !ischecked
 	
 func generateTween():
-	#if zoomin and zoomin.is_valid():
-		#zoomin.kill()
+	if zoomin and zoomin.is_valid():
+		zoomin.kill()
 	zoomin = create_tween()
 	zoomin.set_trans(Tween.TRANS_CUBIC)
 	zoomin.set_ease(Tween.EASE_IN)

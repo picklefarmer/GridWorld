@@ -51,7 +51,7 @@ ambient_light_color = Color(0.09922416, 0.3832445, 0.5481852, 1)
 ambient_light_sky_contribution = 0.31
 ambient_light_energy = 1.5
 
-[node name="Raceway 9" type="Node3D" unique_id=424916225 node_paths=PackedStringArray("top")]
+[node name="Raceway 9" type="Node3D" unique_id=424916225 node_paths=PackedStringArray("top", "birdsEye")]
 script = ExtResource("1_eo7v2")
 outIn = 60.0
 outOut = 40.0
@@ -59,7 +59,8 @@ inIn = 45.0
 inOut = 60.0
 trackMultiplier = 1.2
 micSpan = 50.0
-top = NodePath("Path3D2/track2/followPlayer")
+top = NodePath("Path3D2/track1/followPlayer")
+birdsEye = NodePath("BirdsEye")
 
 [node name="raceway 9" parent="." unique_id=1484292569 instance=ExtResource("1_xjt0o")]
 
@@ -89,6 +90,11 @@ transform = Transform3D(1, 0, 0, 0, 0.7527585, -0.6582967, 0, 0.6582967, 0.75275
 light_energy = 15.367
 light_specular = 0.523
 
+[node name="followPlayer" type="Camera3D" parent="Path3D2/track1" unique_id=1464933871]
+transform = Transform3D(0.9317001, 0.36350924, 2.9802322e-08, 0, -2.9802322e-08, 1.0001218, 0.36325476, -0.93104833, 1.4901161e-08, -5.1749954, 100.000015, 11.429003)
+fov = 84.6
+near = 85.98
+
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1486126738]
 script = ExtResource("4_fy1l5")
 PlayableCharacters = Array[PackedScene]([ExtResource("6_ncoeg"), ExtResource("6_p2qo6"), ExtResource("5_v1win"), ExtResource("7_55jsm"), ExtResource("8_bgygm"), ExtResource("9_p2qo6"), ExtResource("10_ncoeg"), ExtResource("11_tfmxy"), ExtResource("12_tsy5s"), ExtResource("6_eo7v2"), ExtResource("17_tsy5s"), ExtResource("18_kb625"), ExtResource("19_lygtk"), ExtResource("20_sr8ce"), ExtResource("21_aoy8q")])
@@ -110,10 +116,6 @@ minimum = 0.1
 [node name="trail" parent="Path3D2/track2" unique_id=1344867179 instance=ExtResource("14_bgygm")]
 transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, -6.193, 3, -0.3450509)
 visible = false
-
-[node name="followPlayer" type="Camera3D" parent="Path3D2/track2" unique_id=1464933871]
-transform = Transform3D(0.931703, 0.36351144, 8.940697e-08, 0, -4.4703484e-08, 1.0001276, 0.3632559, -0.9310479, -1.7881393e-07, -5.1749916, 100.00002, 11.4290085)
-fov = 84.6
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=2086626794]
 transform = Transform3D(-0.37028825, -0.5775046, 0.7279417, 0.5322272, 0.5098477, 0.6761766, -0.7611943, 0.6374167, 0.11867049, 17.818773, -68.12393, -74.09267)

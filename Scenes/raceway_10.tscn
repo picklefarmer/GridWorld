@@ -49,13 +49,15 @@ ambient_light_color = Color(0.09922416, 0.3832445, 0.5481852, 1)
 ambient_light_sky_contribution = 0.31
 ambient_light_energy = 1.5
 
-[node name="Raceway 10" type="Node3D" unique_id=2021777142]
+[node name="Raceway 10" type="Node3D" unique_id=2021777142 node_paths=PackedStringArray("top", "birdsEye")]
 script = ExtResource("1_26l6j")
 outIn = 60.0
-outOut = 80.0
-inIn = 80.0
-inOut = 60.0
+outOut = 40.0
+inIn = 60.0
+inOut = 80.0
 micSpan = 20.0
+top = NodePath("Path3D2/track1/followPlayer")
+birdsEye = NodePath("BirdsEye")
 
 [node name="raceway 10" parent="." unique_id=98726678 instance=ExtResource("1_2qfkj")]
 
@@ -65,7 +67,7 @@ curve = ExtResource("2_hkd8o")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=106998745]
-transform = Transform3D(-0.67948323, 0.7335136, -0.011876478, 0.73147005, 0.6761413, -0.08758756, -0.056210738, -0.06819144, -0.99621195, 19.069723, -31.975483, 4.927646)
+transform = Transform3D(-0.67948294, 0.7335136, -0.011876478, 0.73146975, 0.6761413, -0.08758756, -0.05621071, -0.06819144, -0.99621195, 19.069723, -31.975483, 4.927646)
 progress = 1322.0394
 use_model_front = true
 script = ExtResource("3_26l6j")
@@ -79,7 +81,7 @@ fov = 60.0
 
 [node name="Progress_Meter" parent="Path3D2/track1/Camera3D" unique_id=628590229 instance=ExtResource("4_srkr2")]
 transform = Transform3D(1, 0, 0, 0, -4.371138e-08, -1.0000001, 0, 0.9999998, -4.3711392e-08, -0.73176163, -0.5784673, -1.3911748)
-lapCap = 0
+lapCap = 3
 
 [node name="OmniLight3D" type="AreaLight3D" parent="Path3D2/track1" unique_id=424473808]
 transform = Transform3D(1, 0, 0, 0, 0.7527585, -0.6582967, 0, 0.6582967, 0.7527585, 0.99999994, 3.258231, 4.6411386)
@@ -98,11 +100,12 @@ runSpeed = 2.0
 
 [node name="followPlayer" type="Camera3D" parent="Path3D2/track1" unique_id=161643504]
 transform = Transform3D(0.7975493, -0.60325706, 9.49949e-08, -8.940697e-08, -5.9604645e-08, 1.0000731, -0.60318106, -0.79744875, -1.7881393e-07, -2.6275654, 78.18189, 17.725462)
+cull_mask = 1048573
 fov = 84.6
-near = 0.175
+near = 43.44
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=1044740307]
-transform = Transform3D(-0.67948943, 0.7335075, -0.011876329, 0.7314767, 0.6761357, -0.08758646, -0.05621125, -0.06819087, -0.9961995, 19.069723, -31.975483, 4.927646)
+transform = Transform3D(-0.67948884, 0.7335075, -0.011876329, 0.73147607, 0.6761357, -0.08758646, -0.0562112, -0.06819087, -0.9961995, 19.069723, -31.975483, 4.927646)
 progress = 1322.0394
 use_model_front = true
 script = ExtResource("3_26l6j")
@@ -119,7 +122,7 @@ transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 
 visible = false
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=518840703]
-transform = Transform3D(-0.67948943, 0.7335075, -0.011876329, 0.7314767, 0.6761357, -0.08758646, -0.05621125, -0.06819087, -0.9961995, 19.069723, -31.975483, 4.927646)
+transform = Transform3D(-0.67948884, 0.7335075, -0.011876329, 0.73147607, 0.6761357, -0.08758646, -0.0562112, -0.06819087, -0.9961995, 19.069723, -31.975483, 4.927646)
 progress = 1322.0394
 use_model_front = true
 script = ExtResource("3_26l6j")
@@ -136,7 +139,7 @@ transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 
 visible = false
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=412402230]
-transform = Transform3D(-0.67948943, 0.7335075, -0.011876329, 0.7314767, 0.6761357, -0.08758646, -0.05621125, -0.06819087, -0.9961995, 19.069723, -31.975483, 4.927646)
+transform = Transform3D(-0.67948884, 0.7335075, -0.011876329, 0.73147607, 0.6761357, -0.08758646, -0.0562112, -0.06819087, -0.9961995, 19.069723, -31.975483, 4.927646)
 progress = 1322.0394
 use_model_front = true
 script = ExtResource("3_26l6j")
@@ -184,10 +187,11 @@ fov = 48.9
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1427374361]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_energy = 0.477
+light_color = Color(0.621199, 0.40825447, 0.66589844, 1)
+light_energy = 1.292
 light_indirect_energy = 2.322
 light_angular_distance = 44.9
-light_specular = 0.468
+light_specular = 0.041
 sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=912939130]

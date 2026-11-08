@@ -43,13 +43,14 @@ ambient_light_color = Color(0.09922416, 0.3832445, 0.5481852, 1)
 ambient_light_sky_contribution = 0.31
 ambient_light_energy = 1.5
 
-[node name="Raceway 7" type="Node3D" unique_id=445197391 node_paths=PackedStringArray("top")]
+[node name="Raceway 7" type="Node3D" unique_id=445197391 node_paths=PackedStringArray("top", "birdsEye")]
 script = ExtResource("1_v4mcm")
 outIn = 60.0
 outOut = 85.0
-inOut = 40.0
+inOut = 60.0
 micSpan = 20.0
 top = NodePath("Path3D2/track1/followPlayer")
+birdsEye = NodePath("BirdsEye")
 
 [node name="raceway 7" parent="." unique_id=1542613220 instance=ExtResource("1_ndjim")]
 
@@ -59,7 +60,7 @@ curve = ExtResource("2_kerbq")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=903517246]
-transform = Transform3D(-0.010735579, -0.008248453, -1.0003599, 0.012117202, 0.99973625, -0.008383503, 0.9997558, -0.012205537, -0.010640456, -0.41799816, -171.8219, 7.2712135)
+transform = Transform3D(-0.010735578, -0.008248451, -1.0003606, 0.0121172005, 0.999736, -0.008383509, 0.9997557, -0.012205535, -0.010640464, -0.41799816, -171.8219, 7.2712135)
 progress = 232.74117
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -89,12 +90,14 @@ PlayableCharacters = Array[PackedScene]([ExtResource("6_l4fvf"), ExtResource("6_
 transform = Transform3D(0.99999994, 0, 0, 0, 1.0000004, 0, 0, 0, 0.9999999, 1.1060009, 7.6293945e-06, 0.2539959)
 runSpeed = 2.0
 
-[node name="followPlayer" type="Camera3D" parent="Path3D2/track1" unique_id=1910953769]
+[node name="followPlayer" type="Camera3D" parent="Path3D2/track1" unique_id=1910953769 node_paths=PackedStringArray("target")]
 transform = Transform3D(0.79751205, -0.6034878, -2.5262125e-08, -3.608875e-09, -4.7148205e-08, 1.000154, -0.60315317, -0.7970697, -3.8613507e-08, 5.449001, 72.63305, 8.993999)
 fov = 84.6
+script = ExtResource("19_a8j7u")
+target = NodePath("../PlayerHolder")
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=40535349]
-transform = Transform3D(-0.010735611, -0.008248433, -1.0003475, 0.012117238, 0.9997338, -0.008383399, 0.9997588, -0.012205508, -0.010640325, -0.41799816, -171.8219, 7.2712135)
+transform = Transform3D(-0.01073561, -0.008248431, -1.0003482, 0.012117237, 0.99973357, -0.008383405, 0.99975866, -0.012205505, -0.0106403325, -0.41799816, -171.8219, 7.2712135)
 progress = 232.74117
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -110,7 +113,7 @@ transform = Transform3D(-5.2154064e-08, -1.1641532e-10, 0.99999994, -2.2555469e-
 visible = false
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1702470826]
-transform = Transform3D(-0.010735611, -0.008248433, -1.0003475, 0.012117238, 0.9997338, -0.008383399, 0.9997588, -0.012205508, -0.010640325, -0.41799816, -171.8219, 7.2712135)
+transform = Transform3D(-0.01073561, -0.008248431, -1.0003482, 0.012117237, 0.99973357, -0.008383405, 0.99975866, -0.012205505, -0.0106403325, -0.41799816, -171.8219, 7.2712135)
 progress = 232.74117
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -125,7 +128,7 @@ transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 
 visible = false
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=979988124]
-transform = Transform3D(-0.010735611, -0.008248433, -1.0003475, 0.012117238, 0.9997338, -0.008383399, 0.9997588, -0.012205508, -0.010640325, -0.41799816, -171.8219, 7.2712135)
+transform = Transform3D(-0.01073561, -0.008248431, -1.0003482, 0.012117237, 0.99973357, -0.008383405, 0.99975866, -0.012205505, -0.0106403325, -0.41799816, -171.8219, 7.2712135)
 progress = 232.74117
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -180,10 +183,8 @@ sky_mode = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2080883320]
 environment = SubResource("Environment_v07kg")
 
-[node name="BirdsEye" type="Camera3D" parent="." unique_id=153579034 node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0.00035912686, -1.0893003e-05, -0.00035929203, 0.99954027, -0.030317785, 6.385152e-11, 0.030317787, 0.9995403, -2.737915, -5.9031525, 0.8339958)
-script = ExtResource("19_a8j7u")
-target = NodePath("../Path3D2/track1/Camera3D")
+[node name="BirdsEye" type="Camera3D" parent="." unique_id=153579034]
+transform = Transform3D(1, 0.00035912686, -1.0893003e-05, -0.00035929203, 0.99954027, -0.030317785, 6.385152e-11, 0.030317787, 0.9995403, -2.737915, -5.9031525, 117.73123)
 
 [node name="cloud" parent="." unique_id=1972854392 instance=ExtResource("19_v07kg")]
 transform = Transform3D(20.235, 0, 0, 0, 20.235, 0, 0, 0, 20.235, 20.502823, -115.82792, -22.360224)

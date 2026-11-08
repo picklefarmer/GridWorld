@@ -52,13 +52,14 @@ func updateLabel():
 	if loreTween and loreTween.is_valid():
 		loreTween.kill()
 	loreTween = create_tween()
+	if !loreIndex == 0:
+		loreTween.tween_property(camera,"fov",zoomAmount+camera.fov,0.75)
 	#tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
 
 	loreTween.tween_property(loreWindow,"theme_override_colors/default_color",Color(0.0,0.0,0.0,0.5),0.5)
 	loreTween.tween_callback(updateText)
 	loreTween.tween_property(loreWindow,"theme_override_colors/default_color",Color(1.0,1.0,1.0,1.0),0.5)
-	if !loreIndex == 0:
-		loreTween.tween_property(camera,"fov",zoomAmount+camera.fov,0.5)
+	
 	
 	
 func updateText():

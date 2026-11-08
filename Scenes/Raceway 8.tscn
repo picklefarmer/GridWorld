@@ -51,15 +51,16 @@ ambient_light_color = Color(0.09922416, 0.3832445, 0.5481852, 1)
 ambient_light_sky_contribution = 0.31
 ambient_light_energy = 1.5
 
-[node name="Raceway 8" type="Node3D" unique_id=69725815 node_paths=PackedStringArray("top")]
+[node name="Raceway 8" type="Node3D" unique_id=69725815 node_paths=PackedStringArray("top", "birdsEye")]
 script = ExtResource("1_cbjio")
 outIn = 60.0
 outOut = 80.0
 inIn = 90.0
-inOut = 40.0
+inOut = 60.0
 trackMultiplier = 0.8
 micSpan = 50.0
 top = NodePath("Path3D2/track1/followPlayer")
+birdsEye = NodePath("BirdsEye")
 
 [node name="raceway 8" parent="." unique_id=1066319418 instance=ExtResource("1_0ppcw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3924818, 0, 0.39177728)

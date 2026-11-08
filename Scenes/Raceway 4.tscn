@@ -213,14 +213,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_77j3j")
 
-[node name="True Mobius" type="Node3D" unique_id=248817868 node_paths=PackedStringArray("top")]
+[node name="True Mobius" type="Node3D" unique_id=248817868 node_paths=PackedStringArray("top", "birdsEye")]
 script = ExtResource("1_fh4fj")
 outIn = 78.0
 outOut = 30.575
 inIn = 93.0
-inOut = 20.0
+inOut = 60.0
 micSpan = 25.0
-top = NodePath("Path3D2/track3/followPlayer")
+top = NodePath("Path3D2/track1/FollowPlayer")
+birdsEye = NodePath("BirdsEye")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=242663044]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -265,6 +266,11 @@ transform = Transform3D(1, 0, 0, 0, 0.7527585, -0.6582967, 0, 0.6582967, 0.75275
 light_energy = 15.367
 light_specular = 0.523
 
+[node name="FollowPlayer" type="Camera3D" parent="Path3D2/track1" unique_id=465332010]
+transform = Transform3D(0.8936559, -0.0011684299, 0.4492252, -0.4489655, -0.03381078, 0.8930514, 0.014139265, -0.9993436, -0.03072678, 35.397003, 103.67502, 10.035002)
+fov = 48.9
+near = 82.745
+
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1085270310]
 transform = Transform3D(1.0000001, 1.4901161e-08, 4.656613e-10, 0, 1.0000001, 3.7252903e-09, 0, 3.7252903e-09, 1, 0, 0, 0)
 script = ExtResource("6_jj500")
@@ -304,11 +310,6 @@ runSpeed = 1.1
 transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 5.767, 3, -0.748)
 visible = false
 
-[node name="followPlayer" type="Camera3D" parent="Path3D2/track3" unique_id=1117799396]
-transform = Transform3D(0.9763062, -0.10744484, 0.1889983, -0.1275564, 0.42093885, 0.8982186, -0.1759914, -0.90066403, 0.39709222, 19.715435, 95.64949, 42.069687)
-cull_mask = 1048567
-fov = 84.6
-
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=1820980794]
 transform = Transform3D(-0.7138335, 0.379324, 0.5885163, 0.4490331, 0.892824, -0.030731613, -0.5370113, 0.24232888, -0.8079945, -78.56978, -21.314888, -38.483604)
 progress = 501.28253
@@ -329,6 +330,7 @@ visible = false
 [node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=733533348]
 stream = SubResource("AudioStreamMicrophone_fh4fj")
 volume_db = 1.0
+autoplay = true
 bus = &"recording"
 
 [node name="Track 2 streamer" type="AudioStreamPlayer" parent="." unique_id=2079140832]

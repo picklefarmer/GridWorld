@@ -1,6 +1,6 @@
 extends Node3D
 var tween : Tween
-var tween2: Tween
+
 @onready var characters : Array = [
 	$GrapeMan,
 	$Orangeman,
@@ -42,8 +42,10 @@ func switchCharacter(direction:int):
 	
 	
 func centerCamera():
+	if tween and tween.is_valid():
+		tween.kill()
 	tween = create_tween()
-	tween2 = create_tween()
+
 	
 	var cameraTarget : Node3D = characters[Global.globalPlayerIndex]
 	
