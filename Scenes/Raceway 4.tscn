@@ -215,7 +215,7 @@ shadow_mesh = SubResource("ArrayMesh_77j3j")
 
 [node name="True Mobius" type="Node3D" unique_id=248817868 node_paths=PackedStringArray("top", "birdsEye")]
 script = ExtResource("1_fh4fj")
-outIn = 78.0
+outIn = 60.0
 outOut = 30.575
 inIn = 93.0
 inOut = 60.0

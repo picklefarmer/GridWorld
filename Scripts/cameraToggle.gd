@@ -12,6 +12,7 @@ var ischecked : bool = true
 @export var top : Camera3D 
 @export var birdsEye :Camera3D
 @onready var zoomin :Tween
+@onready var progressMeter : Node3D = $Path3D2/track1/Camera3D/Progress_Meter
 enum cameraState {MAIN, BIRDSEYE,FOllOW}
 var currentCamera : cameraState = cameraState.MAIN
 @onready var music : Array[AudioStreamPlayer] = [$Microphone,$"Track 2 streamer", $"Track 3 streamer", $"Track 4 streamer"]
@@ -20,8 +21,7 @@ var musicProximity : Array[AudioStreamPlayer3D] = []
 func _ready() -> void:
 	if proximityTracks:
 		musicProximity = [$"Path3D2/track2/Track 2 Proximity",$"Path3D2/track3/Track 3 Proximity",$"Path3D2/track4/Track 4 Proximity"]
-	if !top:
-		top = $BirdsEye
+	
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("SwapCamera"):
@@ -31,14 +31,17 @@ func _process(delta: float) -> void:
 			cameraState.MAIN:
 				generateTween()
 				zoom(main,birdsEye)
+				#moveProgressMeter(birdsEye)
 				currentCamera = cameraState.BIRDSEYE
 			cameraState.BIRDSEYE:
 				generateTween()
 				zoom(birdsEye,top)
+				#moveProgressMeter(top)
 				currentCamera = cameraState.FOllOW
 			cameraState.FOllOW:
 				generateTween()
 				zoom(top,main)
+				#moveProgressMeter(main)
 				currentCamera = cameraState.MAIN
 			
 				#
@@ -72,16 +75,19 @@ func zoom(reference:Camera3D,out: Camera3D):
 		zoomin.tween_property(reference,"fov",inIn,0.5)
 		zoomin.tween_callback(switchCamera.bind(out))
 		zoomin.tween_property(out,"fov",outOut,1.0)
-		
+		progressMeter.visible = false
 	else :
 		zoomin.tween_property(reference,"fov",inOut,1.0)
 		zoomin.tween_callback(switchCamera.bind(out))
 		zoomin.tween_property(out,"fov",outIn,0.25)
+		progressMeter.visible = true
 		
 func switchCamera(reference:Camera3D):
 	reference.make_current()
 	
-
+func moveProgressMeter(parent:Camera3D):
+	pass 
+	#progressMeter.reparent(parent,false)
 func flip():
 	if ischecked:
 		main.clear_current()
