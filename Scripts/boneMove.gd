@@ -50,17 +50,19 @@ func _process(delta: float) -> void:
 		set_bone_pose_position(bone_idx, current_pos)
 		
 func rebus():
-	print("is owner active:" ,owner,owner.name)
+	#print("is owner active:" ,owner,owner.name)
 	if embedded:
 		return
 	if owner.active:
 		track = "recording"
-		print(owner.active,owner.name)
+		#print(owner.active,owner.name)
 		record_bus_index = AudioServer.get_bus_index("recording")
 		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
 	elif !Global.gameStart:
 		#track = owner.owner.track
+		
 		track = "track2"
 		record_bus_index = AudioServer.get_bus_index(track)
 		spectrum_analyzer = AudioServer.get_bus_effect_instance(record_bus_index,0)
-	print("boneMove", track,owner.name)
+		#print(owner.name, "character select ", track)
+	#print("boneMove", track,owner.name)
