@@ -22,6 +22,7 @@ func _ready() -> void:
 	Global.globalRacewaySize = Raceways.size()
 	_Vitamen = Vitamen.duplicate()
 	
+	
 func _process(delta: float) -> void:
 	if Global.gameStart and !Global.startMenu:
 		if Input.is_action_just_pressed("trackLeft"):
@@ -54,6 +55,7 @@ func startGame():
 	currentRaceway.playMusic()
 	Actions.resetMic.emit()
 	Global.loadedPlayers.insert(0,Global.playerName)
+	Actions.updatePreview.emit()
 	Actions.timerStart.emit()
 	
 func endGame():
@@ -125,7 +127,7 @@ func swap(direction:int):
 	currentRaceway = racewayInstance
 	assignRandomCharacters(currentRaceway)
 	Global.loadedPlayers.insert(0,Global.playerName)
-	
+	Actions.updatePreview.emit()
 	Global.winners.clear()
 	
 

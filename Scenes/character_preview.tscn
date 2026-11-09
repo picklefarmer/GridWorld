@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bkc0nm6dkfiry"]
+
+[ext_resource type="Texture2D" uid="uid://b2d2nlgt2fu6y" path="res://Images/blueberryman.png" id="1_b8goo"]
+[ext_resource type="Texture2D" uid="uid://dlxxpcb0xdfes" path="res://Images/grapeman.png" id="1_etgfx"]
+[ext_resource type="Shader" uid="uid://b8x2rpjx3w1dd" path="res://Materials/outline.gdshader" id="1_g7dr0"]
+[ext_resource type="Script" uid="uid://brpucrjrl5f02" path="res://Scripts/character_preview.gd" id="1_i7nm4"]
+[ext_resource type="Texture2D" uid="uid://6lhj2ulnp1e3" path="res://Images/appleman.png" id="2_g7dr0"]
+[ext_resource type="Texture2D" uid="uid://da4j0jxep63kt" path="res://Images/orangeman.png" id="3_7v6cc"]
+[ext_resource type="Texture2D" uid="uid://cfjjkdn4gfjqh" path="res://Images/lemonman.png" id="3_i7nm4"]
+[ext_resource type="Texture2D" uid="uid://cx22bcqpk2qc8" path="res://Images/bananaman.png" id="4_j6qlo"]
+[ext_resource type="Texture2D" uid="uid://c6g8rtk676xx" path="res://Images/pineappleman.png" id="4_w344y"]
+[ext_resource type="Texture2D" uid="uid://doh1ebnj0d4kk" path="res://Images/strawberryman.png" id="5_l7tgk"]
+[ext_resource type="Texture2D" uid="uid://cjdcx3u8exfrh" path="res://Images/pearman.png" id="7_nkwbn"]
+[ext_resource type="Texture2D" uid="uid://cvudk0o56v3yv" path="res://Images/cherryman.png" id="8_28scg"]
+[ext_resource type="Texture2D" uid="uid://b13hj2nq5tt3c" path="res://Images/peachman.png" id="11_f8yi8"]
+[ext_resource type="Texture2D" uid="uid://b5lnkgihb0h03" path="res://Images/watermelonman.png" id="12_5bv1t"]
+[ext_resource type="Texture2D" uid="uid://bxklwgk8mlag8" path="res://Images/starfruitman.png" id="13_cxkmt"]
+[ext_resource type="Texture2D" uid="uid://5lrvk38grbl" path="res://Images/mangoman.png" id="15_8bg5i"]
+[ext_resource type="Texture2D" uid="uid://dn5oj5kn16lgh" path="res://Images/coconutman.png" id="16_7v266"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f2pec"]
+shader = ExtResource("1_g7dr0")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 14.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1gu2k"]
+shader = ExtResource("1_g7dr0")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 14.0
+
+[node name="CharacterPreview" type="VBoxContainer" unique_id=179862738]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -136.0
+offset_right = 34.0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 2
+script = ExtResource("1_i7nm4")
+characterTextures = Array[Texture2D]([ExtResource("1_etgfx"), ExtResource("3_7v6cc"), ExtResource("4_j6qlo"), ExtResource("5_l7tgk"), ExtResource("1_b8goo"), ExtResource("7_nkwbn"), ExtResource("8_28scg"), ExtResource("3_i7nm4"), ExtResource("2_g7dr0"), ExtResource("11_f8yi8"), ExtResource("12_5bv1t"), ExtResource("13_cxkmt"), ExtResource("4_w344y"), ExtResource("15_8bg5i"), ExtResource("16_7v266")])
+
+[node name="CharacterOne" type="TextureRect" parent="." unique_id=893150410]
+material = SubResource("ShaderMaterial_f2pec")
+custom_minimum_size = Vector2(34, 34)
+propagate_maximum_size = true
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 6
+texture = ExtResource("1_b8goo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterOne2" type="TextureRect" parent="." unique_id=1531364492]
+material = SubResource("ShaderMaterial_1gu2k")
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+texture = ExtResource("2_g7dr0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterOne3" type="TextureRect" parent="." unique_id=205444745]
+material = SubResource("ShaderMaterial_1gu2k")
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+texture = ExtResource("3_i7nm4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterOne4" type="TextureRect" parent="." unique_id=1793460246]
+material = SubResource("ShaderMaterial_1gu2k")
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+texture = ExtResource("4_w344y")
+expand_mode = 1
+stretch_mode = 5

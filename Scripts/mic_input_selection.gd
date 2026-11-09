@@ -15,7 +15,8 @@ func _ready():
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("startButton"):
 		startToggle = !startToggle
-		$"..".visible = startToggle
+		$"../..".visible = startToggle
+		
 		Global.startMenu = startToggle
 		if startToggle:
 			grab_focus()
@@ -50,6 +51,6 @@ func assignMic(device:String):
 	#print(device)
 	AudioServer.set_input_device(device)
 	startToggle = !startToggle
-	$"..".visible = startToggle
+	$"../..".visible = startToggle
 	Global.startMenu = startToggle
 	release_focus()

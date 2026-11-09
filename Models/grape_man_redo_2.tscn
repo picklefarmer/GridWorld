@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://8r66627kkomc" path="res://Models/Parts/single_grape_eye.tscn" id="7_o54dl"]
 [ext_resource type="PackedScene" uid="uid://bmw00lcr8axyu" path="res://Models/Parts/single_grape_mouth.tscn" id="8_613kt"]
 
-[node name="GrapeMan" type="Node3D" unique_id=2033235155]
+[node name="Grapeman" type="Node3D" unique_id=2033235155]
 script = ExtResource("1_1erxo")
 
 [node name="grape" parent="." unique_id=1846222292 instance=ExtResource("2_dsh10")]

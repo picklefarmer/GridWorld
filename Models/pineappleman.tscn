@@ -6,12 +6,12 @@
 [ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="2_mkbl4"]
 [ext_resource type="Script" uid="uid://cd6ig180cvpii" path="res://Scripts/walk cycle.gd" id="3_mkbl4"]
 
-[node name="PineappleMan" type="Node3D" unique_id=2113251799]
+[node name="Pineappleman" type="Node3D" unique_id=2113251799]
 script = ExtResource("1_kf4r1")
 
 [node name="pineappleman" parent="." unique_id=418868279 instance=ExtResource("1_pb22e")]
 
-[node name="Skeleton3D" parent="pineappleman/Armature" parent_id_path=PackedInt32Array(418868279, 1743555541) index="0" unique_id=1407855533]
+[node name="Skeleton3D" parent="pineappleman/Armature" parent_id_path=PackedInt32Array(418868279, 1084355186) index="0" unique_id=137059720]
 bones/10/rotation = Quaternion(0.855955, 0, 1e-06, 0.585108)
 bones/10/scale = Vector3(1.035, 1.035, 1.035)
 bones/17/scale = Vector3(0.97, 0.97, 0.97)

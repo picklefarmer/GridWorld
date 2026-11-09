@@ -70,21 +70,22 @@ offset_transform_enabled = true
 theme_override_styles/panel = SubResource("StyleBoxFlat_ma4qd")
 metadata/_edit_use_anchors_ = true
 
-[node name="MicInputSelection" parent="Panel" unique_id=2012471788 instance=ExtResource("2_ma4qd")]
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=998239947]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -183.5
-offset_top = -61.0
-offset_right = 183.5
-offset_bottom = 61.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-offset_transform_enabled = true
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="MicInputSelection" parent="Panel/MarginContainer" unique_id=2012471788 instance=ExtResource("2_ma4qd")]
+layout_mode = 2
 offset_transform_scale = Vector2(1.565, 1.565)
+alignment = 1
 
 [node name="TitleScreen2d" parent="." unique_id=1642162364 instance=ExtResource("2_vueyu")]
 

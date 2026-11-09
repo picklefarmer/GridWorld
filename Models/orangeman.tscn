@@ -12,6 +12,8 @@ script = ExtResource("1_ogt2l")
 [node name="orange" parent="." unique_id=493769282 instance=ExtResource("1_que6i")]
 
 [node name="Skeleton3D" parent="orange/Armature" parent_id_path=PackedInt32Array(493769282, 137712658) index="0" unique_id=2007434024]
+bones/34/rotation = Quaternion(0.521278, 0, 0.006561, 0.853362)
+bones/38/rotation = Quaternion(0.443948, 0, 0, 0.860797)
 script = ExtResource("3_bgugc")
 multiplier = 0.5
 
@@ -33,7 +35,7 @@ settings/0/stiffness/value = 11.0
 settings/0/stiffness/damping_curve = null
 settings/0/drag/value = 0.4
 settings/0/drag/damping_curve = null
-settings/0/gravity/value = 3.05
+settings/0/gravity/value = 0.0
 settings/0/gravity/damping_curve = null
 settings/0/gravity/direction = Vector3(0, -1, 0)
 settings/0/joints/0/bone_name = "Bone.008"

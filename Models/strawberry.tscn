@@ -6,12 +6,12 @@
 [ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="2_xi6eh"]
 [ext_resource type="Script" uid="uid://cd6ig180cvpii" path="res://Scripts/walk cycle.gd" id="3_g37py"]
 
-[node name="Strawberry" type="Node3D" unique_id=1848394695]
+[node name="Strawberryman" type="Node3D" unique_id=1848394695]
 script = ExtResource("1_m5ee3")
 
 [node name="strawberry" parent="." unique_id=131434778 instance=ExtResource("1_y1u1h")]
 
-[node name="Skeleton3D" parent="strawberry/Armature" parent_id_path=PackedInt32Array(131434778, 1571092935) index="0" unique_id=628998969]
+[node name="Skeleton3D" parent="strawberry/Armature" parent_id_path=PackedInt32Array(131434778, 1588305334) index="0" unique_id=1265056979]
 script = ExtResource("2_xi6eh")
 multiplier = 1.0
 track = "track2"

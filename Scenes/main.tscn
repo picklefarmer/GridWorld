@@ -136,8 +136,13 @@ parameters/looping = true
 
 [node name="CharacterSelect" parent="." unique_id=338064043 instance=ExtResource("26_cbgmd")]
 
-[node name="MicInputSelection" parent="CharacterSelect/Panel" parent_id_path=PackedInt32Array(338064043, 1477949778) index="0" unique_id=2012471788]
+[node name="Panel" parent="CharacterSelect" index="0" unique_id=1477949778]
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="MicInputSelection" parent="CharacterSelect/Panel/MarginContainer" parent_id_path=PackedInt32Array(338064043, 998239947) index="0" unique_id=2012471788]
 z_index = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera3D" parent="CharacterSelect" index="4" unique_id=764456810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.520847, 7.433, 47.126)

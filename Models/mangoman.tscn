@@ -6,12 +6,12 @@
 [ext_resource type="Script" uid="uid://8j3e1fcc5ih4" path="res://Scripts/boneMove.gd" id="2_4u5tj"]
 [ext_resource type="Script" uid="uid://cd6ig180cvpii" path="res://Scripts/walk cycle.gd" id="2_oxfkj"]
 
-[node name="MangoMan" type="Node3D" unique_id=1614195463]
+[node name="Mangoman" type="Node3D" unique_id=1614195463]
 script = ExtResource("1_irlq8")
 
 [node name="mangoman" parent="." unique_id=1620278724 instance=ExtResource("1_h3g50")]
 
-[node name="Skeleton3D" parent="mangoman/Armature" parent_id_path=PackedInt32Array(1620278724, 893644547) index="0" unique_id=695277071]
+[node name="Skeleton3D" parent="mangoman/Armature" parent_id_path=PackedInt32Array(1620278724, 1957737787) index="0" unique_id=516704038]
 script = ExtResource("2_4u5tj")
 multiplier = 1.5
 

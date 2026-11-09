@@ -16,3 +16,4 @@ signal timerStart
 signal timerStop
 signal timeDisplay
 signal bumpTempo
+signal updatePreview
