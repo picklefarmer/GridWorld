@@ -14,6 +14,7 @@ signal endGame()
 signal winnerOrder(winners:Array)
 signal timerStart
 signal timerStop
-signal timeDisplay
+signal timeDisplay(winnerTimes:Array)
 signal bumpTempo
 signal updatePreview
+signal updateStanding(winnerList:Array)

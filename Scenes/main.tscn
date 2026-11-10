@@ -33,6 +33,25 @@
 [ext_resource type="PackedScene" uid="uid://0ss2sux6ukbd" path="res://Models/introStar.blend" id="26_1w6v2"]
 [ext_resource type="PackedScene" uid="uid://bjh8orpda3weh" path="res://Scenes/character_select.tscn" id="26_cbgmd"]
 [ext_resource type="Texture2D" uid="uid://cyisp87jd0kx2" path="res://Models/textures/Nightsky.png" id="27_ueoa1"]
+[ext_resource type="PackedScene" uid="uid://sfuklkiruvr5" path="res://Scenes/mic_input_selection.tscn" id="34_neg2b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r33sp"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.07, 0.07, 0.07, 0.8392157)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0.9433051, 0.6452391, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ueoa1"]
 content_margin_left = 108.0
@@ -51,7 +70,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="Theme" id="Theme_e08e2"]
+[sub_resource type="Theme" id="Theme_neg2b"]
 resource_local_to_scene = true
 default_font_size = 40
 
@@ -103,11 +122,46 @@ minimum = 0.25
 Raceways = Array[PackedScene]([ExtResource("2_bo1nx"), ExtResource("3_21xkr"), ExtResource("4_6bp64"), ExtResource("5_344ge"), ExtResource("6_ynf5e"), ExtResource("7_6bp64"), ExtResource("7_hptm8"), ExtResource("8_d1ilt"), ExtResource("9_6iyac"), ExtResource("11_e08e2")])
 Vitamen = Array[PackedScene]([ExtResource("11_gt3je"), ExtResource("12_3pmx8"), ExtResource("13_u50mg"), ExtResource("14_cbgmd"), ExtResource("15_1w6v2"), ExtResource("16_ueoa1"), ExtResource("17_6vcvc"), ExtResource("18_7k868"), ExtResource("19_hpc6h"), ExtResource("20_kltya"), ExtResource("21_e08e2"), ExtResource("22_3pmx8"), ExtResource("23_7k868"), ExtResource("24_hpc6h"), ExtResource("25_kltya")])
 
+[node name="Panel" type="Panel" parent="." unique_id=35981914]
+visible = false
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+offset_transform_enabled = true
+mouse_behavior_recursive = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_r33sp")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=105845737]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="MicInputSelection" parent="Panel/MarginContainer" unique_id=1513909188 instance=ExtResource("34_neg2b")]
+z_index = 4
+layout_mode = 2
+offset_transform_scale = Vector2(1.565, 1.565)
+mouse_behavior_recursive = 2
+alignment = 1
+
 [node name="Lore" parent="." unique_id=897700427 instance=ExtResource("11_d1ilt")]
 lore = Array[String](["The worlds, they didn't know. It came on like a dream. [br] [br] There were many missed. And that's what they had seen.", "Beginning at a time when obedience had won. [br] [br] Where commitment to ourselves was little to none.", "Bringing life into our worlds, again and again. [br] [br] Seeking only a peace that would surely begin.", "For as dimensions unfold, though their existence unknown [br] [br] The Vitamen had arrived so that the planets may thrive", "With them it was a time for collection [br] [br] Engaging our minds in self reflection", "Their solution- pliable, viable, oh-so-desirable", "To take time on a race [br] [br] To set at your own pace"])
 zoomAmount = -7.71
 
 [node name="RichTextLabel" parent="Lore" index="0" unique_id=1758505057]
+mouse_filter = 2
 theme_override_constants/line_separation = -7
 theme_override_constants/paragraph_separation = 0
 theme_override_constants/shadow_offset_x = 1
@@ -119,7 +173,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ueoa1")
 
 [node name="StatScreen" parent="Lore" unique_id=224236459 instance=ExtResource("24_6vcvc")]
 visible = false
-theme = SubResource("Theme_e08e2")
+theme = SubResource("Theme_neg2b")
 
 [node name="IntroMusic" type="AudioStreamPlayer" parent="Lore" unique_id=230010655]
 stream = ExtResource("24_ueoa1")
@@ -136,55 +190,47 @@ parameters/looping = true
 
 [node name="CharacterSelect" parent="." unique_id=338064043 instance=ExtResource("26_cbgmd")]
 
-[node name="Panel" parent="CharacterSelect" index="0" unique_id=1477949778]
-size_flags_horizontal = 6
-size_flags_vertical = 6
-
-[node name="MicInputSelection" parent="CharacterSelect/Panel/MarginContainer" parent_id_path=PackedInt32Array(338064043, 998239947) index="0" unique_id=2012471788]
-z_index = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Camera3D" parent="CharacterSelect" index="4" unique_id=764456810]
+[node name="Camera3D" parent="CharacterSelect" index="3" unique_id=764456810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.520847, 7.433, 47.126)
 fov = 65.7
 
-[node name="Appleman" parent="CharacterSelect" index="5" unique_id=4949676]
+[node name="Appleman" parent="CharacterSelect" index="4" unique_id=4949676]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.556235, 0, 2.6476574)
 
-[node name="Bananaman" parent="CharacterSelect" index="6" unique_id=602892636]
+[node name="Bananaman" parent="CharacterSelect" index="5" unique_id=602892636]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.591385, 0, 2.4497051)
 
-[node name="Cherryman" parent="CharacterSelect" index="7" unique_id=1381617479]
+[node name="Cherryman" parent="CharacterSelect" index="6" unique_id=1381617479]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.157028, 0, 2.0503283)
 
-[node name="GrapeMan" parent="CharacterSelect" index="8" unique_id=2033235155]
+[node name="GrapeMan" parent="CharacterSelect" index="7" unique_id=2033235155]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.488373, 0, 2.8404427)
 
-[node name="Strawberry" parent="CharacterSelect" index="9" unique_id=1848394695]
+[node name="Strawberry" parent="CharacterSelect" index="8" unique_id=1848394695]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.202938, 0, 3.175003)
 
-[node name="Blueberryman" parent="CharacterSelect" index="10" unique_id=539657863]
+[node name="Blueberryman" parent="CharacterSelect" index="9" unique_id=539657863]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8949652, 0, 3.1772823)
 
-[node name="Lemonman" parent="CharacterSelect" index="11" unique_id=1507723498]
+[node name="Lemonman" parent="CharacterSelect" index="10" unique_id=1507723498]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.855224, 0, 2.119914)
 
-[node name="Orangeman" parent="CharacterSelect" index="12" unique_id=549132479]
+[node name="Orangeman" parent="CharacterSelect" index="11" unique_id=549132479]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.880695, 0, 2.4892292)
 
-[node name="Peachman" parent="CharacterSelect" index="13" unique_id=1887923755]
+[node name="Peachman" parent="CharacterSelect" index="12" unique_id=1887923755]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.470211, 0, 3.1284733)
 
-[node name="Pearman" parent="CharacterSelect" index="14" unique_id=153210497]
+[node name="Pearman" parent="CharacterSelect" index="13" unique_id=153210497]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.665575, 0, 2.4268093)
 
-[node name="Starfruitman" parent="CharacterSelect" index="15" unique_id=1286964837]
+[node name="Starfruitman" parent="CharacterSelect" index="14" unique_id=1286964837]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.441608, 0, 2.0247064)
 
-[node name="Watermelonman" parent="CharacterSelect" index="16" unique_id=52613899]
+[node name="Watermelonman" parent="CharacterSelect" index="15" unique_id=52613899]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.404873, 0, 2.7117558)
 
-[node name="CoconutMan" parent="CharacterSelect" index="19" unique_id=1728257053]
+[node name="CoconutMan" parent="CharacterSelect" index="18" unique_id=1728257053]
 track = 2
 
 [node name="introStar" parent="CharacterSelect" unique_id=873956865 instance=ExtResource("26_1w6v2")]

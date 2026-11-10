@@ -4,21 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://wjg65e8ag0sf" path="res://Mesh/progress_meter_bar.tscn" id="2_2y8rs"]
 [ext_resource type="PackedScene" uid="uid://bkc0nm6dkfiry" path="res://Scenes/character_preview.tscn" id="2_3m4y5"]
 [ext_resource type="PackedScene" uid="uid://c3awccy1tlxkp" path="res://Mesh/progress_meter_bar_player.tscn" id="2_plfkb"]
-[ext_resource type="Texture2D" uid="uid://dlxxpcb0xdfes" path="res://Images/grapeman.png" id="5_e8lmw"]
-[ext_resource type="Texture2D" uid="uid://da4j0jxep63kt" path="res://Images/orangeman.png" id="6_hwjk5"]
-[ext_resource type="Texture2D" uid="uid://cx22bcqpk2qc8" path="res://Images/bananaman.png" id="7_hjc4h"]
-[ext_resource type="Texture2D" uid="uid://doh1ebnj0d4kk" path="res://Images/strawberryman.png" id="8_a1t7e"]
-[ext_resource type="Texture2D" uid="uid://b2d2nlgt2fu6y" path="res://Images/blueberryman.png" id="9_mylgh"]
-[ext_resource type="Texture2D" uid="uid://cjdcx3u8exfrh" path="res://Images/pearman.png" id="10_cbcw0"]
-[ext_resource type="Texture2D" uid="uid://cvudk0o56v3yv" path="res://Images/cherryman.png" id="11_fs6w2"]
-[ext_resource type="Texture2D" uid="uid://cfjjkdn4gfjqh" path="res://Images/lemonman.png" id="12_g1o2b"]
-[ext_resource type="Texture2D" uid="uid://6lhj2ulnp1e3" path="res://Images/appleman.png" id="13_ef8ag"]
-[ext_resource type="Texture2D" uid="uid://b13hj2nq5tt3c" path="res://Images/peachman.png" id="14_png3r"]
-[ext_resource type="Texture2D" uid="uid://b5lnkgihb0h03" path="res://Images/watermelonman.png" id="15_dpsk5"]
-[ext_resource type="Texture2D" uid="uid://bxklwgk8mlag8" path="res://Images/starfruitman.png" id="16_ytgvl"]
-[ext_resource type="Texture2D" uid="uid://c6g8rtk676xx" path="res://Images/pineappleman.png" id="17_rkad3"]
-[ext_resource type="Texture2D" uid="uid://5lrvk38grbl" path="res://Images/mangoman.png" id="18_5h60i"]
-[ext_resource type="Texture2D" uid="uid://dn5oj5kn16lgh" path="res://Images/coconutman.png" id="19_4kq3g"]
 
 [node name="Progress_Meter" type="Node3D" unique_id=628590229]
 transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0)
@@ -50,6 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1935388751]
 layout_mode = 1
@@ -69,4 +55,3 @@ layout_mode = 2
 size_flags_vertical = 10
 offset_transform_enabled = true
 theme_override_constants/separation = 2
-characterTextures = Array[Texture2D]([ExtResource("5_e8lmw"), ExtResource("6_hwjk5"), ExtResource("7_hjc4h"), ExtResource("8_a1t7e"), ExtResource("9_mylgh"), ExtResource("10_cbcw0"), ExtResource("11_fs6w2"), ExtResource("12_g1o2b"), ExtResource("13_ef8ag"), ExtResource("14_png3r"), ExtResource("15_dpsk5"), ExtResource("16_ytgvl"), ExtResource("17_rkad3"), ExtResource("18_5h60i"), ExtResource("19_4kq3g")])

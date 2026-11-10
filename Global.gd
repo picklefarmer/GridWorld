@@ -11,5 +11,6 @@ var loadedPlayers : Array = []
 var characterNames: Array[String] = ["Grapeman","Orangeman","Bananaman","Strawberryman","Blueberryman","Pearman","Cherryman","Lemonman","Appleman","Peachman","Watermelonman","Starfruitman","Pineappleman","Mangoman","Coconutman"]
 var playerName: String = "Peachman"
 var winners: Array = []
+var winnerTime : Array = []
 var time : String = "0"
 var difficulty : int = 6

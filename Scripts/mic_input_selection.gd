@@ -18,7 +18,9 @@ func _process(delta: float) -> void:
 		$"../..".visible = startToggle
 		
 		Global.startMenu = startToggle
+		
 		if startToggle:
+			
 			grab_focus()
 			var defaultMic : OptionButton = get_child(6) 
 			defaultMic.grab_focus()
@@ -34,8 +36,9 @@ func difficultyUpdate(value:int):
 	
 func updateMinimum(value:float):
 	$Label.text = "Mic Sensitivity: " + str(value)
-	if $"../../../".get_child_count() == 3:
-		$"../../../".get_child(2).get_node("Track 2 streamer").minimum = value
+	
+	if $"../../../".get_child_count() == 4:
+		$"../../../".get_child(3).get_node("Track 2 streamer").minimum = value
 	Global.minimum = value
 			
 func createButton(device:String):

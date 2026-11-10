@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://otn2obxypccm"]
 
 [ext_resource type="Script" uid="uid://eyrt5r06u7ld" path="res://Scripts/stat_screen.gd" id="1_xtb1s"]
+[ext_resource type="PackedScene" uid="uid://bkc0nm6dkfiry" path="res://Scenes/character_preview.tscn" id="2_wwkxc"]
 
 [sub_resource type="Theme" id="Theme_fk1ks"]
 resource_local_to_scene = true
@@ -8,8 +9,6 @@ default_font_size = 40
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtb1s"]
 content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
 content_margin_bottom = 0.0
 bg_color = Color(0.1, 0.1, 0.1, 0.8627451)
 border_width_left = 12
@@ -29,6 +28,7 @@ expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 
 [node name="StatScreen" type="VBoxContainer" unique_id=224236459]
+z_index = 1
 offset_left = 2.0
 offset_right = 648.0
 offset_bottom = 646.0
@@ -40,16 +40,44 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_xtb1s")
 
-[node name="Position" type="VBoxContainer" parent="PositionPanel" unique_id=490814464]
+[node name="Label" type="Label" parent="PositionPanel" unique_id=2005155790]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.195
+offset_bottom = 65.19501
+grow_horizontal = 2
+text = "Position"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PositionPanel" unique_id=2074628014]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 24.645
+offset_bottom = 24.644989
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CharacterPreview" parent="PositionPanel/HBoxContainer" unique_id=179862738 instance=ExtResource("2_wwkxc")]
+custom_minimum_size = Vector2(180, 0)
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.96, 1.96)
+alignment = 0
+isWinner = true
+
+[node name="Position" type="VBoxContainer" parent="PositionPanel/HBoxContainer" unique_id=490814464]
+layout_mode = 2
+size_flags_horizontal = 3
 alignment = 1
 
-[node name="PositionHeader" type="Label" parent="PositionPanel/Position" unique_id=1944897131]
+[node name="PositionHeader" type="Label" parent="PositionPanel/HBoxContainer/Position" unique_id=1944897131]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.53
@@ -59,12 +87,21 @@ text = "Position"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="PositionLeaders" type="VBoxContainer" parent="PositionPanel/Position" unique_id=285990773]
+[node name="PositionLeaders" type="VBoxContainer" parent="PositionPanel/HBoxContainer/Position" unique_id=285990773]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 7.07
+size_flags_stretch_ratio = 20.0
 offset_transform_enabled = true
+offset_transform_position = Vector2(0, -6.535)
+theme_override_constants/separation = 15
 alignment = 1
+
+[node name="Times" type="VBoxContainer" parent="PositionPanel/HBoxContainer" unique_id=1898143064]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.32
+theme_override_constants/separation = 16
 
 [node name="TimePanel" type="Panel" parent="." unique_id=790256619]
 layout_mode = 2

@@ -48,6 +48,7 @@ func changeColor(length:float,trackInd:int):
 			
 			if !Global.winners.has(trackInd):
 				Global.winners.append(trackInd)
+				Global.winnerTime.append(timer)
 				print(trackInd, " Won ")	
 		
 			if trackInd == 1:

@@ -49,7 +49,7 @@ func resetMicFunc():
 func startGame():
 	Vitamen.remove_at(Global.globalPlayerIndex)
 	add_child(startingTrack.instantiate())
-	currentRaceway = get_child(2)
+	currentRaceway = get_child(3)
 	assignRandomCharacters(currentRaceway)
 	
 	currentRaceway.playMusic()
@@ -99,12 +99,16 @@ func createCharacter(track:PathFollow3D,trackIdx:int):
 	track.add_child(opponent)
 	track.move_child(opponent,1)
 	oldOpp.queue_free()
+
+func resetPlayerPosition(raceway):
+	for player in getTracks(raceway):
+		player.progress_ratio = 0
 		
 func swap(direction:int):
 	Actions.timerStop.emit()
 	raceWayInd = posmod(raceWayInd+direction, Raceways.size())
 	Global.globalRacewayIndex = raceWayInd
-	currentRaceway = get_child(2)
+	currentRaceway = get_child(3)
 	#print(raceWayInd)
 	var racewayInstance = Raceways[raceWayInd].instantiate()
 	#print(racewayInstance.get_node("Path3D2/track1/PlayerHolder").playerInd, " player index of level")
@@ -117,7 +121,8 @@ func swap(direction:int):
 	$Lore/StatScreen.isActive = true
 	
 	Actions.winnerOrder.emit(Global.winners.duplicate())
-	Actions.timeDisplay.emit()
+	Actions.timeDisplay.emit(Global.winnerTime.duplicate())
+	Actions.updateStanding.emit(Global.winners.duplicate())
 	#racewayInstance.playMusic()
 	#racewayInstance.get_node("Path3D2/track1/PlayerHolder").get_child(0).active = true
 	Actions.syncLip.emit()
@@ -129,8 +134,8 @@ func swap(direction:int):
 	Global.loadedPlayers.insert(0,Global.playerName)
 	Actions.updatePreview.emit()
 	Global.winners.clear()
-	
-
+	Global.winnerTime.clear()
+	#resetPlayerPosition(currentRaceway)
 	#resetMicFunc()
 
 	

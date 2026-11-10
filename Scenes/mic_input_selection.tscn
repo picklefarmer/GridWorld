@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bti4qjs22a01a" path="res://Scripts/mic_input_selection.gd" id="1_syq3v"]
 
 [node name="MicInputSelection" type="VBoxContainer" unique_id=1513909188]
+z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,11 +14,13 @@ size_flags_vertical = 3
 script = ExtResource("1_syq3v")
 
 [node name="Label" type="Label" parent="." unique_id=977037669]
+visible = false
 layout_mode = 2
 size_flags_vertical = 1
 text = "Mic Sensitivity"
 
 [node name="HSlider" type="HSlider" parent="." unique_id=185253914]
+visible = false
 layout_mode = 2
 max_value = 0.5
 step = 0.015

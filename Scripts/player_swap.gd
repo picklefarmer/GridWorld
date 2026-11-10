@@ -40,6 +40,7 @@ func startingCharacter():
 	newPlayer.transform = player.transform
 	if Global.globalPlayerIndex != 9:
 		Global.playerName = newPlayer.name
+	
 	player.queue_free()
 	player = newPlayer
 	
@@ -57,6 +58,7 @@ func swap(direction:int):
 	newPlayer.runSpeed = player.runSpeed
 	newPlayer.transform = player.transform
 	Global.loadedPlayers[0] = newPlayer.name
+	Actions.updatePreview.emit()
 	player.queue_free()
 	player = newPlayer
 	
