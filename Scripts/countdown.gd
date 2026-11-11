@@ -6,7 +6,7 @@ func _ready() -> void:
 	
 	
 func countdownBegin():
-	
+	Global.countdown = true
 	$Timer.timeout.connect(updateLabel)
 	
 	
@@ -17,4 +17,5 @@ func updateLabel():
 	else:
 		$Timer.stop()
 		Actions.countdown.emit()
+		Global.countdown = false
 		queue_free()

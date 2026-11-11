@@ -14,3 +14,4 @@ var winners: Array = []
 var winnerTime : Array = []
 var time : String = "0"
 var difficulty : int = 6
+var countdown : bool = false

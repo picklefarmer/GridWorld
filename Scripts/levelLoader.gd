@@ -25,7 +25,7 @@ func _ready() -> void:
 	
 	
 func _process(delta: float) -> void:
-	if Global.gameStart and !Global.startMenu and !$Lore/StatScreen.isActive:
+	if Global.gameStart and !Global.startMenu and !$Lore/StatScreen.isActive and !Global.countdown:
 		if Input.is_action_just_pressed("trackLeft"):
 			swap(1)
 		
