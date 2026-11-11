@@ -4,13 +4,14 @@ extends Node3D
 @export var startingTrack : PackedScene
 @export var Raceways : Array[PackedScene] = []
 @export var Vitamen: Array[PackedScene]= []
+@onready var countdown : PackedScene = preload("res://Scenes/countdown.tscn")
 var _Vitamen : Array
 var loadedPlayers : Array = []
 var raceWayInd : int = 0
 var currentRaceway:Node3D
 var intro = true
 var initialTrack :bool = true
-
+#var charactersRandomized : bool = true
 #var playerIndex : int = 0
 
 func _ready() -> void:
@@ -24,7 +25,7 @@ func _ready() -> void:
 	
 	
 func _process(delta: float) -> void:
-	if Global.gameStart and !Global.startMenu:
+	if Global.gameStart and !Global.startMenu and !$Lore/StatScreen.isActive:
 		if Input.is_action_just_pressed("trackLeft"):
 			swap(1)
 		
@@ -47,16 +48,26 @@ func resetMicFunc():
 	#print(currentRaceway.get_node("Microphone").playing,"raceway instance")
 
 func startGame():
+	var countdownBegin = countdown.instantiate()
 	Vitamen.remove_at(Global.globalPlayerIndex)
 	add_child(startingTrack.instantiate())
 	currentRaceway = get_child(3)
+	currentRaceway.pauseMusic()
 	assignRandomCharacters(currentRaceway)
 	
-	currentRaceway.playMusic()
-	Actions.resetMic.emit()
+	
+	
 	Global.loadedPlayers.insert(0,Global.playerName)
 	Actions.updatePreview.emit()
+	add_child(countdownBegin)
+	await Actions.countdown
+	#charactersRandomized = false
+	#resetPlayerPosition(currentRaceway)
+	#charactersRandomized = true
+	currentRaceway.playMusic()
+	Actions.resetMic.emit()
 	Actions.timerStart.emit()
+	
 	
 func endGame():
 	currentRaceway.queue_free()
@@ -76,11 +87,13 @@ func assignRandomCharacters(raceway:Node3D):
 	
 func getTracks(raceway:Node3D):
 	#currentRaceway = get_child(2)
-	
+	#var includePlayer : int = 1
+	#if charactersRandomized:
+		#includePlayer = 2
 	var base = raceway.get_node("Path3D2")
 	var tracks : Array =[]
 	for i in range(2,5):
-		#print(i ,"idx of track ")
+		print(i ,"idx of track ")
 		tracks.append( base.get_node("track"+str(i)))
 	return tracks
 		
@@ -102,9 +115,11 @@ func createCharacter(track:PathFollow3D,trackIdx:int):
 
 func resetPlayerPosition(raceway):
 	for player in getTracks(raceway):
-		player.progress_ratio = 0
+		player.progress_ratio = raceway.startingOffset
 		
 func swap(direction:int):
+	
+	var countdownBegin = countdown.instantiate()
 	Actions.timerStop.emit()
 	raceWayInd = posmod(raceWayInd+direction, Raceways.size())
 	Global.globalRacewayIndex = raceWayInd
@@ -114,11 +129,12 @@ func swap(direction:int):
 	#print(racewayInstance.get_node("Path3D2/track1/PlayerHolder").playerInd, " player index of level")
 	#racewayInstance.get_node("Path3D2/track1/PlayerHolder").playerInd = playerIndex
 	self.add_child(racewayInstance)
-	
+	Actions.pauseProcess.emit()
 	racewayInstance.pauseMusic()
-
+	
 	$Lore/StatScreen.visible = true
 	$Lore/StatScreen.isActive = true
+	$Lore/StatScreen/Complete.play()
 	
 	Actions.winnerOrder.emit(Global.winners.duplicate())
 	Actions.timeDisplay.emit(Global.winnerTime.duplicate())
@@ -135,7 +151,16 @@ func swap(direction:int):
 	Actions.updatePreview.emit()
 	Global.winners.clear()
 	Global.winnerTime.clear()
+	#charactersRandomized = false
 	#resetPlayerPosition(currentRaceway)
+	#charactersRandomized = true
+	await  Actions.statComplete
+	add_child(countdownBegin)
+	await Actions.countdown
+	Actions.playProcess.emit()
+	currentRaceway.playMusic()
+	Actions.timerStart.emit()
+	
 	#resetMicFunc()
 
 	

@@ -58,7 +58,7 @@ outOut = 40.0
 inIn = 45.0
 inOut = 60.0
 trackMultiplier = 1.2
-micSpan = 50.0
+micSpan = 20.0
 top = NodePath("Path3D2/track1/followPlayer")
 birdsEye = NodePath("BirdsEye")
 

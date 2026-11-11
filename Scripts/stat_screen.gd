@@ -2,7 +2,7 @@ extends VBoxContainer
 
 var isActive: bool = false
 var loadedPlayers : Array = []
-var placing : Array[Color] = [Color(0.703, 0.646, 0.0, 0.847),Color(11.974, 11.957, 11.867, 0.749),Color(0.78, 0.286, 0.187, 0.863),Color(.8,.4,1,.75)]
+var placing : Array[Color] = [Color(17.131, 15.793, 0.0, 0.847),Color(0.735, 0.735, 0.728, 0.765),Color(0.804, 0.296, 0.194, 0.863),Color(1.141, 0.582, 1.421, 0.749)]
 func _ready() -> void:
 	Actions.winnerOrder.connect(displayWinners)
 	Actions.timeDisplay.connect(displayTime)
@@ -11,10 +11,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if isActive and Input.is_action_just_pressed("confirm"):
-		Actions.timerStart.emit()
-		owner.get_child(3).playMusic()
+		Actions.statComplete.emit()
 		isActive = false
 		visible = false
+		#owner.get_child(3).playMusic()
+		
 		
 
 func displayTime(winnerTimes:Array):

@@ -18,3 +18,7 @@ signal timeDisplay(winnerTimes:Array)
 signal bumpTempo
 signal updatePreview
 signal updateStanding(winnerList:Array)
+signal countdown
+signal statComplete
+signal pauseProcess
+signal playProcess

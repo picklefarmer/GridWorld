@@ -1,6 +1,7 @@
 extends Node3D
 
 #var ischecked : bool = true
+
 @export var outIn : float = 40
 @export var outOut : float = 20
 @export var inIn : float = 120
@@ -15,10 +16,14 @@ extends Node3D
 @onready var progressMeter : Node3D = $Path3D2/track1/Camera3D/Progress_Meter
 enum cameraState {MAIN, BIRDSEYE,FOllOW}
 var currentCamera : cameraState = cameraState.MAIN
+
 @onready var music : Array[AudioStreamPlayer] = [$Microphone,$"Track 2 streamer", $"Track 3 streamer", $"Track 4 streamer"]
 var musicProximity : Array[AudioStreamPlayer3D] = []
-
+@onready var startingOffset : float = $Path3D2/track1.progress_ratio
 func _ready() -> void:
+	
+	$"..".resetPlayerPosition(self)
+
 	if proximityTracks:
 		musicProximity = [$"Path3D2/track2/Track 2 Proximity",$"Path3D2/track3/Track 3 Proximity",$"Path3D2/track4/Track 4 Proximity"]
 	

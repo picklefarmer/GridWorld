@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://eyrt5r06u7ld" path="res://Scripts/stat_screen.gd" id="1_xtb1s"]
 [ext_resource type="PackedScene" uid="uid://bkc0nm6dkfiry" path="res://Scenes/character_preview.tscn" id="2_wwkxc"]
+[ext_resource type="AudioStream" uid="uid://dpajpciuisji8" path="res://Audio/race_finished_full 150.mp3" id="3_2tryx"]
 
 [sub_resource type="Theme" id="Theme_fk1ks"]
 resource_local_to_scene = true
@@ -40,14 +41,41 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_xtb1s")
 
-[node name="Label" type="Label" parent="PositionPanel" unique_id=2005155790]
+[node name="Title" type="HBoxContainer" parent="PositionPanel" unique_id=1254722702]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 10.195
-offset_bottom = 65.19501
+offset_bottom = 55.0
 grow_horizontal = 2
+
+[node name="Rank" type="Label" parent="PositionPanel/Title" unique_id=2005155790]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 32.285)
+theme_override_font_sizes/font_size = 29
+text = "Rank"
+horizontal_alignment = 1
+
+[node name="Position" type="Label" parent="PositionPanel/Title" unique_id=179941844]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 32.285)
+theme_override_font_sizes/font_size = 29
 text = "Position"
+horizontal_alignment = 1
+
+[node name="Time" type="Label" parent="PositionPanel/Title" unique_id=698649420]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 32.285)
+theme_override_font_sizes/font_size = 29
+text = "Time"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PositionPanel" unique_id=2074628014]
@@ -55,8 +83,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 24.645
-offset_bottom = 24.644989
+offset_top = 27.73
+offset_bottom = 27.730011
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -67,6 +95,7 @@ layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 offset_transform_enabled = true
+offset_transform_position = Vector2(10.84, 0)
 offset_transform_scale = Vector2(1.96, 1.96)
 alignment = 0
 isWinner = true
@@ -74,6 +103,8 @@ isWinner = true
 [node name="Position" type="VBoxContainer" parent="PositionPanel/HBoxContainer" unique_id=490814464]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.84
+offset_transform_enabled = true
 alignment = 1
 
 [node name="PositionHeader" type="Label" parent="PositionPanel/HBoxContainer/Position" unique_id=1944897131]
@@ -101,9 +132,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.32
+offset_transform_enabled = true
 theme_override_constants/separation = 16
 
 [node name="TimePanel" type="Panel" parent="." unique_id=790256619]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.6
@@ -147,3 +180,7 @@ size_flags_vertical = 6
 text = "Track Duration"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Complete" type="AudioStreamPlayer" parent="." unique_id=976621127]
+stream = ExtResource("3_2tryx")
+volume_db = -6.455

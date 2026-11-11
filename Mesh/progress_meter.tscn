@@ -6,23 +6,22 @@
 [ext_resource type="PackedScene" uid="uid://c3awccy1tlxkp" path="res://Mesh/progress_meter_bar_player.tscn" id="2_plfkb"]
 
 [node name="Progress_Meter" type="Node3D" unique_id=628590229]
-transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0)
 script = ExtResource("1_2y8rs")
 
 [node name="progress_meter_bar_player" parent="." unique_id=400981961 instance=ExtResource("2_plfkb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 0, -0.003)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.085, 0.07, 0, -0.009070525)
 trackMeterIndex = 1
 
 [node name="progress_meter_bar2" parent="." unique_id=1066932079 instance=ExtResource("2_2y8rs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 1.1452403e-09, 0.15689997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.085, 0.07, 0, 0.15424013)
 trackMeterIndex = 2
 
 [node name="progress_meter_bar3" parent="." unique_id=1808620194 instance=ExtResource("2_2y8rs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, -8.4287866e-10, -0.080358595)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.085, 0.07, 0, -0.09358757)
 trackMeterIndex = 3
 
 [node name="progress_meter_bar4" parent="." unique_id=1840191378 instance=ExtResource("2_2y8rs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 0, 0.076)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.085, 0.07, 0, 0.07241251)
 trackMeterIndex = 4
 
 [node name="RaceTime" type="Timer" parent="." unique_id=1362244565]
@@ -48,7 +47,7 @@ grow_vertical = 0
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_bottom = 8
 
 [node name="CharacterPreview" parent="Control/MarginContainer" unique_id=179862738 instance=ExtResource("2_3m4y5")]
 layout_mode = 2

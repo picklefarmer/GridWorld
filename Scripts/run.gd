@@ -13,8 +13,11 @@ var progressNormalized : int
 
 func _ready() -> void:
 	progressNormalized = get_parent().curve.get_baked_length()
+	Actions.playProcess.connect(playProcess)
+	Actions.pauseProcess.connect(pauseProcess)
 	micSpan = owner.micSpan
 	runAmount = 0.0
+	process_mode = Node.PROCESS_MODE_PAUSABLE
 	#progressNormalized/ 6
 	#print(progressNormalized,"progressNormalized")
 	trackNorm = owner.trackMultiplier
@@ -30,7 +33,11 @@ func _ready() -> void:
 		#Actions.beatOff.connect(modRun)
 	#else:
 		#nonPlayerMultiplier = 4.0
-	
+
+func pauseProcess():
+	process_mode = Node.PROCESS_MODE_DISABLED
+func playProcess():
+	process_mode = Node.PROCESS_MODE_INHERIT
 	
 func _physics_process(delta: float) -> void:
 

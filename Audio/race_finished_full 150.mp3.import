@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dpajpciuisji8"
+path="res://.godot/imported/race_finished_full 150.mp3-05f411f4e91bcf1211b318c14d7733d3.mp3str"
+
+[deps]
+
+source_file="res://Audio/race_finished_full 150.mp3"
+dest_files=["res://.godot/imported/race_finished_full 150.mp3-05f411f4e91bcf1211b318c14d7733d3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
