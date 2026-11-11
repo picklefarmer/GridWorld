@@ -3,6 +3,8 @@ extends Node3D
 var tracks : Array = [0,0,0,0]
 var trackEnds : Array = [false,false,false,false]
 var timer : int = 0
+var colorCount : int = 0
+var winColors: Array[Color] = [Color(17.131, 15.793, 0.0, 0.847),Color(0.735, 0.735, 0.728, 0.765),Color(0.804, 0.296, 0.194, 0.863),Color(1.141, 0.582, 1.421, 0.749)]
 #var winners : Array[int] = []
 #var raceTime : Timer = $RaceTime
 @export var lapCap : int = 2
@@ -48,6 +50,9 @@ func changeColor(length:float,trackInd:int):
 			
 			if !Global.winners.has(trackInd):
 				Global.winners.append(trackInd)
+				if colorCount <4:
+					Actions.showStanding.emit(trackInd-1,winColors[colorCount])
+					colorCount += 1
 				Global.winnerTime.append(timer)
 				print(trackInd, " Won ")	
 		

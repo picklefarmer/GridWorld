@@ -39,7 +39,7 @@ func displayWinners(winnerOrder:Array):
 		label.add_theme_color_override("font_color",placing[count])
 		
 		
-		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		label.text = Global.loadedPlayers[player-1]
 		$PositionPanel/HBoxContainer/Position/PositionLeaders.add_child(label)
 		

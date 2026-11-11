@@ -22,3 +22,5 @@ signal countdown
 signal statComplete
 signal pauseProcess
 signal playProcess
+signal showStanding(character:int, color:Color)
+signal resetColors

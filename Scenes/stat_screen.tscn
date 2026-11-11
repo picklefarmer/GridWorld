@@ -87,9 +87,10 @@ offset_top = 27.73
 offset_bottom = 27.730011
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 2
 
 [node name="CharacterPreview" parent="PositionPanel/HBoxContainer" unique_id=179862738 instance=ExtResource("2_wwkxc")]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(140, 0)
 propagate_maximum_size = false
 layout_mode = 2
 size_flags_vertical = 4

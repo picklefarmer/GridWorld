@@ -59,6 +59,7 @@ func startGame():
 	
 	Global.loadedPlayers.insert(0,Global.playerName)
 	Actions.updatePreview.emit()
+	Actions.resetColors.emit()
 	add_child(countdownBegin)
 	await Actions.countdown
 	#charactersRandomized = false
@@ -149,6 +150,7 @@ func swap(direction:int):
 	assignRandomCharacters(currentRaceway)
 	Global.loadedPlayers.insert(0,Global.playerName)
 	Actions.updatePreview.emit()
+	
 	Global.winners.clear()
 	Global.winnerTime.clear()
 	#charactersRandomized = false
@@ -157,7 +159,10 @@ func swap(direction:int):
 	await  Actions.statComplete
 	add_child(countdownBegin)
 	await Actions.countdown
+	
+	
 	Actions.playProcess.emit()
+	Actions.resetColors.emit()
 	currentRaceway.playMusic()
 	Actions.timerStart.emit()
 	
