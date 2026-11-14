@@ -15,3 +15,5 @@ var winnerTime : Array = []
 var time : String = "0"
 var difficulty : int = 6
 var countdown : bool = false
+var isFinished : Array[bool] = [false, false, false, false]
+var revolveCamera : bool = false

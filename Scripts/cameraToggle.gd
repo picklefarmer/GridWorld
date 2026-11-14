@@ -10,18 +10,19 @@ extends Node3D
 @export var micSpan : float = 200
 @export var proximityTracks : bool = false
 @onready var main : Camera3D = $Path3D2/track1/Camera3D
+@onready var cameraTarget : Node3D = $Path3D2/track1/PlayerHolder
 @export var top : Camera3D 
 @export var birdsEye :Camera3D
 @onready var zoomin :Tween
 @onready var progressMeter : Node3D = $Path3D2/track1/Camera3D/Progress_Meter
 enum cameraState {MAIN, BIRDSEYE,FOllOW}
 var currentCamera : cameraState = cameraState.MAIN
-
+@onready var finishCamera: PackedScene = preload("res://Scenes/camera_revolve.tscn")
 @onready var music : Array[AudioStreamPlayer] = [$Microphone,$"Track 2 streamer", $"Track 3 streamer", $"Track 4 streamer"]
 var musicProximity : Array[AudioStreamPlayer3D] = []
 @onready var startingOffset : float = $Path3D2/track1.progress_ratio
 func _ready() -> void:
-	
+	Actions.revolveCamera.connect(finishCameraBegin)
 	$"..".resetPlayerPosition(self)
 
 	if proximityTracks:
@@ -90,3 +91,9 @@ func generateTween():
 	zoomin = create_tween()
 	zoomin.set_trans(Tween.TRANS_CUBIC)
 	zoomin.set_ease(Tween.EASE_IN)
+
+func finishCameraBegin():
+	var cameraFinished = finishCamera.instantiate()
+	cameraTarget.add_child(cameraFinished)
+	cameraFinished.transform = cameraTarget.transform
+	

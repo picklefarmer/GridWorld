@@ -39,7 +39,7 @@ func meter_length(length:float,trackInd:int):
 		4: $progress_meter_bar4/Plane.scale.x = length
 
 func changeColor(length:float,trackInd:int):
-	if trackEnds[trackInd-1] == true and length >= 0 and length < 0.97:
+	if trackEnds[trackInd-1] == true and length >= 0 and length < 0.98:
 		trackEnds[trackInd-1] = false
 	elif trackEnds[trackInd -1 ] == false and length >= 0.98 :
 		trackEnds[trackInd - 1] = true
@@ -54,9 +54,13 @@ func changeColor(length:float,trackInd:int):
 					Actions.showStanding.emit(trackInd-1,winColors[colorCount])
 					colorCount += 1
 				Global.winnerTime.append(timer)
+				Global.isFinished[trackInd-1] = true
+				
 				print(trackInd, " Won ")	
 		
 			if trackInd == 1:
+				Actions.revolveCamera.emit()
+				
 				if Global.globalRacewayIndex+1 == Global.globalRacewaySize:
 					thanksForPlaying()
 				else:

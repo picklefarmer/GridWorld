@@ -24,9 +24,12 @@ func _ready() -> void:
 	_Vitamen = Vitamen.duplicate()
 	
 	
+	
 func _process(delta: float) -> void:
-	if Global.gameStart and !Global.startMenu and !$Lore/StatScreen.isActive and !Global.countdown:
+	
+	if Global.gameStart and !Global.startMenu and !$Lore/StatScreen.isActive and !Global.countdown and !Global.revolveCamera:
 		if Input.is_action_just_pressed("trackLeft"):
+			
 			swap(1)
 		
 		if Input.is_action_just_pressed("trackRight"):
@@ -120,6 +123,9 @@ func resetPlayerPosition(raceway):
 		
 func swap(direction:int):
 	
+	if Global.isFinished[0]:
+		await Actions.startStat
+	
 	var countdownBegin = countdown.instantiate()
 	Actions.timerStop.emit()
 	raceWayInd = posmod(raceWayInd+direction, Raceways.size())
@@ -156,11 +162,12 @@ func swap(direction:int):
 	#charactersRandomized = false
 	#resetPlayerPosition(currentRaceway)
 	#charactersRandomized = true
-	await  Actions.statComplete
+	await Actions.statComplete
 	add_child(countdownBegin)
 	await Actions.countdown
 	
 	
+	resetIsFinished()
 	Actions.playProcess.emit()
 	Actions.resetColors.emit()
 	currentRaceway.playMusic()
@@ -169,8 +176,12 @@ func swap(direction:int):
 	#resetMicFunc()
 
 	
-	
-	
+func resetIsFinished():
+	var count = 0
+	for i in Global.isFinished:
+		Global.isFinished[count] = false
+		count += 1
+	Global.revolveCamera = false
 		
 	
 

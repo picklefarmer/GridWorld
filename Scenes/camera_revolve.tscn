@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://c32y87ucm27ir"]
+
+[ext_resource type="Script" uid="uid://crfhaeuyymdvb" path="res://Scripts/camera_revolve.gd" id="1_rgimk"]
+[ext_resource type="Curve3D" uid="uid://bwfcufhl8a51v" path="res://Curves/revolveCircle.tres" id="2_litkg"]
+
+[node name="cameraRevolve" type="Node3D" unique_id=829454512]
+process_mode = 3
+script = ExtResource("1_rgimk")
+cameraSpeed = 0.12
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1188417027]
+curve = ExtResource("2_litkg")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=115361240]
+transform = Transform3D(-4.371122e-08, 0, -0.9999962, 0, 1, 0, 0.9999962, 0, -4.371122e-08, -0.10201645, 0, 7.1240945)
+
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=397257237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.71, 0)
+fov = 80.0
+
+[node name="target" type="Node3D" parent="." unique_id=82011347]
+
+[node name="Control" type="Control" parent="." unique_id=1377875152]
+layout_mode = 3
+anchor_top = 0.0015432099
+anchor_right = 1.0
+anchor_bottom = 0.9984568
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control" unique_id=357271519]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4691358
+anchor_top = 0.91640866
+anchor_right = 0.5308642
+anchor_bottom = 1.0
+offset_left = -223.0
+offset_top = -142.0
+offset_right = 223.0
+offset_bottom = 0.00024414063
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(1.1413007, 0.5816276, 1.4211367, 0.7490196)
+theme_override_constants/outline_size = 26
+theme_override_font_sizes/font_size = 120
+text = "Finished!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

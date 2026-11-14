@@ -41,7 +41,8 @@ func playProcess():
 	
 func _physics_process(delta: float) -> void:
 
-	
+	isFinished()
+		
 	#progress_ratio = lerp(progress_ratio,runAmount + progress_ratio,delta*evalTime)
 	progress = lerp(progress,(runAmount*trackNorm) + progress,delta*evalTime)
 	if trackNumber == 1:
@@ -99,5 +100,7 @@ func modRun(beatInt:float,delta:float,time:float):
 	print(runAmount)
 	
 
-
+func isFinished():
+	if Global.isFinished[trackNumber-1]:
+		pauseProcess()
 			

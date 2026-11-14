@@ -24,3 +24,5 @@ signal pauseProcess
 signal playProcess
 signal showStanding(character:int, color:Color)
 signal resetColors
+signal revolveCamera
+signal startStat
