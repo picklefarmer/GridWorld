@@ -3,7 +3,7 @@ extends VBoxContainer
 @export var characterTextures : Array[Texture2D] = []
 @onready var characterPreview : Array[TextureRect] = [ $CharacterOne2,$CharacterOne4, $CharacterOne,$CharacterOne3]
 @onready var characterStanding: Array[TextureRect] = [ $CharacterOne,$CharacterOne2, $CharacterOne3,$CharacterOne4]
-@onready var characterMedal: Array[TextureRect] = [ $CharacterOne2,$CharacterOne4, $CharacterOne3,$CharacterOne]
+@onready var characterMedal: Array[TextureRect] = [ $CharacterOne2,$CharacterOne4, $CharacterOne,$CharacterOne3]
 var winnerColors :Array[Color] = [Color(17.131, 15.793, 0.0, 0.847),Color(0.735, 0.735, 0.728, 0.765),Color(0.804, 0.296, 0.194, 0.863),Color(1.141, 0.582, 1.421, 0.749)]
 func _ready() -> void:
 	Actions.showStanding.connect(showStanding)

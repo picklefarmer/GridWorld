@@ -39,9 +39,9 @@ func meter_length(length:float,trackInd:int):
 		4: $progress_meter_bar4/Plane.scale.x = length
 
 func changeColor(length:float,trackInd:int):
-	if trackEnds[trackInd-1] == true and length >= 0 and length < 0.98:
+	if trackEnds[trackInd-1] == true and length >= 0 and length < 0.99:
 		trackEnds[trackInd-1] = false
-	elif trackEnds[trackInd -1 ] == false and length >= 0.98 :
+	elif trackEnds[trackInd -1 ] == false and length >= 0.99 :
 		trackEnds[trackInd - 1] = true
 		if tracks[trackInd-1] < lapCap:
 			Actions.meterColor.emit(tracks[trackInd-1],trackInd)
@@ -68,7 +68,8 @@ func changeColor(length:float,trackInd:int):
 					#Global.winners.clear()
 					print("timer in progress meter",Global.time,timer)
 					Global.time = str(timer)
-					timer = 0
+					#timer = 0
+					
 					Actions.changeLevel.emit(1)
 					
 					

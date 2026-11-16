@@ -25,6 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.085, 0.07, 0, 0.07241251)
 trackMeterIndex = 4
 
 [node name="RaceTime" type="Timer" parent="." unique_id=1362244565]
+process_mode = 3
 process_callback = 0
 
 [node name="Control" type="Control" parent="." unique_id=1764858171]

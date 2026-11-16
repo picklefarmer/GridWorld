@@ -44,6 +44,8 @@ func displayWinners(winnerOrder:Array):
 		$PositionPanel/HBoxContainer/Position/PositionLeaders.add_child(label)
 		
 		count += 1
+	
+		
 func clearTimes():
 	for child in $PositionPanel/HBoxContainer/Times.get_children():
 		child.queue_free()

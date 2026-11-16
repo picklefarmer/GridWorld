@@ -127,18 +127,23 @@ func swap(direction:int):
 		await Actions.startStat
 	
 	var countdownBegin = countdown.instantiate()
-	Actions.timerStop.emit()
-	raceWayInd = posmod(raceWayInd+direction, Raceways.size())
-	Global.globalRacewayIndex = raceWayInd
-	currentRaceway = get_child(3)
-	#print(raceWayInd)
-	var racewayInstance = Raceways[raceWayInd].instantiate()
-	#print(racewayInstance.get_node("Path3D2/track1/PlayerHolder").playerInd, " player index of level")
-	#racewayInstance.get_node("Path3D2/track1/PlayerHolder").playerInd = playerIndex
-	self.add_child(racewayInstance)
-	Actions.pauseProcess.emit()
-	racewayInstance.pauseMusic()
 	
+	
+	
+	#raceWayInd = posmod(raceWayInd+direction, Raceways.size())
+	#Global.globalRacewayIndex = raceWayInd
+	currentRaceway = get_child(3)
+	##print(raceWayInd)
+	#var racewayInstance = Raceways[raceWayInd].instantiate()
+	#
+	
+	
+	
+	#self.add_child(racewayInstance)
+	#Actions.pauseProcess.emit()
+	#racewayInstance.pauseMusic()
+	Actions.timerStop.emit()
+	currentRaceway.pauseMusic()
 	$Lore/StatScreen.visible = true
 	$Lore/StatScreen.isActive = true
 	$Lore/StatScreen/Complete.play()
@@ -146,23 +151,23 @@ func swap(direction:int):
 	Actions.winnerOrder.emit(Global.winners.duplicate())
 	Actions.timeDisplay.emit(Global.winnerTime.duplicate())
 	Actions.updateStanding.emit(Global.winners.duplicate())
-	#racewayInstance.playMusic()
-	#racewayInstance.get_node("Path3D2/track1/PlayerHolder").get_child(0).active = true
+	
+	
 	Actions.syncLip.emit()
-	#currentRaceway.get_node("Microphone").stop()
-	currentRaceway.queue_free()
 	
-	currentRaceway = racewayInstance
-	assignRandomCharacters(currentRaceway)
-	Global.loadedPlayers.insert(0,Global.playerName)
-	Actions.updatePreview.emit()
+	#currentRaceway.queue_free()
+	#
+	#currentRaceway = racewayInstance
+	#assignRandomCharacters(currentRaceway)
+	#Global.loadedPlayers.insert(0,Global.playerName)
+	#Actions.updatePreview.emit()
+	#
+	#Global.winners.clear()
+	#Global.winnerTime.clear()
 	
-	Global.winners.clear()
-	Global.winnerTime.clear()
-	#charactersRandomized = false
-	#resetPlayerPosition(currentRaceway)
-	#charactersRandomized = true
+	
 	await Actions.statComplete
+	racewayChange(direction)
 	add_child(countdownBegin)
 	await Actions.countdown
 	
@@ -184,5 +189,21 @@ func resetIsFinished():
 	Global.revolveCamera = false
 		
 	
-
+func racewayChange(direction:int):
+	raceWayInd = posmod(raceWayInd+direction, Raceways.size())
+	Global.globalRacewayIndex = raceWayInd
+	currentRaceway = get_child(3)
+	#print(raceWayInd)
+	var racewayInstance = Raceways[raceWayInd].instantiate()
+	self.add_child(racewayInstance)
+	Actions.pauseProcess.emit()
+	racewayInstance.pauseMusic()
+	currentRaceway.queue_free()
 	
+	currentRaceway = racewayInstance
+	assignRandomCharacters(currentRaceway)
+	Global.loadedPlayers.insert(0,Global.playerName)
+	Actions.updatePreview.emit()
+	
+	Global.winners.clear()
+	Global.winnerTime.clear()

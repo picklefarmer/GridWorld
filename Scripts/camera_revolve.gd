@@ -4,11 +4,14 @@ extends Node3D
 @onready var cameraFollow: PathFollow3D = $Path3D/PathFollow3D
 @onready var camera: Camera3D = $Path3D/PathFollow3D/Camera3D
 @export var cameraSpeed: float = 0.2
-
+var main : Camera3D
 
 func _ready() -> void:
 	updateLabel()
 	camera.make_current()
+	
+	main.visible = false
+	
 
 func _process(delta: float) -> void:
 	Global.revolveCamera = true

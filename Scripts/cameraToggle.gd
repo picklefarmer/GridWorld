@@ -15,6 +15,8 @@ extends Node3D
 @export var birdsEye :Camera3D
 @onready var zoomin :Tween
 @onready var progressMeter : Node3D = $Path3D2/track1/Camera3D/Progress_Meter
+@onready var players : Array = [$Path3D2/track1/PlayerHolder,$Path3D2/track2,$Path3D2/track3,$Path3D2/track4]
+var playerFollowInd : int = 1
 enum cameraState {MAIN, BIRDSEYE,FOllOW}
 var currentCamera : cameraState = cameraState.MAIN
 @onready var finishCamera: PackedScene = preload("res://Scenes/camera_revolve.tscn")
@@ -24,12 +26,17 @@ var musicProximity : Array[AudioStreamPlayer3D] = []
 func _ready() -> void:
 	Actions.revolveCamera.connect(finishCameraBegin)
 	$"..".resetPlayerPosition(self)
-
+	
 	if proximityTracks:
 		musicProximity = [$"Path3D2/track2/Track 2 Proximity",$"Path3D2/track3/Track 3 Proximity",$"Path3D2/track4/Track 4 Proximity"]
 	
 	
 func _process(delta: float) -> void:
+	if currentCamera == cameraState.FOllOW and Input.is_action_just_pressed("confirm"):
+		print(" is swapping")
+		followSwap()
+		
+		
 	if Input.is_action_just_pressed("SwapCamera"):
 		
 		
@@ -39,16 +46,20 @@ func _process(delta: float) -> void:
 				zoom(main,birdsEye)
 				#moveProgressMeter(birdsEye)
 				currentCamera = cameraState.BIRDSEYE
+				main.visible = false
 			cameraState.BIRDSEYE:
 				generateTween()
 				zoom(birdsEye,top)
 				#moveProgressMeter(top)
 				currentCamera = cameraState.FOllOW
+				
 			cameraState.FOllOW:
 				generateTween()
 				zoom(top,main)
 				#moveProgressMeter(main)
 				currentCamera = cameraState.MAIN
+				main.visible = true
+			
 
 func pauseMusic():
 	for instrument in music:
@@ -94,6 +105,17 @@ func generateTween():
 
 func finishCameraBegin():
 	var cameraFinished = finishCamera.instantiate()
+	cameraFinished.main = main
 	cameraTarget.add_child(cameraFinished)
+	
+	
 	cameraFinished.transform = cameraTarget.transform
+	
+func followSwap():
+	var cameraOffset = top.transform
+	top.reparent(players[playerFollowInd])
+	top.transform = cameraOffset
+	print(top.get_parent(), "camera parent")
+	playerFollowInd = ((playerFollowInd+1)%4)
+	print(playerFollowInd)
 	
