@@ -45,6 +45,8 @@ func displayWinners(winnerOrder:Array):
 		
 		count += 1
 	
+			
+
 		
 func clearTimes():
 	for child in $PositionPanel/HBoxContainer/Times.get_children():

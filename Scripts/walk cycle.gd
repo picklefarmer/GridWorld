@@ -17,13 +17,14 @@ var bone_idx: int
 @export var isLeg : bool = false
 @export var bus : String = "recording"
 @export var track : int = 1
-
+var dance : bool = false
 #@export var runSpeed : float = 0.074
 
 var runSpeed : float = 1.0
 var skeleton : Skeleton3D
 var canMove : bool = true
 func _ready() -> void:
+	dance = owner.dance
 	if owner.track:
 		track = owner.track
 		bus = "track"+str(owner.track)
@@ -52,7 +53,8 @@ func _physics_process(delta: float) -> void:
 	if volume_mag > minimum:
 		if canMove:
 			
-			stride *= -1.0
+			if !dance:
+				stride *= -1.0
 			var global_force_vector : Vector3 = Vector3(0,0,volume_mag *multiplier*stride)
 			var path3dVector : Vector3 = owner.get_parent().global_transform.basis * global_force_vector
 			var skeleton: Skeleton3D = get_parent() as Skeleton3D

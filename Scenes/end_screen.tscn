@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://bbr8t08hsp3q"]
+
+[ext_resource type="Script" uid="uid://c32tx5ejt1hq" path="res://Scripts/end_screen.gd" id="1_qutw1"]
+[ext_resource type="PackedScene" uid="uid://cvhhbyfkukdgx" path="res://Models/grape_man_redo_2.tscn" id="2_0clig"]
+[ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="3_funqh"]
+[ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="4_nhgxi"]
+[ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="5_dhpe0"]
+[ext_resource type="PackedScene" uid="uid://c5147cxtt5lq2" path="res://Models/Blueberry.tscn" id="6_cepg3"]
+[ext_resource type="PackedScene" uid="uid://brot8tvj4oaou" path="res://Models/pearman.tscn" id="7_88ngm"]
+[ext_resource type="PackedScene" uid="uid://4disebtdqhdv" path="res://Models/cherryman.tscn" id="8_ojcam"]
+[ext_resource type="PackedScene" uid="uid://b7fj7bvjb1wl5" path="res://Models/lemonman.tscn" id="9_3dwtc"]
+[ext_resource type="PackedScene" uid="uid://bx3wchm3qg4cg" path="res://Models/appleman.tscn" id="10_webds"]
+[ext_resource type="PackedScene" uid="uid://dijdkqpdtklv" path="res://Models/peachman.tscn" id="11_cdn2a"]
+[ext_resource type="PackedScene" uid="uid://inqwvslqoi4c" path="res://Models/watermelonman.tscn" id="12_preh7"]
+[ext_resource type="PackedScene" uid="uid://ekhlj2fr6t0f" path="res://Models/starfruitman.tscn" id="13_3apig"]
+[ext_resource type="PackedScene" uid="uid://cse8fqn1pcsq6" path="res://Models/pineappleman.tscn" id="14_cb006"]
+[ext_resource type="PackedScene" uid="uid://c5ufo20cwwt7g" path="res://Models/mangoman.tscn" id="15_qvgue"]
+[ext_resource type="PackedScene" uid="uid://ccod2crv7yv3g" path="res://Models/coconutman.tscn" id="16_q2eis"]
+[ext_resource type="Curve3D" uid="uid://b6vkoosgrnmmo" path="res://Curves/endScreen.tres" id="17_3yka7"]
+[ext_resource type="AudioStream" uid="uid://dh825lhlgp6of" path="res://Audio/outro guitar and keys bpm 117.mp3" id="18_0clig"]
+[ext_resource type="Texture2D" uid="uid://cyisp87jd0kx2" path="res://Models/textures/Nightsky.png" id="19_funqh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qutw1"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_0clig"]
+sky_material = SubResource("ProceduralSkyMaterial_qutw1")
+
+[sub_resource type="Environment" id="Environment_funqh"]
+background_mode = 1
+background_color = Color(0.21348926, 0.095175736, 0.27095968, 1)
+background_energy_multiplier = 0.47
+sky = SubResource("Sky_0clig")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vcvc"]
+resource_name = "Material.001"
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission_energy_multiplier = 2.21
+emission_texture = ExtResource("19_funqh")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5uvei"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nhgxi"]
+resource_name = "introStar_Plane"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": SubResource("StandardMaterial3D_6vcvc"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_5uvei")
+
+[node name="End Screen" type="Node3D" unique_id=1230412259]
+script = ExtResource("1_qutw1")
+PlayableCharacters = Array[PackedScene]([ExtResource("2_0clig"), ExtResource("3_funqh"), ExtResource("4_nhgxi"), ExtResource("5_dhpe0"), ExtResource("6_cepg3"), ExtResource("7_88ngm"), ExtResource("8_ojcam"), ExtResource("9_3dwtc"), ExtResource("10_webds"), ExtResource("11_cdn2a"), ExtResource("12_preh7"), ExtResource("13_3apig"), ExtResource("14_cb006"), ExtResource("15_qvgue"), ExtResource("16_q2eis")])
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1710778663]
+environment = SubResource("Environment_funqh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1647162436]
+light_specular = 0.244
+shadow_enabled = true
+
+[node name="Path3D" type="Path3D" parent="." unique_id=243491614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.465, 0)
+top_level = true
+curve = ExtResource("17_3yka7")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=239128658]
+transform = Transform3D(4.3711157e-08, 0, 0.99999475, 0, 1, 0, -0.99999475, 0, 4.3711157e-08, -0.10201645, 0, 23.124094)
+use_model_front = true
+
+[node name="target" type="Node3D" parent="." unique_id=1181146238]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1664278679]
+transform = Transform3D(1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, 1, -0.102, 3.39, -2.908)
+fov = 43.9
+
+[node name="Control" type="Control" parent="." unique_id=1415566650]
+layout_mode = 3
+anchor_top = 0.0015432099
+anchor_right = 1.0
+anchor_bottom = 0.9984568
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control" unique_id=1931713615]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4205247
+anchor_top = 1.0325078
+anchor_right = 0.5794753
+anchor_bottom = 1.0
+offset_left = -223.0
+offset_top = -142.0
+offset_right = 223.0
+offset_bottom = 0.00024414063
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(1.1413007, 0.5816276, 1.4211367, 0.7490196)
+theme_override_constants/outline_size = 26
+theme_override_font_sizes/font_size = 60
+text = "Thanks for Playing!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="EndMusic" type="AudioStreamPlayer" parent="." unique_id=187722571]
+stream = ExtResource("18_0clig")
+autoplay = true
+bus = &"track2"
+parameters/looping = true
+
+[node name="Plane" type="MeshInstance3D" parent="." unique_id=122492770]
+transform = Transform3D(26.935, 0, 0, 0, -1.1773662e-06, -26.935, 0, 26.935, -1.1773662e-06, 0, 2.876893, -24.310318)
+mesh = SubResource("ArrayMesh_nhgxi")
+skeleton = NodePath("")

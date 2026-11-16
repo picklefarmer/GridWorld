@@ -62,7 +62,8 @@ func changeColor(length:float,trackInd:int):
 				Actions.revolveCamera.emit()
 				
 				if Global.globalRacewayIndex+1 == Global.globalRacewaySize:
-					thanksForPlaying()
+					Actions.changeLevel.emit(0)
+					#thanksForPlaying()
 				else:
 					
 					#Global.winners.clear()

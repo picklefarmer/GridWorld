@@ -5,6 +5,7 @@ extends Node3D
 @export var Raceways : Array[PackedScene] = []
 @export var Vitamen: Array[PackedScene]= []
 @onready var countdown : PackedScene = preload("res://Scenes/countdown.tscn")
+@onready var endScreen : PackedScene = preload("res://Scenes/end_screen.tscn")
 var _Vitamen : Array
 var loadedPlayers : Array = []
 var raceWayInd : int = 0
@@ -74,10 +75,12 @@ func startGame():
 	
 	
 func endGame():
+	
 	currentRaceway.queue_free()
-	$Lore/OutroMusic.play()	
-	var label = $Lore/TitleScreen2d/EndScreen
-	label.visible = true
+	add_child(endScreen.instantiate())
+	
+	
+	
 	
 	
 	
@@ -167,6 +170,9 @@ func swap(direction:int):
 	
 	
 	await Actions.statComplete
+	if direction == 0:
+		Actions.endGame.emit()
+		return
 	racewayChange(direction)
 	add_child(countdownBegin)
 	await Actions.countdown

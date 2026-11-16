@@ -11,7 +11,7 @@ script = ExtResource("1_j6bun")
 
 [node name="watermelon" parent="." unique_id=1349137633 instance=ExtResource("1_tmyeh")]
 
-[node name="Skeleton3D" parent="watermelon/Armature" parent_id_path=PackedInt32Array(1349137633, 1460318396) index="0" unique_id=795852433]
+[node name="Skeleton3D" parent="watermelon/Armature" parent_id_path=PackedInt32Array(1349137633, 2112096472) index="0" unique_id=278820767]
 script = ExtResource("3_odr8r")
 multiplier = 1.65
 
@@ -81,7 +81,7 @@ settings/0/joints/3/bone = 4
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("4_odr8r")
-multiplier = 100.0
+multiplier = -100.0
 
 [node name="RA" type="SpringBoneSimulator3D" parent="watermelon/Armature/Skeleton3D" index="4" unique_id=808212009]
 setting_count = 1
@@ -117,7 +117,7 @@ settings/0/joints/3/bone = 8
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("4_odr8r")
-multiplier = -100.0
+multiplier = 100.0
 
 [node name="LL" type="SpringBoneSimulator3D" parent="watermelon/Armature/Skeleton3D" index="5" unique_id=394923368]
 setting_count = 1
@@ -151,7 +151,7 @@ settings/0/joints/2/bone = 15
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("4_odr8r")
-multiplier = -144.0
+multiplier = 144.0
 isLeg = true
 
 [node name="RL" type="SpringBoneSimulator3D" parent="watermelon/Armature/Skeleton3D" index="6" unique_id=1580140926]
@@ -186,7 +186,7 @@ settings/0/joints/2/bone = 19
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("4_odr8r")
-multiplier = 144.0
+multiplier = -144.0
 isLeg = true
 
 [editable path="watermelon"]

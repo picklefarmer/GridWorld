@@ -11,7 +11,7 @@ script = ExtResource("1_ogt2l")
 
 [node name="orange" parent="." unique_id=493769282 instance=ExtResource("1_que6i")]
 
-[node name="Skeleton3D" parent="orange/Armature" parent_id_path=PackedInt32Array(493769282, 137712658) index="0" unique_id=2007434024]
+[node name="Skeleton3D" parent="orange/Armature" parent_id_path=PackedInt32Array(493769282, 488329223) index="0" unique_id=1863851265]
 bones/34/rotation = Quaternion(0.521278, 0, 0.006561, 0.853362)
 bones/38/rotation = Quaternion(0.443948, 0, 0, 0.860797)
 script = ExtResource("3_bgugc")
@@ -118,7 +118,7 @@ settings/0/joints/2/bone = 10
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("5_i1vpo")
-multiplier = 250.0
+multiplier = -250.0
 isLeg = true
 
 [node name="RL" type="SpringBoneSimulator3D" parent="orange/Armature/Skeleton3D" index="5" unique_id=1257861043]
@@ -153,7 +153,7 @@ settings/0/joints/2/bone = 14
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("5_i1vpo")
-multiplier = -250.0
+multiplier = 250.0
 isLeg = true
 
 [node name="LA" type="SpringBoneSimulator3D" parent="orange/Armature/Skeleton3D" index="6" unique_id=1829221753]
@@ -190,7 +190,7 @@ settings/0/joints/3/bone = 31
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("5_i1vpo")
-multiplier = -150.0
+multiplier = 150.0
 
 [node name="RA" type="SpringBoneSimulator3D" parent="orange/Armature/Skeleton3D" index="7" unique_id=172252795]
 setting_count = 1
@@ -226,7 +226,7 @@ settings/0/joints/3/bone = 36
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 script = ExtResource("5_i1vpo")
-multiplier = 150.0
+multiplier = -150.0
 
 [node name="Head" type="SpringBoneSimulator3D" parent="orange/Armature/Skeleton3D" index="8" unique_id=1680824305]
 setting_count = 1

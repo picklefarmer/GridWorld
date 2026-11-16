@@ -4,7 +4,7 @@ var active = false
 @export var minimum:float = 0.05
 @export var runSpeed : float = 1.0
 @export var track : int = 0
-
+@export var dance : bool = false
 func _ready() -> void:
 	
 	#minimum = Global.minimum
