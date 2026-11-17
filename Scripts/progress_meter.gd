@@ -20,6 +20,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ProgressMeter"):
+		if !visible:
+			Actions.previewOn.emit()
+		else:
+			Actions.previewOff.emit()
 		visible = !visible
 
 func startTimer():
@@ -50,6 +54,7 @@ func changeColor(length:float,trackInd:int):
 			
 			if !Global.winners.has(trackInd):
 				Global.winners.append(trackInd)
+				
 				if colorCount <4:
 					Actions.showStanding.emit(trackInd-1,winColors[colorCount])
 					colorCount += 1

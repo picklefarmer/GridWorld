@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://be313hac0dmwk"
+path="res://.godot/imported/good ending 130bpm piano.mp3-3ff20bfa0e47748183c5c8a1f4181ff6.mp3str"
+
+[deps]
+
+source_file="res://Audio/Outro/good ending 130bpm piano.mp3"
+dest_files=["res://.godot/imported/good ending 130bpm piano.mp3-3ff20bfa0e47748183c5c8a1f4181ff6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

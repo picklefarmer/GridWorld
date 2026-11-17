@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c32tx5ejt1hq" path="res://Scripts/end_screen.gd" id="1_qutw1"]
 [ext_resource type="PackedScene" uid="uid://cvhhbyfkukdgx" path="res://Models/grape_man_redo_2.tscn" id="2_0clig"]
+[ext_resource type="AudioStream" uid="uid://dm6g0td0151cv" path="res://Audio/Outro/full good ending 130bpm.mp3" id="2_nhgxi"]
 [ext_resource type="PackedScene" uid="uid://c6sryhq03lanm" path="res://Models/orangeman.tscn" id="3_funqh"]
 [ext_resource type="PackedScene" uid="uid://bqm41vsg73qys" path="res://Models/bananaman.tscn" id="4_nhgxi"]
 [ext_resource type="PackedScene" uid="uid://bbiowgnfyjsi4" path="res://Models/strawberry.tscn" id="5_dhpe0"]
@@ -78,6 +79,7 @@ shadow_mesh = SubResource("ArrayMesh_5uvei")
 
 [node name="End Screen" type="Node3D" unique_id=1230412259]
 script = ExtResource("1_qutw1")
+goodEnding = ExtResource("2_nhgxi")
 PlayableCharacters = Array[PackedScene]([ExtResource("2_0clig"), ExtResource("3_funqh"), ExtResource("4_nhgxi"), ExtResource("5_dhpe0"), ExtResource("6_cepg3"), ExtResource("7_88ngm"), ExtResource("8_ojcam"), ExtResource("9_3dwtc"), ExtResource("10_webds"), ExtResource("11_cdn2a"), ExtResource("12_preh7"), ExtResource("13_3apig"), ExtResource("14_cb006"), ExtResource("15_qvgue"), ExtResource("16_q2eis")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1710778663]

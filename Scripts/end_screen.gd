@@ -1,6 +1,6 @@
 extends Node3D
 
-
+@export var goodEnding : AudioStream
 @onready var circle : Path3D = $Path3D
 @export var PlayableCharacters : Array[PackedScene] = []
 @export var rotateSpeed : float = PI/16
@@ -11,6 +11,9 @@ func _ready() -> void:
 	$Camera3D.make_current()
 	offset = 1.0 / PlayableCharacters.size()
 	populate()
+	if Global.winCondition:
+		$EndMusic.stream = goodEnding
+		$EndMusic.play()
 func _process(delta: float) -> void:
 	circle.rotate_y(rotateSpeed*delta)
 func populate():

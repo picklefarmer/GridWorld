@@ -103,4 +103,5 @@ func modRun(beatInt:float,delta:float,time:float):
 func isFinished():
 	if Global.isFinished[trackNumber-1]:
 		pauseProcess()
+		Actions.meter_Progress.emit(1.0,trackNumber)
 			

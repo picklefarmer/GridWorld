@@ -44,24 +44,28 @@ func _process(delta: float) -> void:
 			cameraState.MAIN:
 				generateTween()
 				zoom(main,birdsEye)
-				#moveProgressMeter(birdsEye)
+				
 				currentCamera = cameraState.BIRDSEYE
-				main.visible = false
-				Actions.previewOff.emit()
+				
+				moveMeter(main,birdsEye)
+				
 				
 			cameraState.BIRDSEYE:
 				generateTween()
 				zoom(birdsEye,top)
-				#moveProgressMeter(top)
+				
 				currentCamera = cameraState.FOllOW
+				moveMeter(birdsEye,top)
 				
 			cameraState.FOllOW:
 				generateTween()
 				zoom(top,main)
-				#moveProgressMeter(main)
+				
+				
 				currentCamera = cameraState.MAIN
-				main.visible = true
-				Actions.previewOn.emit()
+				moveMeter(top,main)
+				
+				
 			
 
 func pauseMusic():
@@ -81,22 +85,25 @@ func playMusic():
 func zoom(reference:Camera3D,out: Camera3D):
 	
 	if currentCamera != cameraState.FOllOW:		
+		progressMeter.visible = false
 		zoomin.tween_property(reference,"fov",inIn,0.5)
 		zoomin.tween_callback(switchCamera.bind(out))
-		zoomin.tween_property(out,"fov",outOut,1.0)
-		progressMeter.visible = false
+		zoomin.tween_property(out,"fov",outOut,0.25)
+		zoomin.tween_callback(makeProgressVisible)
+		
 	else :
+		progressMeter.visible = false
 		zoomin.tween_property(reference,"fov",inOut,1.0)
 		zoomin.tween_callback(switchCamera.bind(out))
 		zoomin.tween_property(out,"fov",outIn,0.25)
-		progressMeter.visible = true
+		zoomin.tween_callback(makeProgressVisible)
+	
 		
 func switchCamera(reference:Camera3D):
 	reference.make_current()
 	
-func moveProgressMeter(parent:Camera3D):
-	pass 
-	#progressMeter.reparent(parent,false)
+func makeProgressVisible():
+	progressMeter.visible = true
 
 	
 func generateTween():
@@ -121,4 +128,20 @@ func followSwap():
 	print(top.get_parent(), "camera parent")
 	playerFollowInd = ((playerFollowInd+1)%4)
 	print(playerFollowInd)
+	
+func moveMeter(from:Camera3D,to:Camera3D):
+	var progressMeter : Node3D = from.get_node("Progress_Meter")
+	var startTransform = progressMeter.transform
+	
+	progressMeter.reparent(to)
+	progressMeter.transform = startTransform
+	
+	if currentCamera != 0:
+		progressMeter.position.z = -0.957
+	else:
+		progressMeter.position.z = -1.391
+	
+
+	
+		
 	
