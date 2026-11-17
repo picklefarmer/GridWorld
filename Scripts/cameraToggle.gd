@@ -6,6 +6,7 @@ extends Node3D
 @export var outOut : float = 20
 @export var inIn : float = 120
 @export var inOut : float = 78
+@export var progressMeterOut : float = -0.957
 @export var trackMultiplier : float = 1.0
 @export var micSpan : float = 200
 @export var proximityTracks : bool = false
@@ -137,7 +138,7 @@ func moveMeter(from:Camera3D,to:Camera3D):
 	progressMeter.transform = startTransform
 	
 	if currentCamera != 0:
-		progressMeter.position.z = -0.957
+		progressMeter.position.z = progressMeterOut
 	else:
 		progressMeter.position.z = -1.391
 	

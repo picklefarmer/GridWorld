@@ -8,9 +8,16 @@ transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 curve = ExtResource("1_isosr")
 script = ExtResource("2_ndu1r")
 
-[node name="FollowPath3D" type="PathFollow3D" parent="." unique_id=1821299627]
-transform = Transform3D(-0.42634535, 0, -0.90455425, 0, 1, 0, 0.90455425, 0, -0.42634535, 5.1890717, 0, -10.066041)
-progress = 5.3211565
+[node name="LR" type="PathFollow3D" parent="." unique_id=1821299627]
+transform = Transform3D(-0.4261231, 0, -0.90465814, 0, 1, 0, 0.90465814, 0, -0.4261231, 5.1868887, 0, -10.06707)
+progress = 5.3187413
 
-[node name="BirdsEyeCamera" type="Camera3D" parent="FollowPath3D" unique_id=570116194]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+[node name="Path3D" type="Path3D" parent="LR" unique_id=876515955]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 11.261729, 0, 0.4201948)
+curve = ExtResource("1_isosr")
+
+[node name="UD" type="PathFollow3D" parent="LR/Path3D" unique_id=1011764659]
+transform = Transform3D(-4.371132e-08, 0, -0.99999845, 0, 1, 0, 0.99999845, 0, -4.371132e-08, 0.018669128, 0, -11.126941)
+
+[node name="BirdsEyeCamera" type="Camera3D" parent="LR/Path3D/UD" unique_id=570116194]
+transform = Transform3D(-1.4570554e-09, -0.033333335, 1.4570556e-09, 0.033333544, -1.4570464e-09, -9.313226e-10, 9.313226e-10, 1.4570464e-09, 0.033333544, 11.126943, -0.42019463, 11.280397)

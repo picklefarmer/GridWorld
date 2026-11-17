@@ -49,9 +49,10 @@ script = ExtResource("1_v4mcm")
 outIn = 60.0
 outOut = 85.0
 inOut = 60.0
+progressMeterOut = -0.89
 micSpan = 20.0
 top = NodePath("Path3D2/track1/followPlayer")
-birdsEye = NodePath("birdsEye/FollowPath3D/BirdsEyeCamera")
+birdsEye = NodePath("birdsEye/LR/Path3D/UD/BirdsEyeCamera")
 
 [node name="raceway 7" parent="." unique_id=1542613220 instance=ExtResource("1_ndjim")]
 
@@ -61,7 +62,7 @@ curve = ExtResource("2_kerbq")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=903517246]
-transform = Transform3D(-0.010735573, -0.008248443, -1.0003635, 0.012117195, 0.99973506, -0.008383533, 0.9997552, -0.012205523, -0.0106404945, -0.41799816, -171.8219, 7.2712135)
+transform = Transform3D(-0.01073557, -0.008248439, -1.0003649, 0.012117192, 0.9997346, -0.008383545, 0.99975497, -0.012205517, -0.010640509, -0.41799816, -171.8219, 7.2712135)
 progress = 232.74117
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -98,7 +99,7 @@ script = ExtResource("19_a8j7u")
 target = NodePath("../PlayerHolder")
 
 [node name="track2" type="PathFollow3D" parent="Path3D2" unique_id=40535349]
-transform = Transform3D(-0.010735605, -0.008248422, -1.0003511, 0.012117231, 0.9997326, -0.00838343, 0.9997582, -0.012205494, -0.010640362, -0.41799816, -171.8219, 7.2712135)
+transform = Transform3D(-0.010735602, -0.008248419, -1.0003525, 0.0121172285, 0.99973214, -0.008383441, 0.99975795, -0.012205487, -0.010640378, -0.41799816, -171.8219, 7.2712135)
 progress = 232.74117
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -114,7 +115,7 @@ transform = Transform3D(-5.2154064e-08, -1.1641532e-10, 0.99999994, -2.2555469e-
 visible = false
 
 [node name="track3" type="PathFollow3D" parent="Path3D2" unique_id=1702470826]
-transform = Transform3D(-0.010735605, -0.008248422, -1.0003511, 0.012117231, 0.9997326, -0.00838343, 0.9997582, -0.012205494, -0.010640362, -0.41799816, -171.8219, 7.2712135)
+transform = Transform3D(-0.010735602, -0.008248419, -1.0003525, 0.0121172285, 0.99973214, -0.008383441, 0.99975795, -0.012205487, -0.010640378, -0.41799816, -171.8219, 7.2712135)
 progress = 232.74117
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -129,7 +130,7 @@ transform = Transform3D(-5.310934e-08, 0, 1, 0, 1, 0, -1.215, 0, -4.371139e-08, 
 visible = false
 
 [node name="track4" type="PathFollow3D" parent="Path3D2" unique_id=979988124]
-transform = Transform3D(-0.010735605, -0.008248422, -1.0003511, 0.012117231, 0.9997326, -0.00838343, 0.9997582, -0.012205494, -0.010640362, -0.41799816, -171.8219, 7.2712135)
+transform = Transform3D(-0.010735602, -0.008248419, -1.0003525, 0.0121172285, 0.99973214, -0.008383441, 0.99975795, -0.012205487, -0.010640378, -0.41799816, -171.8219, 7.2712135)
 progress = 232.74117
 use_model_front = true
 script = ExtResource("3_pknt2")
@@ -205,7 +206,7 @@ transform = Transform3D(12.467109, 0, -19.191, 0, 22.885, 0, 19.191, 0, 12.46710
 [node name="birdsEye" parent="." unique_id=758360174 instance=ExtResource("30_tguwy")]
 transform = Transform3D(11.51, 0, 0, 0, 11.51, 0, 0, 0, 11.51, 0, 0, 0)
 
-[node name="FollowPath3D" parent="birdsEye" index="0" unique_id=1821299627]
+[node name="LR" parent="birdsEye" index="0" unique_id=1821299627]
 transform = Transform3D(-0.6151333, 0, 0.7884155, 0, 1, 0, -0.7884155, 0, -0.6151333, 6.957232, 0, 8.790511)
 progress = 27.572012
 

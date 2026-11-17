@@ -61,7 +61,7 @@ inOut = 60.0
 trackMultiplier = 0.8
 micSpan = 50.0
 top = NodePath("Path3D2/track1/followPlayer")
-birdsEye = NodePath("birdsEye/FollowPath3D/BirdsEyeCamera")
+birdsEye = NodePath("birdsEye/LR/Path3D/UD/BirdsEyeCamera")
 
 [node name="raceway 8" parent="." unique_id=1066319418 instance=ExtResource("1_0ppcw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3924818, 0, 0.39177728)

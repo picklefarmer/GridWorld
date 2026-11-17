@@ -56,9 +56,10 @@ outIn = 60.0
 outOut = 40.0
 inIn = 60.0
 inOut = 80.0
+progressMeterOut = -2.207
 micSpan = 20.0
 top = NodePath("Path3D2/track1/followPlayer")
-birdsEye = NodePath("birdsEye/FollowPath3D/BirdsEyeCamera")
+birdsEye = NodePath("birdsEye/LR/Path3D/UD/BirdsEyeCamera")
 
 [node name="raceway 10" parent="." unique_id=98726678 instance=ExtResource("1_2qfkj")]
 

@@ -1,6 +1,6 @@
 extends Path3D
 
-@export var turnSpeed : float = 0.035
+@export var turnSpeed : float = 0.12
 @export var transformScale : float = 30.0 : 
 	get():
 		return scale.x
@@ -9,9 +9,13 @@ extends Path3D
 
 
 func _process(delta: float) -> void:
-	progressCamera(delta)	
+	var rotateInputLR: float = Input.get_axis("stickL","stickR")
+	var rotateInputUD: float = Input.get_axis("stickU","stickD")
+	
+	progressCamera(delta,rotateInputLR,rotateInputUD)	
 
 
 
-func progressCamera(delta:float):
-	$FollowPath3D.progress_ratio = wrapf($FollowPath3D.progress_ratio + turnSpeed*delta, 0.0, 1.0)
+func progressCamera(delta:float,influenceLR:float,influenceUD:float):
+	$LR.progress_ratio = wrapf($LR.progress_ratio + influenceLR *delta* turnSpeed, 0.0, 1.0)
+	$LR/Path3D/UD.progress_ratio = wrapf($LR/Path3D/UD.progress_ratio + influenceUD *delta*turnSpeed, 0.0, 1.0)
