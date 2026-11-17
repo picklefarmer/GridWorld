@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://cse8fqn1pcsq6" path="res://Models/pineappleman.tscn" id="19_i04qb"]
 [ext_resource type="PackedScene" uid="uid://c5ufo20cwwt7g" path="res://Models/mangoman.tscn" id="20_ailbu"]
 [ext_resource type="PackedScene" uid="uid://ccod2crv7yv3g" path="res://Models/coconutman.tscn" id="21_umjcr"]
+[ext_resource type="PackedScene" uid="uid://ivr4sugy8lg1" path="res://Scenes/birds_eye.tscn" id="27_4b8vm"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_xdynq"]
 
@@ -60,7 +61,7 @@ inOut = 60.0
 trackMultiplier = 0.8
 micSpan = 50.0
 top = NodePath("Path3D2/track1/followPlayer")
-birdsEye = NodePath("BirdsEye")
+birdsEye = NodePath("birdsEye/FollowPath3D/BirdsEyeCamera")
 
 [node name="raceway 8" parent="." unique_id=1066319418 instance=ExtResource("1_0ppcw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3924818, 0, 0.39177728)
@@ -192,6 +193,9 @@ environment = SubResource("Environment_6hc2p")
 [node name="BirdsEye" type="Camera3D" parent="." unique_id=307974521]
 transform = Transform3D(1, 0, 0, 0, -0.03031783, -0.9995403, 0, 0.9995403, -0.03031783, 0, -327.56415, 0)
 
+[node name="birdsEye" parent="." unique_id=758360174 instance=ExtResource("27_4b8vm")]
+transform = Transform3D(30, 0, 0, 0, -1.3113416e-06, -30, 0, 30, -1.3113416e-06, 0, 0, 0)
+
 [node name="cloud" parent="." unique_id=1972854392 instance=ExtResource("19_6hc2p")]
 transform = Transform3D(20.235, 0, 0, 0, 20.235, 0, 0, 0, 20.235, 20.502823, -43.932693, -22.360224)
 
@@ -206,3 +210,5 @@ transform = Transform3D(-15.521639, 0, -2.4576335, 0, 15.715, 0, 2.4576335, 0, -
 
 [node name="cloud2" parent="." unique_id=204760463 instance=ExtResource("19_6hc2p")]
 transform = Transform3D(12.46711, 0, -19.191, 0, 22.885, 0, 19.191, 0, 12.46711, 20.503, 41.599327, -22.36)
+
+[editable path="birdsEye"]

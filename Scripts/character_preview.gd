@@ -9,17 +9,23 @@ func _ready() -> void:
 	Actions.showStanding.connect(showStanding)
 	Actions.resetColors.connect(resetPreviewColor)
 	if !isWinner:
-		
+		Actions.previewOff.connect(previewOff)
+		Actions.previewOn.connect(previewOn)
 		Actions.updatePreview.connect(updatePreview)
 		
 	else:
 		#Actions.winnerOrder.connect(updateStanding)
+		
 		Actions.updateStanding.connect(updateStanding)
 
 func showStanding(character:int,color:Color):
 	characterMedal[character].material.set("shader_parameter/line_color",color)
 	
-
+func previewOff():
+	visible = false
+func previewOn():
+	visible = true	
+	
 func updatePreview():
 	var count:int = 0
 	

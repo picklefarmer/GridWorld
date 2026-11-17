@@ -25,7 +25,7 @@ var musicProximity : Array[AudioStreamPlayer3D] = []
 @onready var startingOffset : float = $Path3D2/track1.progress_ratio
 func _ready() -> void:
 	Actions.revolveCamera.connect(finishCameraBegin)
-	$"..".resetPlayerPosition(self)
+	#$"..".resetPlayerPosition(self)
 	
 	if proximityTracks:
 		musicProximity = [$"Path3D2/track2/Track 2 Proximity",$"Path3D2/track3/Track 3 Proximity",$"Path3D2/track4/Track 4 Proximity"]
@@ -47,6 +47,8 @@ func _process(delta: float) -> void:
 				#moveProgressMeter(birdsEye)
 				currentCamera = cameraState.BIRDSEYE
 				main.visible = false
+				Actions.previewOff.emit()
+				
 			cameraState.BIRDSEYE:
 				generateTween()
 				zoom(birdsEye,top)
@@ -59,6 +61,7 @@ func _process(delta: float) -> void:
 				#moveProgressMeter(main)
 				currentCamera = cameraState.MAIN
 				main.visible = true
+				Actions.previewOn.emit()
 			
 
 func pauseMusic():

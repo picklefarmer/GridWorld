@@ -8,6 +8,7 @@ var pathPoints : Array[PathFollow3D] = []
 var offset : float = 0.0
 var offsetCount : int = 1
 func _ready() -> void:
+	$Camera3D.make_current()
 	offset = 1.0 / PlayableCharacters.size()
 	populate()
 func _process(delta: float) -> void:

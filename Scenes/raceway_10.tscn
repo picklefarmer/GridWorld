@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://dt6braqcj457c" path="res://Audio/Past tracks/Track 10/Track 10 - bpm 151 - keys.mp3" id="25_h45kk"]
 [ext_resource type="AudioStream" uid="uid://8qpik32nw1qu" path="res://Audio/Past tracks/Track 10/Track 10 - bpm 151 - bass.mp3" id="26_pne3y"]
 [ext_resource type="PackedScene" uid="uid://c47yc10fjtfn0" path="res://Models/cloud.blend" id="27_h45kk"]
+[ext_resource type="PackedScene" uid="uid://ivr4sugy8lg1" path="res://Scenes/birds_eye.tscn" id="27_pne3y"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_qty0d"]
 
@@ -57,7 +58,7 @@ inIn = 60.0
 inOut = 80.0
 micSpan = 20.0
 top = NodePath("Path3D2/track1/followPlayer")
-birdsEye = NodePath("BirdsEye")
+birdsEye = NodePath("birdsEye/FollowPath3D/BirdsEyeCamera")
 
 [node name="raceway 10" parent="." unique_id=98726678 instance=ExtResource("1_2qfkj")]
 
@@ -183,6 +184,9 @@ parameters/looping = true
 transform = Transform3D(1, 0, 0, 0, -0.11852854, 0.9929507, 0, -0.9929507, -0.11852854, 2.763, 646.869, -68.106)
 fov = 48.9
 
+[node name="birdsEye" parent="." unique_id=758360174 instance=ExtResource("27_pne3y")]
+transform = Transform3D(34.424408, 25.102709, 0, 11.474394, -15.735323, -37.893585, -22.326761, 30.617632, -19.474653, 0, 58.13, 0)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1427374361]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 light_color = Color(0.621199, 0.40825447, 0.66589844, 1)
@@ -206,3 +210,5 @@ transform = Transform3D(-7.7963448, 0, -1.1790856, 0, 7.885, 0, 1.1790856, 0, -7
 
 [node name="cloud4" parent="." unique_id=971095045 instance=ExtResource("27_h45kk")]
 transform = Transform3D(-21.881178, 0, -3.3092153, 0, 22.13, 0, 3.3092153, 0, -21.881178, 7.9626465, 43.236153, -8.76511)
+
+[editable path="birdsEye"]

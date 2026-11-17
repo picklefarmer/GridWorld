@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://cse8fqn1pcsq6" path="res://Models/pineappleman.tscn" id="19_42u67"]
 [ext_resource type="PackedScene" uid="uid://c5ufo20cwwt7g" path="res://Models/mangoman.tscn" id="20_rhad4"]
 [ext_resource type="PackedScene" uid="uid://ccod2crv7yv3g" path="res://Models/coconutman.tscn" id="21_vqt4l"]
+[ext_resource type="PackedScene" uid="uid://ivr4sugy8lg1" path="res://Scenes/birds_eye.tscn" id="27_vbcho"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_5bss4"]
 
@@ -58,7 +59,7 @@ inOut = 60.0
 trackMultiplier = 2.0
 micSpan = 50.0
 top = NodePath("Path3D2/track1/followPlayer")
-birdsEye = NodePath("BirdsEye")
+birdsEye = NodePath("birdsEye/FollowPath3D/BirdsEyeCamera")
 
 [node name="raceway 6" parent="." unique_id=2046131668 instance=ExtResource("1_6ivuv")]
 
@@ -68,7 +69,7 @@ curve = ExtResource("2_xg55g")
 debug_custom_color = Color(1, 0, 0, 1)
 
 [node name="track1" type="PathFollow3D" parent="Path3D2" unique_id=1076679970]
-transform = Transform3D(-0.09493779, -0.92052823, -0.37884837, 0.9947214, -0.10257588, 1.6393311e-06, -0.038860116, -0.37677523, 0.92559284, 19.517391, 98.3894, -1.6191597)
+transform = Transform3D(-0.09493778, -0.92052823, -0.37884837, 0.99472135, -0.10257588, 1.6393311e-06, -0.038860112, -0.37677523, 0.92559284, 19.517391, 98.3894, -1.6191597)
 use_model_front = true
 script = ExtResource("3_4npvc")
 trackNumber = 1
@@ -179,6 +180,9 @@ parameters/looping = true
 transform = Transform3D(1, 0, 0, 0, -0.11852854, 0.9929507, 0, -0.9929507, -0.11852854, 2.763, 646.869, -68.106)
 fov = 48.9
 
+[node name="birdsEye" parent="." unique_id=758360174 instance=ExtResource("27_vbcho")]
+transform = Transform3D(61.76, 0, 0, 0, 61.76, 0, 0, 0, 61.76, 0, 69.515, 0)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2121323329]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 light_energy = 0.477
@@ -204,3 +208,5 @@ transform = Transform3D(-15.521639, 0, -2.4576335, 0, 15.715, 0, 2.4576335, 0, -
 
 [node name="cloud2" parent="." unique_id=1037589380 instance=ExtResource("17_u8886")]
 transform = Transform3D(12.46711, 0, -19.191, 0, 22.885, 0, 19.191, 0, 12.46711, 20.503, 41.599327, -22.36)
+
+[editable path="birdsEye"]

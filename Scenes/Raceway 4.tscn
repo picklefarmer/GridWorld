@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://c5ufo20cwwt7g" path="res://Models/mangoman.tscn" id="21_kxof6"]
 [ext_resource type="PackedScene" uid="uid://ccod2crv7yv3g" path="res://Models/coconutman.tscn" id="22_277n5"]
 [ext_resource type="PackedScene" uid="uid://crldn2u381y1n" path="res://Scenes/Background/dragon.tscn" id="26_ppby4"]
+[ext_resource type="PackedScene" uid="uid://ivr4sugy8lg1" path="res://Scenes/birds_eye.tscn" id="29_npstl"]
 
 [sub_resource type="Curve" id="Curve_sdpiv"]
 _data = [Vector2(0.098919265, 0), 0.0, 0.17114195, 0, 0, Vector2(0.4142403, 0.12065345), 0.8054654, 0.8054654, 0, 0, Vector2(0.6288621, 0.30478907), 1.0292553, 1.0292553, 0, 0, Vector2(0.8841704, 0.81066704), 0.24449319, 0.0, 0, 0]
@@ -221,7 +222,7 @@ inIn = 93.0
 inOut = 60.0
 micSpan = 25.0
 top = NodePath("Path3D2/track1/FollowPlayer")
-birdsEye = NodePath("BirdsEye")
+birdsEye = NodePath("birdsEye/FollowPath3D/BirdsEyeCamera")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=242663044]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -357,6 +358,9 @@ parameters/looping = true
 [node name="BirdsEye" type="Camera3D" parent="." unique_id=1756956984]
 transform = Transform3D(1, 0, 0, 0, -0.11852854, 0.9929507, 0, -0.9929507, -0.11852854, 25.848495, 646.8691, -47.805542)
 fov = 48.9
+
+[node name="birdsEye" parent="." unique_id=758360174 instance=ExtResource("29_npstl")]
+transform = Transform3D(40.55, 0, 0, 0, -1.7724967e-06, -40.55, 0, 40.55, -1.7724967e-06, 0, 0, 0)
 
 [node name="Background" type="Node3D" parent="." unique_id=1660193458]
 
@@ -715,6 +719,7 @@ transform = Transform3D(0.1014148, 0.97717106, 0.18666461, -0.1874871, -0.165496
 transform = Transform3D(0.6318782, 0.7287936, 0.26378548, -0.096124224, 0.41139862, -0.90636975, -0.7690813, 0.5473588, 0.33001006, -15.957916, -19.293468, -76.74232)
 
 [editable path="raceway 4"]
+[editable path="birdsEye"]
 [editable path="Background/crystal"]
 [editable path="Background/crystal2"]
 [editable path="Background/crystal3"]

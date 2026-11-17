@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ivr4sugy8lg1"]
+
+[ext_resource type="Curve3D" uid="uid://bk7q0y7b56uk" path="res://Curves/birdsEye.tres" id="1_isosr"]
+[ext_resource type="Script" uid="uid://cw25c4ebm0lkv" path="res://Scripts/birds_eye.gd" id="2_ndu1r"]
+
+[node name="birdsEye" type="Path3D" unique_id=758360174]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+curve = ExtResource("1_isosr")
+script = ExtResource("2_ndu1r")
+
+[node name="FollowPath3D" type="PathFollow3D" parent="." unique_id=1821299627]
+transform = Transform3D(-0.42634535, 0, -0.90455425, 0, 1, 0, 0.90455425, 0, -0.42634535, 5.1890717, 0, -10.066041)
+progress = 5.3211565
+
+[node name="BirdsEyeCamera" type="Camera3D" parent="FollowPath3D" unique_id=570116194]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)

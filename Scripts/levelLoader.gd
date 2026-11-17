@@ -127,6 +127,7 @@ func resetPlayerPosition(raceway):
 func swap(direction:int):
 	
 	if Global.isFinished[0]:
+		Actions.previewOff.emit()
 		await Actions.startStat
 	
 	var countdownBegin = countdown.instantiate()
@@ -147,6 +148,7 @@ func swap(direction:int):
 	#racewayInstance.pauseMusic()
 	Actions.timerStop.emit()
 	currentRaceway.pauseMusic()
+	
 	$Lore/StatScreen.visible = true
 	$Lore/StatScreen.isActive = true
 	$Lore/StatScreen/Complete.play()

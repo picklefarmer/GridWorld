@@ -26,3 +26,5 @@ signal showStanding(character:int, color:Color)
 signal resetColors
 signal revolveCamera
 signal startStat
+signal previewOff
+signal previewOn
