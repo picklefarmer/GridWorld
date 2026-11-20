@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cse8fqn1pcsq6" path="res://Models/pineappleman.tscn" id="16_nq02w"]
 [ext_resource type="PackedScene" uid="uid://c5ufo20cwwt7g" path="res://Models/mangoman.tscn" id="17_jxsgu"]
 [ext_resource type="PackedScene" uid="uid://ccod2crv7yv3g" path="res://Models/coconutman.tscn" id="18_jp3rh"]
+[ext_resource type="PackedScene" uid="uid://dq8kvh3vn7thl" path="res://Models/limeman.tscn" id="18_y3dkq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2kyu5"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -126,6 +127,11 @@ track = 2
 
 [node name="CoconutMan" parent="." unique_id=1728257053 instance=ExtResource("18_jp3rh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.18576, 0, 3.206629)
+track = 2
+
+[node name="Limeman" parent="." unique_id=858740386 instance=ExtResource("18_y3dkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.309826, 0, 2.9105225)
+track = 2
 
 [node name="Microphone" type="AudioStreamPlayer" parent="." unique_id=1892974747]
 stream = SubResource("AudioStreamMicrophone_fk1ks")

@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://cse8fqn1pcsq6" path="res://Models/pineappleman.tscn" id="20_ogudm"]
 [ext_resource type="PackedScene" uid="uid://c5ufo20cwwt7g" path="res://Models/mangoman.tscn" id="21_kxof6"]
 [ext_resource type="PackedScene" uid="uid://ccod2crv7yv3g" path="res://Models/coconutman.tscn" id="22_277n5"]
+[ext_resource type="PackedScene" uid="uid://dq8kvh3vn7thl" path="res://Models/limeman.tscn" id="23_mow56"]
 [ext_resource type="PackedScene" uid="uid://crldn2u381y1n" path="res://Scenes/Background/dragon.tscn" id="26_ppby4"]
 [ext_resource type="PackedScene" uid="uid://ivr4sugy8lg1" path="res://Scenes/birds_eye.tscn" id="29_npstl"]
 
@@ -276,7 +277,7 @@ near = 82.745
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1085270310]
 transform = Transform3D(1.0000001, 1.4901161e-08, 4.656613e-10, 0, 1.0000001, 3.7252903e-09, 0, 3.7252903e-09, 1, 0, 0, 0)
 script = ExtResource("6_jj500")
-PlayableCharacters = Array[PackedScene]([ExtResource("7_vt77n"), ExtResource("7_f7s0b"), ExtResource("7_xjy4r"), ExtResource("5_po5p7"), ExtResource("6_ubsab"), ExtResource("11_uwv7w"), ExtResource("12_g6ltt"), ExtResource("13_so25e"), ExtResource("14_afnnl"), ExtResource("4_bu834"), ExtResource("18_6k8qg"), ExtResource("19_skn80"), ExtResource("20_ogudm"), ExtResource("21_kxof6"), ExtResource("22_277n5")])
+PlayableCharacters = Array[PackedScene]([ExtResource("7_vt77n"), ExtResource("7_f7s0b"), ExtResource("7_xjy4r"), ExtResource("5_po5p7"), ExtResource("6_ubsab"), ExtResource("11_uwv7w"), ExtResource("12_g6ltt"), ExtResource("13_so25e"), ExtResource("14_afnnl"), ExtResource("4_bu834"), ExtResource("18_6k8qg"), ExtResource("19_skn80"), ExtResource("20_ogudm"), ExtResource("21_kxof6"), ExtResource("22_277n5"), ExtResource("23_mow56")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("4_bu834")]
 transform = Transform3D(0.99966985, 7.450581e-09, -0.025692385, 7.450581e-09, 1.0000004, 0, 0.025692455, 2.9802322e-08, 0.9996698, 1.1060009, 7.6293945e-06, 0.2539959)

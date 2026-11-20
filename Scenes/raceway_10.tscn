@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://ccod2crv7yv3g" path="res://Models/coconutman.tscn" id="20_gdq43"]
 [ext_resource type="PackedScene" uid="uid://dok0tv4lxakgx" path="res://Mesh/trail.blend" id="21_0c711"]
 [ext_resource type="Script" uid="uid://ts38hmt4qhiy" path="res://Scripts/BPM.gd" id="22_8bqf1"]
+[ext_resource type="PackedScene" uid="uid://dq8kvh3vn7thl" path="res://Models/limeman.tscn" id="22_v7bjd"]
 [ext_resource type="AudioStream" uid="uid://bua5ymchrhco5" path="res://Audio/Past tracks/Track 10/Track 10 - bpm 151 - guitar.mp3" id="23_basx1"]
 [ext_resource type="AudioStream" uid="uid://dt6braqcj457c" path="res://Audio/Past tracks/Track 10/Track 10 - bpm 151 - keys.mp3" id="25_h45kk"]
 [ext_resource type="AudioStream" uid="uid://8qpik32nw1qu" path="res://Audio/Past tracks/Track 10/Track 10 - bpm 151 - bass.mp3" id="26_pne3y"]
@@ -93,7 +94,7 @@ area_range = 5.3
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1676707902]
 transform = Transform3D(1, 6.519258e-09, 6.519258e-09, -7.683411e-09, 0.99999994, 2.9802322e-08, 3.7252903e-09, 0, 1, 0, 0, 0)
 script = ExtResource("5_wfxae")
-PlayableCharacters = Array[PackedScene]([ExtResource("6_basx1"), ExtResource("7_h45kk"), ExtResource("8_pne3y"), ExtResource("9_v7bjd"), ExtResource("10_e3ai7"), ExtResource("11_p2mi1"), ExtResource("12_g77l2"), ExtResource("13_vy0us"), ExtResource("14_or61b"), ExtResource("15_pyoxk"), ExtResource("16_8fjkj"), ExtResource("17_i3v03"), ExtResource("18_3x0kk"), ExtResource("19_y5ahd"), ExtResource("20_gdq43")])
+PlayableCharacters = Array[PackedScene]([ExtResource("6_basx1"), ExtResource("7_h45kk"), ExtResource("8_pne3y"), ExtResource("9_v7bjd"), ExtResource("10_e3ai7"), ExtResource("11_p2mi1"), ExtResource("12_g77l2"), ExtResource("13_vy0us"), ExtResource("14_or61b"), ExtResource("15_pyoxk"), ExtResource("16_8fjkj"), ExtResource("17_i3v03"), ExtResource("18_3x0kk"), ExtResource("19_y5ahd"), ExtResource("20_gdq43"), ExtResource("22_v7bjd")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("15_pyoxk")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1.0000004, 0, 0, 0, 0.9999999, 1.1060009, 7.6293945e-06, 0.2539959)

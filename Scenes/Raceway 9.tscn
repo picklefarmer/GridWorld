@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://cse8fqn1pcsq6" path="res://Models/pineappleman.tscn" id="19_lygtk"]
 [ext_resource type="PackedScene" uid="uid://c5ufo20cwwt7g" path="res://Models/mangoman.tscn" id="20_sr8ce"]
 [ext_resource type="PackedScene" uid="uid://ccod2crv7yv3g" path="res://Models/coconutman.tscn" id="21_aoy8q"]
+[ext_resource type="PackedScene" uid="uid://dq8kvh3vn7thl" path="res://Models/limeman.tscn" id="22_kqsb5"]
 [ext_resource type="PackedScene" uid="uid://ivr4sugy8lg1" path="res://Scenes/birds_eye.tscn" id="27_n6eja"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_tfmxy"]
@@ -99,7 +100,7 @@ near = 85.98
 
 [node name="PlayerHolder" type="Node3D" parent="Path3D2/track1" unique_id=1486126738]
 script = ExtResource("4_fy1l5")
-PlayableCharacters = Array[PackedScene]([ExtResource("6_ncoeg"), ExtResource("6_p2qo6"), ExtResource("5_v1win"), ExtResource("7_55jsm"), ExtResource("8_bgygm"), ExtResource("9_p2qo6"), ExtResource("10_ncoeg"), ExtResource("11_tfmxy"), ExtResource("12_tsy5s"), ExtResource("6_eo7v2"), ExtResource("17_tsy5s"), ExtResource("18_kb625"), ExtResource("19_lygtk"), ExtResource("20_sr8ce"), ExtResource("21_aoy8q")])
+PlayableCharacters = Array[PackedScene]([ExtResource("6_ncoeg"), ExtResource("6_p2qo6"), ExtResource("5_v1win"), ExtResource("7_55jsm"), ExtResource("8_bgygm"), ExtResource("9_p2qo6"), ExtResource("10_ncoeg"), ExtResource("11_tfmxy"), ExtResource("12_tsy5s"), ExtResource("6_eo7v2"), ExtResource("17_tsy5s"), ExtResource("18_kb625"), ExtResource("19_lygtk"), ExtResource("20_sr8ce"), ExtResource("21_aoy8q"), ExtResource("22_kqsb5")])
 
 [node name="Peachman" parent="Path3D2/track1/PlayerHolder" unique_id=1887923755 instance=ExtResource("6_eo7v2")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1.0000004, 0, 0, 0, 0.9999999, 1.1060009, 7.6293945e-06, 0.2539959)

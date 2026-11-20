@@ -16,7 +16,8 @@ var tween : Tween
 	$Starfruitman,
 	$PineappleMan,
 	$MangoMan,
-	$CoconutMan
+	$CoconutMan,
+	$Limeman
 	]
 
 func _ready() -> void:
