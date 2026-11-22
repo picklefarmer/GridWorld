@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://bjh8orpda3weh" path="res://Scenes/character_select.tscn" id="26_cbgmd"]
 [ext_resource type="PackedScene" uid="uid://dq8kvh3vn7thl" path="res://Models/limeman.tscn" id="27_r33sp"]
 [ext_resource type="Texture2D" uid="uid://cyisp87jd0kx2" path="res://Models/textures/Nightsky.png" id="27_ueoa1"]
+[ext_resource type="Script" uid="uid://dk8qepe1u8bgk" path="res://Scripts/characterSelectArrows.gd" id="34_hdf80"]
 [ext_resource type="PackedScene" uid="uid://sfuklkiruvr5" path="res://Scenes/mic_input_selection.tscn" id="34_neg2b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r33sp"]
@@ -71,7 +72,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="Theme" id="Theme_r33sp"]
+[sub_resource type="Theme" id="Theme_hdf80"]
 resource_local_to_scene = true
 default_font_size = 40
 
@@ -183,7 +184,7 @@ size_flags_vertical = 0
 
 [node name="StatScreen" parent="Lore" unique_id=224236459 instance=ExtResource("24_6vcvc")]
 visible = false
-theme = SubResource("Theme_r33sp")
+theme = SubResource("Theme_hdf80")
 
 [node name="IntroMusic" type="AudioStreamPlayer" parent="Lore" unique_id=230010655]
 stream = ExtResource("24_ueoa1")
@@ -212,7 +213,32 @@ size_flags_vertical = 3
 theme_override_colors/font_outline_color = Color(0.23012006, 0.67954206, 1.92523e-07, 1)
 theme_override_constants/outline_size = 20
 
-[node name="EndScreen" parent="CharacterSelect/TitleScreen2d" parent_id_path=PackedInt32Array(338064043, 1642162364) index="1" unique_id=291964157]
+[node name="Arrows" type="Label" parent="CharacterSelect/TitleScreen2d" parent_id_path=PackedInt32Array(338064043, 1642162364) index="1" unique_id=146075013]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -321.5
+offset_top = -373.5
+offset_right = 321.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0.23012006, 0.67954206, 1.92523e-07, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 129
+text = "←  →"
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("34_hdf80")
+
+[node name="Timer" type="Timer" parent="CharacterSelect/TitleScreen2d" parent_id_path=PackedInt32Array(338064043, 1642162364) index="2" unique_id=1274067751]
+wait_time = 0.25
+
+[node name="EndScreen" parent="CharacterSelect/TitleScreen2d" parent_id_path=PackedInt32Array(338064043, 1642162364) index="3" unique_id=291964157]
 offset_top = -322.25
 offset_bottom = 322.25
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkwjkv8aafiu3"
 path.s3tc="res://.godot/imported/track 8.png-3c99a20494c10f7dd9b670e357748edf.s3tc.ctex"
+path.etc2="res://.godot/imported/track 8.png-3c99a20494c10f7dd9b670e357748edf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Mesh/textures/track 8.png"
-dest_files=["res://.godot/imported/track 8.png-3c99a20494c10f7dd9b670e357748edf.s3tc.ctex"]
+dest_files=["res://.godot/imported/track 8.png-3c99a20494c10f7dd9b670e357748edf.s3tc.ctex", "res://.godot/imported/track 8.png-3c99a20494c10f7dd9b670e357748edf.etc2.ctex"]
 
 [params]
 

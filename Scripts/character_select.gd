@@ -35,6 +35,8 @@ func _process(delta: float) -> void:
 		
 func switchCharacter(direction:int):
 	
+	Actions.characterSelectInput.emit()
+	
 	for character in characters:
 		character.active = false
 		character.track = 2

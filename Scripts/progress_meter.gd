@@ -67,6 +67,7 @@ func changeColor(length:float,trackInd:int):
 				Actions.revolveCamera.emit()
 				
 				if Global.globalRacewayIndex+1 == Global.globalRacewaySize:
+					Global.totalTime += int(Global.time)
 					Actions.changeLevel.emit(0)
 					#thanksForPlaying()
 				else:
@@ -75,7 +76,7 @@ func changeColor(length:float,trackInd:int):
 					print("timer in progress meter",Global.time,timer)
 					Global.time = str(timer)
 					#timer = 0
-					
+					Global.totalTime += int(Global.time)
 					Actions.changeLevel.emit(1)
 					
 					

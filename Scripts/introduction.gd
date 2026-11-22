@@ -29,6 +29,7 @@ func _process(delta: float) -> void:
 			introDone = true
 			$IntroMusic.stop()
 			$CharacterSelectMusic.play()
+			Actions.characterStart.emit()
 			#$TitleScreen2d.titleScreen.visible = true
 			#get_tree().create_timer(1.5).timeout.connect(fadeTitle)
 		elif charSelect or introDone:
@@ -40,7 +41,7 @@ func _process(delta: float) -> void:
 			$"../CharacterSelect/Microphone".stop()
 			$"../CharacterSelect/Microphone".queue_free()
 			Global.gameStart = true
-			
+			Actions.characterSelectInput.emit()
 			$"..".startGame()
 		
 		else:

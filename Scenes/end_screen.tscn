@@ -91,7 +91,7 @@ light_specular = 0.244
 shadow_enabled = true
 
 [node name="Path3D" type="Path3D" parent="." unique_id=243491614]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.465, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.13, 0)
 top_level = true
 curve = ExtResource("17_3yka7")
 
@@ -116,25 +116,48 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control" unique_id=1931713615]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1453136401]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.4205247
-anchor_top = 1.0
-anchor_right = 0.5794753
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -223.0
-offset_top = -142.0
-offset_right = 223.0
-offset_bottom = 0.00024414063
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+
+[node name="difficulty" type="Label" parent="Control/VBoxContainer" unique_id=85500841]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 31.645)
+theme_override_colors/font_outline_color = Color(0.83414495, 0.4584298, 1.92523e-07, 0.627451)
+theme_override_constants/outline_size = 26
+theme_override_font_sizes/font_size = 38
+text = "Difficulty: "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="totalTime" type="Label" parent="Control/VBoxContainer" unique_id=693714278]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 31.645)
+theme_override_colors/font_outline_color = Color(0.22666661, 0.68, 0, 0.627451)
+theme_override_constants/outline_size = 26
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control/VBoxContainer" unique_id=1931713615]
+layout_mode = 2
+size_flags_vertical = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -35.175)
 theme_override_colors/font_outline_color = Color(1.1413007, 0.5816276, 1.4211367, 0.7490196)
 theme_override_constants/outline_size = 26
 theme_override_font_sizes/font_size = 60
 text = "Thanks for Playing!"
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="EndMusic" type="AudioStreamPlayer" parent="." unique_id=187722571]

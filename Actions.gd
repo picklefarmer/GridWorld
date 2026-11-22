@@ -29,3 +29,5 @@ signal startStat
 signal previewOff
 signal previewOn
 signal difficulty(value:int)
+signal characterStart
+signal characterSelectInput

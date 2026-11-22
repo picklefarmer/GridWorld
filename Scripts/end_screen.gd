@@ -4,12 +4,17 @@ extends Node3D
 @onready var circle : Path3D = $Path3D
 @export var PlayableCharacters : Array[PackedScene] = []
 @export var rotateSpeed : float = PI/16
+@onready var totalTime : Label = $Control/VBoxContainer/totalTime
+@onready var difficulty : Label = $Control/VBoxContainer/difficulty
+
 var pathPoints : Array[PathFollow3D] = []
 var offset : float = 0.0
 var offsetCount : int = 1
 func _ready() -> void:
 	$Camera3D.make_current()
 	offset = 1.0 / PlayableCharacters.size()
+	totalTime.text = "Total Time: " + str(Global.totalTime)
+	difficulty.text = "Difficulty: " + str(Global.difficulty)
 	populate()
 	if Global.winCondition:
 		$EndMusic.stream = goodEnding

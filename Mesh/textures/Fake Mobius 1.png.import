@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bodpimoakjn37"
 path.s3tc="res://.godot/imported/Fake Mobius 1.png-796948334a2f9514ca33355ac4fcc056.s3tc.ctex"
+path.etc2="res://.godot/imported/Fake Mobius 1.png-796948334a2f9514ca33355ac4fcc056.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Mesh/textures/Fake Mobius 1.png"
-dest_files=["res://.godot/imported/Fake Mobius 1.png-796948334a2f9514ca33355ac4fcc056.s3tc.ctex"]
+dest_files=["res://.godot/imported/Fake Mobius 1.png-796948334a2f9514ca33355ac4fcc056.s3tc.ctex", "res://.godot/imported/Fake Mobius 1.png-796948334a2f9514ca33355ac4fcc056.etc2.ctex"]
 
 [params]
 
