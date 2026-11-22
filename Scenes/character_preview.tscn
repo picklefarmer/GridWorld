@@ -16,8 +16,14 @@
 [ext_resource type="Texture2D" uid="uid://b5lnkgihb0h03" path="res://Images/watermelonman.png" id="12_5bv1t"]
 [ext_resource type="Texture2D" uid="uid://bxklwgk8mlag8" path="res://Images/starfruitman.png" id="13_cxkmt"]
 [ext_resource type="Texture2D" uid="uid://5lrvk38grbl" path="res://Images/mangoman.png" id="15_8bg5i"]
-[ext_resource type="Texture2D" uid="uid://dn5oj5kn16lgh" path="res://Images/coconutman.png" id="16_7v266"]
-[ext_resource type="Texture2D" uid="uid://mfkmy6atjk38" path="res://Images/limeman.png" id="17_j6qlo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7v6cc"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/coconutman.png-98d90ddf5fb0b542dcbe26128fa3aac5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uc26y"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/limeman.png-886b27f653574468b75efdd6f8eea87a.ctex"
 
 [sub_resource type="Shader" id="Shader_7v6cc"]
 code = "shader_type canvas_item;
@@ -77,7 +83,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = 0
 alignment = 2
 script = ExtResource("1_i7nm4")
-characterTextures = Array[Texture2D]([ExtResource("1_etgfx"), ExtResource("3_7v6cc"), ExtResource("4_j6qlo"), ExtResource("5_l7tgk"), ExtResource("1_b8goo"), ExtResource("7_nkwbn"), ExtResource("8_28scg"), ExtResource("3_i7nm4"), ExtResource("2_g7dr0"), ExtResource("11_f8yi8"), ExtResource("12_5bv1t"), ExtResource("13_cxkmt"), ExtResource("4_w344y"), ExtResource("15_8bg5i"), ExtResource("16_7v266"), ExtResource("17_j6qlo")])
+characterTextures = Array[Texture2D]([ExtResource("1_etgfx"), ExtResource("3_7v6cc"), ExtResource("4_j6qlo"), ExtResource("5_l7tgk"), ExtResource("1_b8goo"), ExtResource("7_nkwbn"), ExtResource("8_28scg"), ExtResource("3_i7nm4"), ExtResource("2_g7dr0"), ExtResource("11_f8yi8"), ExtResource("12_5bv1t"), ExtResource("13_cxkmt"), ExtResource("4_w344y"), ExtResource("15_8bg5i"), SubResource("CompressedTexture2D_7v6cc"), SubResource("CompressedTexture2D_uc26y")])
 
 [node name="CharacterOne" type="TextureRect" parent="." unique_id=893150410]
 material = SubResource("ShaderMaterial_f2pec")

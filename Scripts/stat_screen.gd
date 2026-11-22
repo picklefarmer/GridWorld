@@ -7,6 +7,7 @@ func _ready() -> void:
 	Actions.winnerOrder.connect(displayWinners)
 	Actions.timeDisplay.connect(displayTime)
 	Actions.timeDisplay.connect(createTimes)
+	Actions.difficulty.connect(setDifficulty)
 
 
 func _process(delta: float) -> void:
@@ -17,7 +18,8 @@ func _process(delta: float) -> void:
 		#owner.get_child(3).playMusic()
 		
 		
-
+func setDifficulty(value:int):
+	$DurationPanel/DurationContainer/Duration.text = "Difficulty: " + str(value)
 func displayTime(winnerTimes:Array):
 	print(Global.time , "Timer")
 	$TimePanel/TimeContainer/Time.text = "Time : " + Global.time

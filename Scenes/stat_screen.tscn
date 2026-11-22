@@ -2,7 +2,23 @@
 
 [ext_resource type="Script" uid="uid://eyrt5r06u7ld" path="res://Scripts/stat_screen.gd" id="1_xtb1s"]
 [ext_resource type="PackedScene" uid="uid://bkc0nm6dkfiry" path="res://Scenes/character_preview.tscn" id="2_wwkxc"]
+[ext_resource type="Texture2D" uid="uid://dlxxpcb0xdfes" path="res://Images/grapeman.png" id="3_2lmgs"]
 [ext_resource type="AudioStream" uid="uid://dpajpciuisji8" path="res://Audio/race_finished_full 150.mp3" id="3_2tryx"]
+[ext_resource type="Texture2D" uid="uid://da4j0jxep63kt" path="res://Images/orangeman.png" id="4_rtr8w"]
+[ext_resource type="Texture2D" uid="uid://cx22bcqpk2qc8" path="res://Images/bananaman.png" id="5_gh16d"]
+[ext_resource type="Texture2D" uid="uid://doh1ebnj0d4kk" path="res://Images/strawberryman.png" id="6_v036n"]
+[ext_resource type="Texture2D" uid="uid://b2d2nlgt2fu6y" path="res://Images/blueberryman.png" id="7_1qmsu"]
+[ext_resource type="Texture2D" uid="uid://cjdcx3u8exfrh" path="res://Images/pearman.png" id="8_gulks"]
+[ext_resource type="Texture2D" uid="uid://cvudk0o56v3yv" path="res://Images/cherryman.png" id="9_rgt5s"]
+[ext_resource type="Texture2D" uid="uid://cfjjkdn4gfjqh" path="res://Images/lemonman.png" id="10_8ovp7"]
+[ext_resource type="Texture2D" uid="uid://6lhj2ulnp1e3" path="res://Images/appleman.png" id="11_pdequ"]
+[ext_resource type="Texture2D" uid="uid://b13hj2nq5tt3c" path="res://Images/peachman.png" id="12_o3fbm"]
+[ext_resource type="Texture2D" uid="uid://b5lnkgihb0h03" path="res://Images/watermelonman.png" id="13_4180c"]
+[ext_resource type="Texture2D" uid="uid://bxklwgk8mlag8" path="res://Images/starfruitman.png" id="14_7phe1"]
+[ext_resource type="Texture2D" uid="uid://c6g8rtk676xx" path="res://Images/pineappleman.png" id="15_vm4ax"]
+[ext_resource type="Texture2D" uid="uid://5lrvk38grbl" path="res://Images/mangoman.png" id="16_mowbe"]
+[ext_resource type="Texture2D" uid="uid://dn5oj5kn16lgh" path="res://Images/coconutman.png" id="17_qo1js"]
+[ext_resource type="Texture2D" uid="uid://mfkmy6atjk38" path="res://Images/limeman.png" id="18_1wlu0"]
 
 [sub_resource type="Theme" id="Theme_fk1ks"]
 resource_local_to_scene = true
@@ -100,6 +116,7 @@ offset_transform_position = Vector2(10.84, 0)
 offset_transform_scale = Vector2(1.96, 1.96)
 alignment = 0
 isWinner = true
+characterTextures = Array[Texture2D]([ExtResource("3_2lmgs"), ExtResource("4_rtr8w"), ExtResource("5_gh16d"), ExtResource("6_v036n"), ExtResource("7_1qmsu"), ExtResource("8_gulks"), ExtResource("9_rgt5s"), ExtResource("10_8ovp7"), ExtResource("11_pdequ"), ExtResource("12_o3fbm"), ExtResource("13_4180c"), ExtResource("14_7phe1"), ExtResource("15_vm4ax"), ExtResource("16_mowbe"), ExtResource("17_qo1js"), ExtResource("18_1wlu0")])
 
 [node name="Position" type="VBoxContainer" parent="PositionPanel/HBoxContainer" unique_id=490814464]
 layout_mode = 2
@@ -160,7 +177,6 @@ horizontal_alignment = 1
 vertical_alignment = 3
 
 [node name="DurationPanel" type="Panel" parent="." unique_id=1843765124]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.7
@@ -178,7 +194,7 @@ alignment = 1
 [node name="Duration" type="Label" parent="DurationPanel/DurationContainer" unique_id=1790160564]
 layout_mode = 2
 size_flags_vertical = 6
-text = "Track Duration"
+text = "Difficulty: 6"
 horizontal_alignment = 1
 vertical_alignment = 1
 

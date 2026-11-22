@@ -31,7 +31,7 @@ func updatePreview():
 	
 	for character in characterPreview:
 		character.texture = characterTextures[Global.characterNames.find(Global.loadedPlayers[count])]
-		#print(character,character.texture,count,Global.loadedPlayers[count])
+		print(count," ",Global.loadedPlayers[count])
 		count+=1
 		
 func updateStanding(winnerOrder: Array):

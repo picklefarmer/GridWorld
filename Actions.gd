@@ -28,3 +28,4 @@ signal revolveCamera
 signal startStat
 signal previewOff
 signal previewOn
+signal difficulty(value:int)

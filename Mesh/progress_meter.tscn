@@ -4,6 +4,28 @@
 [ext_resource type="PackedScene" uid="uid://wjg65e8ag0sf" path="res://Mesh/progress_meter_bar.tscn" id="2_2y8rs"]
 [ext_resource type="PackedScene" uid="uid://bkc0nm6dkfiry" path="res://Scenes/character_preview.tscn" id="2_3m4y5"]
 [ext_resource type="PackedScene" uid="uid://c3awccy1tlxkp" path="res://Mesh/progress_meter_bar_player.tscn" id="2_plfkb"]
+[ext_resource type="Texture2D" uid="uid://dlxxpcb0xdfes" path="res://Images/grapeman.png" id="5_4f6b3"]
+[ext_resource type="Texture2D" uid="uid://da4j0jxep63kt" path="res://Images/orangeman.png" id="6_e8lmw"]
+[ext_resource type="Texture2D" uid="uid://cx22bcqpk2qc8" path="res://Images/bananaman.png" id="7_hwjk5"]
+[ext_resource type="Texture2D" uid="uid://doh1ebnj0d4kk" path="res://Images/strawberryman.png" id="8_hjc4h"]
+[ext_resource type="Texture2D" uid="uid://b2d2nlgt2fu6y" path="res://Images/blueberryman.png" id="9_a1t7e"]
+[ext_resource type="Texture2D" uid="uid://cjdcx3u8exfrh" path="res://Images/pearman.png" id="10_mylgh"]
+[ext_resource type="Texture2D" uid="uid://cvudk0o56v3yv" path="res://Images/cherryman.png" id="11_cbcw0"]
+[ext_resource type="Texture2D" uid="uid://cfjjkdn4gfjqh" path="res://Images/lemonman.png" id="12_fs6w2"]
+[ext_resource type="Texture2D" uid="uid://6lhj2ulnp1e3" path="res://Images/appleman.png" id="13_g1o2b"]
+[ext_resource type="Texture2D" uid="uid://b13hj2nq5tt3c" path="res://Images/peachman.png" id="14_ef8ag"]
+[ext_resource type="Texture2D" uid="uid://b5lnkgihb0h03" path="res://Images/watermelonman.png" id="15_png3r"]
+[ext_resource type="Texture2D" uid="uid://bxklwgk8mlag8" path="res://Images/starfruitman.png" id="16_dpsk5"]
+[ext_resource type="Texture2D" uid="uid://c6g8rtk676xx" path="res://Images/pineappleman.png" id="17_ytgvl"]
+[ext_resource type="Texture2D" uid="uid://5lrvk38grbl" path="res://Images/mangoman.png" id="18_rkad3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5h60i"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/coconutman.png-98d90ddf5fb0b542dcbe26128fa3aac5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4kq3g"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/limeman.png-886b27f653574468b75efdd6f8eea87a.ctex"
 
 [node name="Progress_Meter" type="Node3D" unique_id=628590229]
 script = ExtResource("1_2y8rs")
@@ -55,3 +77,4 @@ layout_mode = 2
 size_flags_vertical = 10
 offset_transform_enabled = true
 theme_override_constants/separation = 2
+characterTextures = Array[Texture2D]([ExtResource("5_4f6b3"), ExtResource("6_e8lmw"), ExtResource("7_hwjk5"), ExtResource("8_hjc4h"), ExtResource("9_a1t7e"), ExtResource("10_mylgh"), ExtResource("11_cbcw0"), ExtResource("12_fs6w2"), ExtResource("13_g1o2b"), ExtResource("14_ef8ag"), ExtResource("15_png3r"), ExtResource("16_dpsk5"), ExtResource("17_ytgvl"), ExtResource("18_rkad3"), SubResource("CompressedTexture2D_5h60i"), SubResource("CompressedTexture2D_4kq3g")])

@@ -13,7 +13,7 @@ func _ready():
 		
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("startButton"):
+	if !$"../../../Lore/StatScreen".isActive and Input.is_action_just_pressed("startButton"):
 		startToggle = !startToggle
 		$"../..".visible = startToggle
 		
@@ -33,6 +33,7 @@ func volumeMain(value:float):
 func difficultyUpdate(value:int):	
 	$Difficulty.text = "Difficulty: " + str(value)
 	Global.difficulty = value
+	Actions.difficulty.emit(value)
 	
 func updateMinimum(value:float):
 	$Label.text = "Mic Sensitivity: " + str(value)

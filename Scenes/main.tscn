@@ -71,7 +71,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="Theme" id="Theme_hdf80"]
+[sub_resource type="Theme" id="Theme_r33sp"]
 resource_local_to_scene = true
 default_font_size = 40
 
@@ -172,9 +172,18 @@ theme_override_constants/table_h_separation = 3
 theme_override_font_sizes/normal_font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxFlat_ueoa1")
 
+[node name="Label" parent="Lore/TitleScreen2d" parent_id_path=PackedInt32Array(897700427, 2053449483) index="0" unique_id=898577245]
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 373.5
+grow_vertical = 1
+size_flags_vertical = 0
+
 [node name="StatScreen" parent="Lore" unique_id=224236459 instance=ExtResource("24_6vcvc")]
 visible = false
-theme = SubResource("Theme_hdf80")
+theme = SubResource("Theme_r33sp")
 
 [node name="IntroMusic" type="AudioStreamPlayer" parent="Lore" unique_id=230010655]
 stream = ExtResource("24_ueoa1")
@@ -192,8 +201,16 @@ parameters/looping = true
 [node name="CharacterSelect" parent="." unique_id=338064043 instance=ExtResource("26_cbgmd")]
 
 [node name="Label" parent="CharacterSelect/TitleScreen2d" parent_id_path=PackedInt32Array(338064043, 1642162364) index="0" unique_id=898577245]
-offset_top = -186.75
-offset_bottom = 186.75
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 373.5
+grow_vertical = 1
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0.23012006, 0.67954206, 1.92523e-07, 1)
+theme_override_constants/outline_size = 20
 
 [node name="EndScreen" parent="CharacterSelect/TitleScreen2d" parent_id_path=PackedInt32Array(338064043, 1642162364) index="1" unique_id=291964157]
 offset_top = -322.25
