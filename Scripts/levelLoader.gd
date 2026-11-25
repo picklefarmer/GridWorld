@@ -6,12 +6,16 @@ extends Node3D
 @export var Vitamen: Array[PackedScene]= []
 @onready var countdown : PackedScene = preload("res://Scenes/countdown.tscn")
 @onready var endScreen : PackedScene = preload("res://Scenes/end_screen.tscn")
+@onready var flythroughScene : PackedScene = preload("res://Scenes/flythrough.tscn")
+var flythroughInstantiated : Node3D
 var _Vitamen : Array
 var loadedPlayers : Array = []
 var raceWayInd : int = 0
 var currentRaceway:Node3D
 var intro = true
 var initialTrack :bool = true
+var flythroughToggle : bool = false
+var oldWorldEnvironment : WorldEnvironment
 #var charactersRandomized : bool = true
 #var playerIndex : int = 0
 
@@ -28,7 +32,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	
-	if Global.gameStart and !Global.startMenu and !$Lore/StatScreen.isActive and !Global.countdown and !Global.revolveCamera:
+	if !Global.preview and Global.gameStart and !Global.startMenu and !$Lore/StatScreen.isActive and !Global.countdown and !Global.revolveCamera:
 		if Input.is_action_just_pressed("trackLeft"):
 			
 			swap(1)
@@ -36,9 +40,13 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("trackRight"):
 			swap(-1)
 		
-	
+	if $Lore/StatScreen.isActive:
+		if Input.is_action_just_pressed("previewTrack"):
+			flythrough()
+			
 		
 
+	
 func resetMicFunc():
 	#print(currentRaceway.get_node("Microphone"))
 	#currentRaceway.get_node("Microphone").stop()
@@ -159,17 +167,9 @@ func swap(direction:int):
 	
 	
 	Actions.syncLip.emit()
-	
-	#currentRaceway.queue_free()
-	#
-	#currentRaceway = racewayInstance
-	#assignRandomCharacters(currentRaceway)
-	#Global.loadedPlayers.insert(0,Global.playerName)
-	#Actions.updatePreview.emit()
-	#
-	#Global.winners.clear()
-	#Global.winnerTime.clear()
-	
+
+
+
 	
 	await Actions.statComplete
 	if direction == 0:
@@ -187,8 +187,30 @@ func swap(direction:int):
 	Actions.timerStart.emit()
 	
 	#resetMicFunc()
-
 	
+	
+func flythrough():
+	if !flythroughToggle:
+		oldWorldEnvironment = currentRaceway.get_node("WorldEnvironment")
+		currentRaceway.remove_child(oldWorldEnvironment)
+		$Lore/StatScreen/Complete.stop()
+		Global.preview = true
+		$Lore/StatScreen.visible = false
+		currentRaceway.visible = false
+		flythroughInstantiated = flythroughScene.instantiate()
+		add_child(flythroughInstantiated)
+		flythroughToggle = true
+	else:
+		Global.preview = false
+		$Lore/StatScreen.visible = true
+		if is_instance_valid(flythroughInstantiated):
+			flythroughInstantiated.queue_free()
+		currentRaceway.visible = true
+		currentRaceway.main.make_current()
+		currentRaceway.add_child(oldWorldEnvironment)
+		flythroughToggle = false
+		
+		
 func resetIsFinished():
 	var count = 0
 	for i in Global.isFinished:

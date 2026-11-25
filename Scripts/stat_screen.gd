@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if isActive and Input.is_action_just_pressed("confirm"):
+	if isActive and !Global.preview and Input.is_action_just_pressed("confirm"):
 		Actions.statComplete.emit()
 		isActive = false
 		visible = false

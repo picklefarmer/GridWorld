@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dd7j53ivfjgkm"]
+
+[ext_resource type="Script" uid="uid://c4fgp1erscgem" path="res://Scripts/flythrough.gd" id="1_ekrhr"]
+[ext_resource type="PackedScene" uid="uid://daydnui185opp" path="res://Scenes/Raceway 1.tscn" id="2_6brsb"]
+[ext_resource type="PackedScene" uid="uid://dlrtv3mwqbror" path="res://Scenes/Raceway 2.tscn" id="3_wtonv"]
+[ext_resource type="PackedScene" uid="uid://ce20vt5qq8yd3" path="res://Scenes/Raceway_3.tscn" id="4_c37nn"]
+[ext_resource type="PackedScene" uid="uid://cnjoq7c1creac" path="res://Scenes/Raceway 4.tscn" id="5_av4or"]
+[ext_resource type="PackedScene" uid="uid://dt8nd1t23uiig" path="res://Scenes/Raceway_5.tscn" id="6_u0na1"]
+[ext_resource type="PackedScene" uid="uid://c5dpxbtyyj4kg" path="res://Scenes/Raceway_6.tscn" id="7_axee8"]
+[ext_resource type="PackedScene" uid="uid://bjuaeaj4mjnl0" path="res://Scenes/Raceway 7.tscn" id="8_wpj2y"]
+[ext_resource type="PackedScene" uid="uid://cag3hbu5f3qpy" path="res://Scenes/Raceway 8.tscn" id="9_yoxs8"]
+[ext_resource type="PackedScene" uid="uid://b2eq88hf7tec1" path="res://Scenes/Raceway 9.tscn" id="10_7nk1p"]
+[ext_resource type="PackedScene" uid="uid://dd46vdb83ta8c" path="res://Scenes/raceway_10.tscn" id="11_17y55"]
+
+[node name="Flythrough" type="Node3D" unique_id=289637335]
+script = ExtResource("1_ekrhr")
+raceways = Array[PackedScene]([ExtResource("2_6brsb"), ExtResource("3_wtonv"), ExtResource("4_c37nn"), ExtResource("5_av4or"), ExtResource("6_u0na1"), ExtResource("7_axee8"), ExtResource("8_wpj2y"), ExtResource("9_yoxs8"), ExtResource("10_7nk1p"), ExtResource("11_17y55")])

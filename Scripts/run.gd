@@ -12,22 +12,23 @@ var progressOffset : float
 var progressNormalized : int 
 
 func _ready() -> void:
-	progressNormalized = get_parent().curve.get_baked_length()
-	Actions.playProcess.connect(playProcess)
-	Actions.pauseProcess.connect(pauseProcess)
-	micSpan = owner.micSpan
-	runAmount = 0.0
-	process_mode = Node.PROCESS_MODE_PAUSABLE
-	#progressNormalized/ 6
-	#print(progressNormalized,"progressNormalized")
-	trackNorm = owner.trackMultiplier
-	progressOffset = progress_ratio
-	Actions.goForward.connect(running)
-	if trackNumber != 1:
-		runSpeed = get_child(0).runSpeed
-		Actions.updateProgress.connect(errorBoost)
-	else:
-		runSpeed = $PlayerHolder.get_child(0).runSpeed
+	if owner is not previewScript:
+		progressNormalized = get_parent().curve.get_baked_length()
+		Actions.playProcess.connect(playProcess)
+		Actions.pauseProcess.connect(pauseProcess)
+		micSpan = owner.micSpan
+		runAmount = 0.0
+		process_mode = Node.PROCESS_MODE_PAUSABLE
+		#progressNormalized/ 6
+		#print(progressNormalized,"progressNormalized")
+		trackNorm = owner.trackMultiplier
+		progressOffset = progress_ratio
+		Actions.goForward.connect(running)
+		if trackNumber != 1:
+			runSpeed = get_child(0).runSpeed
+			Actions.updateProgress.connect(errorBoost)
+		else:
+			runSpeed = $PlayerHolder.get_child(0).runSpeed
 		#trackNorm = runSpeed
 	#if trackNumber == 1:
 		#Actions.beatOff.connect(modRun)
