@@ -197,8 +197,10 @@ func flythrough():
 		Global.preview = true
 		$Lore/StatScreen.visible = false
 		currentRaceway.visible = false
+		Actions.toggleWinLabel.emit()
 		flythroughInstantiated = flythroughScene.instantiate()
 		add_child(flythroughInstantiated)
+		Actions.pauseProcess.emit()
 		flythroughToggle = true
 	else:
 		Global.preview = false
@@ -206,6 +208,8 @@ func flythrough():
 		if is_instance_valid(flythroughInstantiated):
 			flythroughInstantiated.queue_free()
 		currentRaceway.visible = true
+		Actions.playProcess.emit()
+		Actions.toggleWinLabel.emit()
 		currentRaceway.main.make_current()
 		currentRaceway.add_child(oldWorldEnvironment)
 		flythroughToggle = false

@@ -283,7 +283,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.441608, 0, 2.0247064)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.404873, 0, 2.7117558)
 
 [node name="introStar" parent="CharacterSelect" unique_id=873956865 instance=ExtResource("26_1w6v2")]
-transform = Transform3D(7.763116e-14, 1.7759937e-06, 40.63, 40.63, -1.7759937e-06, -5.731049e-21, 1.7759937e-06, 40.63, -1.7759937e-06, 10.297234, 15.737549, 0)
+transform = Transform3D(1.0316747e-13, 2.3601963e-06, 53.995, 53.995, -2.3601963e-06, -7.616244e-21, 2.3601963e-06, 53.995, -2.3601963e-06, 10.297234, 15.737549, 0)
 
 [node name="Plane" parent="CharacterSelect/introStar" index="0" unique_id=1196324003]
 mesh = SubResource("ArrayMesh_7k868")

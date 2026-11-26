@@ -7,6 +7,7 @@ extends Node3D
 var main : Camera3D
 
 func _ready() -> void:
+	Actions.toggleWinLabel.connect(toggleLabel)
 	updateLabel()
 	camera.make_current()
 	
@@ -30,3 +31,6 @@ func turnCamera():
 func updateLabel():
 	if Global.winners[0] == 1:
 		labelText.text = "You Win!"
+
+func toggleLabel():
+	$Control/Label.visible = !$Control/Label.visible 

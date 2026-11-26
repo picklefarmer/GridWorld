@@ -1,4 +1,7 @@
 extends Path3D
+
+var trackSpeed : float = 0.5
+
 @export var isPreview : bool = false
 @export var turnSpeed : float = 0.12
 @export var transformScale : float = 30.0 : 
@@ -15,8 +18,9 @@ func _process(delta: float) -> void:
 		rotateInputUD = Input.get_axis("stickU","stickD")
 	else:
 		rotateInputUD = 0.0
-	
-	
+		trackSpeed	=	Input.get_axis("stickU","stickD")
+		Actions.previewSpeed.emit(trackSpeed)
+		
 	progressCamera(delta,rotateInputLR,rotateInputUD)	
 
 

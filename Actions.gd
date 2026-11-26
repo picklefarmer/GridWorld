@@ -31,3 +31,5 @@ signal previewOn
 signal difficulty(value:int)
 signal characterStart
 signal characterSelectInput
+signal toggleWinLabel
+signal previewSpeed(value:float)

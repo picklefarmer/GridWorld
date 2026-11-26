@@ -16,6 +16,9 @@ func _ready() -> void:
 		preview.set_script(previewScript)
 		add_child(preview)
 		path = preview.get_node("Path3D2")
+		path.curve.bake_interval = 75.0
+		path.curve.get_baked_length()
 		var previewCameraInstantiated = previewCamera.instantiate()
 		path.add_child(previewCameraInstantiated)
+		
 	

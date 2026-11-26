@@ -176,6 +176,7 @@ birdsEye = NodePath("birdsEye/LR/Path3D/UD/BirdsEyeCamera")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8966691, 0, 1.9250069)
 
 [node name="Torus Knot 11 x 39" parent="raceway 5" index="0" unique_id=857775846]
+process_mode = 3
 script = ExtResource("3_u3wwd")
 
 [node name="Path3D2" type="Path3D" parent="." unique_id=199831343]
@@ -335,6 +336,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.268677, 117.69885, 0)
 curve = SubResource("Curve3D_3ut23")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="ship patrol" unique_id=28002278]
+process_mode = 3
 transform = Transform3D(-0.8881308, -0.0012073071, 0.4595514, 0.002353166, 0.9999637, 0.0071747284, -0.4595472, 0.007453701, -0.8881022, 23.816458, 0.12254615, 127.89141)
 progress = 564.7782
 use_model_front = true
@@ -348,6 +350,7 @@ transform = Transform3D(0.99279076, 0.11986026, -1.8626451e-09, -0.118746035, 0.
 curve = SubResource("Curve3D_4p2bv")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="ship2 patrol1" unique_id=533479948]
+process_mode = 3
 transform = Transform3D(-0.9855141, 0.034144383, 0.16598544, 0.039682202, 0.9987357, 0.03016057, -0.16474959, 0.03631126, -0.9856422, 28.438972, 1.2536281, 91.33742)
 progress = 589.88025
 use_model_front = true
@@ -362,7 +365,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1765137, 133.68167, -73.566
 curve = SubResource("Curve3D_oby42")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="ship2 patrol2" unique_id=706926250]
-transform = Transform3D(-0.18074596, 0.0008151564, 0.983504, 0.0045084963, 0.99996454, -2.3934393e-07, -0.98349404, 0.0044341907, -0.1807478, -71.99847, 9.843416e-07, 186.6596)
+process_mode = 3
+transform = Transform3D(-0.18074596, 0.00081515627, 0.983504, 0.0045084963, 0.9999644, -2.3934393e-07, -0.98349404, 0.00443419, -0.1807478, -71.99847, 9.843416e-07, 186.6596)
 progress = 448.82913
 use_model_front = true
 script = ExtResource("20_s87fk")
@@ -376,6 +380,7 @@ transform = Transform3D(-0.29599428, 0, -0.9551897, 0, 1, 0, 0.9551897, 0, -0.29
 curve = SubResource("Curve3D_bbyen")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="ship patrol2" unique_id=1097711867]
+process_mode = 3
 transform = Transform3D(0.36647406, -0.021862546, -0.93015045, 0, 0.9997142, -0.02349713, 0.930408, 0.008611336, 0.36637264, -214.65251, 0, -105.28398)
 use_model_front = true
 script = ExtResource("20_s87fk")
@@ -388,6 +393,7 @@ transform = Transform3D(-0.2866512, 0, 0.958035, 0, 1, 0, -0.958035, 0, -0.28665
 curve = SubResource("Curve3D_n4ffx")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="ship patrol3" unique_id=497572140]
+process_mode = 3
 transform = Transform3D(-0.8881308, -0.0012073071, 0.4595514, 0.002353166, 0.9999637, 0.0071747284, -0.4595472, 0.007453701, -0.8881022, 23.816458, 0.12254615, 127.89141)
 progress = 564.7782
 use_model_front = true
