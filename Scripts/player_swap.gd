@@ -38,7 +38,7 @@ func startingCharacter():
 	newPlayer.minimum = Global.minimum
 	newPlayer.runSpeed = player.runSpeed
 	newPlayer.transform = player.transform
-	if Global.globalPlayerIndex != 9:
+	if Global.globalPlayerIndex != Global.carryCharacter:
 		Global.playerName = newPlayer.name
 	
 	player.queue_free()

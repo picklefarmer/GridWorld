@@ -20,6 +20,9 @@ func _ready() -> void:
 		$EndMusic.stream = goodEnding
 		$EndMusic.play()
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("confirm"):
+		resetGame()
+		
 	circle.rotate_y(rotateSpeed*delta)
 func populate():
 	for character in PlayableCharacters:
@@ -36,3 +39,17 @@ func populate():
 		path.add_child(instantiatedCharacter)
 		
 		offsetCount += 1
+
+
+func resetGame():
+	$EndMusic.stop()
+	
+	Global.gameStart = false
+	Global.globalRacewayIndex = 0
+	Global.totalTime = 0
+	Global.winnerTime = []
+	Global.winners = []
+	Global.loadedPlayers = []
+	Global.isFinished = [false, false, false, false]
+	Global.carryCharacter = Global.globalPlayerIndex
+	get_tree().reload_current_scene()

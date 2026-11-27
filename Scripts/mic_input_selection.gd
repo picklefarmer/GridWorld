@@ -13,7 +13,8 @@ func _ready():
 		
 
 func _process(delta: float) -> void:
-	if !$"../../../Lore/StatScreen".isActive and Input.is_action_just_pressed("startButton"):
+	#if !$"../../../Lore/StatScreen".isActive and Input.is_action_just_pressed("startButton"):
+	if !Global.statScreen and Input.is_action_just_pressed("startButton"):
 		startToggle = !startToggle
 		$"../..".visible = startToggle
 		

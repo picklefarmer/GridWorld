@@ -21,7 +21,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("confirm") and Global.gameStart == false and !Global.startMenu:
+	if Input.is_action_just_pressed("confirm") and !Global.gameStart and !Global.startMenu:
 		loreIndex = loreIndex+1
 		if loreIndex == lore.size():
 			loreWindow.visible = false

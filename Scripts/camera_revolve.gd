@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	Global.revolveCamera = true
+	#Global.revolveCamera = true
 	if Input.is_action_just_pressed("confirm"):
 		Actions.startStat.emit()
 	progressCamera(delta)

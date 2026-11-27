@@ -31,18 +31,20 @@ func _ready() -> void:
 	
 	
 func _process(delta: float) -> void:
-	
-	if !Global.preview and Global.gameStart and !Global.startMenu and !$Lore/StatScreen.isActive and !Global.countdown and !Global.revolveCamera:
+	#if !Global.preview and Global.gameStart and !Global.startMenu and !$Lore/StatScreen.isActive and !Global.countdown and !Global.revolveCamera:
+
+	if !Global.preview and Global.gameStart and !Global.startMenu and !Global.statScreen and !Global.countdown and !Global.revolveCamera:
 		if Input.is_action_just_pressed("trackLeft"):
 			
 			swap(1)
 		
 		if Input.is_action_just_pressed("trackRight"):
 			swap(-1)
-		
-	if $Lore/StatScreen.isActive:
+	#if $Lore/StatScreen.isActive:	
+	if Global.statScreen:
 		if Input.is_action_just_pressed("previewTrack"):
-			flythrough()
+			if Global.globalRacewayIndex +1 < Raceways.size():
+				flythrough()
 			
 		
 
@@ -158,7 +160,8 @@ func swap(direction:int):
 	currentRaceway.pauseMusic()
 	
 	$Lore/StatScreen.visible = true
-	$Lore/StatScreen.isActive = true
+	#$Lore/StatScreen.isActive = true
+	Global.statScreen = true
 	$Lore/StatScreen/Complete.play()
 	
 	Actions.winnerOrder.emit(Global.winners.duplicate())

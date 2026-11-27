@@ -13,6 +13,7 @@ var progressNormalized : int
 
 func _ready() -> void:
 	if owner is not previewScript:
+		
 		progressNormalized = get_parent().curve.get_baked_length()
 		Actions.playProcess.connect(playProcess)
 		Actions.pauseProcess.connect(pauseProcess)

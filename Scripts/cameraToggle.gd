@@ -25,6 +25,9 @@ var currentCamera : cameraState = cameraState.MAIN
 var musicProximity : Array[AudioStreamPlayer3D] = []
 @onready var startingOffset : float = $Path3D2/track1.progress_ratio
 func _ready() -> void:
+	$Path3D2.curve.bake_interval = 0.2
+	$Path3D2.curve.get_baked_length()
+	
 	Actions.revolveCamera.connect(finishCameraBegin)
 	#$"..".resetPlayerPosition(self)
 	
@@ -38,7 +41,7 @@ func _process(delta: float) -> void:
 		followSwap()
 		
 		
-	if Input.is_action_just_pressed("SwapCamera"):
+	if !Global.preview and !Global.statScreen and Input.is_action_just_pressed("SwapCamera"):
 		
 		
 		match currentCamera:
@@ -117,6 +120,7 @@ func generateTween():
 func finishCameraBegin():
 	var cameraFinished = finishCamera.instantiate()
 	cameraFinished.main = main
+	
 	cameraTarget.add_child(cameraFinished)
 	
 	

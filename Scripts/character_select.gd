@@ -21,6 +21,8 @@ var tween : Tween
 	]
 
 func _ready() -> void:
+	if Global.carryCharacter != 9:
+		centerCamera()
 	$Camera3D/AreaLight3D.light_energy = 0.0
 	tween = create_tween()
 	tween.tween_property($Camera3D/AreaLight3D,"light_energy", 3.669,0.5)
@@ -48,7 +50,7 @@ func switchCharacter(direction:int):
 	
 	$Camera3D/AreaLight3D.light_energy = 0.0
 	centerCamera()
-	
+	$"../Lore".charSelect = true
 	
 func centerCamera():
 	if tween and tween.is_valid():
@@ -60,4 +62,4 @@ func centerCamera():
 	
 	tween.tween_property($Camera3D,"global_position:x",cameraTarget.global_position.x,0.5)
 	tween.tween_property($Camera3D/AreaLight3D,"light_energy", 3.669,0.5)
-	$"../Lore".charSelect = true
+	

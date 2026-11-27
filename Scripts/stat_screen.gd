@@ -11,9 +11,13 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if isActive and !Global.preview and Input.is_action_just_pressed("confirm"):
+	#if isActive and !Global.preview and Input.is_action_just_pressed("confirm"):
+	if Global.statScreen and !Global.preview and Input.is_action_just_pressed("confirm"):
+		$Complete.stop()
 		Actions.statComplete.emit()
-		isActive = false
+		
+		#isActive = false
+		Global.statScreen = false
 		visible = false
 		#owner.get_child(3).playMusic()
 		

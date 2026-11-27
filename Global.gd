@@ -2,6 +2,7 @@ extends Node
 
 
 var globalPlayerIndex :int = 9
+var carryCharacter: int = 9
 var globalRacewayIndex : int = 0
 var globalRacewaySize : int
 var minimum : float = 0.05
@@ -20,3 +21,4 @@ var isFinished : Array[bool] = [false, false, false, false]
 var revolveCamera : bool = false
 var winCondition : bool = true
 var preview : bool =  false
+var statScreen : bool = false
