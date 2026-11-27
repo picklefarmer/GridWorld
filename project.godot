@@ -29,6 +29,7 @@ driver/enable_input=true
 
 Actions="*uid://dbn5cww40x3ad"
 Global="*uid://boxxs1ymyn3fe"
+SaveManager="*uid://dl8o6sokvyxxf"
 
 [display]
 

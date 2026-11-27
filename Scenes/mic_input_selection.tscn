@@ -45,3 +45,8 @@ layout_mode = 2
 max_value = 1.0
 step = 0.1
 value = 0.8
+
+[node name="MicSelect" type="Label" parent="." unique_id=1996838760]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Mic Select"
